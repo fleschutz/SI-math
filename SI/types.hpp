@@ -904,4 +904,3 @@ namespace core
 #undef SI_QUANTITY
 #undef SI_INLINE_CONSTEXPR
 #undef SI_INLINE
-#undef SI_LITERAL
