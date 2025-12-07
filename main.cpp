@@ -31,5 +31,11 @@ int main()
 	auto BMI = Markus_weight / (Markus_height * Markus_height);
 	// std::cout << "Markus' BMI is " << BMI.quantity() << "." << std::endl;
 
+	// Example 6:
+	auto Earth_radius = 6371.009_km;
+	auto Radar_station_height = 30_ft;
+	auto distance = sqrt((Earth_radius + Radar_station_height) * (Earth_radius + Radar_station_height) - Earth_radius * Earth_radius);
+	print(distance, "radar's geometrical horizon (the distance it can see)");
+
 	return 0;
 }

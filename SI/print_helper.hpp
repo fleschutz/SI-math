@@ -6,7 +6,10 @@ namespace si
 {
 	void print(si::length d, const char* description)
 	{
-		std::cout << meter(d) << "m " << description << std::endl;
+		if (d >= si::kilometer(1))
+			std::cout << kilometer(d) << "km " << description << std::endl;
+		else
+			std::cout << meter(d) << "m " << description << std::endl;
 	}
 
 	void print(si::time t, const char* description)
@@ -16,7 +19,7 @@ namespace si
 
 	void print(si::speed v, const char* description)
 	{
-		std::cout << miles_per_hour(v) << "MPH " << description << std::endl;
+		std::cout << kilometers_per_hour(v) << "km/h " << description << std::endl;
 	}
 
 	void print(si::energy E, const char* description)
