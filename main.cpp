@@ -19,7 +19,7 @@ int main()
 	// Example 3:
 	auto H2_frequency = 1420.4057517682_MHz;
 	auto H2_wavelength = formula::wavelength(constant::speed_of_light, H2_frequency);
-	std::cout << "H2 wavelength in vacuum is: " << centimeter(H2_wavelength) << " cm" << std::endl;
+	std::cout << "Wavelength of H2 in vacuum is: " << centimeter(H2_wavelength) << " cm" << std::endl;
 
 	return 0;
 }
