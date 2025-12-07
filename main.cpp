@@ -23,19 +23,24 @@ int main()
 	// Example 4:
 	height Eiffel_Tower_height = 330_m;
 	auto time_falling = formula::free_fall_time(Eiffel_Tower_height, constant::gravity_of_Earth);
-	print(time_falling, "free fall time from Eiffel Tower");
+	print(time_falling, "is the Eiffel Tower's free fall time");
 
 	// Example 5:
 	auto Markus_height = 190_cm;
 	auto Markus_weight = 84_kg;
 	auto BMI = Markus_weight / (Markus_height * Markus_height);
-	// std::cout << "Markus' BMI is " << BMI.quantity() << "." << std::endl;
+	// std::cout << "is Markus' BMI" << BMI.quantity() << "." << std::endl;
 
 	// Example 6:
 	auto Earth_radius = 6371.009_km;
 	auto Radar_station_height = 30_ft;
 	auto distance = sqrt((Earth_radius + Radar_station_height) * (Earth_radius + Radar_station_height) - Earth_radius * Earth_radius);
 	print(distance, "radar's geometrical horizon (the distance it can see)");
+
+	// Example 7:
+	double MachSpeed = 5.5;
+	auto speed = MachSpeed * constant::speed_of_sound;
+	print(speed, "is M5.5 speed");
 
 	return 0;
 }

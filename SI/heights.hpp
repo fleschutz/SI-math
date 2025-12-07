@@ -4,7 +4,7 @@
 
 namespace si
 {
-	namespace height
+	namespace heights
 	{
 		const height Burj_Khalifa_Tower = 829.8_m;
 		const height Eiffel_Tower = 330_m;

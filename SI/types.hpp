@@ -740,10 +740,12 @@ namespace si
 	using position2d = length2;
 	using position = length3;
 
-	inline constexpr auto one = unit<detail::null_dimension>();
-	inline constexpr auto kilo = unit<detail::null_dimension, 1000>();
-	inline constexpr auto hecto = unit<detail::null_dimension, 100>();
+	// SI prefixes
+	inline constexpr auto giga = unit<detail::null_dimension, 1000000000>();
 	inline constexpr auto mega = unit<detail::null_dimension, 1000000>();
+	inline constexpr auto hecto = unit<detail::null_dimension, 100>();
+	inline constexpr auto kilo = unit<detail::null_dimension, 1000>();
+	inline constexpr auto one = unit<detail::null_dimension>();
 	inline constexpr auto milli = unit<detail::null_dimension, 1, 1000>();
 	inline constexpr auto micro = unit<detail::null_dimension, 1, 1000000>();
 
@@ -791,6 +793,7 @@ namespace si
 	inline constexpr auto hertz = unit<frequency>();
 	inline constexpr auto kilohertz = kilo * hertz;
 	inline constexpr auto megahertz = mega * hertz;
+	inline constexpr auto gigahertz = giga * hertz;
 	inline constexpr auto per_minute = one / minute;
 
 	inline constexpr auto radians_per_second = unit<angular_speed>();

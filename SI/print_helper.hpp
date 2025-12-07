@@ -8,8 +8,10 @@ namespace si
 	{
 		if (d >= si::kilometer(1))
 			std::cout << kilometer(d) << "km " << description << std::endl;
-		else
+		else if (d >= si::meter(1))
 			std::cout << meter(d) << "m " << description << std::endl;
+		else
+			std::cout << centimeter(d) << "cm " << description << std::endl;
 	}
 
 	void print(si::time t, const char* description)
