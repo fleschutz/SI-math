@@ -26,9 +26,19 @@ namespace si
 			return q * v * B;
 		}
 
-		auto free_fall_time(si::height h, si::acceleration gravity)
+		si::time free_fall_time(si::height h, si::acceleration gravity)
 		{
 			return sqrt((2.0 * h) / gravity);
+		}
+
+		si::angle glide_path(si::length horizontalDistance, si::height verticalChange)
+		{
+			return si::radian(SinCosToMathArcs(si::meter(verticalChange), si::meter(horizontalDistance)));
+		}
+
+		si::height vertical_height(si::angle glidePath, si::length horizontalDistance)
+		{
+			return horizontalDistance * tan(glidePath);
 		}
 	}
 }
