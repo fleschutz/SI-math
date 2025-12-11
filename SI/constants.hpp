@@ -13,6 +13,8 @@ namespace si
 
 		const auto standard_gravity = meters_per_second2(9.80665); // standard gravitational acceleration (G) for the surface of the Earth, defined in the third General Conference on Weights and Measures (1901, CR 70).
 
+		const auto min_temperature = kelvin(0.0);
+
 		// const auto Gravitational_constant = 6.6743015×10−11 m3⋅kg−1⋅s−2
 
 		const auto electron_mass = kilogram(9.1093837139 * 10E-31);

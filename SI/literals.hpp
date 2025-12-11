@@ -1,42 +1,42 @@
-// SI literals for comfort, e.g. 12_km (requires C++11 or higher)
+// Literals for comfort, e.g. 12_km (requires C++11 or higher)
 #pragma once
 
 #include "types.hpp"
 
-#define LITERAL(symbol_, unit_)	\
+#define MAP(symbol_, unit_)	\
 	constexpr auto operator "" _ ## symbol_(long double x) { return unit_(static_cast<double>(x)); }	\
 	constexpr auto operator "" _ ## symbol_(unsigned long long x) { return unit_(static_cast<int>(x)); }
 
 namespace si
 {
-	//   Symbol:  Unit:                     Example:    (sorted alphabetically)
-	LITERAL(cm,   centimeter);		// 9_cm
-	LITERAL(deg,  degree);			// 90_deg
-	LITERAL(degC, celsius);			// 0_degC
-	LITERAL(degF, fahrenheit);		// 32_degF
-	LITERAL(ft,   feet);			// 10_ft
-	LITERAL(GHz,  gigahertz);		// 18_GHz
-	LITERAL(h,    hour);			// 24_h
-	LITERAL(J,    joule);			// 1_J
-	LITERAL(K,    kelvin);			// 273.15_K
-	LITERAL(kg,   kilogram);		// 10_kg
-	LITERAL(kHz,  kilohertz);		// 700_kHz
-	LITERAL(km,   kilometer);		// 1.2_km
-	LITERAL(kmh,  kilometers_per_hour);	// 100_kmh
-	LITERAL(kn,   knots);			// 60_kn
-	LITERAL(m,    meter);			// 1_m
-	LITERAL(Mach, Mach);                    // 6_Mach
-	LITERAL(min,  minute);                  // 60_min
-	LITERAL(MHz,  megahertz);		// 128_MHz
-	LITERAL(mm,   millimeter);		// 10_mm
-	LITERAL(mph,  miles_per_hour);		// 50_mph
-	LITERAL(mps,  meters_per_second);	// 10_mps
-	LITERAL(mps2, meters_per_second2);	// 9.807_mps2
-	LITERAL(NM,   nautical_mile);		// 1_NM
-	LITERAL(s,    second);			// 60_s
-	LITERAL(sec,  second);			// 60_sec
-	LITERAL(N,    newton);			// 5.0_N
-	LITERAL(Nm,   newtonmeter);		// 2.1_Nm
+	// Symbol:  Unit:                 Example: (sorted alphabetically)
+	MAP( cm,    centimeter);          // 9_cm
+	MAP( deg,   degree);              // 90_deg
+	MAP( degC,  celsius);             // 0_degC
+	MAP( degF,  fahrenheit);          // 32_degF
+	MAP( ft,    feet);                // 10_ft
+	MAP( GHz,   gigahertz);           // 18_GHz
+	MAP( h,     hour);                // 24_h
+	MAP( J,     joule);               // 1_J
+	MAP( K,     kelvin);              // 273.15_K
+	MAP( kg,    kilogram);            // 10_kg
+	MAP( kHz,   kilohertz);           // 700_kHz
+	MAP( km,    kilometer);	          // 1.2_km
+	MAP( kmh,   kilometers_per_hour); // 100_kmh
+	MAP( kn,    knots);               // 60_kn
+	MAP( m,     meter);               // 1_m
+	MAP( Mach,  Mach);                // 6_Mach
+	MAP( min,   minute);              // 60_min
+	MAP( MHz,   megahertz);           // 128_MHz
+	MAP( mm,    millimeter);          // 10_mm
+	MAP( mph,   miles_per_hour);      // 50_mph
+	MAP( mps,   meters_per_second);   // 10_mps
+	MAP( mps2,  meters_per_second2);  // 9.807_mps2
+	MAP( NM,    nautical_mile);       // 1_NM
+	MAP( s,     second);              // 60_s
+	MAP( sec,   second);              // 60_sec
+	MAP( N,     newton);              // 5.0_N
+	MAP( Nm,    newtonmeter);         // 2.1_Nm
 }
 
-#undef LITERAL
+#undef LIT

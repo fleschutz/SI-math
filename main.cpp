@@ -30,7 +30,7 @@ int main()
 	print(avg_speed, "average speed");
 
 	// Example 6:
-	auto avg_temperature = (7_degC + 30_degF + 200_K) / 3;
+	auto avg_temperature = (0_degC + 32_degF + 273.15_K) / 3;
 	print(avg_temperature, "average temperature");
 
 	// Example 7:
