@@ -10,3 +10,11 @@ Type-safe programming with SI units and easy conversion to and from them. The SI
 * kelvin (K, thermodynamic temperature)
 * mole (mol, amount of substance)
 * candela (cd, luminous intensity)
+
+Example
+-------
+```
+si::mass m = 1_kg;
+si::speed c = si::constant::light_speed;
+si::energy E = m * (c*c);
+```
