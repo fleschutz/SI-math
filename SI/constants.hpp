@@ -23,8 +23,8 @@ namespace si
 
 		const auto gravity_of_Mars = meters_per_second2(3.728);
 		const auto gravity_of_Mercury = meters_per_second2(3.7); // surface gravity
-		const auto gravity_of_Moon = meters_per_second2(1.628);
 										
+		const auto Marathon_length = kilometer(42.195);
 
 		// Mathematical constants: (source: https://en.wikipedia.org/wiki/List_of_mathematical_constants)
 		const auto pi = degree(180);

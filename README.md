@@ -9,6 +9,6 @@ Code Example
 ------------
 ```
 auto m = 1_kg;
-auto c = si::constant::light_speed;
-auto E = m * (c*c);
+auto c = constant::light_speed;
+auto E = m * c * c;
 ```

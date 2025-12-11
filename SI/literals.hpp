@@ -1,3 +1,4 @@
+// SI literals for comfort, e.g. 12_km (requires C++11 or higher)
 #pragma once
 
 #include "types.hpp"

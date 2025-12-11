@@ -5,21 +5,21 @@ int main()
 {
 	// Example 1:
 	auto m = 1_kg;
-	auto c = si::constant::speed_of_light;
-	auto E = m * (c*c);
-	print(E, "is the potential energy of 1kg mass");
+	auto c = constant::speed_of_light;
+	auto E = m * c * c;
+	print(E, "is the potential energy of 1 kg mass");
 
-	// Example 2:
-	auto car = 1500_kg;
-	auto normal_speed = 30_mph;
-	auto KE = formula::kinetic_energy(car, normal_speed);
-	print(KE, "is the kinetic energy of a normal car at 30MPH");
-
-	// Example 3: 
+	// Example 2: 
 	auto Marathon_distance = 42.195_km;
 	auto Kiptums_time = 2_h;
 	auto Kiptums_average_speed = Marathon_distance / Kiptums_time;
 	print(Kiptums_average_speed, "was Kiptum's average speed");
+
+	// Example 3:
+	auto car = 1500_kg;
+	auto normal_speed = 30_mph;
+	auto KE = formula::kinetic_energy(car, normal_speed);
+	print(KE, "is the kinetic energy of a normal car at 30MPH");
 
 	// Example 4:
 	auto avg_length = (8_m + 3_ft + 7_NM) / 3;
@@ -56,10 +56,10 @@ int main()
 	print(distance, "radar's geometrical horizon (the distance it can see)");
 
 	// Example 10:
-	auto myDist = Earth::equatorial_circumference;
-	auto mySpeed = 1_Mach;
-	auto timeNeeded = myDist / mySpeed;
-	print(timeNeeded, "needed to fly around the Earth at Mach 1");
+	auto fly_distance = Earth::equatorial_circumference;
+	auto fly_speed = 1_Mach;
+	auto time_needed = fly_distance / fly_speed;
+	print(time_needed, "is needed to fly non-stop around the Earth at Mach 1");
 
 	return 0;
 }
