@@ -8,4 +8,5 @@
 #include "building_heights.hpp"
 #include "mountain_heights.hpp"
 #include "city_distances.hpp"
+#include "Earth.hpp"
 #include "print_helper.hpp"

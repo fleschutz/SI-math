@@ -40,7 +40,7 @@ int main()
 
 	// Example 8:
 	height Eiffel_Tower_height = 330_m;
-	auto time_falling = formula::free_fall_time(Eiffel_Tower_height, constant::gravity_of_Earth);
+	auto time_falling = formula::free_fall_time(Eiffel_Tower_height, Earth::gravity);
 	print(time_falling, "is the Eiffel Tower's free fall time");
 
 	// Example 9:
@@ -54,6 +54,12 @@ int main()
 	auto Radar_station_height = 30_ft;
 	auto distance = sqrt((Earth_radius + Radar_station_height) * (Earth_radius + Radar_station_height) - Earth_radius * Earth_radius);
 	print(distance, "radar's geometrical horizon (the distance it can see)");
+
+	// Example 10:
+	auto myDist = Earth::equatorial_circumference;
+	auto mySpeed = 1_Mach;
+	auto timeNeeded = myDist / mySpeed;
+	print(timeNeeded, "needed to fly around the Earth at Mach 1");
 
 	return 0;
 }

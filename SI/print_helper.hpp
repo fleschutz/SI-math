@@ -16,7 +16,12 @@ namespace si
 
 	void print(si::time t, const char* description)
 	{
-		std::cout << second(t) << " s " << description << std::endl;
+		if (t >= si::hour(1))
+			std::cout << hour(t) << "h " << description << std::endl;
+		else if (t >= si::minute(1))
+			std::cout << minute(t) << "min " << description << std::endl;
+		else
+			std::cout << second(t) << "sec " << description << std::endl;
 	}
 
 	void print(si::speed v, const char* description)
