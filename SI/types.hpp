@@ -816,7 +816,13 @@ namespace si
 	inline constexpr auto newton = kilogram * meter / (second * second);
 	inline constexpr auto kilonewton = kilo * newton;
 	inline constexpr auto meganewton = mega * newton;
+	inline constexpr auto giganewton = giga * newton;
+
 	inline constexpr auto joule = newton * meter;
+	inline constexpr auto kilojoule = kilonewton * meter;
+	inline constexpr auto megajoule = meganewton * meter;
+	inline constexpr auto gigajoule = giganewton * meter;
+
 	inline constexpr auto meters_per_second2 = meter / (second * second);
 
 	inline constexpr auto pascal_ = newton / (meter * meter);

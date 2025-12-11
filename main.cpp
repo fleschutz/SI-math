@@ -3,41 +3,47 @@ using namespace si;
 
 int main()
 {
-	// Example 1: 
+	// Example 1:
+	auto m = 1_kg;
+	auto c = si::constant::speed_of_light;
+	auto E = m * (c*c);
+	print(E, "is the potential energy of 1kg mass");
+
+	// Example 2:
+	auto car = 1500_kg;
+	auto normal_speed = 30_mph;
+	auto KE = formula::kinetic_energy(car, normal_speed);
+	print(KE, "is the kinetic energy of a normal car at 30MPH");
+
+	// Example 3: 
 	auto Marathon_distance = 42.195_km;
 	auto Kiptums_time = 2_h;
 	auto Kiptums_average_speed = Marathon_distance / Kiptums_time;
 	print(Kiptums_average_speed, "was Kiptum's average speed");
 
-	// Example 2:
+	// Example 4:
 	auto avg_length = (8_m + 3_ft + 7_NM) / 3;
 	print(avg_length, "average length");
 
-	// Example 3:
+	// Example 5:
 	auto avg_speed = (10_kmh + 3_kn + 7_mph + 5.5_Mach) / 4;
 	print(avg_speed, "average speed");
 
-	// Example 4:
+	// Example 6:
 	auto avg_temperature = (7_degC + 30_degF + 200_K) / 3;
 	print(avg_temperature, "average temperature");
 
-	// Example 5:
-	mass m = 1_kg;
-	speed c = constant::speed_of_light;
-	energy E = m * (c*c);
-	print(E, "is the potential energy of 1kg mass");
-
-	// Example 6:
+	// Example 7:
 	auto H2_frequency = 1420.4057517682_MHz;
 	auto H2_wavelength = formula::wavelength(constant::speed_of_light, H2_frequency);
 	print(H2_wavelength, "is the wavelength of H2 in vacuum");
 
-	// Example 7:
+	// Example 8:
 	height Eiffel_Tower_height = 330_m;
 	auto time_falling = formula::free_fall_time(Eiffel_Tower_height, constant::gravity_of_Earth);
 	print(time_falling, "is the Eiffel Tower's free fall time");
 
-	// Example 8:
+	// Example 9:
 	auto Markus_height = 190_cm;
 	auto Markus_weight = 84_kg;
 	auto BMI = Markus_weight / (Markus_height * Markus_height);

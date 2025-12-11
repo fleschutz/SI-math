@@ -13,6 +13,12 @@ namespace si
 			return sqrt(a*a + b*b);
 		}
 
+		// Calculates the kinetic energy of a given mass m at speed v.
+		si::energy kinetic_energy(si::mass m, si::speed v)
+		{
+			return 0.5 * m * (v * v);
+		}
+
 		auto wavelength(si::speed v, si::frequency f)
 		{
 			return v / f;
