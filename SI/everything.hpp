@@ -14,3 +14,4 @@
 #include "mountains.hpp"
 #include "buildings.hpp"
 #include "city_distances.hpp"
+void checks();

@@ -20,6 +20,7 @@ namespace si
 	MAP( GHz,  1,   gigahertz);         // 18_GHz
 	MAP( in,   0.0254, meter);          // 9_in
 	MAP( h,    3600, second);           // 24_h
+	MAP( Hz,   1,   hertz);             // 4_Hz
 	MAP( J,    1,   joule);             // 1_J
 	MAP( K,    1,   kelvin);            // 100_K
 	MAP( kg,   1,   kilogram);          // 10_kg

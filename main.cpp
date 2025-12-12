@@ -3,6 +3,8 @@ using namespace si;
 
 int main()
 {
+	checks();
+
 	// Let's calculate the average speed of Kiptum's world record in Marathon...
 	auto Marathon_distance = 42.195_km;
 	auto Kiptums_time = 2_h;
