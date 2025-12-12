@@ -8,7 +8,7 @@ namespace si
 	{
 		// Universal constants
     		const auto c_0 = meters_per_second(299792458); // speed of light in vacuum
-		const auto speed_of_light = meters_per_second(299792458); // speed of light in vacuum (c)
+		const auto speed_of_light_in_vaccum = meters_per_second(299792458); // speed of light in vacuum (c)
 #if 0
     static constexpr auto Z_0  = 376.730313667 * units::Ohm; // characteristic impedance of vacuum
     static constexpr auto epsilon_0  = 8.854'187'817'620'39e-12 * units::F / units::m; // electric constant (vacuum permittivity)

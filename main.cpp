@@ -13,7 +13,7 @@ int main()
 
 	// Let's calculate the potential energy of 1 kg mass...
 	auto m = 1_kg;
-	auto c = constant::speed_of_light;
+	auto c = constant::speed_of_light_in_vacuum;
 	auto E = m * c * c;
 	printResult(E, "is the potential energy of 1 kg mass");
 
@@ -33,7 +33,7 @@ int main()
 
 	// Example 7:
 	auto H2_frequency = 1420.4057517682_MHz;
-	auto H2_wavelength = formula::wavelength(constant::speed_of_light, H2_frequency);
+	auto H2_wavelength = formula::wavelength(constant::speed_of_light_in_vacuum, H2_frequency);
 	printResult(H2_wavelength, "is the wavelength of H2 in vacuum");
 
 	// Example 8:
