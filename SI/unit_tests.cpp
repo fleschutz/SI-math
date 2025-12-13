@@ -5,7 +5,7 @@ using namespace si;
 
 namespace si
 {
-	void test_literals()
+	void unit_tests()
 	{
 		// Let's check length usage:
 		assert(1_km == 1000_m);
