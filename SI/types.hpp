@@ -869,6 +869,9 @@ namespace si
 
 		return ret;
 	}
+
+	// DIGITAL UNITS:
+	typedef unsigned long long byte;
 }
 
 #if 0

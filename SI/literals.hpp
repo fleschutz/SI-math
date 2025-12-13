@@ -39,6 +39,17 @@ MAP( N,     1,     newton);              // 5.0_N
 MAP( Nm,    1,     newtonmeter);         // 2.1_Nm
 
 // DIGITAL UNITS
+// Symbol: Factor: Base Unit:            Example:
+MAP( kB,    10e3,  byte);                // 1_kB (kilobyte)
+MAP( MB,    10e6,  byte);                // 2_MB (megabyte)
+MAP( GB,    10e9,  byte);                // 3_GB (gigabyte)
+MAP( TB,    10e12, byte);                // 4_TB (terabyte)
+MAP( PB,    10e15, byte);                // 5_PB (terabyte)
+MAP( EB,    10e18, byte);                // 6_EB (exabyte)
+MAP( ZB,    10e21, byte);                // 7_ZB (zettabyte)
+MAP( YB,    10e24, byte);                // 8_YB (yottabyte)
+MAP( RB,    10e27, byte);                // 9_RB (ronnabyte)
+MAP( QB,    10e30, byte);                // 10_QB (ronnabyte)
 
 // IMPERIAL UNITS
 // Symbol: Factor: Base Unit:            Example: (sorted alphabetically)
