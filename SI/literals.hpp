@@ -12,6 +12,7 @@ namespace si
 // SI UNITS
 // Symbol: Factor: Base Unit:            Example: (sorted alphabetically)
 MAP( A,     1,     ampere);              // 5_A 
+MAP( Bq,    1,     hertz);               // 100_Bq (Bequerel)
 MAP( cm,    .01,   meter);               // 9_cm 
 MAP( day,   24*3600,second);             // 1_day
 MAP( deg,   1,     degree);              // 90_deg
@@ -22,6 +23,7 @@ MAP( Hz,    1,     hertz);               // 4_Hz
 MAP( J,     1,     joule);               // 1_J
 MAP( K,     1,     kelvin);              // 100_K
 MAP( kA,    1000,  ampere);              // 1_kA
+MAP( kBq,   1000,  hertz);               // 2_kBq
 MAP( kg,    1,     kilogram);            // 10_kg
 MAP( kHz,   1000,  hertz);               // 700_kHz
 MAP( km,    1000,  meter);	         // 1.2_km
