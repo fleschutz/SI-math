@@ -803,6 +803,8 @@ namespace si
 	inline constexpr auto kilometers_per_hour = kilometer / hour;
 	inline constexpr auto miles_per_hour = statute_mile / hour;
 
+	inline constexpr auto kilogram_per_meter2 = kilogram / (meter * meter);
+
 	// Knots are "nautical_mile / hour", but we cannot use nautical_mile because those are incorrect (see note above)
 	// Here, we have to use the correct factor of 1852 m / 3600 s = 0.5144444 m/s (which is what ExEngine MS2KTS uses)
 	// inline constexpr auto knots = nautical_mile / hour;
@@ -871,10 +873,8 @@ namespace si
 	}
 
 	typedef long double ampere;
-	// DIGITAL UNITS:
 	typedef long double byte;
-
-	typedef long double quantity; // big enough
+	typedef long double quantity;
 
 	void unit_tests(); // Unit tests in SI/unit_tests.cpp
 }

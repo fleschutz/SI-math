@@ -4,33 +4,12 @@
 
 namespace si
 {
-	void H1(const char* text)
-	{
-		std::cout << "" << std::endl;
-		std::cout << text << std::endl;
-		std::cout << "===================" << std::endl;
-		std::cout << "" << std::endl;
-	}
-
-	void H2(const char* text)
-	{
-		std::cout << "" << std::endl;
-		std::cout << text << std::endl;
-		std::cout << "-------------------" << std::endl;
-		std::cout << "" << std::endl;
-	}
-
-	void P(const char* text)
+	void print(std::string text)
 	{
 		std::cout << text << std::endl;
-		std::cout << "" << std::endl;
 	}
 
-#define FORMULA(_cmds) \
-	P(#_cmds); \
-	_cmds
-
-	void print(si::time t, const char* description)
+	void print(si::time t, std::string description)
 	{
 		if (t >= si::hour(1))
 			std::cout << "-> " << hour(t) << "h " << description << std::endl;
@@ -40,7 +19,7 @@ namespace si
 			std::cout << "-> " << second(t) << " sec " << description << std::endl;
 	}
 
-	void print(si::length d, const char* description)
+	void print(si::length d, std::string description)
 	{
 		if (d >= si::kilometer(1))
 			std::cout << "-> " << kilometer(d) << " km " << description << std::endl;
@@ -50,20 +29,20 @@ namespace si
 			std::cout << "-> " << centimeter(d) << " cm " << description << std::endl;
 	}
 
-	void print(si::speed v, const char* description)
+	void print(si::speed v, std::string description)
 	{
 		std::cout << "-> " << kilometers_per_hour(v) << " km/h " << description << std::endl;
 	}
 
-	void print(si::acceleration a, const char* description)
+	void print(si::acceleration a, std::string description)
 	{
 	}
 
-	void print(si::mass m, const char* description)
+	void print(si::mass m, std::string description)
 	{
 	}
 
-	void print(si::energy E, const char* description)
+	void print(si::energy E, std::string description)
 	{
 		if (E >= si::gigajoule(1))
 			std::cout << "-> " << megajoule(E) << " GJ " << description << std::endl;
@@ -75,12 +54,19 @@ namespace si
 			std::cout << "-> " << joule(E) << " Joule " << description << std::endl;
 	}
 
-	void print(si::temperature T, const char* description)
+	void print(si::temperature T, std::string description)
 	{
 		std::cout << "-> " << celsius(T) << "°C " << description << std::endl;
 	}
 
-	void print(si::byte number, const char* description)
+#if 0
+	void print(kilogram_per_meter2 value, const char* description)
+	{
+		std::cout << "-> " << kilogram_per_meter2(value) << " BMI " << description << std::endl;
+	}
+#endif
+
+	void print(si::byte number, std::string description)
 	{
 		std::cout << "-> " << number << " bytes " << description << std::endl;
 	}
