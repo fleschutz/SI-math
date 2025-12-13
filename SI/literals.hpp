@@ -71,7 +71,6 @@ MAP( yd,    .9144, meter);               // 3_yd
 MAP( degC,  1,     celsius);             // 0_degC
 MAP( Mach,  330,   meters_per_second);   // 6_Mach
 
-	void test_literals(); // Unit tests (in SI/test_literals.cpp)
 }
 
 #undef MAP
