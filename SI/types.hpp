@@ -805,8 +805,6 @@ namespace si
 	inline constexpr auto kilometers_per_hour = kilometer / hour;
 	inline constexpr auto miles_per_hour = statute_mile / hour;
 
-	inline constexpr auto kilogram_per_meter2 = kilogram / (meter * meter);
-
 	// Knots are "nautical_mile / hour", but we cannot use nautical_mile because those are incorrect (see note above)
 	// Here, we have to use the correct factor of 1852 m / 3600 s = 0.5144444 m/s (which is what ExEngine MS2KTS uses)
 	// inline constexpr auto knots = nautical_mile / hour;
@@ -836,6 +834,7 @@ namespace si
 	inline constexpr auto newtonmeter = newton * meter;
 	inline constexpr auto newtonsecond = newton * second;
 
+	inline constexpr auto kilograms_per_meter2 = kilogram / (meter * meter);
 	inline constexpr auto kilograms_per_meter3 = kilogram / (meter * meter * meter);
 
 	// Declaring the following constants constexpr somehow caused si functions to show up in completely unrelated template error diagnostics
