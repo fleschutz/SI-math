@@ -18,7 +18,8 @@ Features
 * Supports type checking: Can't add a mass to a length
 * Supports convenient literals, e.g. 10_km
 * Supports hundreds of constants
-* Supports SI units, digital units, and Imperial units
+* Supports SI units, derived units, digital units, and Imperial units
+* Supports hundreds of usage examples
 * Supports unit tests to check everything
 * No runtime overhead: Compiles to nothing but simple doubles
   
@@ -26,23 +27,23 @@ Directory Tree
 --------------
 ```
   ├📂SI
-  │  ├📄constants.hpp - constants in SI units
-  │  ├📄Earth.hpp - physical characteristics of planet Earth
+  │  ├📄constants.hpp - with constants in SI units
+  │  ├📄Earth.hpp - with physical characteristics of planet Earth
   │  ├📄everything.hpp - contains everything for convenience
-  │  ├📄formulas.hpp - well-known formulas
-  │  ├📄Jupiter.hpp - physical characteristics of planet Jupiter
-  │  ├📄literals.hpp - SI literals for convenience
-  │  ├📄Mars.hpp - physical characteristics of planet Mars
-  │  ├📄Mercury.hpp - physical characteristics of planet Mercury
-  │  ├📄Moon.hpp - physical characteristics of the Moon
-  │  ├📄prefixes.hpp - the SI prefixes
-  │  ├📄printer.hpp - simple print interface for output
-  │  ├📄Sun.hpp - physical characteristics of the Sun
-  │  ├📄types.hpp - the basic SI types
-  │  ├📄unit_tests.cpp - to check everything is OK
-  ├📄CMakeLists.txt - Makefile for cmake
+  │  ├📄formulas.hpp - with common formulas
+  │  ├📄Jupiter.hpp - with physical characteristics of planet Jupiter
+  │  ├📄literals.hpp - with SI literals for convenience
+  │  ├📄Mars.hpp - with physical characteristics of planet Mars
+  │  ├📄Mercury.hpp - with physical characteristics of planet Mercury
+  │  ├📄Moon.hpp - with physical characteristics of the Moon
+  │  ├📄prefixes.hpp - with the SI prefixes
+  │  ├📄printer.hpp - with a simple output interface 
+  │  ├📄Sun.hpp - with physical characteristics of the Sun
+  │  ├📄types.hpp - with basic SI types
+  │  ├📄unit_tests.cpp - with unit tests for basic tests
+  ├📄CMakeLists.txt - the Makefile for cmake
   ├📄LICENSE - the CC0 license
-  ├📄main.cpp - contains hundreds of usage example
+  ├📄main.cpp - with hundreds of usage example
   ├📄README.md - this README
 ```
 

@@ -1,4 +1,4 @@
-// literals.hpp - Supports convenient literals, e.g. 12_km (requires C++11 or higher)
+// SI/literals.hpp - contains convenient literals, e.g. 12_km (requires C++11 or higher)
 #pragma once
 
 #include "types.hpp"

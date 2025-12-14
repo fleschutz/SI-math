@@ -1,3 +1,4 @@
+// SI/constants.hpp - contains constants in SI units
 #pragma once
 
 #include "types.hpp"
