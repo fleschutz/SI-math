@@ -27,6 +27,7 @@ MAP( kBq,   1000,  hertz);               // 2_kBq
 MAP( kg,    1,     kilogram);            // 10_kg
 MAP( kHz,   1000,  hertz);               // 700_kHz
 MAP( km,    1000,  meter);	         // 1.2_km
+MAP( km2,   1,     kilometer2);	         // 7_km2
 MAP( kmh,   3.6,   meters_per_second);   // 30_kmh
 MAP( m,     1,     meter);               // 1_m
 MAP( mA,    .001,  ampere);              // 5_mA 

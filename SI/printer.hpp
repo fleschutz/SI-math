@@ -65,7 +65,10 @@ namespace si
 
 	void print(si::temperature T)
 	{
-		std::cout << " It's " << celsius(T) << "°C " << std::endl;
+		if (T >= si::celsius(0))
+			std::cout << " It's " << celsius(T) << "°C " << std::endl;
+		else
+			std::cout << " It's " << kelvin(T) << "°K " << std::endl;
 	}
 
 #if 0
@@ -75,8 +78,8 @@ namespace si
 	}
 #endif
 
-	void print(si::byte number)
+	void print(si::quantity number)
 	{
-		std::cout << " It's " << number << " bytes " << std::endl;
+		std::cout << " It's " << number << std::endl;
 	}
 }
