@@ -100,6 +100,10 @@ int main()
 	auto volume = formula::area_in_circle(diameter / 2) * height;
 	print(volume);
 } {
+	print("What's the distance the Earth has travelled so far? It's... ");
+	auto distance_per_year = formula::circumference(constant::AU);
+	auto total = distance_per_year * (Earth::age / 1_year);
+	print(total);
 #if 0
 	// Let's calculate the Earth year:
 	auto sunMass = Sun::mass;

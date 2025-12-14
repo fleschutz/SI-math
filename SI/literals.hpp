@@ -42,6 +42,7 @@ MAP( second,1,     second);              // 60_second
 MAP( N,     1,     newton);              // 5.0_N
 MAP( Nm,    1,     newtonmeter);         // 2.1_Nm
 MAP( week,  7*24*3600,second);           // 1_week
+MAP( year,  365.25*24*3600,second);      // 1_year
 
 // SI DERIVED UNITS
 // Symbol: Factor: Base Unit:            Example: 
