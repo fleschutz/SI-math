@@ -23,8 +23,8 @@ Features
 * Supports unit tests to check everything
 * No runtime overhead: Compiles to nothing but simple doubles
   
-Directory Tree
---------------
+Folder Structure
+----------------
 ```
   ├📂SI
   │  ├📄constants.hpp - with constants in SI units
@@ -43,8 +43,8 @@ Directory Tree
   │  ├📄unit_tests.cpp - with unit tests for basic tests
   ├📄CMakeLists.txt - the Makefile for cmake
   ├📄LICENSE - the CC0 license
-  ├📄main.cpp - with hundreds of usage example
   ├📄README.md - this README
+  ├📄main.cpp - with hundreds of usage example
 ```
 
 Program Output
