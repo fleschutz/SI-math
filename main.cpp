@@ -108,6 +108,16 @@ int main()
 	auto distance_per_year = formula::circumference(constant::AU);
 	auto total = distance_per_year * (Earth::age / 1_year);
 	print(total);
+} {
+	print("What's a car's braking distance on dry asphalt from 100km/h? It's... ");
+	auto deceleration = 8_mps2; // on dry asphalt
+	auto distance = formula::braking_distance(100_kmh, 0_kmh, deceleration);
+	print(distance);
+} {
+	print("What's a car's braking distance on wet asphalt from 100km/h? It's... ");
+	auto deceleration = 6_mps2; // on wet asphalt
+	auto distance = formula::braking_distance(100_kmh, 0_kmh, deceleration);
+	print(distance);
 #if 0
 	// Let's calculate the Earth year:
 	auto sunMass = Sun::mass;

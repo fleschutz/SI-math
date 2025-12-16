@@ -82,9 +82,9 @@ namespace si
 			return horizontal_distance * tan(glide_path);
 		}
 
-		si::length distance_to_brake(si::speed current_speed, si::speed target_speed, si::acceleration deceleration)
+		si::length braking_distance(si::speed from_speed, si::speed to_speed, si::acceleration deceleration)
 		{
-			return (current_speed * current_speed - target_speed * target_speed) / (2.0 * deceleration);
+			return (from_speed * from_speed - to_speed * to_speed) / (2.0 * deceleration);
 		}
 
 		si::acceleration acceleration_for_distance(si::speed current_speed, si::speed target_speed, si::length distance)

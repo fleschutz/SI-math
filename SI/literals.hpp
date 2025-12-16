@@ -52,7 +52,7 @@ LITERAL( Hz,    1,     hertz);               // 4_Hz
 LITERAL( J,     1,     joule);               // 1_J
 LITERAL( kBq,   1000,  hertz);               // 2_kBq
 LITERAL( kHz,   1000,  hertz);               // 700_kHz
-LITERAL( kmh,   3.6,   meters_per_second);   // 30_kmh
+LITERAL( kmh,   1,     kilometers_per_hour); // 30_kmh
 LITERAL( MHz,   1000000, hertz);             // 128_MHz
 LITERAL( mps,   1,     meters_per_second);   // 10_mps
 LITERAL( mps2,  1,     meters_per_second2);  // 9.807_mps2

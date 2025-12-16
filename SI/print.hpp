@@ -8,15 +8,15 @@ namespace si
 	// SI BASE UNITS:
 	void print(si::time t)
 	{
-		if (t >= year(1))
+		if (abs(t) >= year(1))
 			std::cout << year(t) << " year(s)" << std::endl;
-		else if (t >= week(1))
+		else if (abs(t) >= week(1))
 			std::cout << week(t) << " week(s)" << std::endl;
-		else if (t >= day(1))
+		else if (abs(t) >= day(1))
 			std::cout << day(t) << " day(s)" << std::endl;
-		else if (t >= hour(1))
+		else if (abs(t) >= hour(1))
 			std::cout << hour(t) << " h" << std::endl;
-		else if (t >= minute(1))
+		else if (abs(t) >= minute(1))
 			std::cout << minute(t) << " min" << std::endl;
 		else
 			std::cout << second(t) << " sec" << std::endl;
@@ -24,15 +24,15 @@ namespace si
 
 	void print(si::length d)
 	{
-		if (d >= constant::lightyear * 1000000)
+		if (abs(d) >= constant::lightyear * 1000000)
 			std::cout << (d / (constant::lightyear * 1000000)) << " megalight-year(s)" << std::endl;
-		else if (d >= constant::lightyear * 1000)
+		else if (abs(d) >= constant::lightyear * 1000)
 			std::cout << (d / (constant::lightyear * 1000)) << " kilolight-year(s)" << std::endl;
-		else if (d >= constant::lightyear)
+		else if (abs(d) >= constant::lightyear)
 			std::cout << (d / constant::lightyear) << " light-year(s)" << std::endl;
-		else if (d >= kilometer(1))
+		else if (abs(d) >= kilometer(1))
 			std::cout << kilometer(d) << " km" << std::endl;
-		else if (d >= meter(1))
+		else if (abs(d) >= meter(1))
 			std::cout << meter(d) << "m" << std::endl;
 		else
 			std::cout << centimeter(d) << " cm" << std::endl;
@@ -40,7 +40,7 @@ namespace si
 
 	void print(si::mass m)
 	{
-		if (m >= kilogram(1))
+		if (abs(m) >= kilogram(1))
 			std::cout << kilogram(m) << " kg" << std::endl;
 		else
 			std::cout << gram(m) << " g" << std::endl;
@@ -57,9 +57,9 @@ namespace si
 	// SI DERIVED UNITS:
 	void print(si::area a)
 	{
-		if (a >= kilometer2(1))
+		if (abs(a) >= kilometer2(1))
 			std::cout << kilometer2(a) << " km²" << std::endl;
-		else if (a >= meter2(1.0))
+		else if (abs(a) >= meter2(1.0))
 			std::cout << meter2(a) << " m²" << std::endl;
 		else
 			std::cout << centimeter2(a) << " cm²" << std::endl;
@@ -67,7 +67,7 @@ namespace si
 
 	void print(si::volume v)
 	{
-		if (v >= meter3(1.0))
+		if (abs(v) >= meter3(1.0))
 			std::cout << meter3(v) << " m³" << std::endl;
 		else
 			std::cout << centimeter3(v) << " cm³" << std::endl;
@@ -85,11 +85,11 @@ namespace si
 
 	void print(si::energy E)
 	{
-		if (E >= gigajoule(1))
+		if (abs(E) >= gigajoule(1))
 			std::cout << gigajoule(E) << " GJ " << std::endl;
-		else if (E >= megajoule(1))
+		else if (abs(E) >= megajoule(1))
 			std::cout << megajoule(E) << " MJ " << std::endl;
-		else if (E >= kilojoule(1))
+		else if (abs(E) >= kilojoule(1))
 			std::cout << kilojoule(E) << " kJ " << std::endl;
 		else
 			std::cout << joule(E) << " Joule " << std::endl;
