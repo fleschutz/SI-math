@@ -49,7 +49,7 @@ Folder Structure
 ```
   ├📂SI
   │  ├📄constants.hpp - with constants in SI units
-  │  ├📄Earth.hpp - with physical characteristics of planet Earth
+  │  ├📄Earth.hpp - with characteristics of planet Earth
   │  ├📄everything.hpp - contains everything for convenience
   │  ├📄formulas.hpp - with common formulas
   │  ├📄Jupiter.hpp - with physical characteristics of planet Jupiter
@@ -58,7 +58,7 @@ Folder Structure
   │  ├📄Mercury.hpp - with physical characteristics of planet Mercury
   │  ├📄Moon.hpp - with physical characteristics of the Moon
   │  ├📄prefixes.hpp - with the SI prefixes
-  │  ├📄printer.hpp - with a simple output interface 
+  │  ├📄print.hpp - with a simple print to console interface 
   │  ├📄Sun.hpp - with physical characteristics of the Sun
   │  ├📄types.hpp - with basic SI types
   │  ├📄unit_tests.cpp - with unit tests for basic tests
