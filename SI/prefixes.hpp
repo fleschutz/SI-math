@@ -1,14 +1,12 @@
-// SI/prefixes.hpp - contains the SI prefixes 
+// SI/prefixes.hpp - contains the 24 SI prefixes as of 2022 
 #pragma once
 
 #include "units.hpp"
 
 namespace si
 {
-	namespace prefix
-	{
-	       	// 24 SI prefixes as of 2022 (source: https://en.wikipedia.org/wiki/Metric_prefix)
-		                                // Symbol
+	namespace prefix // (source: https://en.wikipedia.org/wiki/Metric_prefix)
+	{  	                                // Symbol
 		const quantity quetta = 1e30;   // Q
 		const quantity ronna  = 1e27;   // R
 		const quantity yotta  = 1e24;   // Y
