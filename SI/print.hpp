@@ -17,9 +17,9 @@ namespace si
 		else if (abs(t) >= hour(1))
 			std::cout << (int)hour(t) << "h " << ((int)minute(t)) % 60 << "min" << std::endl;
 		else if (abs(t) >= minute(1))
-			std::cout << minute(t) << " min" << std::endl;
+			std::cout << minute(t) << "min" << std::endl;
 		else
-			std::cout << second(t) << " sec" << std::endl;
+			std::cout << second(t) << "sec" << std::endl;
 	}
 
 	void print(si::length d)
@@ -31,19 +31,19 @@ namespace si
 		else if (abs(d) >= constant::lightyear)
 			std::cout << (d / constant::lightyear) << " light-year(s)" << std::endl;
 		else if (abs(d) >= kilometer(1))
-			std::cout << kilometer(d) << " km" << std::endl;
+			std::cout << kilometer(d) << "km" << std::endl;
 		else if (abs(d) >= meter(1))
 			std::cout << meter(d) << "m" << std::endl;
 		else
-			std::cout << centimeter(d) << " cm" << std::endl;
+			std::cout << centimeter(d) << "cm" << std::endl;
 	}
 
 	void print(si::mass m)
 	{
 		if (abs(m) >= kilogram(1))
-			std::cout << kilogram(m) << " kg" << std::endl;
+			std::cout << kilogram(m) << "kg" << std::endl;
 		else
-			std::cout << gram(m) << " g" << std::endl;
+			std::cout << gram(m) << "g" << std::endl;
 	}
 
 	void print(si::temperature T)
@@ -58,29 +58,29 @@ namespace si
 	void print(si::area a)
 	{
 		if (abs(a) >= kilometer2(1))
-			std::cout << kilometer2(a) << " km²" << std::endl;
+			std::cout << kilometer2(a) << "km²" << std::endl;
 		else if (abs(a) >= meter2(1.0))
-			std::cout << meter2(a) << " m²" << std::endl;
+			std::cout << meter2(a) << "m²" << std::endl;
 		else
-			std::cout << centimeter2(a) << " cm²" << std::endl;
+			std::cout << centimeter2(a) << "cm²" << std::endl;
 	}
 
 	void print(si::volume v)
 	{
 		if (abs(v) >= meter3(1.0))
-			std::cout << meter3(v) << " m³" << std::endl;
+			std::cout << meter3(v) << "m³" << std::endl;
 		else
-			std::cout << centimeter3(v) << " cm³" << std::endl;
+			std::cout << centimeter3(v) << "cm³" << std::endl;
 	}
 
 	void print(si::speed v)
 	{
-		std::cout << kilometers_per_hour(v) << " km/h" << std::endl;
+		std::cout << kilometers_per_hour(v) << "km/h" << std::endl;
 	}
 
 	void print(si::acceleration a)
 	{
-		std::cout << meters_per_second2(a) << " m/s²" << std::endl;
+		std::cout << meters_per_second2(a) << "m/s²" << std::endl;
 	}
 
 	void print(si::energy E)

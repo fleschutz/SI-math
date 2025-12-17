@@ -34,10 +34,10 @@ int main()
 	auto H2_wavelength = formula::wavelength(constant::speed_of_light, H2_frequency);
 	print(H2_wavelength);
 } {
-	print("What's the free fall time from Eiffel Tower in Paris? It's... ");
-	height Eiffel_Tower_height = 330_m;
-	auto result = formula::free_fall_time(Eiffel_Tower_height, Earth::gravity);
-	print(result);
+	print("What's the free fall time from Burj Khalifa tower in Dubai? It's... ");
+	height tower_height = 828_m;
+	auto time = formula::free_fall_time(tower_height, Earth::gravity);
+	print(time);
 } {
 	print("What's Markus BMI? OMG, it's... ");
 	auto Markus_weight = 90_kg;
@@ -79,27 +79,27 @@ int main()
 	auto per_person = Earth::land_area / Earth::human_population;
 	print(per_person);
 } {
-	print("What's the surface area of a soccer ball (in FIFA size 5)? It's... ");
-	auto circumference = 70_cm; // (69-71 cm)
+	print("What's the surface area of a soccer ball? It's... ");
+	auto circumference = 70_cm; // (69-71cm for FIFA ball size 5)
 	auto radius = formula::radius_of_circumference(circumference);
 	auto area = formula::area_of_ball(radius);
 	print(area);
 } {
-	print("What's the volume of a soccer ball (in FIFA size 5)? It's... ");
-	auto circumference = 70_cm; // (69-71 cm)
+	print("What's the volume of a soccer ball? It's... ");
+	auto circumference = 70_cm; // (69-71cm for FIFA ball size 5)
 	auto radius = formula::radius_of_circumference(circumference);
 	auto volume = formula::volume_of_ball(radius);
 	print(volume);
 } {
 	print("What's the surface area of a 30cm pizza? It's... ");
-	auto diameter = 30_cm;
-	auto area = formula::area_in_circle(diameter / 2);
+	auto radius = 30_cm / 2;
+	auto area = formula::area_in_circle(radius);
 	print(area);
 } {
 	print("What's the volume of a 30cm x 1cm pizza? It's... ");
-	auto diameter = 30_cm; 
+	auto radius = 30_cm / 2; 
 	auto height = 1_cm;
-	auto volume = formula::area_in_circle(diameter / 2) * height;
+	auto volume = formula::area_in_circle(radius) * height;
 	print(volume);
 } {
 	print("What's the distance the Earth has travelled so far? It's... ");
