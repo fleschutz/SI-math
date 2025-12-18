@@ -1,36 +1,38 @@
 // SI/prefixes.hpp - contains the 24 SI prefixes as of 2022 
 #pragma once
-
 #include "units.hpp"
+#define PREFIX(_name, _symbol, _value)  constexpr quantity _name = _value, _symbol = _value
 
 namespace si
 {
 	namespace prefix // (source: https://en.wikipedia.org/wiki/Metric_prefix)
-	{  	                                // Symbol
-		const quantity quetta = 1e30;   // Q
-		const quantity ronna  = 1e27;   // R
-		const quantity yotta  = 1e24;   // Y
-		const quantity zetta  = 1e21;   // Z
-		const quantity exa    = 1e18;   // E
-		const quantity peta   = 1e15;   // P
-		const quantity tera   = 1e12;   // T
-		const quantity giga   = 1e9;    // G
-		const quantity mega   = 1e6;    // k
-		const quantity kilo   = 1e3;    // k
-		const quantity hecto  = 1e2;    // h
-		const quantity deca   = 1e1;    // da
+	{
+		PREFIX( quetta, Q,  1e30);
+		PREFIX( ronna,  R,  1e27);
+		PREFIX( yotta,  Y,  1e24); 
+		PREFIX( zetta,  Z,  1e21);
+		PREFIX( exa,    E,  1e18);
+		PREFIX( peta,   P,  1e15); 
+		PREFIX( tera,   T,  1e12);
+		PREFIX( giga,   G,   1e9);
+		PREFIX( mega,   M,   1e6);
+		PREFIX( kilo,   k,   1e3);
+		PREFIX( hecto,  h,   1e2); 
+		PREFIX( deca,  da,   1e1); 
 
-		const quantity deci   = 1e-1;   // d
-		const quantity centi  = 1e-2;   // c
-		const quantity milli  = 1e-3;   // m
-		const quantity micro  = 1e-6;   // μ
-		const quantity nano   = 1e-9;   // n
-		const quantity pico   = 1e-12;  // p
-		const quantity femto  = 1e-15;  // f
-		const quantity atto   = 1e-18;  // a
-		const quantity zepto  = 1e-21;  // z
-		const quantity yocto  = 1e-24;  // y
-		const quantity ronto  = 1e-27;  // r
-		const quantity quecto = 1e-30;  // q
+		PREFIX( deci,   d,  1e-1); 
+		PREFIX( centi,  c,  1e-2); 
+		PREFIX( milli,  m,  1e-3);
+		PREFIX( micro,  μ,  1e-6);
+		PREFIX( nano,   n,  1e-9); 
+		PREFIX( pico,   p, 1e-12);
+		PREFIX( femto,  f, 1e-15);
+		PREFIX( atto,   a, 1e-18); 
+		PREFIX( zepto,  z, 1e-21); 
+		PREFIX( yocto,  y, 1e-24); 
+		PREFIX( ronto,  r, 1e-27);
+		PREFIX( quecto, q, 1e-30);
 	}
 }	
+
+#undef PREFIX

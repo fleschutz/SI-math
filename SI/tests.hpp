@@ -1,6 +1,7 @@
 // SI/tests.hpp - Unit tests of SI literals
 #include <cassert>
 #include "literals.hpp"
+#include "prefixes.hpp"
 #include "Earth.hpp"
 using namespace si;
 
@@ -60,5 +61,18 @@ namespace si
 		// static_assert(1_YB == 1000_ZB); (too big yet)
 		// static_assert(1_RB == 1000_YB); (too big yet)
 		// static_assert(1_QB == 1000_RB); (too big yet)
+
+		// SI Prefixes:
+		//static_assert(prefix::quetta == 1000 * prefix::yotta); (too big yet)
+		//static_assert(prefix::ronna == 1000 * prefix::yotta); (too big yet)
+		//static_assert(prefix::yotta == 1000 * prefix::zetta); (too big yet)
+		static_assert(prefix::zetta == 1000 * prefix::exa);
+		static_assert(prefix::exa == 1000 * prefix::peta);
+		static_assert(prefix::peta == 1000 * prefix::tera);
+		static_assert(prefix::tera == 1000 * prefix::giga);
+		static_assert(prefix::giga == 1000 * prefix::mega);
+		static_assert(prefix::mega == 1000 * prefix::kilo);
+		static_assert(prefix::kilo == 10 * prefix::hecto);
+		static_assert(prefix::hecto == 10 * prefix::deca);
 	}
 }
