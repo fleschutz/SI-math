@@ -8,7 +8,6 @@ namespace si
 {
 	namespace formula
 	{
-
 		length circumference(length radius)
 		{
 			return 2.0 * M_PI * radius;
