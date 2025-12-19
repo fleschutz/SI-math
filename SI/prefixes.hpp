@@ -1,12 +1,13 @@
 // SI/prefixes.hpp - contains the 24 SI prefixes as of 2022 
 #pragma once
+
 #include "units.hpp"
-#define PREFIX(_name, _symbol, _value)  constexpr quantity _name = _value, _symbol = _value
 
 namespace si
 {
 	namespace prefix // (source: https://en.wikipedia.org/wiki/Metric_prefix)
 	{
+#define PREFIX(_name, _symbol, _value)  constexpr quantity _name = _value, _symbol = _value
 		PREFIX( quetta, Q,  1e30);
 		PREFIX( ronna,  R,  1e27);
 		PREFIX( yotta,  Y,  1e24); 
@@ -32,7 +33,7 @@ namespace si
 		PREFIX( yocto,  y, 1e-24); 
 		PREFIX( ronto,  r, 1e-27);
 		PREFIX( quecto, q, 1e-30);
+#undef PREFIX
 	}
 }	
 
-#undef PREFIX

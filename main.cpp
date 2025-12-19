@@ -35,7 +35,7 @@ int main()
 	print(H2_wavelength);
 } {
 	print("What's the free fall time from Burj Khalifa tower in Dubai? It's... ");
-	height tower_height = 828_m;
+	auto tower_height = 828_m;
 	auto time = formula::free_fall_time(tower_height, Earth::gravity);
 	print(time);
 } {

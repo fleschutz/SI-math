@@ -11,6 +11,14 @@ namespace si
 
 // THE 7 SI BASE UNITS:
 // Symbol:   Factor:  Base Unit:            Example:
+LITERAL( m,        1, meter);               // 1_m
+LITERAL( meter,    1, meter);               // 2_meter
+LITERAL( dm,    1e-1, meter);               // 3_dm (decimeter)
+LITERAL( cm,    1e-2, meter);               // 4_cm (centimeter)
+LITERAL( mm,    1e-3, meter);               // 5_mm (millimeter)
+LITERAL( μm,    1e-6, meter);               // 6_μm (micrometer)
+LITERAL( km,     1e3, meter);               // 7_km (kilometer)
+
 LITERAL( s,        1, second);              // 60_s
 LITERAL( sec,      1, second);              // 60_sec
 LITERAL( second,   1, second);              // 60_second
@@ -21,14 +29,6 @@ LITERAL( h,     3600, second);              // 24_h
 LITERAL( day,24*3600,second);               // 1_day on Earth!
 LITERAL( week,  7*24*3600,second);          // 1_week on Earth!
 LITERAL( year,  365.25*24*3600,second);     // 1_year on Earth!
-
-LITERAL( m,        1, meter);               // 1_m
-LITERAL( meter,    1, meter);               // 2_meter
-LITERAL( dm,    1e-1, meter);               // 3_dm (decimeter)
-LITERAL( cm,    1e-2, meter);               // 4_cm (centimeter)
-LITERAL( mm,    1e-3, meter);               // 5_mm (millimeter)
-LITERAL( μm,    1e-6, meter);               // 6_μm (micrometer)
-LITERAL( km,     1e3, meter);               // 7_km (kilometer)
 
 LITERAL( kg,       1, kilogram);            // 10_kg
 LITERAL( g,     1e-3, kilogram);            // 3_g (gram)

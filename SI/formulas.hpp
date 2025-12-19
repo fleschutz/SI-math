@@ -67,17 +67,17 @@ namespace si
 		}
 #endif
 
-		time free_fall_time(height h, acceleration gravity)
+		time free_fall_time(length height, acceleration gravity)
 		{
-			return sqrt((2.0 * h) / gravity);
+			return sqrt((2.0 * height) / gravity);
 		}
 
-		angle glide_path(length horizontal_distance, height vertical_change)
+		angle glide_path(length horizontal_distance, length vertical_change)
 		{
 			return atan2(vertical_change, horizontal_distance);
 		}
 
-		height vertical_height(angle glide_path, length horizontal_distance)
+		length vertical_height(angle glide_path, length horizontal_distance)
 		{
 			return horizontal_distance * tan(glide_path);
 		}

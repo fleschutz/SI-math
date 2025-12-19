@@ -715,14 +715,14 @@ namespace si
 	using name_ ## 2f = name_ ## _t<detail::vec2<float>>;							\
 	using name_ ## 3 = name_ ## _t<detail::vec3<double>>;							\
 	using name_ ## 3f = name_ ## _t<detail::vec3<float>>															
-	SI_QUANTITY(angle, 0, 0, 0, 0, 1);
-
+	// The 7 SI base units:
 	SI_QUANTITY(length, 1, 0, 0, 0, 0);
-	SI_QUANTITY(height, 1, 0, 0, 0, 0);
 	SI_QUANTITY(mass, 0, 1, 0, 0, 0);
 	SI_QUANTITY(time, 0, 0, 1, 0, 0);
 	SI_QUANTITY(temperature, 0, 0, 0, 1, 0);
+	SI_QUANTITY(angle, 0, 0, 0, 0, 1);
 
+	// The 22 SI derived units:
 	SI_QUANTITY(frequency, 0, 0, -1, 0, 0);
 	SI_QUANTITY(speed, 1, 0, -1, 0, 0);
 	SI_QUANTITY(angular_speed, 0, 0, -1, 0, 1);
@@ -741,7 +741,9 @@ namespace si
 	using position2d = length2;
 	using position = length3;
 
-	// SI prefixes
+	// SI prefixes:
+	inline constexpr auto exa   = unit<detail::null_dimension, 1000000000000000000>();
+	inline constexpr auto peta  = unit<detail::null_dimension, 1000000000000000>();
 	inline constexpr auto tera  = unit<detail::null_dimension, 1000000000000>();
 	inline constexpr auto giga  = unit<detail::null_dimension, 1000000000>();
 	inline constexpr auto mega  = unit<detail::null_dimension, 1000000>();
@@ -751,49 +753,38 @@ namespace si
 	inline constexpr auto centi = unit<detail::null_dimension, 1, 100>();
 	inline constexpr auto milli = unit<detail::null_dimension, 1, 1000>();
 	inline constexpr auto micro = unit<detail::null_dimension, 1, 1000000>();
+	inline constexpr auto nano  = unit<detail::null_dimension, 1, 1000000000>();
+	inline constexpr auto pico  = unit<detail::null_dimension, 1, 1000000000000>();
+	inline constexpr auto femto = unit<detail::null_dimension, 1, 1000000000000000>();
 
-	inline constexpr auto kilometer  = unit<length, 1000>();
+	// The 7 SI base units:
 	inline constexpr auto meter      = unit<length>();
-	inline constexpr auto centimeter = unit<length, 1, 100>();
-	inline constexpr auto millimeter = unit<length, 1, 1000>();
-	inline constexpr auto feet = unit<length, 3048, 10000>();
-	inline constexpr auto nautical_mile = unit<length, 185318, 100>(); // !!! this is NOT the correct factor, but for sake of compatibility this value from TowMacros.h is used !!!
-	//inline constexpr auto nautical_mile = unit<length, 1852>(); // !!! this is NOT the value used by TowMacros.h but the correct factor !!!
-	inline constexpr auto inch = unit<length, 254, 10000>();
-	inline constexpr auto statute_mile = unit<length, 1609344, 1000>(); // that's the "international mile", the U.S. survey mile is about 1609.347218694 metres (sigh)
+	inline constexpr auto kilometer  = kilo * meter; 
+	inline constexpr auto centimeter = centi * meter;
+	inline constexpr auto millimeter = milli * meter;
+	inline constexpr auto micrometer = micro * meter;
 
-	inline constexpr auto ton       = unit<mass, 1000>();
-	inline constexpr auto kilogram  = unit<mass>();
-	inline constexpr auto gram      = unit<mass, 1, 1000>();
-	inline constexpr auto milligram = unit<mass, 1, 1000000>();
-	inline constexpr auto microgram = unit<mass, 1, 1000000000>();
-	inline constexpr auto pound = unit<mass, 45359237, 100000000>();
-
+	inline constexpr auto second      = unit<time>();
+	inline constexpr auto minute      = unit<time, 60>();
+	inline constexpr auto hour        = unit<time, 3600>();
+	inline constexpr auto day         = unit<time, 24*3600>();
 	inline constexpr auto year        = unit<time, 365*24*3600>();
 	inline constexpr auto week        = unit<time, 7*24*3600>();
-	inline constexpr auto day         = unit<time, 24 * 3600>();
-	inline constexpr auto hour        = unit<time, 3600>();
-	inline constexpr auto minute      = unit<time, 60>();
-	inline constexpr auto second      = unit<time>();
-	inline constexpr auto millisecond = unit<time, 1, 1000>();
-	inline constexpr auto microsecond = unit<time, 1, 1000000>();
+	inline constexpr auto millisecond = milli * second;
+	inline constexpr auto microsecond = micro * second;
+	inline constexpr auto nanosecond  = nano * second;
 
-	//@{
-	/**
-		Because of the different zero points, care has to be taken when using temperature in calculations.
+	inline constexpr auto kilogram  = unit<mass>();
+	inline constexpr auto ton       = kilo * kilogram;
+	inline constexpr auto gram      = milli * kilogram;
+	inline constexpr auto milligram = micro * kilogram;
+	inline constexpr auto microgram = nano * kilogram;
 
-		In particular:
-		- 'si::celsius(a / b)' IS NOT EQUAL TO 'si::celsius(a) / si::celsius(b)'
-		- [...]
-	*/
 	inline constexpr auto kelvin = unit<temperature>();
-	inline constexpr auto celsius = detail::unit<detail::temperature_dimension, detail::tag_celsius>();
-	inline constexpr auto fahrenheit = detail::unit<detail::temperature_dimension, detail::tag_fahrenheit>();
-	//@}
 
-	inline constexpr auto radian = unit<angle>();
-	inline constexpr auto degree = detail::unit<detail::angle_dimension, detail::ratio_degree>();
+	typedef long double ampere;
 
+	// The 22 SI derived units:
 	inline constexpr auto meter2 = unit<area>();
 	inline constexpr auto centimeter2 = centi * centi * meter2;
 	inline constexpr auto kilometer2 = kilo * kilo * meter2;
@@ -802,27 +793,17 @@ namespace si
 	inline constexpr auto centimeter3 = centi * centi * centi * meter3;
 	inline constexpr auto kilometer3 = kilo * kilo * kilo * meter3;
 
+	inline constexpr auto meters_per_second = meter / second;
+	inline constexpr auto kilometers_per_hour = kilometer / hour;
+
+	inline constexpr auto kilograms_per_meter2 = kilogram / (meter * meter);
+	inline constexpr auto kilograms_per_meter3 = kilogram / (meter * meter * meter);
+
 	inline constexpr auto hertz = unit<frequency>();
 	inline constexpr auto kilohertz = kilo * hertz;
 	inline constexpr auto megahertz = mega * hertz;
 	inline constexpr auto gigahertz = giga * hertz;
-	inline constexpr auto per_minute = one / minute;
-
-	inline constexpr auto radians_per_second = unit<angular_speed>();
-	inline constexpr auto degrees_per_second = degree / second;
-
-	inline constexpr auto meters_per_second = meter / second;
-	inline constexpr auto kilometers_per_hour = kilometer / hour;
-	inline constexpr auto miles_per_hour = statute_mile / hour;
-
-	// Knots are "nautical_mile / hour", but we cannot use nautical_mile because those are incorrect (see note above)
-	// Here, we have to use the correct factor of 1852 m / 3600 s = 0.5144444 m/s (which is what ExEngine MS2KTS uses)
-	// inline constexpr auto knots = nautical_mile / hour;
-	inline constexpr auto knots = unit<speed, 1852, 3600>();
-
-	inline constexpr auto feet_per_minute = feet / minute;
-	inline constexpr auto millimeters_per_hour = millimeter / hour;
-	inline constexpr auto inches_per_hour = inch / hour;
+	inline constexpr auto terahertz = tera * hertz;
 
 	inline constexpr auto newton = kilogram * meter / (second * second);
 	inline constexpr auto kilonewton = kilo * newton;
@@ -845,8 +826,42 @@ namespace si
 	inline constexpr auto newtonmeter = newton * meter;
 	inline constexpr auto newtonsecond = newton * second;
 
-	inline constexpr auto kilograms_per_meter2 = kilogram / (meter * meter);
-	inline constexpr auto kilograms_per_meter3 = kilogram / (meter * meter * meter);
+	// Imperial Units:
+	inline constexpr auto pound = unit<mass, 45359237, 100000000>();
+	inline constexpr auto feet = unit<length, 3048, 10000>();
+	inline constexpr auto nautical_mile = unit<length, 185318, 100>(); // !!! this is NOT the correct factor, but for sake of compatibility this value from TowMacros.h is used !!!
+	//inline constexpr auto nautical_mile = unit<length, 1852>(); // !!! this is NOT the value used by TowMacros.h but the correct factor !!!
+	inline constexpr auto inch = unit<length, 254, 10000>();
+	inline constexpr auto statute_mile = unit<length, 1609344, 1000>(); // that's the "international mile", the U.S. survey mile is about 1609.347218694 metres (sigh)
+	inline constexpr auto fahrenheit = detail::unit<detail::temperature_dimension, detail::tag_fahrenheit>();
+	inline constexpr auto miles_per_hour = statute_mile / hour;
+
+	// Knots are "nautical_mile / hour", but we cannot use nautical_mile because those are incorrect (see note above)
+	// Here, we have to use the correct factor of 1852 m / 3600 s = 0.5144444 m/s (which is what ExEngine MS2KTS uses)
+	// inline constexpr auto knots = nautical_mile / hour;
+	inline constexpr auto knots = unit<speed, 1852, 3600>();
+
+	inline constexpr auto feet_per_minute = feet / minute;
+	inline constexpr auto millimeters_per_hour = millimeter / hour;
+	inline constexpr auto inches_per_hour = inch / hour;
+
+	//@{
+	/**
+		Because of the different zero points, care has to be taken when using temperature in calculations.
+
+		In particular:
+		- 'si::celsius(a / b)' IS NOT EQUAL TO 'si::celsius(a) / si::celsius(b)'
+		- [...]
+	*/
+	inline constexpr auto celsius = detail::unit<detail::temperature_dimension, detail::tag_celsius>();
+	//@}
+
+	inline constexpr auto radian = unit<angle>();
+	inline constexpr auto degree = detail::unit<detail::angle_dimension, detail::ratio_degree>();
+	inline constexpr auto radians_per_second = unit<angular_speed>();
+	inline constexpr auto degrees_per_second = degree / second;
+
+	//inline constexpr auto per_minute = one / minute;
 
 	// Declaring the following constants constexpr somehow caused si functions to show up in completely unrelated template error diagnostics
 
@@ -884,7 +899,6 @@ namespace si
 		return ret;
 	}
 
-	typedef long double ampere;
 	inline constexpr auto byte = unit<detail::null_dimension>();
 	inline constexpr auto bytes_per_second = byte / second;
 	typedef long double quantity;
