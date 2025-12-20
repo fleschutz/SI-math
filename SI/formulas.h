@@ -1,4 +1,4 @@
-// SI/formulas.h - contains type-safe formulas
+// SI/formulas.h - type-safe formulas
 #pragma once
 
 #include <cmath>
@@ -59,12 +59,6 @@ namespace si
 		{
 			return q * v * B;
 		}
-#if 0
-		auto Kepler(mass m, length a)
-		{
-			return 4 * constant::pi * constant::pi * a*a*a / (constant::Gravity_constant * m );
-		}
-#endif
 
 		time free_fall_time(length height, acceleration gravity)
 		{
@@ -99,10 +93,16 @@ namespace si
 			return sqrt((dx * dx) + (dy * dy));
 		}
 
-		// Calculates the body-mass-index
+		// Calculates the body-mass index.
 		auto BMI(mass weight, length height)
 		{
 			return weight / (height * height);
 		}
+#if 0 // TODO
+		auto Kepler(mass m, length a)
+		{
+			return 4 * constant::pi * constant::pi * a*a*a / (constant::Gravity_constant * m );
+		}
+#endif
 	}
 }
