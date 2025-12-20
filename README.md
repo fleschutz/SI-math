@@ -11,7 +11,6 @@ Features
 * Type-safe [formulas](SI/formulas.h), e.g. formula::circumference()
 * With all 24 [SI prefixes](SI/prefixes.h), e.g. prefix::tera
 * Type-safe values for planet [Earth](SI/Earth.h), the [Moon](SI/Moon.h), and more.
-* With hundreds of [examples](main.cpp)
 * With hundreds of [unit tests](SI/tests.h) for safety
 * Supports SI base and derived units, Imperial units, and various more
 * Header only, own namespace, no runtime overhead (compiles to nothing but simple doubles)
@@ -23,6 +22,8 @@ auto m = 1_kg;
 auto c = constant::speed_of_light;
 auto E = m * c * c;
 ```
+Many more examples and the full code at [main.cpp](main.cpp)
+
 
 Program Output
 --------------
@@ -58,14 +59,6 @@ Folder Structure
 ----------------
 ```
   ├📂SI
-  │  ├📂values
-  │  │  ├📄Earth.h (3K)
-  │  │  ├📄Jupiter.h (954 bytes)
-  │  │  ├📄Mars.h (828 bytes)
-  │  │  ├📄Mercury.h (834 bytes)
-  │  │  ├📄Moon.h (1K)
-  │  │  ├📄music.h (480 bytes)
-  │  │  ├📄Sun.h (1K)
   │  ├📄all.h (388 bytes)
   │  ├📄constants.h (7K)
   │  ├📄formulas.h (2K)
@@ -74,11 +67,19 @@ Folder Structure
   │  ├📄print.h (3K)
   │  ├📄tests.h (3K)
   │  ├📄units.h (32K)
+  │  ├📂values
+  │  │  ├📄Earth.h (3K)
+  │  │  ├📄Jupiter.h (954 bytes)
+  │  │  ├📄Mars.h (828 bytes)
+  │  │  ├📄Mercury.h (834 bytes)
+  │  │  ├📄Moon.h (1K)
+  │  │  ├📄music.h (480 bytes)
+  │  │  ├📄Sun.h (1K)
   ├📄CMakeLists.txt (318 bytes)
   ├📄LICENSE (7K)
   ├📄main.cpp (5K)
   ├📄README.md (4K)
-     (25 files, 5 folders, depth 3, 5MB total)
+     (25 files, 5 folders, 5MB in total)
 
 ```
 
@@ -86,7 +87,7 @@ Folder Structure
 ---------------
 * Contributions, suggestions, and improvements are welcome!
 * Open an Issue if you encounter bugs or have feature ideas.
-* Create a Pull Request if you'd like to improve a script.
+* Create a Pull Request if you'd like to improve something.
 
 
 📜 License & Copyright
