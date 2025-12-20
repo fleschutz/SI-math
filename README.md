@@ -58,22 +58,37 @@ Folder Structure
 ----------------
 ```
   ├📂SI
-  │  ├📄all.h - includes any .h header file (for convenience)
-  │  ├📄constants.h - provides universal constants 
-  │  ├📄Earth.h - with characteristics of planet Earth
-  │  ├📄formulas.h - with common formulas
-  │  ├📄Jupiter.h - with physical characteristics of planet Jupiter
-  │  ├📄literals.h - with SI literals for convenience
-  │  ├📄Mars.h - with physical characteristics of planet Mars
-  │  ├📄Mercury.h - with physical characteristics of planet Mercury
-  │  ├📄Moon.h - with physical characteristics of the Moon
-  │  ├📄prefixes.h - with the SI prefixes
-  │  ├📄print.h - with a simple print to console interface 
-  │  ├📄Sun.h - with physical characteristics of the Sun
-  │  ├📄tests.h - with unit tests for basic tests
-  │  ├📄units.h - the SI units
-  ├📄CMakeLists.txt - the Makefile for cmake
-  ├📄LICENSE - the CC0 license
-  ├📄README.md - this README
-  ├📄main.cpp - with hundreds of usage example
+  │  ├📂values
+  │  │  ├📄Earth.h (3K)
+  │  │  ├📄Jupiter.h (954 bytes)
+  │  │  ├📄Mars.h (828 bytes)
+  │  │  ├📄Mercury.h (834 bytes)
+  │  │  ├📄Moon.h (1K)
+  │  │  ├📄music.h (480 bytes)
+  │  │  ├📄Sun.h (1K)
+  │  ├📄all.h (388 bytes)
+  │  ├📄constants.h (7K)
+  │  ├📄formulas.h (2K)
+  │  ├📄literals.h (7K)
+  │  ├📄prefixes.h (1K)
+  │  ├📄print.h (3K)
+  │  ├📄tests.h (3K)
+  │  ├📄units.h (32K)
+  ├📄CMakeLists.txt (318 bytes)
+  ├📄LICENSE (7K)
+  ├📄main.cpp (5K)
+  ├📄README.md (4K)
+     (25 files, 5 folders, depth 3, 5MB total)
+
 ```
+
+🤝 Contributing
+---------------
+* Contributions, suggestions, and improvements are welcome!
+* Open an Issue if you encounter bugs or have feature ideas.
+* Create a Pull Request if you'd like to improve a script.
+
+
+📜 License & Copyright
+-----------------------
+This open source project is licensed under the CC0-1.0 license. All trademarks are the property of their respective owners.
