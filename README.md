@@ -11,9 +11,8 @@ Features
 * Type-safe [formulas](SI/formulas.h), e.g. formula::circumference()
 * With all 24 [SI prefixes](SI/prefixes.h), e.g. prefix::tera
 * Type-safe values for planet [Earth](SI/Earth.h), the [Moon](SI/Moon.h), and more.
-* With hundreds of [unit tests](SI/tests.h) for safety
 * Supports SI base and derived units, Imperial units, and various more
-* Header only, own namespace, no runtime overhead (compiles to nothing but simple doubles)
+* Header only, own namespace, with [unit tests](SI/tests.h), no runtime overhead (compiles to nothing but simple doubles)
 
 Code Example
 ------------
