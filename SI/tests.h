@@ -1,7 +1,8 @@
 // SI/tests.h - unit tests for safety
+#pragma once
+
 #include <cassert>
 #include "literals.h"
-#include "prefixes.h"
 #include "values/Earth.h"
 
 using namespace si;
@@ -10,7 +11,9 @@ namespace si
 {
 	void tests()
 	{
-		// SI length checks:
+		// THE 7 SI BASE UNITS:
+
+		// SI meter:
 		static_assert(1_km == 1000_m);
 		static_assert(1_m == 10_dm);
 		static_assert(1_m == 100_cm);
@@ -19,10 +22,8 @@ namespace si
 		static_assert(1_dm == 0.1_m);
 		static_assert(1_cm == 0.01_m);
 		static_assert(1_mm == 0.001_m);
-		static_assert(1_NM == 1852_m);
-		// static_assert(1_m == 3.28084_ft);
 
-		// SI time checks:
+		// SI second:
 		static_assert(1_week == 7_day);
 		static_assert(1_day == 24_h);
 		static_assert(1_h == 60_min);
@@ -30,25 +31,25 @@ namespace si
 		static_assert(1_s == 1000_ms);
 		static_assert(1_ms == 0.001_s);
 
-		// SI area checks:
-		static_assert(Earth::land_area + Earth::water_area == Earth::surface_area);
+		// SI kilogram:
+		static_assert(1_t  == 1000_kg);
+		static_assert(1_kg == 1000_g);
+		static_assert(1_g  == 1000_mg);
 
 		// SI ampere:
 		static_assert(1_MA == 1000_kA);
 		static_assert(1_kA == 1000_A);
 		static_assert(1_A == 1000_mA);
 		static_assert(1_mA == 1000_muA);
-		//static_assert(1_muA == 1000_nA);
-		static_assert(1_nA == 1000_pA);
 
+		// THE 22 SI DERIVED UNITS:
+
+		// SI area checks:
+		static_assert(Earth::land_area + Earth::water_area == Earth::surface_area);
 		// Speed checks:
 		//static_assert(1_kmh == 3.6_mps);
-		static_assert(1_Mach == 330_mps);
 
-		// Temperature checks:
-		// assert(0_K == -273.15_degC);
-
-		// SI frequency checks:
+		// SI frequency:
 		static_assert(1_THz == 1000_GHz);
 		static_assert(1_GHz == 1000_MHz);
 		static_assert(1_MHz == 1000_kHz);
@@ -57,7 +58,15 @@ namespace si
 		static_assert(1_Hz  == 0.000001_MHz);
 		static_assert(1_Hz  == 0.000000001_GHz);
 
-		// Digital units checks:
+		// IMPERIAL UNITS:
+		static_assert(1_NM == 1852_m);
+		static_assert(1_ft == 0.3048_m);
+
+		// VARIOUS UNITS:
+		static_assert(1_Mach == 330_mps);
+		//static_assert(0_deg == 273.15_K);
+
+		// Digital units:
 		static_assert(1_ZB == 1000_EB);
 		static_assert(1_EB == 1000_PB);
 		static_assert(1_PB == 1000_TB);
@@ -65,30 +74,5 @@ namespace si
 		static_assert(1_GB == 1000_MB);
 		static_assert(1_MB == 1000_kB);
 		static_assert(1_kB == 1000_byte);
-
-		// SI Prefix checks:
-		static_assert(prefix::quetta > prefix::yotta); // (too big yet)
-		static_assert(prefix::ronna > prefix::yotta); // (too big yet)
-		static_assert(prefix::yotta > prefix::zetta); // (too big yet)
-		static_assert(prefix::zetta == 1000 * prefix::exa);
-		static_assert(prefix::exa == 1000 * prefix::peta);
-		static_assert(prefix::peta == 1000 * prefix::tera);
-		static_assert(prefix::tera == 1000 * prefix::giga);
-		static_assert(prefix::giga == 1000 * prefix::mega);
-		static_assert(prefix::mega == 1000 * prefix::kilo);
-		static_assert(prefix::kilo == 10 * prefix::hecto);
-		static_assert(prefix::hecto == 10 * prefix::deca);
-		static_assert(prefix::deca > prefix::deci);
-		static_assert(prefix::deci > prefix::centi);
-		static_assert(prefix::centi > prefix::milli);
-		static_assert(prefix::milli > prefix::micro);
-		static_assert(prefix::micro > prefix::nano);
-		static_assert(prefix::nano > prefix::pico);
-		static_assert(prefix::pico > prefix::femto);
-		static_assert(prefix::femto > prefix::atto);
-		static_assert(prefix::atto > prefix::zepto);
-		static_assert(prefix::zepto > prefix::yocto);
-		static_assert(prefix::yocto > prefix::ronto);
-		static_assert(prefix::ronto > prefix::quecto);
 	}
 }

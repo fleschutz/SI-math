@@ -33,7 +33,7 @@ LITERAL( year,  365.25*24*3600,second);     // 1_year on Earth!
 LITERAL( kg,       1, kilogram);            // 1_kg
 LITERAL( g,     1e-3, kilogram);            // 2_g (gram)
 LITERAL( mg,    1e-6, kilogram);            // 3_mg (milligram)
-LITERAL( μg,    1e-9, kilogram);            // 4_μg (microgram)
+LITERAL( mug,   1e-9, kilogram);            // 4_mug (microgram)
 LITERAL( t,      1e3, kilogram);            // 5_t (metric ton)
 
 LITERAL( K,        1, kelvin);              // 1_K
