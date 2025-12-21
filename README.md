@@ -1,7 +1,7 @@
 Type-safe Math in C++
 =====================
 
-This repo provides type-safe computations on arbitrary units and easy conversion to and from them.
+This repo helps to apply mathematics correct, with precise results and as easy as possible. It provides type-safe computations on arbitrary units and easy conversion to and from them.
 
 Features
 --------
@@ -77,6 +77,11 @@ Folder Structure
   │  │  ├📄Sun.h (1K)
 (19 files, 3 folders, 97K in total)
 ```
+
+Frequently Asked Questions
+--------------------------
+* **What is SI?** It's the [International System of Units](https://en.wikipedia.org/wiki/International_System_of_Units).
+* **Is this repo feature-complete?** No, absolutely not. Please help to add missing parts.
 
 🤝 Contributing
 ---------------
