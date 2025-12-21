@@ -34,6 +34,11 @@ int main()
 	auto H2_wavelength = formula::wavelength(constant::speed_of_light, H2_frequency);
 	print(H2_wavelength);
 } {
+	print("What's the wavelength of the high 'c' music note? It's... ");
+	auto high_c_frequency = 1046.5_Hz
+	auto wavelength = formula::wavelength(constant::speed_of_sound, high_c_frequency);
+	print(wavelength);
+} {
 	print("What's the free fall time from Burj Khalifa tower in Dubai? It's... ");
 	auto tower_height = 828_m;
 	auto time = formula::free_fall_time(tower_height, Earth::surface_gravity);

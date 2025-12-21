@@ -77,10 +77,13 @@ CONST( S_0_by_R,    -1.15170753706,  quantity); // Sackur–Tetrode constant
 CONST( atm,             101325, pascal_); // standard atmosphere
    
 // Physical constants: (source: https://en.wikipedia.org/wiki/List_of_physical_constants)
-CONST( speed_of_sound, 343,  meters_per_second); // speed of sound in air at 20 °C (68 °F)
 CONST( standard_gravity, 9.80665, meters_per_second2); // standard gravitational acceleration (G) for the surface of the Earth, defined in the third General Conference on Weights and Measures (1901, CR 70).
 CONST( g_0,              9.80665, meters_per_second2); // standard acceleration of gravity
 //CONST( Gravitational_constant, 6.6743015e−11, * si::m3 / si::kilogram / si::s2);
+CONST( speed_of_sound, 343, meters_per_second); // speed of sound in dry air at 20°C (68°F)
+CONST( speed_of_sound_in_fresh_water, 1481, meters_per_second); // at 20°C (68°F)
+CONST( speed_of_sound_in_iron, 5120, meters_per_second);
+CONST( speed_of_sound_in_diamonds, 12'000, meters_per_second);
 
 // Mathematical constants:  (source: https://en.wikipedia.org/wiki/List_of_mathematical_constants)
 CONST( half_pi,     M_PI / 2.0, quantity);
