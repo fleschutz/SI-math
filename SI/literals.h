@@ -8,6 +8,8 @@ namespace si
 #define LITERAL(_symbol, _factor, _baseUnit) \
   constexpr auto operator "" _ ## _symbol(long double x) { return _baseUnit(static_cast<double>(x) * static_cast<double>(_factor)); } \
   constexpr auto operator "" _ ## _symbol(unsigned long long x) { return _baseUnit(static_cast<double>(x) * _factor); }
+#define CARDINAL(_symbol, _factor, _baseUnit) \
+  constexpr auto operator "" _ ## _symbol(unsigned long long x) { return _baseUnit(static_cast<long long>(x) * _factor); }
 
 // THE 7 SI BASE UNITS:
 // Symbol:   Factor:  Base Unit:            Example:
@@ -23,7 +25,7 @@ LITERAL( s,        1, second);              // 60_s
 LITERAL( sec,      1, second);              // 60_sec
 LITERAL( second,   1, second);              // 60_second
 LITERAL( ms,    1e-3, second);              // 1_ms (millisecond)
-LITERAL( μs,    1e-6, second);              // 2_μs (microsecond)
+LITERAL( mus,   1e-6, second);              // 2_mus (microsecond)
 LITERAL( min,     60, second);              // 5_min
 LITERAL( h,     3600, second);              // 24_h
 LITERAL( day,24*3600,second);               // 1_day on Earth!
@@ -37,12 +39,12 @@ LITERAL( mug,   1e-9, kilogram);            // 4_mug (microgram)
 LITERAL( t,      1e3, kilogram);            // 5_t (metric ton)
 
 LITERAL( K,        1, kelvin);              // 1_K
-LITERAL(kK,      1e3, kelvin);              // 2_kK
-LITERAL(MK,      1e6, kelvin);              // 3_MK
-LITERAL(GK,      1e9, kelvin);              // 4_GK
-LITERAL(mK,     1e-3, kelvin);              // 5_mK
-LITERAL(μK,     1e-6, kelvin);              // 6_μK
-LITERAL(nK,     1e-9, kelvin);              // 7_nK
+LITERAL( kK,     1e3, kelvin);              // 2_kK (kilokelvin)
+LITERAL( MK,     1e6, kelvin);              // 3_MK (megakelvin)
+LITERAL( GK,     1e9, kelvin);              // 4_GK (gigakelvin)
+LITERAL( mK,    1e-3, kelvin);              // 5_mK (millikelvin)
+LITERAL( muK,   1e-6, kelvin);              // 6_muK (microkelvin)
+LITERAL( nK,    1e-9, kelvin);              // 7_nK (nanokelvin)
 
 LITERAL( A,        1, ampere);              // 1_A 
 LITERAL( kA,     1e3, ampere);              // 2_kA (kiloampere)
@@ -85,12 +87,13 @@ LITERAL( kOhm,   1e3, ohm);                // 1_kOhm (kiloohm)
 LITERAL( MOhm,   1e6, ohm);                // 1_MOhm (megaohm)
 LITERAL( mOhm,  1e-3, ohm);                // 1_mOhm (milliohm)
 
+LITERAL( TW,    1e12, joules_per_second);  // 1_TW (terawatt)
+LITERAL( GW,     1e9, joules_per_second);  // 1_GW (gigawatt)
+LITERAL( MW,     1e6, joules_per_second);  // 1_MW (megawatt)
 LITERAL( W,        1, joules_per_second);  // 1_W (Watt)
 LITERAL( kW,     1e3, joules_per_second);  // 1_kW (kilowatt)
-LITERAL( MW,     1e6, joules_per_second);  // 1_MW (megawatt)
-LITERAL( GW,     1e9, joules_per_second);  // 1_GW (gigawatt)
-LITERAL( TW,    1e12, joules_per_second);  // 1_TW (terawatt)
 LITERAL( mW,    1e-3, joules_per_second);  // 1_mW (milliwatt)
+LITERAL( muW,   1e-6, joules_per_second);  // 1_muW (microwatt)
 
 // IMPERIAL UNITS
 //     Symbol: Factor: Base Unit:            Example:
@@ -115,17 +118,17 @@ LITERAL( Mach,  330,   meters_per_second);   // 2_Mach
 LITERAL( AU, 149'597'870'700, meter);        // 3_AU (astronomical unit)
 LITERAL( pc,3.085'677'581'28e16, meter);     // 4_pc (parsec)
 
-LITERAL( byte,     1, byte);                // 1_byte
-LITERAL( kB,     1e3, byte);                // 1_kB (kilobyte)
-LITERAL( MB,     1e6, byte);                // 2_MB (megabyte)
-LITERAL( GB,     1e9, byte);                // 3_GB (gigabyte)
-LITERAL( TB,    1e12, byte);                // 4_TB (terabyte)
-LITERAL( PB,    1e15, byte);                // 5_PB (terabyte)
-LITERAL( EB,    1e18, byte);                // 6_EB (exabyte)
-LITERAL( ZB,    1e21, byte);                // 7_ZB (zettabyte)
-LITERAL( YB,    1e24, byte);                // 8_ZY (yottabyte)
-LITERAL( RB,    1e27, byte);                // 9_RY (ronnabyte)
-LITERAL( QB,    1e30, byte);                //10_QY (quettabyte)
+CARDINAL( byte,    1, byte);                // 1_byte
+CARDINAL( kB,    1e3, byte);                // 1_kB (kilobyte)
+CARDINAL( MB,    1e6, byte);                // 2_MB (megabyte)
+CARDINAL( GB,    1e9, byte);                // 3_GB (gigabyte)
+CARDINAL( TB,   1e12, byte);                // 4_TB (terabyte)
+CARDINAL( PB,   1e15, byte);                // 5_PB (terabyte)
+CARDINAL( EB,   1e18, byte);                // 6_EB (exabyte)
+CARDINAL( ZB,   1e21, byte);                // 7_ZB (zettabyte)
+CARDINAL( YB,   1e24, byte);                // 8_ZY (yottabyte)
+CARDINAL( RB,   1e27, byte);                // 9_RY (ronnabyte)
+CARDINAL( QB,   1e30, byte);                //10_QY (quettabyte)
 
 LITERAL( KBps,   1e3, bytes_per_second);    // 1_KBps (kilobyte/sec)
 LITERAL( MBps,   1e6, bytes_per_second);    // 1_MBps (megabyte/sec)

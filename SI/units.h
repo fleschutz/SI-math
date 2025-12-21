@@ -874,41 +874,10 @@ namespace si
 	// Declaring the following constants constexpr somehow caused si functions to show up in completely unrelated template error diagnostics
 
 
-	///@{
-	/// Prints a quantity to string
-	/**
-		Prints value in base units, without adding the unit string.
-
-		Example: 1000 meters is printed as "1000"
-	*/
-	template <class Dimension, class T>
-	std::to_chars_result to_chars(char* first, char* last, const detail::quantity<Dimension, T>& q)
-	{
-		return std::to_chars(first, last, value(q));
-	}
-	///@}
-
-	/// Reads a quantity from a string
-	/**
-		Supports some basic unit strings (e.g. "m", "ft", "m/s", "km/h", ...).
-
-		Silently skips any superfluous whitespaces between value
-		and unit.
-	*/
-	template <class Dimension, class T>
-	std::from_chars_result from_chars(const char* first, const char* last, detail::quantity<Dimension, T>& q)
-	{
-		static constexpr long dimension[] = { Dimension::length, Dimension::mass, Dimension::time, Dimension::temperature, Dimension::angle };
-
-		double x = {};
-		auto ret = detail::from_chars(first, last, dimension, x);
-		value(q) = static_cast<T>(x);
-
-		return ret;
-	}
-
 	inline constexpr auto byte = unit<detail::null_dimension>();
 	inline constexpr auto bytes_per_second = byte / second;
+
+	typedef long double mol;
 	typedef long double quantity;
 	typedef long double lumens_per_watt;
 	typedef long double ohm;
