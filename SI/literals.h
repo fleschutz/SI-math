@@ -66,7 +66,16 @@ LITERAL( mps,      1, meters_per_second);   // 10_mps
 LITERAL( mps2,     1, meters_per_second2);  // 9.807_mps2
 LITERAL( Nm,       1, newtonmeter);         // 2.1_Nm
 LITERAL( ha,   10000, meter2);              // 3_ha
-LITERAL( km2,      1, kilometer2);	    // 7_km2
+
+LITERAL( km2,      1, kilometer2);	    // 1_km2
+LITERAL( m2,       1, meter2);              // 1_m2
+LITERAL( cm2,      1, centimeter2);         // 1_cm2
+LITERAL( mm2,      1, millimeter2);         // 1_mm2
+
+LITERAL( km3,      1, kilometer3);	    // 1_km3
+LITERAL( m3,       1, meter3);              // 1_m3
+LITERAL( cm3,      1, centimeter3);         // 1_cm3
+LITERAL( mm3,      1, millimeter3);         // 1_mm3
 
 LITERAL( Hz,       1, hertz);               // 1_Hz
 LITERAL( kHz,    1e3, hertz);               // 2_kHz

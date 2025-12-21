@@ -791,8 +791,9 @@ namespace si
 
 	// The 22 SI derived units:
 	inline constexpr auto meter2 = unit<area>();
-	inline constexpr auto centimeter2 = centi * centi * meter2;
 	inline constexpr auto kilometer2 = kilo * kilo * meter2;
+	inline constexpr auto centimeter2 = centi * centi * meter2;
+	inline constexpr auto millimeter2 = milli * milli * meter2;
 
 	inline constexpr auto meter3 = unit<volume>();
 	inline constexpr auto kilometer3 = kilo * kilo * kilo * meter3;

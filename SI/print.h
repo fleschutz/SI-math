@@ -1,4 +1,4 @@
-// SI/print.h - simple print to console interface
+// SI/print.h - print strings and values to the console
 #pragma once
 
 #include <iostream>
@@ -6,6 +6,11 @@
 
 namespace si
 {
+	void print(const std::string& text)
+	{
+		std::cout << text;
+	}
+
 	// The 7 SI base units:
 	void print(time t)
 	{
@@ -17,10 +22,14 @@ namespace si
 			std::cout << day(t) << " day(s)" << std::endl;
 		else if (abs(t) >= hour(1.0))
 			std::cout << (int)hour(t) << "h " << ((int)minute(t)) % 60 << "min" << std::endl;
-		else if (abs(t) >= minute(1.0))
-			std::cout << minute(t) << "min" << std::endl;
+		else if (abs(t) >= 1_min)
+			std::cout << (t / 1_min) << "min" << std::endl;
+		else if (abs(t) >= 1_sec)
+			std::cout << (t / 1_sec) << "sec" << std::endl;
+		else if (abs(t) >= 1_ms)
+			std::cout << (t / 1_ms) << "ms" << std::endl;
 		else
-			std::cout << second(t) << "sec" << std::endl;
+			std::cout << (t / 1_mus) << "mus" << std::endl;
 	}
 
 	void print(length d)
@@ -64,24 +73,26 @@ namespace si
 	// The 22 SI derived units:
 	void print(area a)
 	{
-		if (abs(a) >= kilometer2(1.0))
-			std::cout << kilometer2(a) << "km²" << std::endl;
-		else if (abs(a) >= meter2(1.0))
-			std::cout << meter2(a) << "m²" << std::endl;
+		if (abs(a) >= 1_km2)
+			std::cout << (a / 1_km2) << "km²" << std::endl;
+		else if (abs(a) >= 1_m2)
+			std::cout << (a / 1_m2) << "m²" << std::endl;
+		else if (abs(a) >= 1_cm2)
+			std::cout << (a / 1_cm2) << "cm²" << std::endl;
 		else
-			std::cout << centimeter2(a) << "cm²" << std::endl;
+			std::cout << (a / 1_mm2) << "mm²" << std::endl;
 	}
 
 	void print(volume v)
 	{
-		if (abs(v) >= kilometer3(1.0))
-			std::cout << kilometer3(v) << "km³" << std::endl;
-		else if (abs(v) >= meter3(1.0))
-			std::cout << meter3(v) << "m³" << std::endl;
-		else if (abs(v) >= centimeter3(1.0))
-			std::cout << centimeter3(v) << "cm³" << std::endl;
+		if (abs(v) >= 1_km3)
+			std::cout << (v / 1_km3) << "km³" << std::endl;
+		else if (abs(v) >= 1_m3)
+			std::cout << (v / 1_m3) << "m³" << std::endl;
+		else if (abs(v) >= 1_cm3)
+			std::cout << (v / 1_cm3) << "cm³" << std::endl;
 		else
-			std::cout << millimeter3(v) << "mm³" << std::endl;
+			std::cout << (v / 1_mm3) << "mm³" << std::endl;
 	}
 
 	void print(speed v)
@@ -117,10 +128,5 @@ namespace si
 	void print(quantity number)
 	{
 		std::cout << number << std::endl;
-	}
-
-	void print(const std::string& text)
-	{
-		std::cout << text;
 	}
 }
