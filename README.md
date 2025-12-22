@@ -24,9 +24,9 @@ See all examples in [examples.cpp](examples.cpp). Executing: `cmake . && make &&
 
 ```
 What's the average speed of Kiptum's world record in Marathon? It's...21.0975km/h
-What's the potential energy of 1kg mass? It's... 8.98755e+07 GJ
-What's the kinetic energy of a car at 50 km/h? It's... 125.386 kJ
-What's the average speed here? It's... 185765km/h
+What's the potential energy of 1kg mass? It's... 89875.5TJ
+What's the kinetic energy of a car at 50 km/h? It's... 125.386kJ
+What's the average speed here? It's... 111797km/h
 What's the average temperature of 0°C, 32°F, 491.67°R, and 273.15K? It's... 273.15K
 What's the wavelength of H2 in vacuum? It's... 21.1061cm
 What's the wavelength of the high 'c' music note? It's... 32.7759cm
@@ -38,7 +38,7 @@ What's the sum of 1 byte + 1kB + 1GB...(and so on)? It's... 1.001e+30
 What's the sum of 1m + 1NM + 1ft? It's... 1.8533km
 What's the population density on Earth (people per km² of land area)? It's... 55.0557
 How much land area would be available for each person on Earth? It's... 18163.4m²
-What's the surface area of a soccer ball? It's... 779.859cm²
+What's the surface area of a soccer ball? It's... 1559.72cm²
 What's the volume of a soccer ball? It's... 5792.19cm³
 What's the surface area of a 30cm pizza? It's... 706.858cm²
 What's the volume of a 30cm x 1cm pizza? It's... 706.858cm³
@@ -48,6 +48,7 @@ What's a car's braking distance on wet asphalt from 100km/h? It's... 64.3004m
 How long takes a 1TB download at 100MBit speed? It's... 22h 13min
 What's the aircraft's glide path on final at 10NM distance in 3000ft height? It's... 2.82661°
 What's Donald Trump's body-mass index (BMI)? It's... 28.2548
+What are the details of a 10m x 1m oak tree log? It's... 32.9867m² 7.85398m³ 5.57633t 23.4206MWh
 ```
 
 
