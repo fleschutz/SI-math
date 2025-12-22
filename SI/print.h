@@ -11,97 +11,110 @@ namespace si
 		std::cout << std::endl << text;
 	}
 
+	void print(quantity number)
+	{
+		std::cout << number << " ";
+	}
+
+	void print(quantity value, const std::string& unit)
+	{
+		std::cout << value << unit << " ";
+	}
+
 	// The 7 SI base units:
 	void print(time t)
 	{
 		if (abs(t) >= year(1.0))
-			std::cout << year(t) << " year(s) ";
+			print(year(t), " year(s)");
 		else if (abs(t) >= week(1.0))
-			std::cout << week(t) << " week(s) ";
+			print(week(t), " week(s)");
 		else if (abs(t) >= day(2.0))
-			std::cout << day(t) << " day(s) ";
+			print(day(t), " day(s)");
 		else if (abs(t) >= hour(1.0))
 			std::cout << (int)hour(t) << "h " << ((int)minute(t)) % 60 << "min ";
 		else if (abs(t) >= 1_min)
-			std::cout << (t / 1_min) << "min ";
+			print(t / 1_min, "min");
 		else if (abs(t) >= 1_sec)
-			std::cout << (t / 1_sec) << "sec ";
+			print(t / 1_sec, "sec");
 		else if (abs(t) >= 1_ms)
-			std::cout << (t / 1_ms) << "ms ";
+			print(t / 1_ms, "ms");
 		else
-			std::cout << (t / 1_mus) << "mus ";
+			print(t / 1_mus, "mus");
 	}
 
 	void print(length d)
 	{
 		if (abs(d) >= constant::lightyear)
-			std::cout << (d / constant::lightyear) << " light-year(s) ";
+			print(d / constant::lightyear, " light-year(s)");
 		else if (abs(d) >= 1_km)
-			std::cout << (d / 1_km) << "km ";
+			print(d / 1_km, "km");
 		else if (abs(d) >= 1_m)
-			std::cout << (d / 1_m) << "m ";
+			print(d / 1_m, "m ");
 		else if (abs(d) >= 1_cm)
-			std::cout << (d / 1_cm) << "cm ";
+			print(d / 1_cm, "cm");
 		else
-			std::cout << (d / 1_mm) << "mm ";
+			print(d / 1_mm, "mm");
 	}
 
 	void print(mass m)
 	{
 		if (abs(m) >= 1_mt)
-			std::cout << (m / 1_mt) << "mt ";
+			print(m / 1_mt, "mt");
 		else if (abs(m) >= 1_kt)
-			std::cout << (m / 1_kt) << "kt ";
+			print(m / 1_kt, "kt");
 		else if (abs(m) >= 1_t)
-			std::cout << (m / 1_t) << "t ";
+			print(m / 1_t, "t");
 		else if (abs(m) >= 1_kg)
-			std::cout << (m / 1_kg) << "kg ";
+			print(m / 1_kg, "kg");
 		else if (abs(m) >= 1_g)
-			std::cout << (m / 1_g) << "g ";
+			print(m / 1_g, "g");
 		else
-			std::cout << (m / 1_mg) << "mg ";
+			print(m / 1_mg, "mg");
 	}
 
 	void print(temperature T)
 	{
 		if (abs(T) >= 1_GK)
-			std::cout << (T / 1_GK) << "GK ";
+			print(T / 1_GK, "GK");
 		else if (abs(T) >= 1_MK)
-			std::cout << (T / 1_MK) << "MK ";
-		else if (abs(T) >= kelvin(1.0))
-			std::cout << kelvin(T) << "K ";
+			print(T / 1_MK, "MK");
+		else if (abs(T) >= 1_K)
+			print(T / 1_K, "K");
 		else
-			std::cout << (T / 1_mK) << "mK ";
+			print(T / 1_mK, "mK");
 	}
 
 	// The 22 SI derived units:
 	void print(area a)
 	{
 		if (abs(a) >= 1_km2)
-			std::cout << (a / 1_km2) << "km² ";
+			print(a / 1_km2, "km²");
 		else if (abs(a) >= 1_m2)
-			std::cout << (a / 1_m2) << "m² ";
+			print(a / 1_m2, "m²");
 		else if (abs(a) >= 1_cm2)
-			std::cout << (a / 1_cm2) << "cm² ";
+			print(a / 1_cm2, "cm²");
 		else
-			std::cout << (a / 1_mm2) << "mm² ";
+			print(a / 1_mm2, "mm²");
 	}
 
 	void print(volume v)
 	{
 		if (abs(v) >= 1_km3)
-			std::cout << (v / 1_km3) << "km³ ";
+			print(v / 1_km3, "km³");
 		else if (abs(v) >= 1_m3)
-			std::cout << (v / 1_m3) << "m³ ";
+			print(v / 1_m3, "m³");
 		else if (abs(v) >= 1_cm3)
-			std::cout << (v / 1_cm3) << "cm³ ";
+			print(v / 1_cm3, "cm³");
 		else
-			std::cout << (v / 1_mm3) << "mm³ ";
+			print(v / 1_mm3, "mm³");
 	}
 
 	void print(speed v)
 	{
-		std::cout << kilometers_per_hour(v) << "km/h ";
+		if (abs(v) >= 1_kmh)
+			print(v / 1_kmh, "km/h");
+		else
+			print(v / 1_mps, "m/s");
 	}
 
 	void print(acceleration a)
@@ -112,15 +125,29 @@ namespace si
 	void print(energy E)
 	{
 		if (abs(E) >= 1_TJ)
-			std::cout << (E / 1_TJ) << "TJ ";
+			print(E / 1_TJ, "TJ");
 		else if (abs(E) >= 1_GJ)
-			std::cout << (E / 1_GJ) << "GJ ";
+			print(E / 1_GJ, "GJ");
 		else if (abs(E) >= 1_MJ)
-			std::cout << (E / 1_MJ) << "MJ ";
+			print(E / 1_MJ, "MJ");
 		else if (abs(E) >= 1_kJ)
-			std::cout << (E / 1_kJ) << "kJ ";
+			print(E / 1_kJ, "kJ");
 		else
-			std::cout << joule(E) << "Joule ";
+			print(E / 1_J, "J");
+	}
+
+	void print(power P)
+	{
+		if (abs(P) >= 1_TWh)
+			print(P / 1_TWh, "TWh");
+		else if (abs(P) >= 1_GWh)
+			print(P / 1_GWh, "GWh");
+		else if (abs(P) >= 1_MWh)
+			print(P / 1_MWh, "MWh");
+		else if (abs(P) >= 1_kWh)
+			print(P / 1_kWh, "kWh");
+		else
+			print(P / 1_Wh, "Wh");
 	}
 
 	void print(angle a)
@@ -128,13 +155,13 @@ namespace si
 		std::cout << degree(a) << "° ";
 	}
 
-	void print(quantity number)
-	{
-		std::cout << number << " ";
-	}
-
 	void print(area a, volume v, mass m)
 	{
 		print(a); print(v); print(m);
+	}
+
+	void print(area a, volume v, mass m, power p)
+	{
+		print(a); print(v); print(m); print(p);
 	}
 }

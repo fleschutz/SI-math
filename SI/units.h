@@ -11,6 +11,8 @@
 
 namespace si
 {
+	typedef long double quantity; // a value without(!) unit, e.g. 42
+
 	namespace detail
 	{
 		template <class T>
@@ -803,6 +805,8 @@ namespace si
 	inline constexpr auto meters_per_second = meter / second;
 	inline constexpr auto kilometers_per_hour = kilometer / hour;
 
+	inline constexpr auto meters_per_second2 = meter / (second * second);
+
 	inline constexpr auto kilograms_per_meter2 = kilogram / (meter * meter);
 	inline constexpr auto kilograms_per_meter3 = kilogram / (meter * meter * meter);
 
@@ -825,7 +829,7 @@ namespace si
 	inline constexpr auto joulesecond = joule * second;
 	inline constexpr auto joules_per_kelvin = joule / kelvin;
 	inline constexpr auto joules_per_second = joule / second;
-	inline constexpr auto meters_per_second2 = meter / (second * second);
+	inline constexpr auto joules_per_second_per_kilogram = joule / second / kilogram;
 
 	inline constexpr auto pascal_ = newton / (meter * meter);
 	inline constexpr auto hectopascal = hecto * pascal_;
@@ -879,7 +883,6 @@ namespace si
 	inline constexpr auto bytes_per_second = byte / second;
 
 	typedef long double mol;
-	typedef long double quantity;
 	typedef long double lumens_per_watt;
 	typedef long double ohm;
 

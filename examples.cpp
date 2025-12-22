@@ -134,14 +134,21 @@ int main()
 	auto BMI = formula::BMI(Donalds_weight, Donalds_height);
 	print(kilograms_per_meter2(BMI));
 } {
-	print("What's the details of a 10m x 1m oak tree log? It's... ");
-	auto tree_length = 10_m;
-	auto tree_diameter = 1_m;
-	auto wet_oak_weight = 970_kg_per_m³;
-	auto area = formula::area_of_cylinder(tree_diameter / 2, tree_length);
-	auto volume = formula::volume_of_cylinder(tree_diameter / 2, tree_length);
-	auto weight = volume * wet_oak_weight;
-	print(area, volume, weight);
+	print("What are the details of a 10m x 1m oak tree log? It's... ");
+	auto log_length = 10_m;
+	auto log_diameter = 1_m;
+	auto dry_oak_weight = 710_kg_per_m³; 
+	auto dry_oak_power = 4.2_kWh_per_kg;
+	auto area = formula::area_of_cylinder(log_diameter / 2, log_length);
+	auto volume = formula::volume_of_cylinder(log_diameter / 2, log_length);
+	auto weight = volume * dry_oak_weight;
+	auto power = weight * dry_oak_power;
+	print(area, volume, weight, power);
+} {
+	// Here's the basic principle:
+	quantity x = 42;        // <- just a number without unit
+	si::time t = x * 1_sec; // <- now we have 42sec
+	quantity y = t / 1_sec; // <- and again 42, a number without unit
 }
 	return 0;
 }

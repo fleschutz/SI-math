@@ -109,6 +109,15 @@ LITERAL( MJ,     1e6, joule);              // 1_MW (megajoule)
 LITERAL( kJ,     1e3, joule);              // 1_kW (kilojoule)
 LITERAL( J,        1, joule);              // 1_J (joule)
 
+LITERAL( TWh, 3.6e15, joules_per_second);  // 1_TWh (terawatt-hour)
+LITERAL( GWh, 3.6e12, joules_per_second);  // 1_GWh (gigawatt-hour)
+LITERAL( MWh,  3.6e9, joules_per_second);  // 1_MWh (megawatt-hour)
+LITERAL( kWh,  3.6e6, joules_per_second);  // 1_kWh (kilowatt-hour)
+LITERAL( Wh,   3.6e3, joules_per_second);  // 1_Wh (watt-hour)
+
+LITERAL( kWh_per_kg, 3.6e6, joules_per_second_per_kilogram);  // 1_kWh_per_kg (kilowatt-hour per kilogram)
+LITERAL( Wh_per_kg,  3.6e3, joules_per_second_per_kilogram);  // 1_Wh_per_kg (watt-hour per kilogram)
+
 LITERAL( TW,    1e12, joules_per_second);  // 1_TW (terawatt)
 LITERAL( GW,     1e9, joules_per_second);  // 1_GW (gigawatt)
 LITERAL( MW,     1e6, joules_per_second);  // 1_MW (megawatt)
