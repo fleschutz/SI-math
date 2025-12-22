@@ -7,7 +7,7 @@ namespace si
 {
 	namespace Moon // source: https://en.wikipedia.org/wiki/Moon
 	{
-#define VALUE(_name, _value, _unit)  static constexpr auto _name = _unit(_value)
+#define VALUE(_name, _value, _unit) const auto _name = _unit(_value)
 VALUE( equatorial_radius,              1'738.1, kilometer);
 VALUE( polar_radius,                   1'736.0, kilometer);
 VALUE( mean_radius,                    1'737.4, kilometer);

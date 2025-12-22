@@ -7,8 +7,8 @@ namespace si
 {
 	namespace constant
 	{
-#define CONST(_name, _value, _unit) constexpr auto _name = _unit(_value)
-#if defined(__clang__) || defined(_MSC_VER) // with Unicode support in names
+#define CONST(_name, _value, _unit) const auto _name = _unit(_value)
+#if defined(__clang__) // with Unicode support in names
 #define UNICODE(_name, _value, _unit) constexpr auto _name = _unit(_value)
 #else
 #define UNICODE(_name, _value, _unit) 

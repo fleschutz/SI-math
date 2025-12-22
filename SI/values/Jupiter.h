@@ -7,7 +7,7 @@ namespace si
 {
 	namespace Jupiter // source: https://en.wikipedia.org/wiki/Jupiter
 	{
-#define VALUE(_name, _value, _unit)  static constexpr auto _name = _unit(_value)
+#define VALUE(_name, _value, _unit)  const auto _name = _unit(_value)
 VALUE( equatorial_radius,            71'492, kilometer);
 VALUE( polar_radius,                 66'854, kilometer);
 VALUE( mean_radius,                  69'911, kilometer);

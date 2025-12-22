@@ -8,7 +8,7 @@ namespace si
 {
 	void print(const std::string& text)
 	{
-		std::cout << std::endl << text;
+		std::cout << std::endl << text.c_str();
 	}
 
 	void print(quantity number)
@@ -18,7 +18,7 @@ namespace si
 
 	void print(quantity value, const std::string& unit)
 	{
-		std::cout << value << unit << " ";
+		std::cout << value << unit.c_str() << " ";
 	}
 
 	// The 7 SI base units:

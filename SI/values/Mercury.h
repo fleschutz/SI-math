@@ -7,7 +7,7 @@ namespace si
 {
 	namespace Mercury // source: https://en.wikipedia.org/wiki/Mercury_(planet)
 	{
-#define VALUE(_name, _value, _unit)  static constexpr auto _name = _unit(_value)
+#define VALUE(_name, _value, _unit) const auto _name = _unit(_value)
 VALUE( mean_radius,                2'439.7, kilometer);
 VALUE( flattening,                  0.0009, quantity);
 VALUE( surface_area,                7.48e7, kilometer2);

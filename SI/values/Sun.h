@@ -7,7 +7,7 @@ namespace si
 {
 	namespace Sun
 	{
-#define VALUE(_name, _value, _unit)  static constexpr auto _name = _unit(_value)
+#define VALUE(_name, _value, _unit) const auto _name = _unit(_value)
 VALUE( equatorial_radius,        695'700'000, meter);
 VALUE( equatorial_rotation_velocity,    1997, meters_per_second);
 VALUE( equatorial_surface_gravity,       274, meters_per_second2);

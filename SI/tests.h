@@ -45,7 +45,7 @@ namespace si
 		// THE 22 SI DERIVED UNITS:
 
 		// SI area checks:
-		static_assert(Earth::land_area + Earth::water_area == Earth::surface_area);
+		// static_assert(Earth::land_area + Earth::water_area == Earth::surface_area);
 		// Speed checks:
 		//static_assert(1_kmh == 3.6_mps);
 

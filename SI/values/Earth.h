@@ -7,7 +7,7 @@ namespace si
 {
 	namespace Earth // source: https://en.wikipedia.org/wiki/Earth
 	{
-#define VALUE(_name, _value, _unit)  static constexpr auto _name = _unit(_value)
+#define VALUE(_name, _value, _unit)  const auto _name = _unit(_value)
 VALUE( surface_gravity,             9.80665, meters_per_second2); // standard gravitational acceleration (G) for the surface of the Earth, defined 1901 in the third General Conference on Weights and Measures.
 VALUE( equatorial_radius,          6378.137, kilometer);      // denoted 'a'
 VALUE( equatorial_diameter, equatorial_radius * 2, meter);

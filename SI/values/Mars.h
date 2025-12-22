@@ -7,7 +7,7 @@ namespace si
 {
 	namespace Mars // source: https://en.wikipedia.org/wiki/Mars
 	{
-#define VALUE(_name, _value, _unit)  static constexpr auto _name = _unit(_value)
+#define VALUE(_name, _value, _unit)   const auto _name = _unit(_value)
 VALUE( equatorial_radius,          3'396.2, kilometer);
 VALUE( polar_radius,               3'376.2, kilometer);
 VALUE( surface_area,            1.4437e8, kilometer2);
