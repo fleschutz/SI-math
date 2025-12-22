@@ -8,11 +8,7 @@ namespace si
 	namespace constant
 	{
 #define CONST(_name, _value, _unit) const auto _name = _unit(_value)
-#if 0 // with Unicode support in names
-#define UNICODE(_name, _value, _unit) constexpr auto _name = _unit(_value)
-#else
 #define UNICODE(_name, _value, _unit) 
-#endif
 
 // The 7 defining constants of SI:
 CONST( speed_of_light, 299'792'458, meters_per_second); // speed of light in vacuum (symbol: c)

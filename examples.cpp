@@ -91,14 +91,14 @@ int main()
 	print(volume);
 } {
 	print("What's the surface area of a 30cm pizza? It's... ");
-	auto radius = 30_cm / 2;
-	auto area = formula::area_of_circle(radius);
+	auto diameter = 30_cm;
+	auto area = formula::area_of_circle(diameter / 2);
 	print(area);
 } {
 	print("What's the volume of a 30cm x 1cm pizza? It's... ");
-	auto radius = 30_cm / 2; 
+	auto diameter = 30_cm; 
 	auto height = 1_cm;
-	auto volume = formula::area_of_circle(radius) * height;
+	auto volume = formula::volume_of_cylinder(diameter / 2, height);
 	print(volume);
 } {
 	print("What's the distance the Earth has travelled so far? It's... ");
