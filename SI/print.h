@@ -125,8 +125,10 @@ namespace si
 	{
 		if (abs(v) >= 1_kmh)
 			print(v / 1_kmh, "km/h");
-		else
+		else if (abs(v) >= 1_mps)
 			print(v / 1_mps, "m/s");
+		else
+			print(v / 1_mmh, "mm/h");
 	}
 
 	void print(acceleration a)

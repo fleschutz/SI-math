@@ -62,6 +62,7 @@ LITERAL( Bq,       1, hertz);               // 1_Bq (Bequerel)
 LITERAL( deg,      1, degree);              // 1_deg
 LITERAL( kBq,   1000, hertz);               // 1_kBq
 LITERAL( kmh,      1, kilometers_per_hour); // 1_kmh
+LITERAL( mmh,      1, millimeters_per_hour);// 1_mmh
 LITERAL( mps,      1, meters_per_second);   // 1_mps
 LITERAL( mps²,     1, meters_per_second2);  // 1_mps²
 LITERAL( Nm,       1, newtonmeter);         // 1_Nm
@@ -128,17 +129,17 @@ LITERAL( Wh_per_kg,  3.6e3, joules_per_second_per_kilogram);  // 1_Wh_per_kg (wa
 
 // IMPERIAL UNITS
 //     Symbol: Factor: Base Unit:          Example:
-LITERAL( degF,  1,     fahrenheit);        // 1_degF (°Fahrenheit)
-LITERAL( ft,    .3048, meter);             // 1_ft
-LITERAL( in,    0.0254,meter);             // 1_in
-LITERAL( kn,    1'852.0, kilometers_per_hour); // 1_kn
-LITERAL( lb,    453.592'37, gram);         // 1_lb
-LITERAL( oz,    28.349'523'125, gram);     // 1_oz
-LITERAL( mi,    1'609.344, meter);         // 1_mi
-LITERAL( mph,   .44704,meters_per_second); // 1_mph
-LITERAL( NM,    1852,  meter);             // 1_NM (nautical mile)
-LITERAL( nmi,   1852,  meter);             // 1_nmi (nautical mile)
-LITERAL( yd,    .9144, meter);             // 1_yd (yard)
+LITERAL( degF,            1, fahrenheit);  // 1_degF (°Fahrenheit)
+LITERAL( ft,          .3048, meter);       // 1_ft
+LITERAL( in,         0.0254, meter);       // 1_in
+LITERAL( kn,          1.852, kilometers_per_hour); // 1_kn
+LITERAL( lb,     453.592'37, gram);        // 1_lb
+LITERAL( oz, 28.349'523'125, gram);        // 1_oz
+LITERAL( mi,      1'609.344, meter);       // 1_mi
+LITERAL( mph,        .44704, meters_per_second); // 1_mph
+LITERAL( NM,          1'852, meter);       // 1_NM (nautical mile)
+LITERAL( nmi,         1'852, meter);       // 1_nmi (nautical mile)
+LITERAL( yd,          .9144, meter);       // 1_yd (yard)
 
 // VARIOUS UNITS
 //     Symbol: Factor: Base Unit:           Example:

@@ -22,7 +22,7 @@ int main()
 	print(KE);
 } {
 	print("What's the average speed here? It's... ");
-	auto average = (330_mps + 1000_kmh + 300_kn + 7_mph + 1_Mach) / 5.0;
+	auto average = (278_mps + 1000_kmh + 540_kn + 621_mph + 0.85_Mach) / 5.0;
 	print(average);
 } {
 	print("What's the average temperature of 0°C, 32°F, 491.67°R, and 273.15K? It's... ");
