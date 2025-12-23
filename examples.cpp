@@ -41,7 +41,7 @@ int main()
 } {
 	print("What's the free fall time from Burj Khalifa tower in Dubai? It's... ");
 	auto tower_height = 828_m;
-	auto time = formula::free_fall_time(tower_height, Earth::surface_gravity);
+	auto time = formula::time_of_free_fall(tower_height, Earth::surface_gravity);
 	print(time);
 } {
 	print("What's a radar's geometrical horizon (the distance it can see)? It's... ");

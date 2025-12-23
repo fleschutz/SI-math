@@ -1,4 +1,4 @@
-// SI/constants.h - type-safe constants in SI units
+// SI/constants.h - type-safe constants based on SI units
 #pragma once
 
 #include "units.h"
@@ -8,7 +8,7 @@ namespace si
 	namespace constant
 	{
 #define CONST(_name, _value, _unit) const auto _name = _unit(_value)
-#define UNICODE(_name, _value, _unit) // contains a non-ASCII character
+#define UNICODE(_name, _value, _unit) // contains a non-ASCII character (not supported yet)
 #define TODO(_name, _value, _unit)    // to be done
 
 // The 7 defining constants of SI:
@@ -17,7 +17,8 @@ CONST( c,              299'792'458, meters_per_second); // (the symbol)
 CONST( h,              6.62607e-34, joulesecond); // Planck constant
 UNICODE( ℏ,        1.054571817e-34, joulesecond); // reduced Planck constant
 TODO( e,              1.602176e-19, units::C); // elementary charge
-UNICODE( Δν_Cs,      9'192'631'770, hertz); // hyperfine transition frequency of cesium-133 (defines the SI second)
+CONST( delta_ν_Cs,   9'192'631'770, hertz); // hyperfine transition frequency of cesium-133 (defines the SI second)
+UNICODE( Δν_Cs,      9'192'631'770, hertz); // (the symbol)
 CONST( k,            1.380'649e-23, joules_per_kelvin); // Boltzmann constant
 TODO( N_A,           6.02214076e23, 1 / units::mol); // Avogadro constant
 CONST( K_cd,                   683, lumens_per_watt); // luminous efficacy of 540 THz monochromatic radiation
@@ -79,26 +80,26 @@ TODO( b_prime,    5.878925757e10, units::Hz / units::K); // Wien frequency displ
 CONST( S_0_by_R,  -1.15170753706,  quantity); // Sackur–Tetrode constant
 
 // Adopted values
-CONST( atm,             101325, pascal_); // standard atmosphere
+CONST( atm,               101325, pascal_); // standard atmosphere
    
 // Physical constants: (source: https://en.wikipedia.org/wiki/List_of_physical_constants)
 CONST( standard_gravity,   9.80665, meters_per_second2); // standard gravitational acceleration (G) for the surface of the Earth, defined in the third General Conference on Weights and Measures (1901, CR 70).
 CONST( g_0,                9.80665, meters_per_second2); // standard acceleration of gravity
 TODO( Gravitational_constant,  /*6.6743015e−11*/, /*si::m3 / si::kilogram / si::s2*/);
-CONST( speed_of_sound, 343, meters_per_second); // speed of sound in dry air at 20°C (68°F)
+CONST( speed_of_sound,   343, meters_per_second); // speed of sound in dry air at 20°C (68°F)
 CONST( speed_of_sound_in_fresh_water, 1481, meters_per_second); // at 20°C (68°F)
 CONST( speed_of_sound_in_iron, 5120, meters_per_second);
 CONST( speed_of_sound_in_diamonds, 12'000, meters_per_second);
 
 // Mathematical constants:  (source: https://en.wikipedia.org/wiki/List_of_mathematical_constants)
-CONST( pi,            3.14159265358979323846, quantity);
-CONST( half_pi,                     pi / 2.0, quantity);
-CONST( quarter_pi,                  pi / 4.0, quantity);
-UNICODE( π,                               pi, quantity);
-CONST( tau,           6.28318530717958647692, quantity);
-UNICODE( τ,                              tau, quantity);
+CONST(   pi,          3.14159265358979323846, quantity);
+UNICODE( π,                               pi, quantity); // (the symbol)
+CONST(   half_pi,                   pi / 2.0, quantity);
+CONST(   quarter_pi,                pi / 4.0, quantity);
+CONST(   tau,         6.28318530717958647692, quantity);
+UNICODE( τ,                              tau, quantity); // (the symbol)
+CONST(   Phi,         1.61803398874989484820, quantity);
 CONST( Eulers_number, 2.71828182845904523536, quantity);
-CONST( Phi,           1.61803398874989484820, quantity);
 
 TODO( ε_0,         8.8541878e-12, units::F / units::m); // electric constant (vacuum permittivity)
 TODO( μ_0,         1.25663706e-6, units::N / units::A2); // magnetic constant (vacuum permeability)
@@ -118,7 +119,8 @@ CONST( lightyear,  9'460'730'472'580'800, meter);
 TODO( Hubble,                       70.1, /*km s−1 Mpc−1*/); // symbol: H0
 
 // Various constants:
-CONST( Marathon_length, 42195, meter);
+CONST( Marathon_length,           42'195, meter);
+CONST( quarter_mile,              402.34, meter);
 
 #undef CONST
 #undef UNICODE

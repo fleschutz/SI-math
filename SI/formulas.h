@@ -1,4 +1,4 @@
-// SI/formulas.h - type-safe formulas
+// SI/formulas.h - type-safe formulas based on SI units
 #pragma once
 
 #include <cmath>
@@ -8,7 +8,14 @@ namespace si
 {
 	namespace formula
 	{
-		// 2D Formulas
+		// 2D FORMULAS:
+
+		// Returns the hypotenuse in a right triangle, based on Pythagorean equation: a² + b² = c² 
+		length hypotenuse_of_triangle(length a, length b)
+		{
+			return sqrt(a*a + b*b);
+		}
+
 		length perimeter_of_rectangle(length l, length b)
 		{
 			return 2.0 * (l + b);
@@ -54,7 +61,16 @@ namespace si
 			return constant::pi * radius * radius;
 		}
 
-		// 3D Formulas
+		// Returns the shortest distance between two points in 2D.
+		length distance(length x1, length y1, length x2, length y2)
+		{
+			const length dx = x2 - x1;
+			const length dy = y2 - y1;
+			return sqrt((dx * dx) + (dy * dy));
+		}
+
+		// 3D FORMULAS:
+
 		area area_of_cube(length a)
 		{
 			return 6.0 * a * a;
@@ -95,11 +111,7 @@ namespace si
 			return (4.0 / 3.0) * constant::pi * radius * radius * radius;
 		}
 
-		// Returns the hypotenuse in a right triangle, based on Pythagorean equation a² + b² = c² 
-		length hypotenuse_in_triangle(length a, length b)
-		{
-			return sqrt(a*a + b*b);
-		}
+		// VARIOUS FORMULAS:
 
 		// Returns the kinetic energy of a non-rotating object of mass m traveling at speed v.
 		energy kinetic_energy(mass m, speed v)
@@ -122,7 +134,7 @@ namespace si
 			return q * v * B;
 		}
 
-		time free_fall_time(length height, acceleration gravity)
+		time time_of_free_fall(length height, acceleration gravity)
 		{
 			return sqrt((2.0 * height) / gravity);
 		}
@@ -147,15 +159,7 @@ namespace si
 			return (target_speed * target_speed - current_speed * current_speed) / (2.0 * distance);
 		}
 
-		// Returns the distance between both points.
-		length distance(length x1, length y1, length x2, length y2)
-		{
-			const length dx = x2 - x1;
-			const length dy = y2 - y1;
-			return sqrt((dx * dx) + (dy * dy));
-		}
-
-		// Calculates the body-mass index.
+		// Calculates the body-mass index (BMI).
 		auto BMI(mass weight, length height)
 		{
 			return weight / (height * height);
