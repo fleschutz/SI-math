@@ -3,12 +3,12 @@
 Type-safe Math in C++
 =====================
 
-This repo helps to apply mathematics correct, with precise results and as easy as possible. It provides type-safe computations on arbitrary units and easy conversion to and from them.
+This Math lib helps to apply mathematics correct, with high precision, and as easy as possible. It provides type-safe computations on arbitrary units and easy conversion to and from them.
 
 Features
 --------
 * Type-safe [units](SI/units.h): Can't add a mass to a length
-* Type-safe [literals](SI/literals.h), e.g. 5_km or 24_h
+* Type-safe and prefix-safe [literals](SI/literals.h), e.g. 24_h or 3_GWh
 * Type-safe [constants](SI/constants.h), e.g. constant::sigma
 * Type-safe [formulas](SI/formulas.h), e.g. formula::circumference()
 * Type-safe [values](SI/values/), e.g. for planet [Earth](SI/Earth.h) or the [Moon](SI/Moon.h).

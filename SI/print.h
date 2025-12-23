@@ -87,26 +87,26 @@ namespace si
 	// The 22 SI derived units:
 	void print(area a)
 	{
-		if (abs(a) >= 1_km2)
-			print(a / 1_km2, "km²");
-		else if (abs(a) >= 1_m2)
-			print(a / 1_m2, "m²");
-		else if (abs(a) >= 1_cm2)
-			print(a / 1_cm2, "cm²");
+		if (abs(a) >= 1_km²)
+			print(a / 1_km², "km²");
+		else if (abs(a) >= 1_m²)
+			print(a / 1_m², "m²");
+		else if (abs(a) >= 1_cm²)
+			print(a / 1_cm², "cm²");
 		else
-			print(a / 1_mm2, "mm²");
+			print(a / 1_mm², "mm²");
 	}
 
 	void print(volume v)
 	{
-		if (abs(v) >= 1_km3)
-			print(v / 1_km3, "km³");
-		else if (abs(v) >= 1_m3)
-			print(v / 1_m3, "m³");
-		else if (abs(v) >= 1_cm3)
-			print(v / 1_cm3, "cm³");
+		if (abs(v) >= 1_km³)
+			print(v / 1_km³, "km³");
+		else if (abs(v) >= 1_m³)
+			print(v / 1_m³, "m³");
+		else if (abs(v) >= 1_cm³)
+			print(v / 1_cm³, "cm³");
 		else
-			print(v / 1_mm3, "mm³");
+			print(v / 1_mm³, "mm³");
 	}
 
 	void print(speed v)
@@ -119,7 +119,7 @@ namespace si
 
 	void print(acceleration a)
 	{
-		std::cout << meters_per_second2(a) << "m/s² ";
+		print(a / 1_mps², "m/s²");
 	}
 
 	void print(energy E)

@@ -13,24 +13,24 @@ namespace si
 
 // THE 7 SI BASE UNITS:
 // Symbol:   Factor:  Base Unit:            Example:
-LITERAL( km,     1e3, meter);               // 7_km (kilometer)
+LITERAL( km,     1e3, meter);               // 1_km (kilometer)
 LITERAL( m,        1, meter);               // 1_m
-LITERAL( meter,    1, meter);               // 2_meter
-LITERAL( dm,    1e-1, meter);               // 3_dm (decimeter)
-LITERAL( cm,    1e-2, meter);               // 4_cm (centimeter)
-LITERAL( mm,    1e-3, meter);               // 5_mm (millimeter)
-LITERAL( μm,    1e-6, meter);               // 6_μm (micrometer)
+LITERAL( meter,    1, meter);               // 1_meter
+LITERAL( dm,    1e-1, meter);               // 1_dm (decimeter)
+LITERAL( cm,    1e-2, meter);               // 1_cm (centimeter)
+LITERAL( mm,    1e-3, meter);               // 1_mm (millimeter)
+LITERAL( μm,    1e-6, meter);               // 1_μm (micrometer)
 
-LITERAL( s,        1, second);              // 60_s
-LITERAL( sec,      1, second);              // 60_sec
-LITERAL( second,   1, second);              // 60_second
+LITERAL( s,        1, second);              // 1_s
+LITERAL( sec,      1, second);              // 1_sec
+LITERAL( second,   1, second);              // 1_second
 LITERAL( ms,    1e-3, second);              // 1_ms (millisecond)
-LITERAL( mus,   1e-6, second);              // 2_mus (microsecond)
-LITERAL( min,     60, second);              // 5_min
-LITERAL( h,     3600, second);              // 24_h
-LITERAL( day,24*3600,second);               // 1_day on Earth!
-LITERAL( week,  7*24*3600,second);          // 1_week on Earth!
-LITERAL( year,  365.25*24*3600,second);     // 1_year on Earth!
+LITERAL( mus,   1e-6, second);              // 1_mus (microsecond)
+LITERAL( min,     60, second);              // 1_min
+LITERAL( h,     3600, second);              // 1_h
+LITERAL( day,24*3600,second);               // 1_day (on Earth)
+LITERAL( week,  7*24*3600,second);          // 1_week (on Earth)
+LITERAL( year,  365.25*24*3600,second);     // 1_year (on Earth)
 
 LITERAL( mt,     1e9, kilogram);            // 1_mt (megaton)
 LITERAL( kt,     1e6, kilogram);            // 1_kt (kiloton)
@@ -57,42 +57,42 @@ LITERAL( nA,    1e-9, ampere);              // 1_nA (nanoampere)
 LITERAL( pA,   1e-12, ampere);              // 1_pA (picoampere)
 
 // THE 22 SI DERIVED UNITS
-//     Symbol: Factor: Base Unit:           Example:
-LITERAL( Bq,       1, hertz);               // 100_Bq (Bequerel)
-LITERAL( deg,      1, degree);              // 90_deg
-LITERAL( kBq,   1000, hertz);               // 2_kBq
-LITERAL( kmh,      1, kilometers_per_hour); // 30_kmh
-LITERAL( mps,      1, meters_per_second);   // 10_mps
-LITERAL( mps2,     1, meters_per_second2);  // 9.807_mps2
-LITERAL( Nm,       1, newtonmeter);         // 2.1_Nm
-LITERAL( ha,   10000, meter2);              // 3_ha
+//    Symbol: Factor: Base Unit:            Example:
+LITERAL( Bq,       1, hertz);               // 1_Bq (Bequerel)
+LITERAL( deg,      1, degree);              // 1_deg
+LITERAL( kBq,   1000, hertz);               // 1_kBq
+LITERAL( kmh,      1, kilometers_per_hour); // 1_kmh
+LITERAL( mps,      1, meters_per_second);   // 1_mps
+LITERAL( mps²,     1, meters_per_second2);  // 1_mps²
+LITERAL( Nm,       1, newtonmeter);         // 1_Nm
+LITERAL( ha,   10000, meter2);              // 1_ha
 
-LITERAL( km2,      1, kilometer2);	    // 1_km2
-LITERAL( m2,       1, meter2);              // 1_m2
-LITERAL( cm2,      1, centimeter2);         // 1_cm2
-LITERAL( mm2,      1, millimeter2);         // 1_mm2
+LITERAL( km²,    1e6, meter2);              // 1_km²
+LITERAL( m²,       1, meter2);              // 1_m²
+LITERAL( cm²,   1e-4, meter2);              // 1_cm²
+LITERAL( mm²,   1e-6, meter2);              // 1_mm²
 
-LITERAL( km3,      1, kilometer3);	    // 1_km3
-LITERAL( m3,       1, meter3);              // 1_m3
-LITERAL( cm3,      1, centimeter3);         // 1_cm3
-LITERAL( mm3,      1, millimeter3);         // 1_mm3
+LITERAL( km³,    1e9, meter3);              // 1_km³
+LITERAL( m³,       1, meter3);              // 1_m³
+LITERAL( cm³,   1e-6, meter3);              // 1_cm³
+LITERAL( mm³,   1e-9, meter3);              // 1_mm³
 
-LITERAL( kg_per_m³,  1, kilograms_per_meter3);// 1_kg_per_m3
-LITERAL( t_per_m³, 1e3, kilograms_per_meter3);// 1_t_per_m3
+LITERAL( kg_per_m³,  1, kilograms_per_meter3);// 1_kg_per_m³
+LITERAL( t_per_m³, 1e3, kilograms_per_meter3);// 1_t_per_m³
 
 LITERAL( Hz,       1, hertz);               // 1_Hz
-LITERAL( kHz,    1e3, hertz);               // 2_kHz
-LITERAL( MHz,    1e6, hertz);               // 3_MHz
-LITERAL( GHz,    1e9, hertz);               // 4_GHz
-LITERAL( THz,   1e12, hertz);               // 5_THz
+LITERAL( kHz,    1e3, hertz);               // 1_kHz
+LITERAL( MHz,    1e6, hertz);               // 1_MHz
+LITERAL( GHz,    1e9, hertz);               // 1_GHz
+LITERAL( THz,   1e12, hertz);               // 1_THz
 
 LITERAL( V,        1, volt);                // 1_V 
-LITERAL( kV,     1e3, volt);                // 2_kV (kilovolt)
-LITERAL( MV,     1e6, volt);                // 3_MV (megavolt)
-LITERAL( mV,    1e-3, volt);                // 4_mV (millivolt)
-LITERAL( muV,   1e-6, volt);                // 5_muV (microvolt)
-LITERAL( nV,    1e-9, volt);                // 6_nV (nanovolt)
-LITERAL( pV,   1e-12, volt);                // 7_pV (picovolt)
+LITERAL( kV,     1e3, volt);                // 1_kV (kilovolt)
+LITERAL( MV,     1e6, volt);                // 1_MV (megavolt)
+LITERAL( mV,    1e-3, volt);                // 1_mV (millivolt)
+LITERAL( muV,   1e-6, volt);                // 1_muV (microvolt)
+LITERAL( nV,    1e-9, volt);                // 1_nV (nanovolt)
+LITERAL( pV,   1e-12, volt);                // 1_pV (picovolt)
 
 LITERAL( Ohm,      1, ohm);                // 1_Ohm
 LITERAL( kOhm,   1e3, ohm);                // 1_kOhm (kiloohm)
@@ -127,38 +127,38 @@ LITERAL( mW,    1e-3, joules_per_second);  // 1_mW (milliwatt)
 LITERAL( muW,   1e-6, joules_per_second);  // 1_muW (microwatt)
 
 // IMPERIAL UNITS
-//     Symbol: Factor: Base Unit:            Example:
-LITERAL( degF,  1,     fahrenheit);          // 32_degF (°Fahrenheit)
-LITERAL( ft,    .3048, meter);               // 5_ft
-LITERAL( in,    0.0254,meter);               // 9_in
-LITERAL( kn,    1'852.0, kilometers_per_hour); // 60_kn
-LITERAL( lb,    453.592'37, gram);           // 6_lb
-LITERAL( oz,    28.349'523'125, gram);       // 13_oz
-LITERAL( mi,    1'609.344, meter);           // 8_mi
-LITERAL( mph,   .44704,meters_per_second);   // 50_mph
-LITERAL( NM,    1852,  meter);               // 1_NM (nautical mile)
-LITERAL( nmi,   1852,  meter);               // 1_nmi (nautical mile)
-LITERAL( yd,    .9144, meter);               // 3_yd (yard)
+//     Symbol: Factor: Base Unit:          Example:
+LITERAL( degF,  1,     fahrenheit);        // 1_degF (°Fahrenheit)
+LITERAL( ft,    .3048, meter);             // 1_ft
+LITERAL( in,    0.0254,meter);             // 1_in
+LITERAL( kn,    1'852.0, kilometers_per_hour); // 1_kn
+LITERAL( lb,    453.592'37, gram);         // 1_lb
+LITERAL( oz,    28.349'523'125, gram);     // 1_oz
+LITERAL( mi,    1'609.344, meter);         // 1_mi
+LITERAL( mph,   .44704,meters_per_second); // 1_mph
+LITERAL( NM,    1852,  meter);             // 1_NM (nautical mile)
+LITERAL( nmi,   1852,  meter);             // 1_nmi (nautical mile)
+LITERAL( yd,    .9144, meter);             // 1_yd (yard)
 
 // VARIOUS UNITS
-//     Symbol: Factor: Base Unit:            Example:
-LITERAL( degC,    1,   celsius);             // 0_degC (°Celsius)
-LITERAL( degR, 5.0/9.0,   kelvin);              // 1_degR (°Rankine)
-LITERAL( Mach,  330,   meters_per_second);   // 2_Mach
-LITERAL( AU, 149'597'870'700, meter);        // 3_AU (astronomical unit)
-LITERAL( pc,3.085'677'581'28e16, meter);     // 4_pc (parsec)
+//     Symbol: Factor: Base Unit:           Example:
+LITERAL( degC,    1,   celsius);            // 1_degC (°Celsius)
+LITERAL( degR, 5.0/9.0,kelvin);             // 1_degR (°Rankine)
+LITERAL( Mach,  330,   meters_per_second);  // 1_Mach
+LITERAL( AU, 149'597'870'700, meter);       // 1_AU (astronomical unit)
+LITERAL( pc,3.085'677'581'28e16, meter);    // 1_pc (parsec)
 
 CARDINAL( byte,    1, byte);                // 1_byte
 CARDINAL( kB,    1e3, byte);                // 1_kB (kilobyte)
-CARDINAL( MB,    1e6, byte);                // 2_MB (megabyte)
-CARDINAL( GB,    1e9, byte);                // 3_GB (gigabyte)
-CARDINAL( TB,   1e12, byte);                // 4_TB (terabyte)
-CARDINAL( PB,   1e15, byte);                // 5_PB (terabyte)
-CARDINAL( EB,   1e18, byte);                // 6_EB (exabyte)
-CARDINAL( ZB,   1e21, byte);                // 7_ZB (zettabyte)
-CARDINAL( YB,   1e24, byte);                // 8_ZY (yottabyte)
-CARDINAL( RB,   1e27, byte);                // 9_RY (ronnabyte)
-CARDINAL( QB,   1e30, byte);                //10_QY (quettabyte)
+CARDINAL( MB,    1e6, byte);                // 1_MB (megabyte)
+CARDINAL( GB,    1e9, byte);                // 1_GB (gigabyte)
+CARDINAL( TB,   1e12, byte);                // 1_TB (terabyte)
+CARDINAL( PB,   1e15, byte);                // 1_PB (terabyte)
+CARDINAL( EB,   1e18, byte);                // 1_EB (exabyte)
+CARDINAL( ZB,   1e21, byte);                // 1_ZB (zettabyte)
+CARDINAL( YB,   1e24, byte);                // 1_ZY (yottabyte)
+CARDINAL( RB,   1e27, byte);                // 1_RY (ronnabyte)
+CARDINAL( QB,   1e30, byte);                // 1_QY (quettabyte)
 
 LITERAL( KBps,   1e3, bytes_per_second);    // 1_KBps (kilobyte/sec)
 LITERAL( MBps,   1e6, bytes_per_second);    // 1_MBps (megabyte/sec)
@@ -171,4 +171,5 @@ LITERAL( Gbps, 1e9/8, bytes_per_second);    // 1_Gbps (gigabit/sec)
 LITERAL( Tbps,1e12/8, bytes_per_second);    // 1_Tbps (terabit/sec)
 
 #undef LITERAL
+#undef CARDINAL
 }
