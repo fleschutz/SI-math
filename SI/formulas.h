@@ -16,6 +16,29 @@ namespace si
 			return sqrt(a*a + b*b);
 		}
 
+		// Returns the angle in a right triangle, based on opposite and hypotenuse.
+		angle angle1_in_triangle(length opposite, length hypotenuse)
+		{
+			return asin(opposite / hypotenuse) * 1_deg;
+		}
+
+		// Returns the angle in a right triangle, based on adjacent and hypotenuse.
+		angle angle2_in_triangle(length adjacent, length hypotenuse)
+		{
+			return acos(adjacent / hypotenuse) * 1_deg;
+		}
+
+		// Returns the angle in a right triangle, based on adjacent and opposite.
+		angle angle3_in_triangle(length adjacent, length opposite)
+		{
+			return atan(opposite / adjacent) * 1_deg;
+		}
+
+		area area_of_triangle(length b, length h)
+		{
+			return 0.5 * b * h;
+		}
+
 		length perimeter_of_rectangle(length l, length b)
 		{
 			return 2.0 * (l + b);
@@ -34,11 +57,6 @@ namespace si
 		area area_of_square(length a)
 		{
 			return a * a;
-		}
-
-		area area_of_triangle(length b, length h)
-		{
-			return 0.5 * b * h;
 		}
 
 		area area_of_trapezoid(length b1, length b2, length h)
