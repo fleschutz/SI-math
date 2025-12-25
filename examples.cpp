@@ -145,10 +145,19 @@ int main()
 	auto power = weight * dry_oak_power;
 	print(area, volume, weight, power);
 } {
+	print("What's the min thickness for a 25m copper cable for 12V / 2A? It's... ");
+	auto cable_length = 25_m;
+	auto electric_current = 2_A;
+	auto max_loss = 2_V;
+	auto cos = 0.018;
+	auto y = 5.8e7; // in S/m for copper
+	auto A = (2.0 * cable_length * electric_current * cos) / (y * max_loss);
+	print(A);
+} {
 	// Here's the basic principle:
-	quantity x = 42;        // <- just a number without unit
-	si::time t = x * 1_sec; // <- now we have 42sec
-	quantity y = t / 1_sec; // <- and again 42, a number without unit
+	quantity x = 42;        // <- x got a number without any unit
+	si::time t = x * 1_sec; // <- t is now 42 seconds
+	quantity y = t / 1_sec; // <- y again got a number without any unit
 }
 	return 0;
 }
