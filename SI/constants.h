@@ -12,14 +12,16 @@ namespace si
 #define TODO(_name, _value, _unit)    // to be done
 
 // The 7 defining constants of SI:
+CONST( Planck,    6.626'070'15e-34, joulesecond); // Planck constant
+CONST( h,         6.626'070'15e-34, joulesecond); // (the symbol)
 CONST( speed_of_light, 299'792'458, meters_per_second); // speed of light in vacuum
 CONST( c,              299'792'458, meters_per_second); // (the symbol)
-CONST( h,              6.62607e-34, joulesecond); // Planck constant
-UNICODE( ℏ,        1.054571817e-34, joulesecond); // reduced Planck constant
-TODO( e,              1.602176e-19, units::C); // elementary charge
-CONST( delta_ν_Cs,   9'192'631'770, hertz); // hyperfine transition frequency of cesium-133 (defines the SI second)
-UNICODE( Δν_Cs,      9'192'631'770, hertz); // (the symbol)
-CONST( k,            1.380'649e-23, joules_per_kelvin); // Boltzmann constant
+CONST( caesium_frequency, 9'192'631'770, hertz); // hyperfine transition frequency of cesium-133 (defines the SI second)
+CONST( d_ν_Cs,       9'192'631'770, hertz); // (the symbol)
+CONST( elementary_charge, 1.602'176'634e-19, coloumb); // elementary charge
+CONST( e,         1.602'176'634e-19, coloumb); // (the symbol)
+CONST( Boltzmann,    1.380'649e-23, joules_per_kelvin); // Boltzmann constant
+CONST( k,            1.380'649e-23, joules_per_kelvin); // (the symbol)
 TODO( N_A,           6.02214076e23, 1 / units::mol); // Avogadro constant
 CONST( K_cd,                   683, lumens_per_watt); // luminous efficacy of 540 THz monochromatic radiation
 

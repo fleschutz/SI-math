@@ -850,9 +850,14 @@ namespace si
 	inline constexpr auto byte        = unit<detail::null_dimension>();
 	inline constexpr auto bytes_per_second = byte / second;
 	inline constexpr auto steradian   = unit<detail::null_dimension>();
+
+	inline constexpr auto coloumb     = ampere * second;
 	inline constexpr auto volt        = unit<detail::null_dimension>(); // TODO
 	inline constexpr auto ohm         = unit<detail::null_dimension>(); // TODO
-	inline constexpr auto lumens_per_watt = unit<detail::null_dimension>(); // TODO
+
+	inline constexpr auto lumen = unit<detail::null_dimension>(); // TODO
+	inline constexpr auto lumen_second = lumen * second;
+	inline constexpr auto lumens_per_watt = lumen / watt; 
 }
 
 #undef SI_RETURN_QUANTITY

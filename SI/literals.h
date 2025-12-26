@@ -164,6 +164,10 @@ LITERAL( sr,       1, steradian);           // 1_sr (steradian)
 LITERAL( Nm,       1, newtonmeter);         // 1_Nm
 LITERAL( W_per_m², 1, watt_per_meter2);     // 1_W/m² (watt per square metre)
 
+LITERAL( lm,       1, lumen);               // 1_lm (lumen)
+LITERAL( lm_s,     1, lumen_second);        // 1_lm s (lumen second)
+LITERAL( lm_per_W, 1, lumens_per_watt);     // 1_lm/W (lumen per watt)
+
 // IMPERIAL UNITS
 // --------------
 //       SYMBOL      FACTOR  BASE UNIT         EXAMPLE
