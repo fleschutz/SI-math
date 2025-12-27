@@ -19,15 +19,16 @@ Features
 Code Example
 ------------
 ```
-auto m = 1_kg;
+auto m = 1_g;
 auto c = constant::speed_of_light;
 auto E = m * c * c;
+print(E);
 ```
 More examples in [examples.cpp](examples.cpp). Executing: `cmake . && make && ./examples` generates the following output:
 
 ```
+What's the potential energy of just 1g mass? It's... 89.8755TJ
 What's the average speed of Kiptum's world record in Marathon? It's...21.0975km/h
-What's the potential energy of 1kg mass? It's... 89875.5TJ
 What's the kinetic energy of a car at 50 km/h? It's... 125.386kJ
 What's the average speed here? It's... 1002km/h
 What's the average temperature of 0°C, 32°F, 491.67°R, and 273.15K? It's... 273.15K

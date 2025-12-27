@@ -3,17 +3,17 @@ using namespace si;
 
 int main()
 { {	
+	print("What's the potential energy of just 1g mass? It's... ");
+	auto m = 1_g;
+	auto c = constant::speed_of_light;
+	auto E = m * c * c;
+	print(E);
+} {
 	print("What's the average speed of Kiptum's world record in Marathon? It's...");
 	auto distance = 42.195_km;
 	auto Kiptums_time = 2_h;
 	auto average_speed = distance / Kiptums_time;
 	print(average_speed);
-} {
-	print("What's the potential energy of 1kg mass? It's... ");
-	auto m = 1_kg;
-	auto c = constant::speed_of_light;
-	auto E = m * c * c;
-	print(E);
 } {
  	print("What's the kinetic energy of a car at 50 km/h? It's... ");
 	auto car_mass = 1300_kg;
