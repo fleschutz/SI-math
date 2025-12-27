@@ -56,8 +56,8 @@ What are the details of a 10m x 1m oak tree log? It's... 32.9867m² 7.85398m³ 5
 ```
 
 
-Folder Structure
-----------------
+File Structure
+--------------
 ```
  📂Math
   ├📄CMakeLists.txt (301 bytes)
