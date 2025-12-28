@@ -161,17 +161,17 @@ namespace SI
 
 	void print(speed v)
 	{
-		if (abs(v) >= 1_kmh)
-			print(v / 1_kmh, "km/h");
-		else if (abs(v) >= 1_mps)
-			print(v / 1_mps, "m/s");
+		if (abs(v) >= 1_km_per_h)
+			print(v / 1_km_per_h, "km/h");
+		else if (abs(v) >= 1_m_per_s)
+			print(v / 1_m_per_s, "m/s");
 		else
-			print(v / 1_mmh, "mm/h");
+			print(v / 1_mm_per_h, "mm/h");
 	}
 
 	void print(acceleration a)
 	{
-		print(a / 1_mps², "m/s²");
+		print(a / 1_m_per_s², "m/s²");
 	}
 
 	void print(energy E)

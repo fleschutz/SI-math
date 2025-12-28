@@ -79,11 +79,11 @@ LITERAL( l,     1e-3, meter3);              // 1_l   (liter)
 LITERAL( ml,    1e-6, meter3);              // 1_ml  (milliliter)
 LITERAL( μl,    1e-9, meter3);              // 1_μl  (microliter)
 // speed in...
-LITERAL( kmh,      1, kilometers_per_hour); // 1_kmh
-LITERAL( mmh,      1, millimeters_per_hour);// 1_mmh
-LITERAL( mps,      1, meters_per_second);   // 1_mps
+LITERAL( km_per_h, 1, kilometers_per_hour); // 1_km_per_h (km/h)
+LITERAL( m_per_s,  1, meters_per_second);   // 1_m_per_s (m/s)
+LITERAL( mm_per_h, 1, millimeters_per_hour);// 1_mm_per_h (mm/h)
 // acceleration in...
-LITERAL( mps²,     1, meters_per_second2);  // 1_mps²
+LITERAL( m_per_s², 1, meters_per_second2);  // 1_m_per_s² (m/s²)
 // frequency in...
 LITERAL( Hz,       1, hertz);               // 1_Hz
 LITERAL( kHz,    1e3, hertz);               // 1_kHz
@@ -161,52 +161,41 @@ LITERAL( N,        1, newton);              // 1_N
 LITERAL( mN,    1e-3, newton);              // 1_mN (millinewton)
 LITERAL( μN,    1e-6, newton);              // 1_μN (micronewton)
 
-LITERAL( rad,      1, radian);              // 1_rad (radian)
-LITERAL( sr,       1, steradian);           // 1_sr (steradian)
-LITERAL( Nm,       1, newtonmeter);         // 1_Nm
+LITERAL( Nm,       1, newtonmeter);         // 1_Nm  (newtonmeter)
 LITERAL( W_per_m², 1, watt_per_meter2);     // 1_W/m² (watt per square metre)
 
-LITERAL( T,        1, tesla);               // 1_T (tesla)
+LITERAL( T,        1, tesla);               // 1_T  (tesla)
 LITERAL( mT,    1e-3, tesla);               // 1_mT (millitesla)
 LITERAL( μT,    1e-6, tesla);               // 1_μT (microtesla)
 LITERAL( nT,    1e-9, tesla);               // 1_nT (nanotesla)
 
 LITERAL( lm,       1, lumen);               // 1_lm (lumen)
-LITERAL( lm_s,     1, lumen_second);        // 1_lm s (lumen second)
-LITERAL( lm_per_W, 1, lumens_per_watt);     // 1_lm/W (lumen per watt)
-
-// IMPERIAL UNITS
-// --------------
-//       SYMBOL      FACTOR  BASE UNIT         EXAMPLE
-LITERAL( degF,            1, fahrenheit);   // 1_degF (°Fahrenheit)
-LITERAL( ft,          .3048, meter);        // 1_ft
-LITERAL( in,         0.0254, meter);        // 1_in
-LITERAL( kn,          1.852, kilometers_per_hour); // 1_kn
-LITERAL( lb,     453.592'37, gram);         // 1_lb
-LITERAL( oz, 28.349'523'125, gram);         // 1_oz
-LITERAL( mi,      1'609.344, meter);        // 1_mi
-LITERAL( mph,        .44704, meters_per_second); // 1_mph
-LITERAL( NM,          1'852, meter);        // 1_NM (nautical mile)
-LITERAL( nmi,         1'852, meter);        // 1_nmi (nautical mile)
-LITERAL( yd,          .9144, meter);        // 1_yd (yard)
+LITERAL( lm_s,     1, lumen_second);        // 1_lm_s (lumen second)
+LITERAL( lm_per_W, 1, lumens_per_watt);     // 1_lm_per_W (lumen per watt)
 
 #define CARDINAL(_symbol, _factor, _baseUnit) \
   constexpr auto operator "" _ ## _symbol(unsigned long long x) { return _baseUnit(static_cast<long long>(x) * _factor); }
 
-// VARIOUS NON-SI UNITS
-// --------------------
+// NON-SI UNITS
+// ------------
 //       SYMBOL           FACTOR                  BASE UNIT   EXAMPLE
-LITERAL( deg, 0.01745329251994329576923690768489, radian); // 1_deg  (angle degree)
-LITERAL( degC,                                 1, celsius);// 1_degC (°Celsius)
-LITERAL( degR,                           5.0/9.0, kelvin); // 1_degR (°Rankine)
-LITERAL( Mach,                               330, meters_per_second); // 1_Mach
-LITERAL( Da,                 1.6605390689252e-27, kilogram);//1_Da (dalton)
-LITERAL( eV,                     1.602176634e-19, joule);  // 1_eV (electronvolt)
 // astronomical distances in...
 LITERAL( Mly,        9'460'730'472'580'800 * 1e6, meter);  // 1_Mly (megalight-year)
 LITERAL( ly,               9'460'730'472'580'800, meter);  // 1_ly (light-year)
 LITERAL( au,                     149'597'870'700, meter);  // 1_au (astronomical unit)
 LITERAL( pc,              30'856'775'814'913'700, meter);  // 1_pc (parsec)
+// imperial units in...
+LITERAL( degF,                                 1, fahrenheit); // 1_degF (°Fahrenheit)
+LITERAL( ft,                               .3048, meter);  // 1_ft (feet)
+LITERAL( in,                              0.0254, meter);  // 1_in (inch)
+LITERAL( kn,                               1.852, kilometers_per_hour); // 1_kn (knots)
+LITERAL( lb,                          453.592'37, gram);   // 1_lb
+LITERAL( oz,                      28.349'523'125, gram);   // 1_oz
+LITERAL( mi,                           1'609.344, meter);  // 1_mi (statute mile)
+LITERAL( mph,                             .44704, meters_per_second); // 1_mph (miles per hour)
+LITERAL( NM,                               1'852, meter);  // 1_NM (nautical mile)
+LITERAL( nmi,                              1'852, meter);  // 1_nmi (nautical mile)
+LITERAL( yd,                               .9144, meter);  // 1_yd (yard)
 // digital units in...
 CARDINAL( byte,                               1, byte);    // 1_byte
 CARDINAL( kB,                               1e3, byte);    // 1_kB (kilobyte)
@@ -219,14 +208,23 @@ CARDINAL( ZB,                              1e21, byte);    // 1_ZB (zettabyte)
 CARDINAL( YB,                              1e24, byte);    // 1_ZY (yottabyte)
 CARDINAL( RB,                              1e27, byte);    // 1_RY (ronnabyte)
 CARDINAL( QB,                              1e30, byte);    // 1_QY (quettabyte)
-LITERAL( KBps,   1e3, bytes_per_second);    // 1_KBps (kilobyte/sec)
-LITERAL( MBps,   1e6, bytes_per_second);    // 1_MBps (megabyte/sec)
-LITERAL( GBps,   1e9, bytes_per_second);    // 1_GBps (gigabyte/sec)
-LITERAL( TBps,  1e12, bytes_per_second);    // 1_TBps (terabyte/sec)
-LITERAL( Kbps, 1e3/8, bytes_per_second);    // 1_Kbps (kilobit/sec)
-LITERAL( Mbps, 1e6/8, bytes_per_second);    // 1_Mbps (megabit/sec)
-LITERAL( Gbps, 1e9/8, bytes_per_second);    // 1_Gbps (gigabit/sec)
-LITERAL( Tbps,1e12/8, bytes_per_second);    // 1_Tbps (terabit/sec)
+LITERAL( KBps,                              1e3, bytes_per_second); // 1_KBps (kilobyte/sec)
+LITERAL( MBps,                              1e6, bytes_per_second); // 1_MBps (megabyte/sec)
+LITERAL( GBps,                              1e9, bytes_per_second); // 1_GBps (gigabyte/sec)
+LITERAL( TBps,                             1e12, bytes_per_second); // 1_TBps (terabyte/sec)
+LITERAL( Kbps,                          1e3 / 8, bytes_per_second); // 1_Kbps (kilobit/sec)
+LITERAL( Mbps,                          1e6 / 8, bytes_per_second); // 1_Mbps (megabit/sec)
+LITERAL( Gbps,                          1e9 / 8, bytes_per_second); // 1_Gbps (gigabit/sec)
+LITERAL( Tbps,                         1e12 / 8, bytes_per_second); // 1_Tbps (terabit/sec)
+// various units in...
+LITERAL( rad,                                 1, radian); // 1_rad (radian)
+LITERAL( deg,0.01745329251994329576923690768489, radian); // 1_deg  (angle degree)
+LITERAL( sr,                                  1, steradian);// 1_sr  (steradian)
+LITERAL( degC,                                1, celsius);// 1_degC (°Celsius)
+LITERAL( degR,                          5.0/9.0, kelvin); // 1_degR (°Rankine)
+LITERAL( Mach,                              330, meters_per_second); // 1_Mach
+LITERAL( Da,                1.6605390689252e-27, kilogram);//1_Da (dalton)
+LITERAL( eV,                    1.602176634e-19, joule);  // 1_eV (electronvolt)
 
 #undef LITERAL
 #undef CARDINAL

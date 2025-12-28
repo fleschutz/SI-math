@@ -17,12 +17,12 @@ int main()
 } {
  	print("What's the kinetic energy of a car at 50 km/h? It's... ");
 	auto car_mass = 1300_kg;
-	auto speed_limit = 50_kmh;
+	auto speed_limit = 50_km_per_h;
 	auto KE = formula::kinetic_energy(car_mass, speed_limit);
 	print(KE);
 } {
 	print("What's the average speed here? It's... ");
-	auto average = (278_mps + 1000_kmh + 540_kn + 621_mph + 0.85_Mach) / 5.0;
+	auto average = (278_m_per_s + 1000_km_per_h + 540_kn + 621_mph + 0.85_Mach) / 5.0;
 	print(average);
 } {
 	print("What's the average temperature of 0°C, 32°F, 491.67°R, and 273.15K? It's... ");
@@ -108,13 +108,13 @@ int main()
 	print(distance_total);
 } {
 	print("What's a car's braking distance on dry asphalt from 100km/h? It's... ");
-	auto deceleration = 8_mps²; // on dry asphalt
-	auto distance = formula::braking_distance(100_kmh, 0_kmh, deceleration);
+	auto deceleration = 8_m_per_s²; // on dry asphalt
+	auto distance = formula::braking_distance(100_km_per_h, 0_km_per_h, deceleration);
 	print(distance);
 } {
 	print("What's a car's braking distance on wet asphalt from 100km/h? It's... ");
-	auto deceleration = 6_mps²; // on wet asphalt
-	auto distance = formula::braking_distance(100_kmh, 0_kmh, deceleration);
+	auto deceleration = 6_m_per_s²; // on wet asphalt
+	auto distance = formula::braking_distance(100_km_per_h, 0_km_per_h, deceleration);
 	print(distance);
 } {
 	print("How long takes a 1TB download at 100MBit speed? It's... ");

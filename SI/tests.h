@@ -43,7 +43,7 @@ namespace SI
 		// SI area checks:
 		// static_assert(Earth::land_area + Earth::water_area == Earth::surface_area);
 		// Speed checks:
-		//static_assert(1_kmh == 3.6_mps);
+		static_assert(3.6_km_per_h == 1_m_per_s);
 
 		// SI frequency:
 		static_assert(1_THz == 1000_GHz);
@@ -59,7 +59,7 @@ namespace SI
 		static_assert(1_ft == 0.3048_m);
 
 		// VARIOUS UNITS:
-		static_assert(1_Mach == 330_mps);
+		static_assert(1_Mach == 330_m_per_s);
 		//static_assert(0_deg == 273.15_K);
 
 		// Digital units:

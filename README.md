@@ -3,7 +3,7 @@
 Type-safe SI Math in C++
 ========================
 
-This Math lib helps to apply mathematics based on SI units correct, with high precision and as easy as possible. It provides type-safe computations on arbitrary units and easy conversion to and from them.
+Apply mathematics based on SI units correct, with high precision and as easy as possible. This math lib provides type-safe computations on arbitrary units and easy conversion to and from them.
 
 Features
 --------
@@ -86,13 +86,12 @@ File Structure
 
 Frequently Asked Questions
 --------------------------
-* **Isn't math boring?** No, everything is applied math: the Nature, cars, planes, rockets, smartphones, even music.
-* **What is SI?** It's the [International System of Units](https://en.wikipedia.org/wiki/International_System_of_Units).
+* **What's this SI?** It's the [International System of Units](https://en.wikipedia.org/wiki/International_System_of_Units).
 * **Is this repo feature-complete?** No, not yet. Please help to add missing parts.
 
 🤝 Contributing
 ---------------
-* Contributions, suggestions, and improvements are welcome!
+* Contributions, suggestions, and improvements are always welcome!
 * Open an Issue if you encounter bugs or have feature ideas.
 * Create a Pull Request if you'd like to improve something.
 
