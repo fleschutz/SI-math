@@ -1,9 +1,9 @@
 [![CMake on multiple platforms](https://github.com/fleschutz/Math/actions/workflows/cmake-multi-platform.yml/badge.svg)](https://github.com/fleschutz/Math/actions/workflows/cmake-multi-platform.yml)
 
-Type-safe Math in C++
-=====================
+Type-safe SI Math in C++
+========================
 
-This Math lib helps to apply mathematics correct, with high precision and as easy as possible. It provides type-safe computations on arbitrary units and easy conversion to and from them.
+This Math lib helps to apply mathematics based on SI units correct, with high precision and as easy as possible. It provides type-safe computations on arbitrary units and easy conversion to and from them.
 
 Features
 --------
