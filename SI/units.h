@@ -16,10 +16,10 @@ namespace SI
 	namespace detail
 	{
 		template <class T>
-		using vec2 = core::vec2<T>;
+		using vec2 = internal::vec2<T>;
 
 		template <class T>
-		using vec3 = core::vec3<T>;
+		using vec3 = internal::vec3<T>;
 
 		// Dimension of a physical quantity
 		/*
@@ -586,11 +586,11 @@ namespace SI
 				SI_RETURN_QUANTITY(Dimension, value);
 			}
 
-			// Special operator for constructing a SI quantity from a trivally constructible core::vec
+			// Special operator for constructing a SI quantity from a trivally constructible internal::vec
 			template <long D, class T>
-			SI_INLINE_CONSTEXPR auto operator()(const core::vec<D, core::detail::vec_trivally_constructible<T>>& value) const
+			SI_INLINE_CONSTEXPR auto operator()(const internal::vec<D, internal::detail::vec_trivally_constructible<T>>& value) const
 			{
-				SI_RETURN_QUANTITY(Dimension, core::vec<D, T>(value));
+				SI_RETURN_QUANTITY(Dimension, internal::vec<D, T>(value));
 			}
 
 			template <class T, class U>

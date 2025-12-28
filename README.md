@@ -12,8 +12,8 @@ Features
 * Type-safe [constants](SI/constants.h), e.g. constant::sigma
 * Type-safe [formulas](SI/formulas.h), e.g. formula::wavelength()
 * Type-safe [values](SI/values/), e.g. [ISO standards](SI/values/ISO.h) or planet [Earth](SI/values/Earth.h)
-* Supports SI base units, SI derived units, Imperial units, and many more.
-* Platform-independant, requires C++11 or higher, tested with VS2017, gcc 15.2, and clang 20.1.8.
+* Supports SI base units, derived units, Imperial units, and many more.
+* Requires C++11 or higher and is platform-independent (tested with VS2017, gcc 15.2, clang 20.1.8).
 * Header only, own namespace ("SI::"), with [unit tests](SI/tests.h), no runtime overhead (compiles to nothing but simple doubles)
 
 Code Example

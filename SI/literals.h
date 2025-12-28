@@ -184,7 +184,7 @@ LITERAL( Mly,        9'460'730'472'580'800 * 1e6, meter);  // 1_Mly (megalight-y
 LITERAL( ly,               9'460'730'472'580'800, meter);  // 1_ly (light-year)
 LITERAL( au,                     149'597'870'700, meter);  // 1_au (astronomical unit)
 LITERAL( pc,              30'856'775'814'913'700, meter);  // 1_pc (parsec)
-// imperial units in...
+// Imperial units in...
 LITERAL( degF,                                 1, fahrenheit); // 1_degF (°Fahrenheit)
 LITERAL( ft,                               .3048, meter);  // 1_ft (feet)
 LITERAL( in,                              0.0254, meter);  // 1_in (inch)
