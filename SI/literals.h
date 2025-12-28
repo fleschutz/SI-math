@@ -78,18 +78,19 @@ LITERAL( μm³,  1e-12, meter3);              // 1_μm³ (cubic micrometer)
 LITERAL( l,     1e-3, meter3);              // 1_l   (liter)
 LITERAL( ml,    1e-6, meter3);              // 1_ml  (milliliter)
 LITERAL( μl,    1e-9, meter3);              // 1_μl  (microliter)
-// Speed in...
+// Velocity (v) in...
 LITERAL( km_per_h, 1, kilometers_per_hour); // 1_km_per_h (km/h)
 LITERAL( m_per_s,  1, meters_per_second);   // 1_m_per_s (m/s)
 LITERAL( mm_per_h, 1, millimeters_per_hour);// 1_mm_per_h (mm/h)
-// Acceleration in...
+// Acceleration (a) in...
 LITERAL( m_per_s², 1, meters_per_second2);  // 1_m_per_s² (m/s²)
-// Frequency in...
+// Frequency (f) in...
 LITERAL( Hz,       1, hertz);               // 1_Hz
 LITERAL( kHz,    1e3, hertz);               // 1_kHz
 LITERAL( MHz,    1e6, hertz);               // 1_MHz
 LITERAL( GHz,    1e9, hertz);               // 1_GHz
 LITERAL( THz,   1e12, hertz);               // 1_THz
+// Radioactivity (A) in...
 LITERAL( Bq,       1, hertz);               // 1_Bq (Bequerel)
 LITERAL( kBq,   1000, hertz);               // 1_kBq
 // Mass per area in...
@@ -139,12 +140,12 @@ LITERAL( pF,   1e-12, farad);               // 1_pF  (picofarad)
 LITERAL( H,        1, henry);               // 1_H   (henry)
 LITERAL( mH,    1e-3, henry);               // 1_mH  (millihenry)
 LITERAL( μH,    1e-6, henry);               // 1_μH  (microhenry)
-// Magnetic flux density (B) in...
+// Magnetic field (B) in...
 LITERAL( T,        1, tesla);               // 1_T  (tesla)
 LITERAL( mT,    1e-3, tesla);               // 1_mT (millitesla)
 LITERAL( μT,    1e-6, tesla);               // 1_μT (microtesla)
 LITERAL( nT,    1e-9, tesla);               // 1_nT (nanotesla)
-// Energy in...
+// Energy (E) in...
 LITERAL( TJ,    1e12, joule);               // 1_TJ  (terajoule)
 LITERAL( GJ,     1e9, joule);               // 1_GJ  (gigajoule)
 LITERAL( MJ,     1e6, joule);               // 1_MJ  (megajoule)
@@ -152,7 +153,7 @@ LITERAL( kJ,     1e3, joule);               // 1_kJ  (kilojoule)
 LITERAL( J,        1, joule);               // 1_J   (joule)
 LITERAL( cal, 4.1868, joule);               // 1_cal (calorie)
 LITERAL( kcal,4186.8, joule);               // 1_kcal (kilocalorie)
-// Active power in...
+// Active power (P) in...
 LITERAL( TW,    1e12, watt);                // 1_TW  (terawatt)
 LITERAL( GW,     1e9, watt);                // 1_GW  (gigawatt)
 LITERAL( MW,     1e6, watt);                // 1_MW  (megawatt)
@@ -170,12 +171,13 @@ LITERAL( PS, 735.49875, watt);              // 1_PS  ('Pferdestärke', german ho
 // Active power per mass in...
 LITERAL( kWh_per_kg, 3.6e6, joules_per_second_per_kilogram);  // 1_kWh_per_kg (kilowatt-hour per kilogram)
 LITERAL( Wh_per_kg,  3.6e3, joules_per_second_per_kilogram);  // 1_Wh_per_kg (watt-hour per kilogram)
-// Ionizing radiation dose in...
+// Equivalent dose (H) in...
 LITERAL( Sv,       1, sievert);             // 1_Sv  (sievert)
 LITERAL( mSv,   1e-3, sievert);             // 1_mSv (millisievert)
 LITERAL( μSv,   1e-6, sievert);             // 1_μSv (microsievert)
-LITERAL( Gy,       1, gray);                // 1_Gy (absorption of one joule of radiation energy per kilogram of matter)
-// Pressure in...
+// Absorbed dose (D) in...
+LITERAL( Gy,       1, gray);                // 1_Gy (gray)
+// Pressure (p) in...
 LITERAL( MPa,    1e6, pascal_);             // 1_MPa  (megapascal) 
 LITERAL( kPa,    1e3, pascal_);             // 1_kPa  (kilopascal) 
 LITERAL( hPa,    1e2, pascal_);             // 1_hPa  (hectopascal) 
@@ -183,20 +185,24 @@ LITERAL( Pa,       1, pascal_);             // 1_Pa   (pascal)
 LITERAL( at,98'066.5, pascal_);             // 1_at   (atmosphere)
 LITERAL( bar,    1e5, pascal_);             // 1_bar 
 LITERAL( mmHg,133.3224, pascal_);           // 1_mmHg (millimeter mercury)
-// Force in...
+// Force (F) in...
 LITERAL( GN,     1e9, newton);              // 1_GN (giganewton)
 LITERAL( MN,     1e6, newton);              // 1_MN (meganewton)
 LITERAL( kN,     1e3, newton);              // 1_kN (kilonewton)
 LITERAL( N,        1, newton);              // 1_N
 LITERAL( mN,    1e-3, newton);              // 1_mN (millinewton)
 LITERAL( μN,    1e-6, newton);              // 1_μN (micronewton)
-
-LITERAL( Nm,       1, newtonmeter);         // 1_Nm  (newtonmeter)
-LITERAL( W_per_m², 1, watt_per_meter2);     // 1_W/m² (watt per square metre)
-
+// Luminous flux (m) in...
 LITERAL( lm,       1, lumen);               // 1_lm (lumen)
 LITERAL( lm_s,     1, lumen_second);        // 1_lm_s (lumen second)
 LITERAL( lm_per_W, 1, lumens_per_watt);     // 1_lm_per_W (lumen per watt)
+// Surface flow (s) in...
+LITERAL( m²_per_s, 1, meter2_per_second);   // 1_m²/s (square meter per second)
+// Volumetric flow (V) in...
+LITERAL( m³_per_s, 1, meter3_per_second);   // 1_m³/s (cubic meter per second)
+					   
+LITERAL( Nm,       1, newtonmeter);         // 1_Nm  (newtonmeter)
+LITERAL( W_per_m², 1, watt_per_meter2);     // 1_W/m² (watt per square metre)
 
 #define CARDINAL(_symbol, _factor, _baseUnit) \
   constexpr auto operator "" _ ## _symbol(unsigned long long x) { return _baseUnit(static_cast<long long>(x) * _factor); }

@@ -741,6 +741,7 @@ namespace SI
 	inline constexpr auto centimeter2 = centi * centi * meter2;
 	inline constexpr auto millimeter2 = milli * milli * meter2;
 
+	inline constexpr auto meter2_per_second = meter2 / second;
 	inline constexpr auto kilograms_per_meter2 = kilogram / meter2;
 
 	inline constexpr auto meter3      = unit<volume>();
@@ -748,6 +749,7 @@ namespace SI
 	inline constexpr auto centimeter3 = centi * centi * centi * meter3;
 	inline constexpr auto millimeter3 = milli * milli * milli * meter3;
 
+	inline constexpr auto meter3_per_second = meter3 / second;
 	inline constexpr auto kilograms_per_meter3 = kilogram / meter3;
 	inline constexpr auto grams_per_centimeter3 = gram / centimeter3;
 
