@@ -34,14 +34,14 @@ namespace SI
 			return radian(atan(opposite / adjacent));
 		}
 
-		area area_of_triangle(length b, length h)
+		area area_of_triangle(length base, length height)
 		{
-			return 0.5 * b * h;
+			return 0.5 * base * height;
 		}
 
 		length perimeter_of_rectangle(length l, length b)
 		{
-			return 2.0 * (l + b);
+			return 2. * (l + b);
 		}
 
 		area area_of_rectangle(length l, length b)
@@ -51,7 +51,7 @@ namespace SI
 
 		length perimeter_of_square(length a)
 		{
-			return 4.0 * a;
+			return 4. * a;
 		}
 
 		area area_of_square(length a)
@@ -66,12 +66,12 @@ namespace SI
 
 		length circumference_of_circle(length radius)
 		{
-			return 2.0 * constant::pi * radius;
+			return 2. * constant::pi * radius;
 		}
 
 		length radius_of_circumference(length circumference)
 		{
-			return circumference / (2.0 * constant::pi);
+			return circumference / (2. * constant::pi);
 		}
 
 		area area_of_circle(length radius)
@@ -91,7 +91,7 @@ namespace SI
 
 		area area_of_cube(length a)
 		{
-			return 6.0 * a * a;
+			return 6. * a * a;
 		}
 
 		volume volume_of_cube(length a)
@@ -101,7 +101,7 @@ namespace SI
 
 		area area_of_cylinder(length radius, length height)
 		{
-			return 2.0 * constant::pi * radius * (radius + height);
+			return 2. * constant::pi * radius * (radius + height);
 		}
 
 		volume volume_of_cylinder(length radius, length height)
@@ -116,17 +116,22 @@ namespace SI
 
 		volume volume_of_cone(length radius, length height)
 		{
-			return (1.0/3.0) * constant::pi * radius * radius * height;
+			return (1./3.) * constant::pi * radius * radius * height;
 		}
 
 		area area_of_sphere(length radius)
 		{
-			return 4.0 * constant::pi * radius * radius;
+			return 4. * constant::pi * radius * radius;
 		}
 
 		volume volume_of_sphere(length radius)
 		{
-			return (4.0 / 3.0) * constant::pi * radius * radius * radius;
+			return (4. / 3.) * constant::pi * radius * radius * radius;
+		}
+
+		volume volume_of_prism(area base_area, length height)
+		{
+			return base_area * height;
 		}
 
 		// VARIOUS FORMULAS:
@@ -154,7 +159,7 @@ namespace SI
 
 		time time_of_free_fall(length height, acceleration gravity)
 		{
-			return sqrt((2.0 * height) / gravity);
+			return sqrt((2. * height) / gravity);
 		}
 
 		angle glide_path(length horizontal_distance, length vertical_change)
@@ -169,12 +174,12 @@ namespace SI
 
 		length braking_distance(speed from_speed, speed to_speed, acceleration deceleration)
 		{
-			return (from_speed * from_speed - to_speed * to_speed) / (2.0 * deceleration);
+			return (from_speed * from_speed - to_speed * to_speed) / (.0 * deceleration);
 		}
 
 		acceleration acceleration_for_distance(speed current_speed, speed target_speed, length distance)
 		{
-			return (target_speed * target_speed - current_speed * current_speed) / (2.0 * distance);
+			return (target_speed * target_speed - current_speed * current_speed) / (2. * distance);
 		}
 
 		// Calculates the body-mass index (BMI).
