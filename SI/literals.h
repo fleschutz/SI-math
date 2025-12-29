@@ -46,15 +46,15 @@ LITERAL( mK,    1e-3, kelvin);              // 1_mK (millikelvin)
 LITERAL( μK,    1e-6, kelvin);              // 1_μK (microkelvin)
 LITERAL( nK,    1e-9, kelvin);              // 1_nK (nanokelvin)
 // Electric current (I) in...
-LITERAL( MA,     1e6, ampere);              // 1_MA (megaampere)
-LITERAL( kA,     1e3, ampere);              // 1_kA (kiloampere)
+LITERAL( MA,     1e6, ampere);              // 1_MA  (megaampere)
+LITERAL( kA,     1e3, ampere);              // 1_kA  (kiloampere)
 LITERAL( A,        1, ampere);              // 1_A 
-LITERAL( mA,    1e-3, ampere);              // 1_mA (milliampere)
+LITERAL( mA,    1e-3, ampere);              // 1_mA  (milliampere)
 LITERAL( muA,   1e-6, ampere);              // 1_muA (microampere)
-LITERAL( nA,    1e-9, ampere);              // 1_nA (nanoampere)
-LITERAL( pA,   1e-12, ampere);              // 1_pA (picoampere)
-// Amount of substance in...
-LITERAL( mol,      1, mole);                // 1_mol
+LITERAL( nA,    1e-9, ampere);              // 1_nA  (nanoampere)
+LITERAL( pA,   1e-12, ampere);              // 1_pA  (picoampere)
+// Amount of substance (N_A) in...
+LITERAL( mol,      1, mol);                // 1_mol 
 // Luminous intensity in...
 LITERAL( cd,       1, candela);             // 1_cd
 
@@ -128,8 +128,8 @@ LITERAL( kS_per_m,1e3, siemens_per_meter);  // 1_kS_per_m (kS/m, kilosiemens per
 LITERAL( S_per_m,  1, siemens_per_meter);   // 1_S_per_m (S/m, siemens per meter)
 // Electric charge (Q) in...
 LITERAL( C,        1, coulomb);             // 1_C   (coulomb)
-LITERAL( Ah,       1, ampere_hours);        // 1_Ah  (ampere hours)
-LITERAL( mAh,   1e-3, ampere_hours);        // 1_mAh (milliampere hours)
+LITERAL( Ah,       1, ampere_hours);        // 1_Ah  (ampere-hours)
+LITERAL( mAh,   1e-3, ampere_hours);        // 1_mAh (milliampere-hours)
 // Electric capacitance (C) in...
 LITERAL( F,        1, farad);               // 1_F   (farad)
 LITERAL( mF,    1e-3, farad);               // 1_mF  (millifarad)
@@ -140,6 +140,8 @@ LITERAL( pF,   1e-12, farad);               // 1_pF  (picofarad)
 LITERAL( H,        1, henry);               // 1_H   (henry)
 LITERAL( mH,    1e-3, henry);               // 1_mH  (millihenry)
 LITERAL( μH,    1e-6, henry);               // 1_μH  (microhenry)
+// Magnetic flux in...
+LITERAL( Wb,       1, weber);               // 1_Wb  (weber)
 // Magnetic field (B) in...
 LITERAL( T,        1, tesla);               // 1_T  (tesla)
 LITERAL( mT,    1e-3, tesla);               // 1_mT (millitesla)

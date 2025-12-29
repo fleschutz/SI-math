@@ -681,6 +681,8 @@ namespace SI
 	SI_QUANTITY(power,         2, 1, -3, 0, 0);
 	SI_QUANTITY(density,      -3, 1,  0, 0, 0); // (mass per length³)
 	SI_QUANTITY(BMI,          -2, 1,  0, 0, 0); // (mass per length²)
+	SI_QUANTITY(reciprocal_length,-1, 0,  0, 0, 0); // (per length)
+	SI_QUANTITY(reciprocal_amount_of_substance,0, 0,  0, 0,-1); // (per amount of substance)
 	//...
 
 	using position2d = length2;
@@ -727,7 +729,7 @@ namespace SI
 	// electric current in...
 	inline constexpr auto ampere      = unit<electric_current>();
 	// amount of substance in...
-	inline constexpr auto mole        = unit<amount_of_substance>(); 
+	inline constexpr auto mol         = unit<amount_of_substance>(); 
 	// luminous intensity in...
 	inline constexpr auto candela     = unit<luminous_intensity>();
 
@@ -743,6 +745,7 @@ namespace SI
 
 	inline constexpr auto meter2_per_second = meter2 / second;
 	inline constexpr auto kilograms_per_meter2 = kilogram / meter2;
+	inline constexpr auto kilograms_per_mol = kilogram / mol;
 
 	inline constexpr auto meter3      = unit<volume>();
 	inline constexpr auto kilometer3  = kilo * kilo * kilo * meter3;
@@ -790,21 +793,28 @@ namespace SI
 	inline constexpr auto ampere_per_meter = ampere / meter;
 	inline constexpr auto ampere_per_meter2 = ampere / (meter * meter);
 	inline constexpr auto coulomb     = ampere * second;
+	inline constexpr auto coulombs_per_mol = coulomb / mol;
 	inline constexpr auto ampere_hours= ampere * hour;
 	inline constexpr auto volt        = joule / coulomb; 
 	inline constexpr auto farad       = coulomb / volt;
+	inline constexpr auto farads_per_meter = farad / meter;
 	inline constexpr auto ohm         = volt / ampere;
 	inline constexpr auto ohm_meter   = ohm * meter;
 	inline constexpr auto siemens     = ampere / volt;
 	inline constexpr auto siemens_per_meter = siemens / meter;
 	inline constexpr auto henry       = volt * second / ampere;
+	inline constexpr auto weber       = volt * second;
 	inline constexpr auto tesla       = kilogram / (ampere * second * second);
+	inline constexpr auto joules_per_tesla = joule / tesla;
 
 	inline constexpr auto steradian   = unit<detail::dimensionless>();
 
 	inline constexpr auto lumen       = candela * steradian; 
 	inline constexpr auto lumen_second = lumen * second;
 	inline constexpr auto lumens_per_watt = lumen / watt; 
+
+	inline constexpr auto per_meter    = unit<reciprocal_length>(); 
+	inline constexpr auto per_mol      = unit<reciprocal_amount_of_substance>(); 
 
 	// IMPERIAL UNITS
 	inline constexpr auto pound        = unit<mass, 45359237, 100000000>();
