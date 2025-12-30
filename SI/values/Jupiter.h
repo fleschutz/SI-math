@@ -2,12 +2,9 @@
 #pragma once
 
 #include "../../SI/units.h"
-
-namespace SI
-{
-	namespace Jupiter // source: https://en.wikipedia.org/wiki/Jupiter
-	{
 #define SET(_name, _value, _unit)  const auto _name = _unit(_value)
+
+namespace SI { namespace Jupiter {
 SET( equatorial_radius,            71'492, kilometer);
 SET( polar_radius,                 66'854, kilometer);
 SET( mean_radius,                  69'911, kilometer);
@@ -17,11 +14,13 @@ SET( volume,                    1.4313e15, kilometer3);
 SET( mass,                      1.8982e27, kilogram);
 SET( surface_gravity,               24.79, meters_per_second2);
 SET( equatorial_rotation_velocity, 12'600, meters_per_second);
+SET( day,                   9.9 * 60 * 60, second); 
 SET( satellites,                       97, quantity);
 SET( human_population,                  0, quantity);
-//...
+} }
 
+// Sources
+// -------
+// https://en.wikipedia.org/wiki/Jupiter
+//
 #undef SET
-	}
-}
-

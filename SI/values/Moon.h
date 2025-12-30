@@ -19,6 +19,7 @@ SET( volume,                       2.1958e10, kilometer3);
 SET( mass,                          7.346e22, kilogram);
 SET( surface_gravity,                  1.622, meters_per_second2);
 SET( equatorial_rotation_velocity,     4.627, meters_per_second);
+SET( day,                    708.7 * 60 * 60, second); 
 SET( human_population,                     0, quantity);
 //...
 
