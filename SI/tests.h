@@ -66,8 +66,17 @@ namespace SI
 		static_assert(1_hm² == 10000_m²);
 		static_assert(1_m²  == 10000_cm²);
 		static_assert(1_cm² == 0.0001_m²);
+
+		static_assert(1_km² == 1_km * 1_km);
+		static_assert(1_hm² == 100_m * 100_m);
+		static_assert(1_m²  == 1_m * 1_m);
+		static_assert(1_cm² == 1_cm * 1_cm);
+		static_assert(1_mm² == 1_mm * 1_mm);
 		// Volume in...
-		// TODO
+		static_assert(1_m³  == 1'000'000_cm³);
+		static_assert(1_cm³ == 0.000'001_m³);
+		static_assert(1_km³ == 1_km * 1_km * 1_km);
+		static_assert(1_m³  == 1_m * 1_m * 1_m);
 		// Velocity in...
 		static_assert(3.6_km_per_h == 1_m_per_s);
 		// Acceleration in...

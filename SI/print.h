@@ -196,7 +196,9 @@ namespace SI
 
 	void print(energy E)
 	{
-		if (abs(E) >= 1_TJ)
+		if (abs(E) >= 1_PJ)
+			print(E / 1_PJ, "PJ");
+		else if (abs(E) >= 1_TJ)
 			print(E / 1_TJ, "TJ");
 		else if (abs(E) >= 1_GJ)
 			print(E / 1_GJ, "GJ");

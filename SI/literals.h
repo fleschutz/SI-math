@@ -61,7 +61,7 @@ LITERAL( μmol,  1e-6, mol);                 // 1_μmol (micromole)
 LITERAL( nmol,  1e-9, mol);                 // 1_nmol (nanomole)
 LITERAL( pmol, 1e-12, mol);                 // 1_pmol (picomole)
 LITERAL( fmol, 1e-15, mol);                 // 1_fmol (femtomole)
-// Luminous intensity in...
+// Luminous intensity (J) in...
 LITERAL( kcd,    1e3, candela);             // 1_kcd (kilocandela)
 LITERAL( cd,       1, candela);             // 1_cd  (candela)
 
@@ -86,8 +86,9 @@ LITERAL( l,     1e-3, meter3);              // 1_l   (liter)
 LITERAL( ml,    1e-6, meter3);              // 1_ml  (milliliter)
 LITERAL( μl,    1e-9, meter3);              // 1_μl  (microliter)
 // Velocity (v) in...
-LITERAL( km_per_h, 1, kilometers_per_hour); // 1_km_per_h (km/h)
+LITERAL( km_per_s, 1e3, meters_per_second); // 1_km_per_s (km/s)
 LITERAL( m_per_s,  1, meters_per_second);   // 1_m_per_s (m/s)
+LITERAL( km_per_h, 1, kilometers_per_hour); // 1_km_per_h (km/h)
 LITERAL( mm_per_h, 1, millimeters_per_hour);// 1_mm_per_h (mm/h)
 // Acceleration (a) in...
 LITERAL( m_per_s², 1, meters_per_second2);  // 1_m_per_s² (m/s²)
@@ -155,6 +156,7 @@ LITERAL( mT,    1e-3, tesla);               // 1_mT (millitesla)
 LITERAL( μT,    1e-6, tesla);               // 1_μT (microtesla)
 LITERAL( nT,    1e-9, tesla);               // 1_nT (nanotesla)
 // Energy (E) in...
+LITERAL( PJ,    1e15, joule);               // 1_PJ  (petajoule)
 LITERAL( TJ,    1e12, joule);               // 1_TJ  (terajoule)
 LITERAL( GJ,     1e9, joule);               // 1_GJ  (gigajoule)
 LITERAL( MJ,     1e6, joule);               // 1_MJ  (megajoule)
