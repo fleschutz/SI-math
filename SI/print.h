@@ -75,9 +75,9 @@ namespace SI
 	void print(mass m)
 	{
 		if (abs(m) >= 1_mt)
-			print(m / 1_mt, "mt");
+			print(m / 1_mt, "mt (megatons)");
 		else if (abs(m) >= 1_kt)
-			print(m / 1_kt, "kt");
+			print(m / 1_kt, "kt (kilotons)");
 		else if (abs(m) >= 1_t)
 			print(m / 1_t, "t");
 		else if (abs(m) >= 1_kg)
@@ -197,9 +197,9 @@ namespace SI
 	void print(energy E)
 	{
 		if (abs(E) >= 1_PJ)
-			print(E / 1_PJ, "PJ");
+			print(E / 1_PJ, "PJ (petajoules)");
 		else if (abs(E) >= 1_TJ)
-			print(E / 1_TJ, "TJ");
+			print(E / 1_TJ, "TJ (terajoules)");
 		else if (abs(E) >= 1_GJ)
 			print(E / 1_GJ, "GJ");
 		else if (abs(E) >= 1_MJ)
@@ -254,5 +254,15 @@ namespace SI
 	void print(area a, volume v, mass m, power p)
 	{
 		print(a); print(v); print(m); print(p);
+	}
+
+	void print(volume v, mass m, energy e)
+	{
+		print(v); print(m); print(e);
+	}
+
+	void print(mass m, energy e)
+	{
+		print(m); print(e);
 	}
 }
