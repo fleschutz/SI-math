@@ -134,8 +134,14 @@ namespace SI
 			return base_area * height;
 		}
 
-		// Formulas for Moving Object
-		// --------------------------
+		// Formulas for Moving Objects
+		// ---------------------------
+		// Returns the kinetic energy of a non-rotating object of mass m traveling at velocity v.
+		energy kinetic_energy(mass m, velocity v)
+		{
+			return 0.5 * m * square(v);
+		}
+
 		time time_of_free_fall(length height, acceleration gravity)
 		{
 			return sqrt((2. * height) / gravity);
@@ -163,6 +169,12 @@ namespace SI
 
 		// Formulas for Aircrafts
 		// ----------------------
+		// Returns the lift force of an aircraft wing, see: https://en.wikipedia.org/wiki/Lift_(force)
+		auto lift_force_of_wing(quantity lift_coefficient, area wing_surface, density air_density, velocity true_air_speed)
+		{
+			return 0.5 * air_density * square(true_air_speed) * wing_surface * lift_coefficient;
+		}
+
 		angle glide_path(length horizontal_distance, length vertical_change)
 		{
 			return atan2(vertical_change, horizontal_distance);
@@ -173,20 +185,8 @@ namespace SI
 			return horizontal_distance * tan(glide_path);
 		}
 
-		// Returns the lift force of an aircraft wing, see: https://en.wikipedia.org/wiki/Lift_(force)
-		auto lift_force_of_wing(quantity lift_coefficient, area wing_surface, density air_density, velocity true_air_speed)
-		{
-			return 0.5 * air_density * square(true_air_speed) * wing_surface * lift_coefficient;
-		}
-
 		// Various Formulas
 		// ----------------
-		// Returns the kinetic energy of a non-rotating object of mass m traveling at velocity v.
-		energy kinetic_energy(mass m, velocity v)
-		{
-			return 0.5 * m * v * v;
-		}
-
 		length wavelength(velocity v, frequency f)
 		{
 			return v / f;
@@ -213,7 +213,7 @@ namespace SI
 		// Calculates the body-mass index (BMI).
 		auto BMI(mass weight, length height)
 		{
-			return weight / (height * height);
+			return weight / square(height);
 		}
 	}
 }
