@@ -3,7 +3,6 @@
 
 #include <cassert>
 #include "literals.h"
-#include "values/Earth.h"
 
 namespace SI
 {
@@ -21,7 +20,7 @@ namespace SI
 		static_assert(1_dm == 0.1_m);
 		static_assert(1_cm == 0.01_m);
 		static_assert(1_mm == 0.001_m);
-		static_assert(1_μm == 0.000'001_m);
+		static_assert(1_μm == 0.001_mm);
 		// Time in...
 		static_assert(1_h   == 60_min);
 		static_assert(1_min == 60_s);
