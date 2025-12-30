@@ -50,9 +50,14 @@ namespace SI
 		static_assert(1_μA == 0.001_mA);
 		static_assert(1_nA == 0.001_μA);
 		// Amount of substance in...
-		// TODO
+		static_assert(1_kmol == 1000_mol);
+		static_assert(1_mol  == 0.001_kmol);
+		static_assert(1_mmol == 0.001_mol);
+		static_assert(1_μmol == 0.001_mmol);
+		static_assert(1_nmol == 0.001_μmol);
 		// Luminous intensity in...
-		// TODO
+		static_assert(1_kcd == 1000_cd);
+		static_assert(1_cd == 0.001_kcd);
 
 		// The 22 SI Derived Units
 		// -----------------------

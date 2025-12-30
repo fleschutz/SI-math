@@ -54,9 +54,16 @@ LITERAL( μA,    1e-6, ampere);              // 1_μA (microampere)
 LITERAL( nA,    1e-9, ampere);              // 1_nA  (nanoampere)
 LITERAL( pA,   1e-12, ampere);              // 1_pA  (picoampere)
 // Amount of substance (N_A) in...
-LITERAL( mol,      1, mol);                // 1_mol 
+LITERAL( kmol,   1e3, mol);                 // 1_kmol (kilomole)
+LITERAL( mol,      1, mol);                 // 1_mol
+LITERAL( mmol,  1e-3, mol);                 // 1_mmol (millimole)
+LITERAL( μmol,  1e-6, mol);                 // 1_μmol (micromole)
+LITERAL( nmol,  1e-9, mol);                 // 1_nmol (nanomole)
+LITERAL( pmol, 1e-12, mol);                 // 1_pmol (picomole)
+LITERAL( fmol, 1e-15, mol);                 // 1_fmol (femtomole)
 // Luminous intensity in...
-LITERAL( cd,       1, candela);             // 1_cd
+LITERAL( kcd,    1e3, candela);             // 1_kcd (kilocandela)
+LITERAL( cd,       1, candela);             // 1_cd  (candela)
 
 // THE 22 DERIVED SI UNITS
 // -----------------------
