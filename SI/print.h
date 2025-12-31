@@ -36,50 +36,12 @@ namespace SI
 
 	void print(time t)
 	{
-		if (abs(t) >= Earth::year)
-			print(t / Earth::year, " year(s)");
-		else if (abs(t) >= Earth::week)
-			print(t / Earth::week, " week(s)");
-		else if (abs(t) > Earth::day)
-			print(t / Earth::day, " day(s)");
-		else if (abs(t) >= 1_h)
-		{
-			print((int)(t / 1_h), "h");
-			print((int)(t / 1_min) % 60, "min");
-		}
-		else if (abs(t) >= 1_min)
-		{
-			print((int)(t / 1_min), "min");
-			print((int)(t / 1_sec) % 60, "sec");
-		}
-		else if (abs(t) >= 1_sec)
-			print(t / 1_sec, "sec");
-		else if (abs(t) >= 1_ms)
-			print(t / 1_ms, "ms");
-		else if (abs(t) >= 1_μs)
-			print(t / 1_μs, "μs");
-		else
-			print(t / 1_ns, "ns");
+		_print(to_string(t));
 	}
 
 	void print(mass m)
 	{
-		if (abs(m) >= 1_Gt)
-			print(m / 1_Gt, "Gt (gigatons)");
-		else if (abs(m) >= 1_Mt)
-			print(m / 1_Mt, "Mt (megatons)");
-		else if (abs(m) >= 1_kt)
-			print(m / 1_kt, "kt (kilotons)");
-		else if (abs(m) >= 1_t)
-			print(m / 1_t, "t");
-		else if (abs(m) >= 1_kg)
-			print(m / 1_kg, "kg");
-		else if (abs(m) >= 1_g)
-			print(m / 1_g, "g");
-		else if (abs(m) >= 1_mg)
-			print(m / 1_mg, "mg");
-		else
-			print(m / 1_μg, "μg");
+		_print(to_string(m));
 	}
 
 	void print(temperature T)
@@ -106,50 +68,19 @@ namespace SI
 
 	void print(electric_current I)
 	{
-		if (abs(I) >= 1_A)
-			print(I / 1_A, "A");
-		else if (abs(I) >= 1_mA)
-			print(I / 1_mA, "mA");
-		else if (abs(I) >= 1_μA)
-			print(I / 1_μA, "μA");
-		else if (abs(I) >= 1_nA)
-			print(I / 1_nA, "nA");
-		else
-			print(I / 1_pA, "pA");
+		_print(to_string(I));
 	}
 
 	// The 22 Derived SI Units
 	// -----------------------
 	void print(area a)
 	{
-		if (abs(a) >= 1_km²)
-			print(a / 1_km², "km²");
-		else if (abs(a) >= 1_hm²)
-			print(a / 1_hm², "hm²");
-		else if (abs(a) >= 1_m²)
-			print(a / 1_m², "m²");
-		else if (abs(a) >= 1_cm²)
-			print(a / 1_cm², "cm²");
-		else if (abs(a) >= 1_mm²)
-			print(a / 1_mm², "mm²");
-		else
-			print(a / 1_μm², "μm²");
+		_print(to_string(a));
 	}
 
 	void print(volume v)
 	{
-		if (abs(v) >= 1_km³)
-			print(v / 1_km³, "km³");
-		else if (abs(v) >= 1_m³)
-			print(v / 1_m³, "m³");
-		else if (abs(v) >= 1_l)
-			print(v / 1_l, "l");
-		else if (abs(v) >= 1_cm³)
-			print(v / 1_cm³, "cm³");
-		else if (abs(v) >= 1_mm³)
-			print(v / 1_mm³, "mm³");
-		else
-			print(v / 1_μm³, "μm³");
+		_print(to_string(v));
 	}
 
 	void print(velocity v)
@@ -159,37 +90,17 @@ namespace SI
 
 	void print(acceleration a)
 	{
-		print(a / 1_m_per_s², "m/s²");
+		_print(to_string(a));
 	}
 
 	void print(frequency f)
 	{
-		if (abs(f) >= 1_THz)
-			print(f / 1_THz, "THz");
-		else if (abs(f) >= 1_GHz)
-			print(f / 1_GHz, "GHz");
-		else if (abs(f) >= 1_MHz)
-			print(f / 1_MHz, "MHz");
-		else if (abs(f) >= 1_kHz)
-			print(f / 1_kHz, "kHz");
-		else
-			print(f / 1_Hz, "Hz");
+		_print(to_string(f));
 	}
 
 	void print(force F)
 	{
-		if (abs(F) >= 1_GN)
-			print(F / 1_GN, "GN");
-		else if (abs(F) >= 1_MN)
-			print(F / 1_MN, "MN");
-		else if (abs(F) >= 1_kN)
-			print(F / 1_kN, "kN");
-		else if (abs(F) >= 1_N)
-			print(F / 1_N, "N");
-		else if (abs(F) >= 1_mN)
-			print(F / 1_mN, "mN");
-		else
-			print(F / 1_μN, "μN");
+		_print(to_string(F));
 	}
 
 	void print(energy E)
