@@ -7,9 +7,19 @@
 
 namespace SI
 {
+	std::string to_string(quantity value, const std::string& unit)
+	{
+		return std::to_string(value) + unit;
+	}
+
 	void print(const std::string& text)
 	{
 		std::cout << std::endl << text.c_str();
+	}
+
+	void printNoNewline(const std::string& text)
+	{
+		std::cout << text;
 	}
 
 	void print(quantity number)
@@ -94,11 +104,6 @@ namespace SI
 			print(m / 1_μg, "μg");
 	}
 
-	static void printNoNewline(const std::string& text)
-	{
-		std::cout << text;
-	}
-
 	void print(temperature T)
 	{
 		if (T >= 250_K && T <= 470_K) // temperature range for humans
@@ -169,14 +174,28 @@ namespace SI
 			print(v / 1_μm³, "μm³");
 	}
 
+	std::string to_string(velocity v)
+	{
+		if (abs(v) >= 1_km_per_h)
+			return to_string(v / 1_km_per_h, "km/h");
+		else if (abs(v) >= 1_m_per_s)
+			return to_string(v / 1_m_per_s, "m/s");
+		else
+			return(v / 1_mm_per_h, "mm/h");
+	}
+
 	void print(velocity v)
 	{
+#if 0
 		if (abs(v) >= 1_km_per_h)
 			print(v / 1_km_per_h, "km/h");
 		else if (abs(v) >= 1_m_per_s)
 			print(v / 1_m_per_s, "m/s");
 		else
 			print(v / 1_mm_per_h, "mm/h");
+#else
+		print(to_string(v));
+#endif
 	}
 
 	void print(acceleration a)
@@ -196,6 +215,22 @@ namespace SI
 			print(f / 1_kHz, "kHz");
 		else
 			print(f / 1_Hz, "Hz");
+	}
+
+	void print(force F)
+	{
+		if (abs(F) >= 1_GN)
+			print(F / 1_GN, "GN");
+		else if (abs(F) >= 1_MN)
+			print(F / 1_MN, "MN");
+		else if (abs(F) >= 1_kN)
+			print(F / 1_kN, "kN");
+		else if (abs(F) >= 1_N)
+			print(F / 1_N, "N");
+		else if (abs(F) >= 1_mN)
+			print(F / 1_mN, "mN");
+		else
+			print(F / 1_μN, "μN");
 	}
 
 	void print(energy E)
@@ -228,22 +263,6 @@ namespace SI
 		quantity factor = E / Hiroshima_bomb;
 		print(factor);
 		printNoNewline("Hiroshima bombs ");
-	}
-
-	void print(force F)
-	{
-		if (abs(F) >= 1_GN)
-			print(F / 1_GN, "GN");
-		else if (abs(F) >= 1_MN)
-			print(F / 1_MN, "MN");
-		else if (abs(F) >= 1_kN)
-			print(F / 1_kN, "kN");
-		else if (abs(F) >= 1_N)
-			print(F / 1_N, "N");
-		else if (abs(F) >= 1_mN)
-			print(F / 1_mN, "mN");
-		else
-			print(F / 1_μN, "μN");
 	}
 
 	void print(power P)

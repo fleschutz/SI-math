@@ -664,14 +664,14 @@ namespace SI
 
 	// The 22 Derived SI Dimensions
 	// ----------------------------
-	SI_DIM(area,                2, 0,  0, 0, 0, 0, 0); // (length²)
-	SI_DIM(volume,              3, 0,  0, 0, 0, 0, 0); // (length³)
+	SI_DIM(area,                2, 0,  0, 0, 0, 0, 0); // (in m²)
+	SI_DIM(volume,              3, 0,  0, 0, 0, 0, 0); // (in m³)
 	SI_DIM(frequency,           0, 0, -1, 0, 0, 0, 0); // (per time)
 	SI_DIM(velocity,            1, 0, -1, 0, 0, 0, 0); // (length per time)
 	SI_DIM(angular_speed,       0, 0, -1, 0, 1, 0, 0); // (degree per time)
 	SI_DIM(acceleration,        1, 0, -2, 0, 0, 0, 0); // (length per time²)
 	SI_DIM(jerk,                1, 0, -3, 0, 0, 0, 0);
-	SI_DIM(force,               1, 1, -2, 0, 0, 0, 0);
+	SI_DIM(force,               1, 1, -2, 0, 0, 0, 0); // (in Newton)
 	SI_DIM(impulse,             1, 1, -1, 0, 0, 0, 0);
 	SI_DIM(pressure,           -1, 1, -2, 0, 0, 0, 0);
 	SI_DIM(energy,              2, 1, -2, 0, 0, 0, 0);
@@ -759,7 +759,7 @@ namespace SI
 
 	SI_INLINE_CONSTEXPR auto meters_per_second2 = meter / (second * second);
 
-	SI_INLINE_CONSTEXPR auto newton      = kilogram * meter / (second * second);
+	SI_INLINE_CONSTEXPR auto newton      = unit<force>();
 	SI_INLINE_CONSTEXPR auto kilonewton  = kilo * newton;
 	SI_INLINE_CONSTEXPR auto meganewton  = mega * newton;
 	SI_INLINE_CONSTEXPR auto giganewton  = giga * newton;
@@ -770,17 +770,17 @@ namespace SI
 	SI_INLINE_CONSTEXPR auto gigajoule   = giga * joule;
 
 	SI_INLINE_CONSTEXPR auto joulesecond = joule * second;
+	SI_INLINE_CONSTEXPR auto joules_per_second = joule / second;
 	SI_INLINE_CONSTEXPR auto joules_per_kelvin = joule / kelvin;
 	SI_INLINE_CONSTEXPR auto joules_per_second_per_kilogram = joule / second / kilogram;
 	SI_INLINE_CONSTEXPR auto joules_per_kilogram_per_kelvin = joule / kilogram / kelvin;
 	SI_INLINE_CONSTEXPR auto gray = joule / kilogram;
 	SI_INLINE_CONSTEXPR auto sievert = joule / kilogram;
 
-	SI_INLINE_CONSTEXPR auto joules_per_second = joule / second;
 	SI_INLINE_CONSTEXPR auto watt        = joule / second; // (energy per time span)
 	SI_INLINE_CONSTEXPR auto watt_per_meter2 = watt / meter2;
 
-	SI_INLINE_CONSTEXPR auto pascal_     = newton / (meter * meter);
+	SI_INLINE_CONSTEXPR auto pascal_     = unit<pressure>();
 	SI_INLINE_CONSTEXPR auto hectopascal = hecto * pascal_;
 	SI_INLINE_CONSTEXPR auto millibar    = hecto * pascal_;
 	SI_INLINE_CONSTEXPR auto bar         = hecto * kilo * pascal_;
