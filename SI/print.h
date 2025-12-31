@@ -68,8 +68,10 @@ namespace SI
 			print(t / 1_sec, "sec");
 		else if (abs(t) >= 1_ms)
 			print(t / 1_ms, "ms");
-		else
+		else if (abs(t) >= 1_μs)
 			print(t / 1_μs, "μs");
+		else
+			print(t / 1_ns, "ns");
 	}
 
 	void print(mass m)

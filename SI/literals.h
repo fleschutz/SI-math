@@ -1,14 +1,13 @@
-// SI/literals.h - type-safe literals, e.g. 7_km (requires C++11 or higher)
+// SI/literals.h - type-safe literals based on SI units, e.g. 7_km (requires C++11 or higher)
 #pragma once
 
 #include "units.h"
-
-namespace SI
-{
 #define LITERAL(_symbol, _factor, _baseUnit) \
   constexpr auto operator "" _ ## _symbol(long double x) { return _baseUnit(static_cast<double_t>(x) * static_cast<double_t>(_factor)); } \
   constexpr auto operator "" _ ## _symbol(unsigned long long x) { return _baseUnit(static_cast<double_t>(x) * static_cast<double_t>(_factor)); }
 
+namespace SI
+{
 // THE 7 SI BASE UNITS
 // -------------------
 // SYMBOL     FACTOR  BASE UNIT                EXAMPLE      
@@ -30,6 +29,7 @@ LITERAL( sec,      1, second);              // 1_sec
 LITERAL( second,   1, second);              // 1_second
 LITERAL( ms,    1e-3, second);              // 1_ms  (millisecond)
 LITERAL( μs,    1e-6, second);              // 1_μs  (microsecond)
+LITERAL( ns,    1e-9, second);              // 1_ns  (nanosecond)
 // Mass in...
 LITERAL( Gt,    1e12, kilogram);            // 1_Gt (metric gigaton)
 LITERAL( Mt,     1e9, kilogram);            // 1_Mt (metric megaton)
@@ -101,6 +101,7 @@ LITERAL( GHz,    1e9, hertz);               // 1_GHz (gigahertz)
 LITERAL( MHz,    1e6, hertz);               // 1_MHz (megahertz)
 LITERAL( kHz,    1e3, hertz);               // 1_kHz (kilohertz)
 LITERAL( Hz,       1, hertz);               // 1_Hz  (hertz)
+LITERAL( mHz,   1e-3, hertz);               // 1_mHz (millihertz)
 // Activity referred to a radionuclide (A) in...
 LITERAL( kBq,    1e3, hertz);               // 1_kBq
 LITERAL( Bq,       1, hertz);               // 1_Bq (Bequerel)
@@ -129,6 +130,7 @@ LITERAL( μOhm,  1e-6, ohm);                 // 1_μOhm (microohm)
 // Electric resistance meter in...
 LITERAL( Ohm_m,    1, ohm_meter);           // 1_Ohm_m (ohm meter)
 // Electric conductance (G) in...
+LITERAL( MS,     1e6, siemens);             // 1_MS   (megasiemens)
 LITERAL( kS,     1e3, siemens);             // 1_kS   (kilosiemens)
 LITERAL( S,        1, siemens);             // 1_S    (siemens)
 LITERAL( mS,    1e-3, siemens);             // 1_mS   (millisiemens)
@@ -180,8 +182,6 @@ LITERAL( GWh, 3.6e12, watt);                // 1_GWh (gigawatt-hour)
 LITERAL( MWh,  3.6e9, watt);                // 1_MWh (megawatt-hour)
 LITERAL( kWh,  3.6e6, watt);                // 1_kWh (kilowatt-hour)
 LITERAL( Wh,   3.6e3, watt);                // 1_Wh  (watt-hour)
-LITERAL( hp, 745.69987158227022, watt);     // 1_hp  (horsepower)
-LITERAL( PS, 735.49875, watt);              // 1_PS  ('Pferdestärke', german horsepower)
 // Active power per mass in...
 LITERAL( kWh_per_kg, 3.6e6, joules_per_second_per_kilogram);  // 1_kWh_per_kg (kilowatt-hour per kilogram)
 LITERAL( Wh_per_kg,  3.6e3, joules_per_second_per_kilogram);  // 1_Wh_per_kg (watt-hour per kilogram)
@@ -270,7 +270,13 @@ LITERAL( degR,                          5.0/9.0, kelvin); // 1_degR (°Rankine)
 LITERAL( Mach,                              330, meters_per_second); // 1_Mach
 LITERAL( Da,                1.6605390689252e-27, kilogram);//1_Da (dalton)
 LITERAL( eV,                    1.602176634e-19, joule);  // 1_eV (electronvolt)
+LITERAL( hp,                 745.69987158227022, watt); // 1_hp  (horsepower)
+LITERAL( PS,                          735.49875, watt); // 1_PS  ('Pferdestärke', german horsepower)
+}
+
+// Sources
+// -------
+// * https://en.wikipedia.org/wiki/International_System_of_Units
 
 #undef LITERAL
 #undef CARDINAL
-}
