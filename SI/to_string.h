@@ -1,15 +1,16 @@
 // SI/to_string.h - converts SI units to a string 
 #pragma once
 
+#include <string>
 #include "literals.h"
 #include "values/Earth.h"
 
 namespace SI
 {
 	// Internal function to join both quantity and unit.
-	std::string _join(quantity value, const std::string& unit)
+	std::string _join(long double quantity, const std::string& unit)
 	{
-		return std::to_string(value) + unit;
+		return std::to_string(quantity) + unit;
 	}
 
 	// The 7 SI Base Units
