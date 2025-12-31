@@ -744,7 +744,6 @@ namespace SI
 
 	SI_INLINE_CONSTEXPR auto meter2_per_second = meter2 / second;
 	SI_INLINE_CONSTEXPR auto kilograms_per_meter2 = kilogram / meter2;
-	SI_INLINE_CONSTEXPR auto kilograms_per_mol = kilogram / mol;
 
 	SI_INLINE_CONSTEXPR auto meter3      = unit<volume>();
 	SI_INLINE_CONSTEXPR auto kilometer3  = kilo * kilo * kilo * meter3;
@@ -813,8 +812,13 @@ namespace SI
 	SI_INLINE_CONSTEXPR auto lumen_second = lumen * second;
 	SI_INLINE_CONSTEXPR auto lumens_per_watt = lumen / watt; 
 
-	SI_INLINE_CONSTEXPR auto per_meter    = unit<reciprocal_length>(); 
+	SI_INLINE_CONSTEXPR auto kilograms_per_mol = kilogram / mol;
+	SI_INLINE_CONSTEXPR auto mols_per_meter3 = mol / meter3;
+	SI_INLINE_CONSTEXPR auto mols_per_kilogram = mol / kilogram;
+	SI_INLINE_CONSTEXPR auto mols_per_second = mol / second;
 	SI_INLINE_CONSTEXPR auto per_mol      = unit<reciprocal_amount_of_substance>(); 
+
+	SI_INLINE_CONSTEXPR auto per_meter    = unit<reciprocal_length>(); 
 
 	// IMPERIAL UNITS
 	SI_INLINE_CONSTEXPR auto pound        = unit<mass, 45359237, 100000000>();
