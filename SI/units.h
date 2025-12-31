@@ -775,6 +775,7 @@ namespace SI
 	inline constexpr auto joulesecond = joule * second;
 	inline constexpr auto joules_per_kelvin = joule / kelvin;
 	inline constexpr auto joules_per_second_per_kilogram = joule / second / kilogram;
+	inline constexpr auto joules_per_kilogram_per_kelvin = joule / kilogram / kelvin;
 	inline constexpr auto gray = joule / kilogram;
 	inline constexpr auto sievert = joule / kilogram;
 

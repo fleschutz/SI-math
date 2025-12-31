@@ -1,4 +1,5 @@
-// SI/formulas.h - type-safe formulas based on SI units (for 2D, 3D, moving object, vehicles, aircrafts, etc.)
+// SI/formulas.h - type-safe formulas based on SI units
+//                 (sorted by 2D, 3D, moving objects, vehicles, aircrafts, various)
 #pragma once
 
 #include <cmath>
@@ -10,25 +11,25 @@ namespace SI
 	{
 		// 2D Formulas
 		// -----------
-		// Returns the hypotenuse in a right triangle, based on Pythagorean equation: a² + b² = c² 
+		// Calculates the hypotenuse in a right triangle, based on Pythagorean equation: a² + b² = c² 
 		length hypotenuse_of_triangle(length a, length b)
 		{
 			return sqrt(a*a + b*b);
 		}
 
-		// Returns the angle in a right triangle, based on opposite and hypotenuse.
+		// Calculates the angle in a right triangle, based on opposite and hypotenuse.
 		angle angle1_in_triangle(length opposite, length hypotenuse)
 		{
 			return radian(asin(opposite / hypotenuse));
 		}
 
-		// Returns the angle in a right triangle, based on adjacent and hypotenuse.
+		// Calculates the angle in a right triangle, based on adjacent and hypotenuse.
 		angle angle2_in_triangle(length adjacent, length hypotenuse)
 		{
 			return radian(acos(adjacent / hypotenuse));
 		}
 
-		// Returns the angle in a right triangle, based on adjacent and opposite.
+		// Calculates the angle in a right triangle, based on adjacent and opposite.
 		angle angle3_in_triangle(length adjacent, length opposite)
 		{
 			return radian(atan(opposite / adjacent));
@@ -79,7 +80,7 @@ namespace SI
 			return constant::pi * radius * radius;
 		}
 
-		// Returns the shortest distance between two points in 2D.
+		// Calculates the shortest distance between two points in 2D.
 		length distance(length x1, length y1, length x2, length y2)
 		{
 			const length dx = x2 - x1;
@@ -136,7 +137,7 @@ namespace SI
 
 		// Formulas for Moving Objects
 		// ---------------------------
-		// Returns the kinetic energy of a non-rotating object of mass m traveling at velocity v.
+		// Calculates the kinetic energy of a non-rotating object of mass m traveling at velocity v.
 		energy kinetic_energy(mass m, velocity v)
 		{
 			return 0.5 * m * square(v);
@@ -147,13 +148,13 @@ namespace SI
 			return sqrt((2. * height) / gravity);
 		}
 
-		// Returns the braking distance to brake from v0 to v1 with the given deceleration.
+		// Calculates the braking distance to brake from v0 to v1 with the given deceleration.
 		length braking_distance(velocity v0, velocity v1, acceleration deceleration)
 		{
 			return (square(v0) - square(v1)) / (2.0 * deceleration);
 		}
 
-		// Returns the acceleration necessary to accelerate from v0 to v1 within the given distance.
+		// Calculates the acceleration necessary to accelerate from v0 to v1 within the given distance.
 		acceleration acceleration_for_distance(velocity v0, velocity v1, length distance)
 		{
 			return (square(v1) - square(v0)) / (2.0 * distance);
@@ -161,7 +162,7 @@ namespace SI
 
 		// Formulas for Vehicles
 		// ---------------------
-		// Returns the turning radius of wheeled vehicles, see: https://en.wikipedia.org/wiki/Turning_radius
+		// Calculates the turning radius of wheeled vehicles, see: https://en.wikipedia.org/wiki/Turning_radius
 		length turning_radius_of_vehicle(length wheelbase, angle steering_angle, length tire_width)
 		{
 			return wheelbase / sin(steering_angle) + tire_width / 2.0;
@@ -169,7 +170,7 @@ namespace SI
 
 		// Formulas for Aircrafts
 		// ----------------------
-		// Returns the lift force of an aircraft wing, see: https://en.wikipedia.org/wiki/Lift_(force)
+		// Calculates the lift force of an aircraft wing, see: https://en.wikipedia.org/wiki/Lift_(force)
 		force lift_force_of_wing(quantity lift_coefficient, area wing_surface, density air_density, velocity true_air_speed)
 		{
 			return 0.5 * air_density * square(true_air_speed) * wing_surface * lift_coefficient;
@@ -187,6 +188,7 @@ namespace SI
 
 		// Various Formulas
 		// ----------------
+		// Calculates the wavelength from velocity and frequency, see: https://en.wikipedia.org/wiki/Wavelength
 		length wavelength(velocity v, frequency f)
 		{
 			return v / f;
@@ -197,17 +199,25 @@ namespace SI
 			return s0 + v0 * t + 0.5 * a * t * t;
 		}
 
+		// Calculates the Lorentz force, see: https://en.wikipedia.org/wiki/Lorentz_force
 		auto Lorentz_force(double q, velocity v, double B)
 		{
 			return q * v * B;
 		}
 
-		// Returns the windchill temperature, see: https://de.wikipedia.org/wiki/Windchill
+		// Calculates the windchill temperature, see: https://de.wikipedia.org/wiki/Windchill
 		temperature windchill_temperature(temperature air_temperature, velocity wind_speed)
 		{
 			auto air_celsius = celsius(air_temperature);
 			return celsius(13.12 + 0.6215 * air_celsius
 			  + (0.3965 * air_celsius - 11.37) * std::pow(wind_speed / 1_km_per_h, 0.16));
+		}
+
+		// Calculates the density of dry air, see: https://en.wikipedia.org/wiki/Density_of_air
+		density density_of_dry_air(pressure air_pressure, temperature air_temperature)
+		{
+			auto Rspecific = joules_per_kilogram_per_kelvin(287.050'0676);
+			return air_pressure / (Rspecific * air_temperature);
 		}
 
 		// Calculates the body-mass index (BMI).

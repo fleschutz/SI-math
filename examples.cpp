@@ -160,11 +160,11 @@ int main()
 	auto result = formula::windchill_temperature(air_temperature, wind_speed);
 	print(result);
 } {
-	print("What's the lift force of an A380 wing on sea level at 100km/h? It's... ");
+	print("What's the lift force of an A380 wing on sea level at 284km/h rotation speed? It's... ");
 	auto wing_surface = 845_m²;
 	quantity lift_coefficient = 1.3939;
 	auto air_density = 1.2250_kg_per_m³; // at sea level at 15°C (59°F)
-	auto air_speed = 100_km_per_h;
+	auto air_speed = 284_km_per_h;
 	auto force = formula::lift_force_of_wing(lift_coefficient, wing_surface, air_density, air_speed);
 	print(force);
 } {
