@@ -185,6 +185,9 @@ namespace SI
 
 	std::string to_string(acceleration a)
 	{
+		if (a <= -1_km_per_s² || a >= 1_km_per_s²)
+			return _join(a / 1_km_per_s², "km/s");
+
 		return _join(a / 1_m_per_s², "m/s²");
 	}
 

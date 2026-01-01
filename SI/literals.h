@@ -103,6 +103,7 @@ LITERAL( m_per_s,  1, meters_per_second);   // 1_m_per_s (m/s)
 LITERAL( km_per_h, 1, kilometers_per_hour); // 1_km_per_h (km/h)
 LITERAL( mm_per_h, 1, millimeters_per_hour);// 1_mm_per_h (mm/h)
 // Acceleration (a) in...
+LITERAL( km_per_s²,1e3, meters_per_second2);// 1_km_per_s² (km/s²)
 LITERAL( m_per_s², 1, meters_per_second2);  // 1_m_per_s² (m/s²)
 // Frequency (f) in...
 LITERAL( THz,   1e12, hertz);               // 1_THz (terahertz)
@@ -245,7 +246,10 @@ LITERAL( pc,              30'856'775'814'913'700, meter);  // 1_pc (parsec)
 // Imperial units in...
 LITERAL( degF,                                 1, fahrenheit); // 1_degF (°Fahrenheit)
 LITERAL( ft,                               .3048, meter);  // 1_ft (feet)
+LITERAL( ft_per_min,                     0.00508, meters_per_second); // 1_ft_per_min (feet/min)
 LITERAL( in,                              0.0254, meter);  // 1_in (inch)
+LITERAL( in_per_s,                        0.0254, meters_per_second); // 1_in_per_s (inch/sec)
+LITERAL( in_per_h,                  0.0000070556, meters_per_second); // 1_in_per_h (inch/hour)
 LITERAL( kn,                               1.852, kilometers_per_hour); // 1_kn (knots)
 LITERAL( lb,                          453.592'37, gram);   // 1_lb
 LITERAL( oz,                      28.349'523'125, gram);   // 1_oz

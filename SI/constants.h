@@ -2,9 +2,9 @@
 #pragma once
 
 #include "units.h"
-#define CONST(_name, _value, _unit) const auto _name = _unit(_value)
-#define UNICODE(_name, _value, _unit) // contains non-ASCII characters (not supported yet)
-#define TODO(_name, _value, _unit)    // to be done
+#define CONST(_name, _value, _baseUnit) const auto _name = _baseUnit(_value##L)
+#define UNICODE(_name, _value, _baseUnit) // contains non-ASCII characters (not supported yet)
+#define TODO(_name, _value, _baseUnit)    // to be done
 
 namespace SI
 {
@@ -12,7 +12,7 @@ namespace SI
 	{
 // The 7 defining constants of SI (as of 20 May 2019)
 CONST( caesium_frequency,     9'192'631'770, hertz); // the unperturbed ground state hyperfine transition frequency of the ceesium-133 atom
-CONST( delta_ν_Cs,            9'192'631'770, hertz); // (the symbol)
+CONST( delta_v_Cs,            9'192'631'770, hertz); // (the symbol)
 CONST( speed_of_light,          299'792'458, meters_per_second); // the speed of light in vacuum
 CONST( c,                       299'792'458, meters_per_second); // (the symbol)
 CONST( Planck,             6.626'070'15e-34, joulesecond); // the Planck constant

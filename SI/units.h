@@ -28,21 +28,21 @@ namespace SI
 			Every physical quantity has a dimension which is specified by it's dimensional exponents.
 			Examples:
 			- velocity is length per time or length^1/time^1, so the exponents for velocity are Length=1,
-			  Mass=0, Time=-1, Temp=0, Angle=0
+			  Mass=0, Time=-1, Temp=0, Current=0
 			- force is mass times acceleration which is mass^1*length^1/time^2, so the exponents are
-			  Length=1, Mass=1, Time=-2, Temp=0, Angle=0
+			  Length=1, Mass=1, Time=-2, Temp=0, Current=0
 
 			This template converts this concept into a C++ type.
 			In order to add a new exponent one has to update the three templates dimension, value_dimension and SI_DIMENSION_OP
 		*/
-		template <long Length, long Mass, long Time, long Temperature, long Angle>
+		template <long Length, long Mass, long Time, long Temperature, long Current>
 		struct dimension
 		{
 			static constexpr long length = Length;
 			static constexpr long mass = Mass;
 			static constexpr long time = Time;
 			static constexpr long temperature = Temperature;
-			static constexpr long angle = Angle;
+			static constexpr long angle = Current;
 		};
 
 		template <long Value>
@@ -643,7 +643,7 @@ namespace SI
 	using detail::is_si;
 	using detail::is_si_v;
 
-#define SI_DIM(name_, length_, mass_, time_, temperature_, current_, substance_, intensity_)		\
+#define DIMENSIONS(name_, length_, mass_, time_, temperature_, current_, substance_, intensity_)		\
 	namespace detail { using name_ ## _dimension = dimension<length_, mass_, time_, temperature_, current_>; }\
 	template <class T> using name_ ## _t = detail::quantity<detail:: name_ ## _dimension, T>;		\
 	using name_ = name_ ## _t<double_t>;									\
@@ -653,37 +653,37 @@ namespace SI
 	using name_ ## 3 = name_ ## _t<detail::vec3<double_t>>;							\
 	using name_ ## 3f = name_ ## _t<detail::vec3<float_t>>															
 	// The 7 SI Base Dimensions
-	// ------------------------ l  m  t  T  A  s  i
-	SI_DIM(length,              1, 0, 0, 0, 0, 0, 0);
-	SI_DIM(mass,                0, 1, 0, 0, 0, 0, 0);
-	SI_DIM(time,                0, 0, 1, 0, 0, 0, 0);
-	SI_DIM(temperature,         0, 0, 0, 1, 0, 0, 0); // (thermodynamic temperature)
-	SI_DIM(electric_current,    0, 0, 0, 0, 1, 0, 0);
-	SI_DIM(amount_of_substance, 0, 0, 0, 0, 1, 1, 0);
-	SI_DIM(luminous_intensity,  0, 0, 0, 0, 1, 0, 1);
+	// ------------------------     l  m  t  T  A  s  i
+	DIMENSIONS(length,              1, 0, 0, 0, 0, 0, 0);
+	DIMENSIONS(mass,                0, 1, 0, 0, 0, 0, 0);
+	DIMENSIONS(time,                0, 0, 1, 0, 0, 0, 0);
+	DIMENSIONS(temperature,         0, 0, 0, 1, 0, 0, 0); // (thermodynamic temperature)
+	DIMENSIONS(electric_current,    0, 0, 0, 0, 1, 0, 0);
+	DIMENSIONS(amount_of_substance, 0, 0, 0, 0, 1, 1, 0);
+	DIMENSIONS(luminous_intensity,  0, 0, 0, 0, 1, 0, 1);
 
 	// The 22 Derived SI Dimensions
 	// ----------------------------
-	SI_DIM(per_length,         -1, 0,  0, 0, 0, 0, 0); // (per m, reciprocal)
-	SI_DIM(area,                2, 0,  0, 0, 0, 0, 0); // (in m²)
-	SI_DIM(per_area,           -2, 0,  0, 0, 0, 0, 0); // (per m², reciprocal)
-	SI_DIM(volume,              3, 0,  0, 0, 0, 0, 0); // (in m³)
-	SI_DIM(frequency,           0, 0, -1, 0, 0, 0, 0); // (per time)
-	SI_DIM(velocity,            1, 0, -1, 0, 0, 0, 0); // (length per time)
-	SI_DIM(angular_speed,       0, 0, -1, 0, 1, 0, 0); // (degree per time)
-	SI_DIM(acceleration,        1, 0, -2, 0, 0, 0, 0); // (length per time²)
-	SI_DIM(jerk,                1, 0, -3, 0, 0, 0, 0);
-	SI_DIM(force,               1, 1, -2, 0, 0, 0, 0); // (in Newton)
-	SI_DIM(impulse,             1, 1, -1, 0, 0, 0, 0);
-	SI_DIM(pressure,           -1, 1, -2, 0, 0, 0, 0);
-	SI_DIM(energy,              2, 1, -2, 0, 0, 0, 0);
-	SI_DIM(torque,              2, 1, -2, 0, 0, 0, 0);
-	SI_DIM(power,               2, 1, -3, 0, 0, 0, 0);
-	SI_DIM(density,            -3, 1,  0, 0, 0, 0, 0); // (mass per length³)
-	SI_DIM(electric_potential,  2, 1, -3, 0,-1, 0, 0); // (in volt)
-	SI_DIM(electric_charge,     0, 0,  1, 0, 1, 0, 0); // (electric current and time)
-	SI_DIM(mass_per_area,      -2, 1,  0, 0, 0, 0, 0); // (kg per m²)
-	SI_DIM(per_amount_of_substance,0, 0,  0, 0,-1, 0, 0);// (per mol, reciprocal)
+	DIMENSIONS(per_length,         -1, 0,  0, 0, 0, 0, 0); // (per m, reciprocal)
+	DIMENSIONS(area,                2, 0,  0, 0, 0, 0, 0); // (in m²)
+	DIMENSIONS(per_area,           -2, 0,  0, 0, 0, 0, 0); // (per m², reciprocal)
+	DIMENSIONS(volume,              3, 0,  0, 0, 0, 0, 0); // (in m³)
+	DIMENSIONS(frequency,           0, 0, -1, 0, 0, 0, 0); // (per second)
+	DIMENSIONS(velocity,            1, 0, -1, 0, 0, 0, 0); // (in m/s)
+	DIMENSIONS(acceleration,        1, 0, -2, 0, 0, 0, 0); // (length per time²)
+	DIMENSIONS(jerk,                1, 0, -3, 0, 0, 0, 0);
+	DIMENSIONS(force,               1, 1, -2, 0, 0, 0, 0); // (in newton)
+	DIMENSIONS(energy,              2, 1, -2, 0, 0, 0, 0); // (in newton-meter)
+	DIMENSIONS(impulse,             1, 1, -1, 0, 0, 0, 0);
+	DIMENSIONS(pressure,           -1, 1, -2, 0, 0, 0, 0);
+	DIMENSIONS(torque,              2, 1, -2, 0, 0, 0, 0);
+	DIMENSIONS(power,               2, 1, -3, 0, 0, 0, 0);
+	DIMENSIONS(density,            -3, 1,  0, 0, 0, 0, 0); // (mass per length³)
+	DIMENSIONS(electric_potential,  2, 1, -3, 0,-1, 0, 0); // (in volt)
+	DIMENSIONS(electric_charge,     0, 0,  1, 0, 1, 0, 0); // (electric current and time)
+	DIMENSIONS(mass_per_area,      -2, 1,  0, 0, 0, 0, 0); // (kg per m²)
+	DIMENSIONS(per_amount_of_substance,0, 0,  0, 0,-1, 0, 0);// (per mol, reciprocal)
+	DIMENSIONS(angular_speed,       0, 0, -1, 0, 1, 0, 0); // (in °/s)
 
 	using position2d = length2;
 	using position = length3;
@@ -712,19 +712,15 @@ namespace SI
 	SI_INLINE_CONSTEXPR auto kilometer   = kilo * meter; 
 	SI_INLINE_CONSTEXPR auto centimeter  = centi * meter;
 	SI_INLINE_CONSTEXPR auto millimeter  = milli * meter;
-	SI_INLINE_CONSTEXPR auto per_meter    = unit<per_length>(); 
+	SI_INLINE_CONSTEXPR auto per_meter   = unit<per_length>(); 
 	// time in...
 	SI_INLINE_CONSTEXPR auto second      = unit<time>();
 	SI_INLINE_CONSTEXPR auto minute      = unit<time, 60>();
 	SI_INLINE_CONSTEXPR auto hour        = unit<time, 3600>();
 	SI_INLINE_CONSTEXPR auto day         = unit<time, 24*3600>();
-	SI_INLINE_CONSTEXPR auto millisecond = milli * second;
-	SI_INLINE_CONSTEXPR auto microsecond = micro * second;
 	// mass in...
 	SI_INLINE_CONSTEXPR auto kilogram    = unit<mass>();
-	SI_INLINE_CONSTEXPR auto ton         = kilo * kilogram;
 	SI_INLINE_CONSTEXPR auto gram        = milli * kilogram;
-	SI_INLINE_CONSTEXPR auto milligram   = micro * kilogram;
 	// thermodynamic temperature in...
 	SI_INLINE_CONSTEXPR auto kelvin      = unit<temperature>();
 	// electric current in...
@@ -737,9 +733,8 @@ namespace SI
 	// The 22 SI Derived Units
 	// -----------------------
 	SI_INLINE_CONSTEXPR auto hertz       = unit<frequency>();
-	SI_INLINE_CONSTEXPR auto kilohertz   = kilo * hertz;
 
-	SI_INLINE_CONSTEXPR auto meter2      = unit<area>();
+	SI_INLINE_CONSTEXPR auto meter2      = unit<area>(); // (square meter)
 	SI_INLINE_CONSTEXPR auto kilometer2  = kilo * kilo * meter2;
 	SI_INLINE_CONSTEXPR auto centimeter2 = centi * centi * meter2;
 	SI_INLINE_CONSTEXPR auto millimeter2 = milli * milli * meter2;
@@ -748,30 +743,25 @@ namespace SI
 	SI_INLINE_CONSTEXPR auto meter2_per_second = meter2 / second;
 	SI_INLINE_CONSTEXPR auto kilograms_per_meter2 = kilogram / meter2;
 
-	SI_INLINE_CONSTEXPR auto meter3      = unit<volume>();
+	SI_INLINE_CONSTEXPR auto meter3      = unit<volume>(); // (cubic meter)
 	SI_INLINE_CONSTEXPR auto kilometer3  = kilo * kilo * kilo * meter3;
 	SI_INLINE_CONSTEXPR auto centimeter3 = centi * centi * centi * meter3;
-	SI_INLINE_CONSTEXPR auto millimeter3 = milli * milli * milli * meter3;
 
 	SI_INLINE_CONSTEXPR auto meter3_per_second = meter3 / second;
 	SI_INLINE_CONSTEXPR auto kilograms_per_meter3 = kilogram / meter3;
 	SI_INLINE_CONSTEXPR auto grams_per_centimeter3 = gram / centimeter3;
 
-	SI_INLINE_CONSTEXPR auto meters_per_second = meter / second;
+	SI_INLINE_CONSTEXPR auto meters_per_second = unit<velocity>();
 	SI_INLINE_CONSTEXPR auto kilometers_per_hour = kilometer / hour;
 	SI_INLINE_CONSTEXPR auto millimeters_per_hour = millimeter / hour;
 
-	SI_INLINE_CONSTEXPR auto meters_per_second2 = meter / (second * second);
+	SI_INLINE_CONSTEXPR auto meters_per_second2 = unit<acceleration>();
 
 	SI_INLINE_CONSTEXPR auto newton      = unit<force>();
-	SI_INLINE_CONSTEXPR auto kilonewton  = kilo * newton;
-	SI_INLINE_CONSTEXPR auto meganewton  = mega * newton;
-	SI_INLINE_CONSTEXPR auto giganewton  = giga * newton;
+	SI_INLINE_CONSTEXPR auto newtonmeter = newton * meter;
+	SI_INLINE_CONSTEXPR auto newtonsecond= newton * second;
 
-	SI_INLINE_CONSTEXPR auto joule       = newton * meter;
-	SI_INLINE_CONSTEXPR auto kilojoule   = kilo * joule;
-	SI_INLINE_CONSTEXPR auto megajoule   = mega * joule;
-	SI_INLINE_CONSTEXPR auto gigajoule   = giga * joule;
+	SI_INLINE_CONSTEXPR auto joule      = unit<energy>();
 
 	SI_INLINE_CONSTEXPR auto joulesecond = joule * second;
 	SI_INLINE_CONSTEXPR auto joules_per_second = joule / second;
@@ -781,22 +771,17 @@ namespace SI
 	SI_INLINE_CONSTEXPR auto gray = joule / kilogram;
 	SI_INLINE_CONSTEXPR auto sievert = joule / kilogram;
 
-	SI_INLINE_CONSTEXPR auto watt        = joule / second; // (energy per time)
+	SI_INLINE_CONSTEXPR auto watt        = joule / second; 
 	SI_INLINE_CONSTEXPR auto watt_per_meter2 = watt / meter2;
 
 	SI_INLINE_CONSTEXPR auto pascal_     = unit<pressure>();
-	SI_INLINE_CONSTEXPR auto hectopascal = hecto * pascal_;
-	SI_INLINE_CONSTEXPR auto millibar    = hecto * pascal_;
-	SI_INLINE_CONSTEXPR auto bar         = hecto * kilo * pascal_;
-
-	SI_INLINE_CONSTEXPR auto newtonmeter = newton * meter;
-	SI_INLINE_CONSTEXPR auto newtonsecond= newton * second;
 
 	SI_INLINE_CONSTEXPR auto ampere_per_meter = ampere / meter;
 	SI_INLINE_CONSTEXPR auto ampere_per_meter2 = ampere / (meter * meter);
+	SI_INLINE_CONSTEXPR auto ampere_hours= ampere * hour;
+
 	SI_INLINE_CONSTEXPR auto coulomb     = unit<electric_charge>();
 	SI_INLINE_CONSTEXPR auto coulombs_per_mol = coulomb / mol;
-	SI_INLINE_CONSTEXPR auto ampere_hours= ampere * hour;
 
 	SI_INLINE_CONSTEXPR auto volt        = unit<electric_potential>();
 	SI_INLINE_CONSTEXPR auto farad       = coulomb / volt;
@@ -831,8 +816,6 @@ namespace SI
 	SI_INLINE_CONSTEXPR auto fahrenheit   = detail::unit<detail::temperature_dimension, detail::tag_fahrenheit>();
 	SI_INLINE_CONSTEXPR auto miles_per_hour = statute_mile / hour;
 	SI_INLINE_CONSTEXPR auto knots        = nautical_mile / hour;
-	SI_INLINE_CONSTEXPR auto feet_per_minute = feet / minute;
-	SI_INLINE_CONSTEXPR auto inches_per_hour = inch / hour;
 
 	// VARIOUS UNITS
 	SI_INLINE_CONSTEXPR auto celsius     = detail::unit<detail::temperature_dimension, detail::tag_celsius>();
@@ -872,6 +855,6 @@ namespace SI
 }
 
 #undef SI_RETURN_QUANTITY
-#undef SI_DIM
+#undef DIMENSIONS
 #undef SI_INLINE_CONSTEXPR
 #undef SI_INLINE
