@@ -8,11 +8,11 @@
 namespace SI
 {
 	// Internal function to join and convert both quantity and unit into a string.
-	std::string _join(double quantity, const std::string& unit)
+	std::string _join(long double quantity, const std::string& unit)
 	{
 		char buf[100];
-		std::snprintf(buf, sizeof(buf), "%.1F%s", quantity, unit.c_str());
-		return buf;
+		std::snprintf(buf, sizeof(buf), "%.3Lf", quantity);
+		return std::string(buf) + unit;
 	}
 
 	// The 7 SI Base Units
@@ -46,11 +46,11 @@ namespace SI
 		if (abs(t) >= Earth::week)
 			return _join(t / Earth::week, " week(s)");
 		if (abs(t) > Earth::day)
-			return _join(t / Earth::day, " day(s)");
+			return _join(t / Earth::day, " days");
 		if (abs(t) >= 1_h)
-			return _join((int)(t / 1_h), "h ") + _join((int)(t / 1_min) % 60, "min");
+			return _join(t / 1_h, "h");
 		if (abs(t) >= 1_min)
-			return _join((int)(t / 1_min), "min ") + _join((int)(t / 1_sec) % 60, "sec");
+			return _join(t / 1_min, "min");
 		if (abs(t) >= 1_sec)
 			return _join(t / 1_sec, "sec");
 		if (abs(t) >= 1_ms)
@@ -64,11 +64,11 @@ namespace SI
 	std::string to_string(mass m)
 	{
 		if (m <= -1_Gt || m >= 1_Gt)
-			return _join(m / 1_Gt, "Gt (gigatons)");
+			return _join(m / 1_Gt, "Gt");
 		if (m <= -1_Mt || m >= 1_Mt)
-			return _join(m / 1_Mt, "Mt (megatons)");
+			return _join(m / 1_Mt, "Mt");
 		if (m <= -1_kt || m >= 1_kt)
-			return _join(m / 1_kt, "kt (kilotons)");
+			return _join(m / 1_kt, "kt");
 		if (m <= -1_t || m >= 1_t)
 			return _join(m / 1_t, "t");
 		if (m <= -1_kg || m >= 1_kg)
@@ -83,12 +83,12 @@ namespace SI
 
 	std::string to_string(temperature T)
 	{
-		if (T >= 250_K && T <= 470_K) // temperature range for humans
-			return _join(celsius(T), "°C ") + _join(fahrenheit(T), "°F");
 		if (T <= -1_GK || T >= 1_GK)
 			return _join(T / 1_GK, "GK");
 		if (T <= -1_MK || T >= 1_MK)
 			return _join(T / 1_MK, "MK");
+		if (T >= 250_K && T <= 470_K) // human temperature range
+			return _join(celsius(T), "°C (") + _join(fahrenheit(T), "°F") + ")";
 		if (T <= -1_K || T >= 1_K)
 			return _join(T / 1_K, "K");
 		if (T <= -1_mK || T >= 1_mK)
@@ -217,9 +217,9 @@ namespace SI
 	std::string to_string(energy E)
 	{
 		if (E <= -1_PJ || E >= 1_PJ)
-			return _join(E / 1_PJ, "PJ (petajoules)");
+			return _join(E / 1_PJ, "PJ");
 		if (E <= -1_TJ || E >= 1_TJ)
-			return _join(E / 1_TJ, "TJ (terajoules)");
+			return _join(E / 1_TJ, "TJ");
 		if (E <= -1_GJ || E >= 1_GJ)
 			return _join(E / 1_GJ, "GJ");
 		if (E <= -1_MJ || E >= 1_MJ)

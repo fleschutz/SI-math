@@ -95,21 +95,18 @@ namespace SI
 		print(to_string(E));
 	}
 
-	void print_as_TNT_equivalent(energy E)
+	void print_equivalent(energy E)
 	{
-		print(" ");
 		const auto one_kg_TNT = 4.184_MJ; // (explosion energy of 1kg Trinitrotoluol))
+		const auto Hiroshima_bomb = 62_TJ; // (explosion energy of the Hiroshima bomb)
+						  //
+		print(" (=");
 		auto TNT_mass = kilogram(E / one_kg_TNT);
 		print(TNT_mass);
-		print("TNT ");
-	}
+		print(" TNT, ");
 
-	void print_as_Hiroshima_equivalent(energy E)
-	{
-		const auto Hiroshima_bomb = 62_TJ; // (explosion energy of the Hiroshima bomb)
 		quantity factor = E / Hiroshima_bomb;
-		print(factor);
-		print("Hiroshima bombs ");
+		print(factor, " Hiroshima bombs)");
 	}
 
 	void print(power P)
@@ -132,23 +129,25 @@ namespace SI
 		print(to_string(a));
 	}
 
+	// Multiple Units
+	// --------------
 	void print(area a, volume v, mass m)
 	{
-		print(a); print(" "); print(v); print(" "); print(m);
+		print(a); print(", "); print(v); print(", "); print(m);
 	}
 
 	void print(area a, volume v, mass m, power p)
 	{
-		print(a); print(" "); print(v); print(" "); print(m); print(" "); print(p);
+		print(a); print(", "); print(v); print(", "); print(m); print(", "); print(p);
 	}
 
 	void print(volume v, mass m, energy e)
 	{
-		print(v); print(" "); print(m); print(" "); print(e);
+		print(v); print(", "); print(m); print(", "); print(e);
 	}
 
 	void print(mass m, energy e)
 	{
-		print(m); print(" "); print(e);
+		print(m); print(", "); print(e);
 	}
 }
