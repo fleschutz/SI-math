@@ -63,8 +63,10 @@ namespace SI
 			return _join(t / 1_ms, "ms");
 		if (t <= -1_us || t >= 1_us)
 			return _join(t / 1_us, "μs");
+		if (t <= -1_ns || t >= 1_ns)
+			return _join(t / 1_ns, "ns");
 
-		return _join(t / 1_ns, "ns");
+		return _join(t / 1_ps, "ps");
 	}
 
 	std::string to_string(mass m)
@@ -83,8 +85,10 @@ namespace SI
 			return _join(m / 1_g, "g");
 		if (m <= -1_mg || m >= 1_mg)
 			return _join(m / 1_mg, "mg");
+		if (m <= -1_ug || m >= 1_ug)
+			return _join(m / 1_ug, "µg");
 
-		return _join(m / 1_ug, "μg");
+		return _join(m / 1_ng, "ng");
 	}
 
 	std::string to_string(temperature T)
@@ -99,8 +103,8 @@ namespace SI
 			return _join(T / 1_K, "K");
 		if (T <= -1_mK || T >= 1_mK)
 			return _join(T / 1_mK, "mK");
-		if (T <= -1_μK || T >= 1_μK)
-			return _join(T / 1_μK, "μK");
+		if (T <= -1_uK || T >= 1_uK)
+			return _join(T / 1_uK, "μK");
 
 		return _join(T / 1_nK, "nK");
 	}
@@ -117,8 +121,8 @@ namespace SI
 			return _join(I / 1_A, "A");
 		if (I <= -1_mA || I >= 1_mA)
 			return _join(I / 1_mA, "mA");
-		if (I <= -1_μA || I >= 1_μA)
-			return _join(I / 1_μA, "μA");
+		if (I <= -1_uA || I >= 1_uA)
+			return _join(I / 1_uA, "μA");
 		if (I <= -1_nA || I >= 1_nA)
 			return _join(I / 1_nA, "nA");
 
@@ -140,7 +144,7 @@ namespace SI
 		if (a <= -1_mm² || a >= 1_mm²)
 			return _join(a / 1_mm², "mm²");
 
-		return _join(a / 1_μm², "μm²");
+		return _join(a / 1_um², "μm²");
 	}
 
 	std::string to_string(per_area a)
@@ -169,8 +173,8 @@ namespace SI
 			return _join(v / 1_l, "l");
 		if (v <= -1_ml || v >= 1_ml)
 			return _join(v / 1_ml, "ml");
-		if (v <= -1_μl || v >= 1_μl)
-			return _join(v / 1_μl, "μl");
+		if (v <= -1_ul || v >= 1_ul)
+			return _join(v / 1_ul, "μl");
 		if (v <= -1_nl || v >= 1_nl)
 			return _join(v / 1_nl, "nl");
 
@@ -223,8 +227,10 @@ namespace SI
 			return _join(F / 1_N, "N");
 		if (F <= -1_mN || F >= 1_mN)
 			return _join(F / 1_mN, "mN");
+		if (F <= -1_uN || F >= 1_uN)
+			return _join(F / 1_uN, "µN");
 
-		return _join(F / 1_μN, "μN");
+		return _join(F / 1_pN, "pN");
 	}
 
 	std::string to_string(energy E)
@@ -239,8 +245,10 @@ namespace SI
 			return _join(E / 1_MJ, "MJ");
 		if (E <= -1_kJ || E >= 1_kJ)
 			return _join(E / 1_kJ, "kJ");
+		if (E <= -1_J || E >= 1_J || E == 0.0_J)
+			return _join(E / 1_J, "J");
 
-		return _join(E / 1_J, "J");
+		return _join(E / 1_mJ, "mJ");
 	}
 
 	std::string to_string(power P)
@@ -297,8 +305,8 @@ namespace SI
 			return _join(U / 1_V, "V");
 		if (U <= -1_mV || U >= 1_mV)
 			return _join(U / 1_mV, "mV");
-		if (U <= -1_μV || U >= 1_μV)
-			return _join(U / 1_μV, "μV");
+		if (U <= -1_uV || U >= 1_uV)
+			return _join(U / 1_uV, "μV");
 		if (U <= -1_nV || U >= 1_nV)
 			return _join(U / 1_nV, "nV");
 		return _join(U / 1_pV, "pV");
@@ -314,8 +322,10 @@ namespace SI
 			return _join(Q / 1_kAh, "kAh");
 		if (Q <= -1_Ah || Q >= 1_Ah || Q == 0.0_Ah)
 			return _join(Q / 1_Ah, "Ah");
+		if (Q <= -1_mAh || Q >= 1_mAh)
+			return _join(Q / 1_mAh, "mAh");
 
-		return _join(Q / 1_mAh, "mAh");
+		return _join(Q / 1_uAh, "µAh");
 	}
 
 	std::string to_string(mass_per_area v)

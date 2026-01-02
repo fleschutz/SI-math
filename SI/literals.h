@@ -10,8 +10,8 @@ namespace SI
 {
 // The 7 SI Base Units
 // -------------------
-// SYMBOL     FACTOR  BASE UNIT                EXAMPLE      
-// Length in...                                     (sorted from big to small)
+// SYMBOL     FACTOR  BASE UNIT                EXAMPLE  (units sorted from big to small)
+// Length in...
 LITERAL( Gm,     1e9, meter);               // 1_Gm (gigameter)
 LITERAL( Mm,     1e6, meter);               // 1_Mm (megameter)
 LITERAL( km,     1e3, meter);               // 1_km (kilometer)
@@ -32,6 +32,7 @@ LITERAL( second,   1, second);              // 1_second
 LITERAL( ms,    1e-3, second);              // 1_ms  (millisecond)
 LITERAL( us,    1e-6, second);              // 1_us  (microsecond)
 LITERAL( ns,    1e-9, second);              // 1_ns  (nanosecond)
+LITERAL( ps,   1e-12, second);              // 1_ps  (picosecond)
 // Mass in...
 LITERAL( Gt,    1e12, kilogram);            // 1_Gt (metric gigaton)
 LITERAL( Mt,     1e9, kilogram);            // 1_Mt (metric megaton)
@@ -41,13 +42,14 @@ LITERAL( kg,       1, kilogram);            // 1_kg
 LITERAL( g,     1e-3, kilogram);            // 1_g  (gram)
 LITERAL( mg,    1e-6, kilogram);            // 1_mg (milligram)
 LITERAL( ug,    1e-9, kilogram);            // 1_ug (microgram)
+LITERAL( ng,   1e-12, kilogram);            // 1_ng (nanogram)
 // Thermodynamic temperature in...
 LITERAL( GK,     1e9, kelvin);              // 1_GK (gigakelvin)
 LITERAL( MK,     1e6, kelvin);              // 1_MK (megakelvin)
 LITERAL( kK,     1e3, kelvin);              // 1_kK (kilokelvin)
 LITERAL( K,        1, kelvin);              // 1_K
 LITERAL( mK,    1e-3, kelvin);              // 1_mK (millikelvin)
-LITERAL( μK,    1e-6, kelvin);              // 1_μK (microkelvin)
+LITERAL( uK,    1e-6, kelvin);              // 1_uK (microkelvin)
 LITERAL( nK,    1e-9, kelvin);              // 1_nK (nanokelvin)
 // Electric current (I) in...
 LITERAL( GA,     1e9, ampere);              // 1_GA  (gigaampere)
@@ -55,14 +57,14 @@ LITERAL( MA,     1e6, ampere);              // 1_MA  (megaampere)
 LITERAL( kA,     1e3, ampere);              // 1_kA  (kiloampere)
 LITERAL( A,        1, ampere);              // 1_A 
 LITERAL( mA,    1e-3, ampere);              // 1_mA  (milliampere)
-LITERAL( μA,    1e-6, ampere);              // 1_μA  (microampere)
+LITERAL( uA,    1e-6, ampere);              // 1_uA  (microampere)
 LITERAL( nA,    1e-9, ampere);              // 1_nA  (nanoampere)
 LITERAL( pA,   1e-12, ampere);              // 1_pA  (picoampere)
 // Amount of substance (N_A) in...
 LITERAL( kmol,   1e3, mol);                 // 1_kmol (kilomole)
 LITERAL( mol,      1, mol);                 // 1_mol
 LITERAL( mmol,  1e-3, mol);                 // 1_mmol (millimole)
-LITERAL( μmol,  1e-6, mol);                 // 1_μmol (micromole)
+LITERAL( umol,  1e-6, mol);                 // 1_umol (micromole)
 LITERAL( nmol,  1e-9, mol);                 // 1_nmol (nanomole)
 LITERAL( pmol, 1e-12, mol);                 // 1_pmol (picomole)
 LITERAL( fmol, 1e-15, mol);                 // 1_fmol (femtomole)
@@ -79,7 +81,7 @@ LITERAL( hm²,    1e4, meter2);              // 1_hm² (hectare)
 LITERAL( m²,       1, meter2);              // 1_m²  (square meter)
 LITERAL( cm²,   1e-4, meter2);              // 1_cm² (square centimeter)
 LITERAL( mm²,   1e-6, meter2);              // 1_mm² (square millimeter)
-LITERAL( μm²,   1e-9, meter2);              // 1_μm² (square micrometer)
+LITERAL( um²,   1e-9, meter2);              // 1_um² (square micrometer)
 // Per area in...
 LITERAL( per_km²,1e-6, per_meter2);         // 1_per_km² (per square kilometer)
 LITERAL( per_hm²,1e-4, per_meter2);         // 1_per_hm² (per hectare)
@@ -93,12 +95,12 @@ LITERAL( m³,       1, meter3);              // 1_m³  (cubic meter)
 LITERAL( dm³,   1e-3, meter3);              // 1_dm³ (cubic decimeter)
 LITERAL( cm³,   1e-6, meter3);              // 1_cm³ (cubic centimeter)
 LITERAL( mm³,   1e-9, meter3);              // 1_mm³ (cubic millimeter)
-LITERAL( μm³,  1e-12, meter3);              // 1_μm³ (cubic micrometer)
+LITERAL( um³,  1e-12, meter3);              // 1_um³ (cubic micrometer)
 // or in...
 LITERAL( hl,     0.1, meter3);              // 1_hl  (hectoliter)
 LITERAL( l,     1e-3, meter3);              // 1_l   (liter)
 LITERAL( ml,    1e-6, meter3);              // 1_ml  (milliliter)
-LITERAL( μl,    1e-9, meter3);              // 1_μl  (microliter)
+LITERAL( ul,    1e-9, meter3);              // 1_ul  (microliter)
 LITERAL( nl,   1e-12, meter3);              // 1_nl  (nanoliter)
 LITERAL( pl,   1e-15, meter3);              // 1_pl  (picoliter)
 // Velocity (v) in...
@@ -131,7 +133,7 @@ LITERAL( MV,     1e6, volt);                // 1_MV (megavolt)
 LITERAL( kV,     1e3, volt);                // 1_kV (kilovolt)
 LITERAL( V,        1, volt);                // 1_V 
 LITERAL( mV,    1e-3, volt);                // 1_mV (millivolt)
-LITERAL( μV,    1e-6, volt);                // 1_μV (microvolt)
+LITERAL( uV,    1e-6, volt);                // 1_uV (microvolt)
 LITERAL( nV,    1e-9, volt);                // 1_nV (nanovolt)
 LITERAL( pV,   1e-12, volt);                // 1_pV (picovolt)
 // Electric resistance (R) in...
@@ -140,7 +142,7 @@ LITERAL( MOhm,   1e6, ohm);                 // 1_MOhm (megaohm)
 LITERAL( kOhm,   1e3, ohm);                 // 1_kOhm (kiloohm)
 LITERAL( Ohm,      1, ohm);                 // 1_Ohm
 LITERAL( mOhm,  1e-3, ohm);                 // 1_mOhm (milliohm)
-LITERAL( μOhm,  1e-6, ohm);                 // 1_μOhm (microohm)
+LITERAL( uOhm,  1e-6, ohm);                 // 1_uOhm (microohm)
 // Electric resistance meter in...
 LITERAL( Ohm_m,    1, ohm_meter);           // 1_Ohm_m (ohm meter)
 // Electric conductance (G) in...
@@ -148,7 +150,7 @@ LITERAL( MS,     1e6, siemens);             // 1_MS   (megasiemens)
 LITERAL( kS,     1e3, siemens);             // 1_kS   (kilosiemens)
 LITERAL( S,        1, siemens);             // 1_S    (siemens)
 LITERAL( mS,    1e-3, siemens);             // 1_mS   (millisiemens)
-LITERAL( μS,    1e-6, siemens);             // 1_μS   (microsiemens)
+LITERAL( uS,    1e-6, siemens);             // 1_uS   (microsiemens)
 // Electric conductivity (σ) in...
 LITERAL( MS_per_m,1e6, siemens_per_meter);  // 1_MS_per_m (MS/m, megasiemens per meter)
 LITERAL( kS_per_m,1e3, siemens_per_meter);  // 1_kS_per_m (kS/m, kilosiemens per meter)
@@ -160,6 +162,7 @@ LITERAL( MAh,    1e6, ampere_hours);        // 1_MAh (megaampere-hours)
 LITERAL( kAh,    1e3, ampere_hours);        // 1_kAh (kiloampere-hours)
 LITERAL( Ah,       1, ampere_hours);        // 1_Ah  (ampere-hours)
 LITERAL( mAh,   1e-3, ampere_hours);        // 1_mAh (milliampere-hours)
+LITERAL( uAh,   1e-6, ampere_hours);        // 1_uAh (microampere-hours)
 // Electric capacitance (C) in...
 LITERAL( F,        1, farad);               // 1_F   (farad)
 LITERAL( mF,    1e-3, farad);               // 1_mF  (millifarad)
@@ -184,6 +187,8 @@ LITERAL( GJ,     1e9, joule);               // 1_GJ  (gigajoule)
 LITERAL( MJ,     1e6, joule);               // 1_MJ  (megajoule)
 LITERAL( kJ,     1e3, joule);               // 1_kJ  (kilojoule)
 LITERAL( J,        1, joule);               // 1_J   (joule)
+LITERAL( mJ,    1e-3, joule);               // 1_mJ  (millijoule)
+// or in...
 LITERAL( cal, 4.1868, joule);               // 1_cal (calorie)
 LITERAL( kcal,4186.8, joule);               // 1_kcal (kilocalorie)
 // Active power (P) in...
@@ -227,7 +232,8 @@ LITERAL( MN,     1e6, newton);              // 1_MN (meganewton)
 LITERAL( kN,     1e3, newton);              // 1_kN (kilonewton)
 LITERAL( N,        1, newton);              // 1_N
 LITERAL( mN,    1e-3, newton);              // 1_mN (millinewton)
-LITERAL( μN,    1e-6, newton);              // 1_μN (micronewton)
+LITERAL( uN,    1e-6, newton);              // 1_uN (micronewton)
+LITERAL( pN,    1e-9, newton);              // 1_pN (piconewton)
 // Luminous flux (m) in...
 LITERAL( lm,       1, lumen);               // 1_lm (lumen)
 LITERAL( lm_s,     1, lumen_second);        // 1_lm_s (lumen second)

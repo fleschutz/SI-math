@@ -42,21 +42,21 @@ namespace SI
 		static_assert(1_MK == 1000_kK);
 		static_assert(1_kK == 1000_K);
 		static_assert(1_mK == 0.001_K);
-		static_assert(1_μK == 0.001_mK);
-		static_assert(1_nK == 0.001_μK);
+		static_assert(1_uK == 0.001_mK);
+		static_assert(1_nK == 0.001_uK);
 		// Electric current in...
 		static_assert(1_MA == 1000_kA);
 		static_assert(1_kA == 1000_A);
 		static_assert(1_A  == 1000_mA);
 		static_assert(1_mA == 0.001_A);
-		static_assert(1_μA == 0.001_mA);
-		static_assert(1_nA == 0.001_μA);
+		static_assert(1_uA == 0.001_mA);
+		static_assert(1_nA == 0.001_uA);
 		// Amount of substance in...
 		static_assert(1_kmol == 1000_mol);
 		static_assert(1_mol  == 0.001_kmol);
 		static_assert(1_mmol == 0.001_mol);
-		static_assert(1_μmol == 0.001_mmol);
-		static_assert(1_nmol == 0.001_μmol);
+		static_assert(1_umol == 0.001_mmol);
+		static_assert(1_nmol == 0.001_umol);
 		// Luminous intensity in...
 		static_assert(1_kcd == 1000_cd);
 		static_assert(1_cd == 0.001_kcd);
