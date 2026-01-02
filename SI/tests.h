@@ -152,5 +152,23 @@ namespace SI
 		static_assert(1_GB == 1000_MB);
 		static_assert(1_MB == 1000_kB);
 		static_assert(1_kB == 1000_byte);
+
+		// simple numeric operations
+		static_assert(10_km / 2 == 5_km);
+
+		// conversions to common units
+		static_assert(1_h == 3600_s);
+		static_assert(1_km + 1_m == 1001_m);
+
+		// derived quantities
+		static_assert(1_km / 1_s == 1000_m_per_s);
+		static_assert(2_km / 1_h * (2_h) == 4_km);
+		static_assert(2_km / (2_km / 1_h) == 1_h);
+
+		static_assert(2_m * 3_m == 6_m²);
+
+		static_assert(10_km / 5_km == 2);
+
+		static_assert(1000 / 1_s == 1_kHz);
 	}
 }
