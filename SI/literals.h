@@ -94,9 +94,13 @@ LITERAL( dm³,   1e-3, meter3);              // 1_dm³ (cubic decimeter)
 LITERAL( cm³,   1e-6, meter3);              // 1_cm³ (cubic centimeter)
 LITERAL( mm³,   1e-9, meter3);              // 1_mm³ (cubic millimeter)
 LITERAL( μm³,  1e-12, meter3);              // 1_μm³ (cubic micrometer)
+// or in...
+LITERAL( hl,     0.1, meter3);              // 1_hl  (hectoliter)
 LITERAL( l,     1e-3, meter3);              // 1_l   (liter)
 LITERAL( ml,    1e-6, meter3);              // 1_ml  (milliliter)
 LITERAL( μl,    1e-9, meter3);              // 1_μl  (microliter)
+LITERAL( nl,   1e-12, meter3);              // 1_nl  (nanoliter)
+LITERAL( pl,   1e-15, meter3);              // 1_pl  (picoliter)
 // Velocity (v) in...
 LITERAL( km_per_s, 1e3, meters_per_second); // 1_km_per_s (km/s)
 LITERAL( m_per_s,  1, meters_per_second);   // 1_m_per_s (m/s)

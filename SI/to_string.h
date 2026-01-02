@@ -1,4 +1,4 @@
-// SI/to_string.h - converts SI units to a string 
+// SI/to_string.h - convert any SI unit to a string, e.g. str = to_string(length); 
 #pragma once
 
 #include <string>
@@ -7,12 +7,14 @@
 
 namespace SI
 {
+	const char* format_of_to_string = "%.1LF %s"; // <-- configurable (precision? whitespace?)
+
 	// Internal function to join and convert both quantity and unit into a string.
 	std::string _join(long double quantity, const std::string& unit)
 	{
-		char buf[100];
-		std::snprintf(buf, sizeof(buf), "%.3Lf", quantity);
-		return std::string(buf) + unit;
+		char buf[256];
+		std::snprintf(buf, sizeof(buf), format_of_to_string, quantity, unit.c_str());
+		return std::string(buf);
 	}
 
 	// The 7 SI Base Units
@@ -50,7 +52,7 @@ namespace SI
 		if (abs(t) >= Earth::week)
 			return _join(t / Earth::week, " week(s)");
 		if (abs(t) > Earth::day)
-			return _join(t / Earth::day, " days");
+			return _join(t / Earth::day, "days");
 		if (abs(t) >= 1_h)
 			return _join(t / 1_h, "h");
 		if (abs(t) >= 1_min)
@@ -165,12 +167,14 @@ namespace SI
 			return _join(v / 1_m³, "m³");
 		if (v <= -1_l || v >= 1_l)
 			return _join(v / 1_l, "l");
-		if (v <= -1_cm³ || v >= 1_cm³)
-			return _join(v / 1_cm³, "cm³");
-		if (v <= -1_mm³ || v >= 1_mm³)
-			return _join(v / 1_mm³, "mm³");
+		if (v <= -1_ml || v >= 1_ml)
+			return _join(v / 1_ml, "ml");
+		if (v <= -1_μl || v >= 1_μl)
+			return _join(v / 1_μl, "μl");
+		if (v <= -1_nl || v >= 1_nl)
+			return _join(v / 1_nl, "nl");
 
-		return _join(v / 1_μm³, "μm³");
+		return _join(v / 1_pl, "pl");
 	}
 
 	std::string to_string(velocity v)
