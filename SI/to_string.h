@@ -31,14 +31,14 @@ namespace SI
 			return _join(d / 1_au, "au (astronomical unit)");
 		if (d <= -1_km || d >= 1_km)
 			return _join(d / 1_km, "km");
-		if (d <= -1_m || d >= 1_m)
-			return _join(d / 1_m, "m ");
+		if (d <= -1_m || d >= 1_m || d == 0.0_m)
+			return _join(d / 1_m, "m");
 		if (d <= -1_cm || d >= 1_cm)
 			return _join(d / 1_cm, "cm");
 		if (d <= -1_mm || d >= 1_mm)
 			return _join(d / 1_mm, "mm");
-		if (d <= -1_μm || d >= 1_μm)
-			return _join(d / 1_μm, "μm");
+		if (d <= -1_um || d >= 1_um)
+			return _join(d / 1_um, "μm");
 		if (d <= -1_nm || d >= 1_nm)
 			return _join(d / 1_nm, "nm");
 
@@ -53,16 +53,16 @@ namespace SI
 			return _join(t / Earth::week, " week(s)");
 		if (abs(t) > Earth::day)
 			return _join(t / Earth::day, "days");
-		if (abs(t) >= 1_h)
+		if (t <= -1_h || t >= 1_h)
 			return _join(t / 1_h, "h");
-		if (abs(t) >= 1_min)
+		if (t <= -1_min || t >= 1_min)
 			return _join(t / 1_min, "min");
-		if (abs(t) >= 1_sec)
+		if (t <= -1_sec || t >= 1_sec || t == 0.0_sec)
 			return _join(t / 1_sec, "sec");
-		if (abs(t) >= 1_ms)
+		if (t <= -1_ms || t >= 1_ms)
 			return _join(t / 1_ms, "ms");
-		if (abs(t) >= 1_μs)
-			return _join(t / 1_μs, "μs");
+		if (t <= -1_us || t >= 1_us)
+			return _join(t / 1_us, "μs");
 
 		return _join(t / 1_ns, "ns");
 	}
@@ -77,14 +77,14 @@ namespace SI
 			return _join(m / 1_kt, "kt");
 		if (m <= -1_t || m >= 1_t)
 			return _join(m / 1_t, "t");
-		if (m <= -1_kg || m >= 1_kg)
+		if (m <= -1_kg || m >= 1_kg || m == 0.0_kg)
 			return _join(m / 1_kg, "kg");
 		if (m <= -1_g || m >= 1_g)
 			return _join(m / 1_g, "g");
 		if (m <= -1_mg || m >= 1_mg)
 			return _join(m / 1_mg, "mg");
 
-		return _join(m / 1_μg, "μg");
+		return _join(m / 1_ug, "μg");
 	}
 
 	std::string to_string(temperature T)
@@ -95,7 +95,7 @@ namespace SI
 			return _join(T / 1_MK, "MK");
 		if (T >= 250_K && T <= 470_K) // human temperature range
 			return _join(celsius(T), "°C (") + _join(fahrenheit(T), "°F") + ")";
-		if (T <= -1_K || T >= 1_K)
+		if (T <= -1_K || T >= 1_K || T == 0.0_K)
 			return _join(T / 1_K, "K");
 		if (T <= -1_mK || T >= 1_mK)
 			return _join(T / 1_mK, "mK");
@@ -113,7 +113,7 @@ namespace SI
 			return _join(I / 1_MA, "MA");
 		if (I <= -1_kA || I >= 1_kA)
 			return _join(I / 1_kA, "kA");
-		if (I <= -1_A || I >= 1_A)
+		if (I <= -1_A || I >= 1_A || I == 0.0_A)
 			return _join(I / 1_A, "A");
 		if (I <= -1_mA || I >= 1_mA)
 			return _join(I / 1_mA, "mA");
@@ -133,7 +133,7 @@ namespace SI
 			return _join(a / 1_km², "km²");
 		if (a <= -1_hm² || a >= 1_hm²)
 			return _join(a / 1_hm², "hm²");
-		if (a <= -1_m² || a >= 1_m²)
+		if (a <= -1_m² || a >= 1_m² || a == 0.0_m²)
 			return _join(a / 1_m², "m²");
 		if (a <= -1_cm² || a >= 1_cm²)
 			return _join(a / 1_cm², "cm²");
@@ -149,7 +149,7 @@ namespace SI
 			return _join(a / 1_per_km², "/km²");
 		if (a <= -1_per_hm² || a >= 1_per_hm²)
 			return _join(a / 1_per_hm², "/hm²");
-		if (a <= -1_per_m² || a >= 1_per_m²)
+		if (a <= -1_per_m² || a >= 1_per_m² || a == 0.0_per_m²)
 			return _join(a / 1_per_m², "/m²");
 		if (a <= -1_per_cm² || a >= 1_per_cm²)
 			return _join(a / 1_per_cm², "/cm²");
@@ -165,7 +165,7 @@ namespace SI
 			return _join(v / 1_km³, "km³");
 		if (v <= -1_m³ || v >= 1_m³)
 			return _join(v / 1_m³, "m³");
-		if (v <= -1_l || v >= 1_l)
+		if (v <= -1_l || v >= 1_l || v == 0.0_l)
 			return _join(v / 1_l, "l");
 		if (v <= -1_ml || v >= 1_ml)
 			return _join(v / 1_ml, "ml");
@@ -181,7 +181,7 @@ namespace SI
 	{
 		if (v <= -1_km_per_h || v >= 1_km_per_h)
 			return _join(v / 1_km_per_h, "km/h");
-		if (v <= -1_m_per_s || v >= 1_m_per_s)
+		if (v <= -1_m_per_s || v >= 1_m_per_s || v == 0.0_m_per_s)
 			return _join(v / 1_m_per_s, "m/s");
 
 		return _join(v / 1_mm_per_h, "mm/h");
@@ -205,8 +205,10 @@ namespace SI
 			return _join(f / 1_MHz, "MHz");
 		if (f <= -1_kHz || f >= 1_kHz)
 			return _join(f / 1_kHz, "kHz");
+		if (f <= -1_Hz || f >= 1_Hz || f == 0.0_Hz)
+			return _join(f / 1_Hz, "Hz");
 
-		return _join(f / 1_Hz, "Hz");
+		return _join(f / 1_mHz, "mHz");
 	}
 
 	std::string to_string(force F)
@@ -217,7 +219,7 @@ namespace SI
 			return _join(F / 1_MN, "MN");
 		if (F <= -1_kN || F >= 1_kN)
 			return _join(F / 1_kN, "kN");
-		if (F <= -1_N || F >= 1_N)
+		if (F <= -1_N || F >= 1_N || F == 0.0_N)
 			return _join(F / 1_N, "N");
 		if (F <= -1_mN || F >= 1_mN)
 			return _join(F / 1_mN, "mN");
@@ -275,8 +277,12 @@ namespace SI
 			return _join(p / 1_kPa, "kPa");
 		if (p <= -1_hPa || p >= 1_hPa)
 			return _join(p / 1_hPa, "hPa");
+		if (p <= -1_Pa || p >= 1_Pa || p == 0.0_Pa)
+			return _join(p / 1_Pa, "Pa");
+		if (p <= -1_mPa || p >= 1_mPa)
+			return _join(p / 1_mPa, "mPa");
 
-		return _join(p / 1_Pa, "Pa");
+		return _join(p / 1_uPa, "µPa");
 	}
 
 	std::string to_string(electric_potential U)
@@ -287,7 +293,7 @@ namespace SI
 			return _join(U / 1_MV, "MV");
 		if (U <= -1_kV || U >= 1_kV)
 			return _join(U / 1_kV, "kV");
-		if (U <= -1_V || U >= 1_V)
+		if (U <= -1_V || U >= 1_V || U == 0.0_V)
 			return _join(U / 1_V, "V");
 		if (U <= -1_mV || U >= 1_mV)
 			return _join(U / 1_mV, "mV");
@@ -306,7 +312,7 @@ namespace SI
 			return _join(Q / 1_MAh, "MAh");
 		if (Q <= -1_kAh || Q >= 1_kAh)
 			return _join(Q / 1_kAh, "kAh");
-		if (Q <= -1_Ah || Q >= 1_Ah)
+		if (Q <= -1_Ah || Q >= 1_Ah || Q == 0.0_Ah)
 			return _join(Q / 1_Ah, "Ah");
 
 		return _join(Q / 1_mAh, "mAh");

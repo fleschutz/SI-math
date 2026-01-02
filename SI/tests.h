@@ -21,13 +21,13 @@ namespace SI
 		static_assert(1_dm == 0.1_m);
 		static_assert(1_cm == 0.01_m);
 		static_assert(1_mm == 0.001_m);
-		static_assert(1_μm == 0.001_mm);
+		static_assert(1_um == 0.001_mm);
 		// Time in...
 		static_assert(1_h   == 60_min);
 		static_assert(1_min == 60_s);
 		static_assert(1_s   == 1000_ms);
 		static_assert(1_ms  == 0.001_s);
-		static_assert(1_μs  == 0.001_ms);
+		static_assert(1_us  == 0.001_ms);
 		// Mass in...
 		static_assert(1_Gt == 1000_Mt);
 		static_assert(1_Mt == 1000_kt);
@@ -36,7 +36,7 @@ namespace SI
 		static_assert(1_kg == 1000_g);
 		static_assert(1_g  == 0.001_kg);
 		static_assert(1_mg == 0.001_g);
-		static_assert(1_μg == 0.001_mg);
+		static_assert(1_ug == 0.001_mg);
 		// Thermodynamic temperature in...
 		static_assert(1_GK == 1000_MK);
 		static_assert(1_MK == 1000_kK);

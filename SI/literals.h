@@ -20,7 +20,7 @@ LITERAL( meter,    1, meter);               // 1_meter
 LITERAL( dm,    1e-1, meter);               // 1_dm (decimeter)
 LITERAL( cm,    1e-2, meter);               // 1_cm (centimeter)
 LITERAL( mm,    1e-3, meter);               // 1_mm (millimeter)
-LITERAL( μm,    1e-6, meter);               // 1_μm (micrometer)
+LITERAL( um,    1e-6, meter);               // 1_um (micrometer)
 LITERAL( nm,    1e-9, meter);               // 1_nm (nanometer)
 LITERAL( pm,   1e-12, meter);               // 1_pm (picometer)
 // Time in...
@@ -30,7 +30,7 @@ LITERAL( s,        1, second);              // 1_s   (second)
 LITERAL( sec,      1, second);              // 1_sec
 LITERAL( second,   1, second);              // 1_second
 LITERAL( ms,    1e-3, second);              // 1_ms  (millisecond)
-LITERAL( μs,    1e-6, second);              // 1_μs  (microsecond)
+LITERAL( us,    1e-6, second);              // 1_us  (microsecond)
 LITERAL( ns,    1e-9, second);              // 1_ns  (nanosecond)
 // Mass in...
 LITERAL( Gt,    1e12, kilogram);            // 1_Gt (metric gigaton)
@@ -40,7 +40,7 @@ LITERAL( t,      1e3, kilogram);            // 1_t  (metric ton)
 LITERAL( kg,       1, kilogram);            // 1_kg
 LITERAL( g,     1e-3, kilogram);            // 1_g  (gram)
 LITERAL( mg,    1e-6, kilogram);            // 1_mg (milligram)
-LITERAL( μg,    1e-9, kilogram);            // 1_μg (microgram)
+LITERAL( ug,    1e-9, kilogram);            // 1_ug (microgram)
 // Thermodynamic temperature in...
 LITERAL( GK,     1e9, kelvin);              // 1_GK (gigakelvin)
 LITERAL( MK,     1e6, kelvin);              // 1_MK (megakelvin)
@@ -163,19 +163,19 @@ LITERAL( mAh,   1e-3, ampere_hours);        // 1_mAh (milliampere-hours)
 // Electric capacitance (C) in...
 LITERAL( F,        1, farad);               // 1_F   (farad)
 LITERAL( mF,    1e-3, farad);               // 1_mF  (millifarad)
-LITERAL( uF,    1e-6, farad);               // 1_μF  (microfarad)
+LITERAL( uF,    1e-6, farad);               // 1_uF  (microfarad)
 LITERAL( nF,    1e-9, farad);               // 1_nF  (nanofarad)
 LITERAL( pF,   1e-12, farad);               // 1_pF  (picofarad)
 // Electric inductance (L) in...
 LITERAL( H,        1, henry);               // 1_H   (henry)
 LITERAL( mH,    1e-3, henry);               // 1_mH  (millihenry)
-LITERAL( μH,    1e-6, henry);               // 1_μH  (microhenry)
+LITERAL( uH,    1e-6, henry);               // 1_uH  (microhenry)
 // Magnetic flux in...
 LITERAL( Wb,       1, weber);               // 1_Wb  (weber)
 // Magnetic field (B) in...
 LITERAL( T,        1, tesla);               // 1_T  (tesla)
 LITERAL( mT,    1e-3, tesla);               // 1_mT (millitesla)
-LITERAL( μT,    1e-6, tesla);               // 1_μT (microtesla)
+LITERAL( uT,    1e-6, tesla);               // 1_uT (microtesla)
 LITERAL( nT,    1e-9, tesla);               // 1_nT (nanotesla)
 // Energy (E) in...
 LITERAL( PJ,    1e15, joule);               // 1_PJ  (petajoule)
@@ -193,7 +193,7 @@ LITERAL( MW,     1e6, watt);                // 1_MW  (megawatt)
 LITERAL( kW,     1e3, watt);                // 1_kW  (kilowatt)
 LITERAL( W,        1, watt);                // 1_W   (Watt)
 LITERAL( mW,    1e-3, watt);                // 1_mW  (milliwatt)
-LITERAL( μW,    1e-6, watt);                // 1_μW  (microwatt)
+LITERAL( uW,    1e-6, watt);                // 1_uW  (microwatt)
 LITERAL( TWh, 3.6e15, watt);                // 1_TWh (terawatt-hour)
 LITERAL( GWh, 3.6e12, watt);                // 1_GWh (gigawatt-hour)
 LITERAL( MWh,  3.6e9, watt);                // 1_MWh (megawatt-hour)
@@ -203,14 +203,15 @@ LITERAL( Wh,   3.6e3, watt);                // 1_Wh  (watt-hour)
 LITERAL( kWh_per_kg, 3.6e6, joules_per_second_per_kilogram);  // 1_kWh_per_kg (kilowatt-hour per kilogram)
 LITERAL( Wh_per_kg,  3.6e3, joules_per_second_per_kilogram);  // 1_Wh_per_kg (watt-hour per kilogram)
 // Power intensity (I) in...
-LITERAL( MW_per_m²,1e6, watts_per_meter2);  // 1_kW/m² (kilowatt per square metre)
-LITERAL( kW_per_m²,1e3, watts_per_meter2);  // 1_kW/m² (kilowatt per square metre)
-LITERAL( W_per_m², 1, watts_per_meter2);    // 1_W/m² (watt per square metre)
-LITERAL( mW_per_m²,1e-3, watts_per_meter2); // 1_mW/m² (milliwatt per square metre)
+LITERAL( MW_per_m²,1e6, watts_per_meter2);  // 1_MW_per_m² (kilowatt per square metre)
+LITERAL( kW_per_m²,1e3, watts_per_meter2);  // 1_kW_per_m² (kilowatt per square metre)
+LITERAL( W_per_m², 1, watts_per_meter2);    // 1_W_per_m² (watt per square metre)
+LITERAL( mW_per_m²,1e-3, watts_per_meter2); // 1_mW_per_m² (milliwatt per square metre)
+LITERAL( uW_per_m²,1e-6, watts_per_meter2); // 1_uW_per_m² (milliwatt per square metre)
 // Equivalent dose (H) in...
 LITERAL( Sv,       1, sievert);             // 1_Sv  (sievert)
 LITERAL( mSv,   1e-3, sievert);             // 1_mSv (millisievert)
-LITERAL( μSv,   1e-6, sievert);             // 1_μSv (microsievert)
+LITERAL( uSv,   1e-6, sievert);             // 1_uSv (microsievert)
 // Absorbed dose (D), kerma in...
 LITERAL( Gy,       1, gray);                // 1_Gy (gray)
 // Pressure (p) in...
@@ -218,6 +219,8 @@ LITERAL( MPa,    1e6, pascal_);             // 1_MPa  (megapascal)
 LITERAL( kPa,    1e3, pascal_);             // 1_kPa  (kilopascal) 
 LITERAL( hPa,    1e2, pascal_);             // 1_hPa  (hectopascal) 
 LITERAL( Pa,       1, pascal_);             // 1_Pa   (pascal) 
+LITERAL( mPa,   1e-3, pascal_);             // 1_mPa  (millipascal) 
+LITERAL( uPa,   1e-6, pascal_);             // 1_uPa  (micropascal) 
 // Force (F) in...
 LITERAL( GN,     1e9, newton);              // 1_GN (giganewton)
 LITERAL( MN,     1e6, newton);              // 1_MN (meganewton)
