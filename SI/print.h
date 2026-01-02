@@ -11,14 +11,14 @@ namespace SI
 		std::cout << text;
 	}
 
-	void print(quantity number)
+	void print(dimensionless value)
 	{
-		std::cout << number << " ";
+		std::cout << value << " ";
 	}
 
-	void print(quantity number, const std::string& unit)
+	void print(dimensionless value, const std::string& unit)
 	{
-		std::cout << number << unit << " ";
+		std::cout << value << unit << " ";
 	}
 
 	// The 7 SI Base Units
@@ -105,7 +105,7 @@ namespace SI
 		print(TNT_mass);
 		print(" TNT, ");
 
-		quantity factor = E / Hiroshima_bomb;
+		dimensionless factor = E / Hiroshima_bomb;
 		print(factor, " Hiroshima bombs)");
 	}
 
@@ -121,7 +121,7 @@ namespace SI
 
 	void print_equivalent(power_intensity I)
 	{
-		quantity decibel = 10.0 * std::log10((I / 1_W_per_m²) / 1e-12);
+		dimensionless decibel = 10.0 * std::log10((I / 1_W_per_m²) / 1e-12);
 		print(" (=");
 		print(decibel, " dB)");
 	}

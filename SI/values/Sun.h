@@ -17,12 +17,12 @@ SET( diameter,               1'390'176'000, meter);
 SET( radius,                  diameter / 2, meter);
 SET( mass,                       1.9884e33, kilogram);
 SET( mean_distance_from_Earth,    1.496e11, meter);
-SET( flattening,                   0.00005, quantity);
+SET( flattening,                   0.00005, dimensionless);
 SET( average_density,                1.408, grams_per_centimeter3);
 SET( center_temperature,        15'700'000, kelvin);
 SET( photosphere_temperature,        5'772, kelvin);
 SET( corona_temperature,         5'000'000, kelvin);
-SET( human_population,                   0, quantity); 
+SET( human_population,                   0, dimensionless); 
 //...
 
 #undef SET

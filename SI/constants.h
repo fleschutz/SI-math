@@ -47,7 +47,7 @@ UNICODE( Φ_0,      2.067833848e-15, weber); // (the symbol)
 CONST( mu_N,         5.0507837e-27, joules_per_tesla); // nuclear magneton
 UNICODE( μ_N,        5.0507837e-27, joules_per_tesla); // (the symbol)
 CONST( R_K,            25812.80745, ohm); // von Klitzing constant
-TODO( k_e,1.0 / (4*M_PI*epsilon_0), quantity);
+TODO( k_e,1.0 / (4*M_PI*epsilon_0), dimensionless);
 
 // Atomic and nuclear constants
 CONST( electron_mass, 9.1093837139e-31, kilogram);
@@ -59,11 +59,11 @@ CONST( m_p,          1.67262192595e-27, kilogram);
 CONST( neutron_mass, 1.67492750056e-27, kilogram);
 CONST( a_0,             5.29177210e-11, meter);    // Bohr radius
 CONST( r_e,              2.8179403e-15, meter);    // classical electron radius
-CONST( g_e,          -2.00231930436256, quantity); // electron g-factor
-CONST( alpha,             7.2973525e-3, quantity); // fine-structure constant
-CONST( alpha_inv,        137.035999084, quantity); // inverse fine-structure constant
+CONST( g_e,          -2.00231930436256, dimensionless); // electron g-factor
+CONST( alpha,             7.2973525e-3, dimensionless); // fine-structure constant
+CONST( alpha_inv,        137.035999084, dimensionless); // inverse fine-structure constant
 CONST( E_h,           4.3597447222e-18, joule);    // Hartree energy
-CONST( sin2Theta_W,            0.22290, quantity); // weak mixing angle
+CONST( sin2Theta_W,            0.22290, dimensionless); // weak mixing angle
 TODO( G0_F,                  1.1663e-5, / units::GeV  / units::GeV); // Fermi coupling constant
 TODO( h_2me,              3.6369475e-4, units::m2 / units::s); // quantum of circulation
 CONST( R_inf,          10973731.568160, per_meter); // Rydberg constant
@@ -84,7 +84,7 @@ TODO( c_2,        1.438776877e-2, units::m * units::K); // second radiation cons
 TODO( sigma,      5.670374419e-8, units::W / units::m2 / units::K2); // Stefan–Boltzmann constant
 TODO( b,          2.897771955e-3, units::m * units::K); // Wien wavelength displacement law constant
 TODO( b_prime,    5.878925757e10, units::Hz / units::K); // Wien frequency displacement law constant
-CONST( S_0_by_R,  -1.15170753706, quantity); // Sackur–Tetrode constant
+CONST( S_0_by_R,  -1.15170753706, dimensionless); // Sackur–Tetrode constant
 
 // Adopted values
 CONST( atm,               101325, pascal_); // standard atmosphere
@@ -105,15 +105,15 @@ CONST(   half_pi,       1.57079632679489661923, radian);
 CONST(   quarter_pi,    0.78539816339744830961, radian);
 CONST(   tau,           6.28318530717958647692, radian);
 UNICODE( τ,             6.28318530717958647692, radian); // (symbol for tau)
-CONST(   phi,           1.61803398874989484820, quantity);
-UNICODE( φ,             1.61803398874989484820, quantity); // (symbol for phi)
-CONST(   Eulers_number, 2.71828182845904523536, quantity);
+CONST(   phi,           1.61803398874989484820, dimensionless);
+UNICODE( φ,             1.61803398874989484820, dimensionless); // (symbol for phi)
+CONST(   Eulers_number, 2.71828182845904523536, dimensionless);
 
 UNICODE( σ_e,         6.6524587e-29, meter2); // Thomson cross section
 UNICODE( σ,          5.670374419e-8, units::W / units::m2 / units::K2); // Stefan–Boltzmann constant
-UNICODE( α,         7.2973525e-3, quantity); // fine-structure constant
-UNICODE( α_inv,    137.035999084, quantity); // inverse fine-structure constant
-UNICODE( sin2θ_W,        0.22290, quantity); // weak mixing angle
+UNICODE( α,         7.2973525e-3, dimensionless); // fine-structure constant
+UNICODE( α_inv,    137.035999084, dimensionless); // inverse fine-structure constant
+UNICODE( sin2θ_W,        0.22290, dimensionless); // weak mixing angle
 
 // Astronomical constants
 CONST( AU,              149'597'870'691, meter); // astronomical unit

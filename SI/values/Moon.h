@@ -12,7 +12,7 @@ SET( equatorial_radius,              1'738.1, kilometer);
 SET( polar_radius,                   1'736.0, kilometer);
 SET( mean_radius,                    1'737.4, kilometer);
 SET( mean_diameter,          mean_radius * 2, meter);
-SET( flattening,                      0.0012, quantity);
+SET( flattening,                      0.0012, dimensionless);
 SET( equatorial_circumference,        10'921, kilometer);
 SET( surface_area,                   3.793e7, kilometer2);
 SET( volume,                       2.1958e10, kilometer3);
@@ -20,7 +20,7 @@ SET( mass,                          7.346e22, kilogram);
 SET( surface_gravity,                  1.622, meters_per_second2);
 SET( equatorial_rotation_velocity,     4.627, meters_per_second);
 SET( day,                    708.7 * 60 * 60, second); 
-SET( human_population,                     0, quantity);
+SET( human_population,                     0, dimensionless);
 //...
 
 #undef SET

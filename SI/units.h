@@ -13,7 +13,7 @@
 
 namespace SI
 {
-	typedef double_t quantity; // datatype to hold a dimensionless value (without any unit), e.g. 42
+	typedef double_t dimensionless; // basic datatype to hold a dimensionless value (without any unit), e.g. 42
 
 	namespace detail
 	{

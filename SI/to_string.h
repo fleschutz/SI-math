@@ -9,11 +9,11 @@ namespace SI
 {
 	const char* format_of_to_string = "%.1LF %s"; // <-- configurable (precision? whitespace?)
 
-	// Internal function to join and convert both quantity and unit into a string.
-	std::string _join(long double quantity, const std::string& unit)
+	// Internal function to join and convert both value and unit into a string.
+	std::string _join(long double value, const std::string& unit)
 	{
 		char buf[256];
-		std::snprintf(buf, sizeof(buf), format_of_to_string, quantity, unit.c_str());
+		std::snprintf(buf, sizeof(buf), format_of_to_string, value, unit.c_str());
 		return std::string(buf);
 	}
 

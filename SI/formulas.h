@@ -91,7 +91,7 @@ namespace SI
 			return constant::pi * a * b;
 		}
 
-		quantity eccentricity_of_ellipse(length a, length b)
+		dimensionless eccentricity_of_ellipse(length a, length b)
 		{
 			return std::sqrt(1.0 - (square(b) / square(a)));
 		}
@@ -192,7 +192,7 @@ namespace SI
 		// Formulas for Aircrafts
 		// ----------------------
 		// Calculates the lift force of an aircraft wing, see: https://en.wikipedia.org/wiki/Lift_(force)
-		force lift_force_of_wing(quantity lift_coefficient, area wing_surface, density air_density, velocity true_air_speed)
+		force lift_force_of_wing(dimensionless lift_coefficient, area wing_surface, density air_density, velocity true_air_speed)
 		{
 			return 0.5 * air_density * square(true_air_speed) * wing_surface * lift_coefficient;
 		}
