@@ -178,6 +178,12 @@ int main()
 	print(energy);
 	print_equivalent(energy);
 } {
+	print("\nWhat's the sound intensity of a 1W loudspeaker at 1m distance? It's... ");
+	auto power = 1_W;
+	auto distance = 1_m;
+	auto intensity = formula::sound_intensity(power, distance);
+	print(intensity);
+} {
 	// Here's the basic principle:
 	quantity x = 42;        // <- x contains a dimensionless number (no unit)
 	SI::time t = x * 1_sec; // <- t is now 42 seconds

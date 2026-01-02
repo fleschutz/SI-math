@@ -24,7 +24,7 @@ SET( mass,                      5.9723e24, kilogram);
 SET( equatorial_rotation_velocity, 1674.4, kilometers_per_hour);
 SET( satellites,                        1, quantity); // see Moon.h
 SET( human_population,              8.2e9, quantity); 
-SET( solar_constant,                 1361, watt_per_meter2); // amount of Sun energy per square meter
+SET( solar_constant,                 1361, watts_per_meter2); // amount of Sun energy per square meter
 SET( magnetic_field,               3.2e-5, tesla); // strength of Earth's magnetic field at 0° lat, 0° long.
 SET( day,                    24 * 60 * 60, second); 
 SET( week,         7 * second(Earth::day), second);

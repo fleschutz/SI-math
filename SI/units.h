@@ -677,7 +677,8 @@ namespace SI
 	DIMENSIONS(impulse,             1, 1, -1, 0, 0, 0, 0);
 	DIMENSIONS(pressure,           -1, 1, -2, 0, 0, 0, 0);
 	DIMENSIONS(torque,              2, 1, -2, 0, 0, 0, 0);
-	DIMENSIONS(power,               2, 1, -3, 0, 0, 0, 0);
+	DIMENSIONS(power,               2, 1, -3, 0, 0, 0, 0); // (in W)
+	DIMENSIONS(power_intensity,     0, 1, -3, 0, 0, 0, 0); // (in W/m²)
 	DIMENSIONS(density,            -3, 1,  0, 0, 0, 0, 0); // (mass per length³)
 	DIMENSIONS(electric_potential,  2, 1, -3, 0,-1, 0, 0); // (in volt)
 	DIMENSIONS(electric_charge,     0, 0,  1, 0, 1, 0, 0); // (electric current and time)
@@ -771,8 +772,8 @@ namespace SI
 	SI_INLINE_CONSTEXPR auto gray = joule / kilogram;
 	SI_INLINE_CONSTEXPR auto sievert = joule / kilogram;
 
-	SI_INLINE_CONSTEXPR auto watt        = joule / second; 
-	SI_INLINE_CONSTEXPR auto watt_per_meter2 = watt / meter2;
+	SI_INLINE_CONSTEXPR auto watt        = unit<power>();
+	SI_INLINE_CONSTEXPR auto watts_per_meter2 = watt / meter2;
 
 	SI_INLINE_CONSTEXPR auto pascal_     = unit<pressure>();
 

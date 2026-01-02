@@ -114,6 +114,11 @@ namespace SI
 		print(to_string(P));
 	}
 
+	void print(power_intensity I)
+	{
+		print(to_string(I));
+	}
+
 	void print(pressure p)
 	{
 		print(to_string(p));

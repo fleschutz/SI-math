@@ -202,6 +202,11 @@ LITERAL( Wh,   3.6e3, watt);                // 1_Wh  (watt-hour)
 // Active power per mass in...
 LITERAL( kWh_per_kg, 3.6e6, joules_per_second_per_kilogram);  // 1_kWh_per_kg (kilowatt-hour per kilogram)
 LITERAL( Wh_per_kg,  3.6e3, joules_per_second_per_kilogram);  // 1_Wh_per_kg (watt-hour per kilogram)
+// Power intensity (I) in...
+LITERAL( MW_per_m²,1e6, watts_per_meter2);  // 1_kW/m² (kilowatt per square metre)
+LITERAL( kW_per_m²,1e3, watts_per_meter2);  // 1_kW/m² (kilowatt per square metre)
+LITERAL( W_per_m², 1, watts_per_meter2);    // 1_W/m² (watt per square metre)
+LITERAL( mW_per_m²,1e-3, watts_per_meter2); // 1_mW/m² (milliwatt per square metre)
 // Equivalent dose (H) in...
 LITERAL( Sv,       1, sievert);             // 1_Sv  (sievert)
 LITERAL( mSv,   1e-3, sievert);             // 1_mSv (millisievert)
@@ -230,7 +235,6 @@ LITERAL( m²_per_s, 1, meter2_per_second);   // 1_m²/s (square meter per second
 LITERAL( m³_per_s, 1, meter3_per_second);   // 1_m³/s (cubic meter per second)
 // Other...
 LITERAL( Nm,       1, newtonmeter);         // 1_Nm  (newtonmeter)
-LITERAL( W_per_m², 1, watt_per_meter2);     // 1_W/m² (watt per square metre)
 // SI supplementary units in...
 LITERAL( rad,      1, radian);              // 1_rad  (radian)
 LITERAL( deg,0.01745329251994329576923690768489, radian); // 1_deg  (angle degree)

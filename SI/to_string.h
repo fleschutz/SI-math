@@ -255,6 +255,18 @@ namespace SI
 		return _join(P / 1_Wh, "Wh");
 	}
 
+	std::string to_string(power_intensity I)
+	{
+		if (I <= -1_MW_per_m² || I >= 1_MW_per_m²)
+			return _join(I / 1_MW_per_m², "MW/m²");
+		if (I <= -1_kW_per_m² || I >= 1_kW_per_m²)
+			return _join(I / 1_kW_per_m², "kW/m²");
+		if (I <= -1_W_per_m² || I >= 1_W_per_m²)
+			return _join(I / 1_W_per_m², "W/m²");
+
+		return _join(I / 1_mW_per_m², "mW/m²");
+	}
+
 	std::string to_string(pressure p)
 	{
 		if (p <= -1_MPa || p >= 1_MPa)

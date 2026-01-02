@@ -230,5 +230,10 @@ namespace SI
 		{
 			return I * U;
 		}
+
+		auto sound_intensity(power power_of_sound_source, length distance_from_sound_source)
+		{
+			return power_of_sound_source / (4.0 * constant::pi * square(distance_from_sound_source));
+		}
 	}
 }
