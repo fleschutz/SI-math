@@ -119,6 +119,13 @@ namespace SI
 		print(to_string(I));
 	}
 
+	void print_equivalent(power_intensity I)
+	{
+		quantity decibel = 10.0 * std::log10((I / 1_W_per_m²) / 1e-12);
+		print(" (=");
+		print(decibel, " dB)");
+	}
+
 	void print(pressure p)
 	{
 		print(to_string(p));

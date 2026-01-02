@@ -183,6 +183,7 @@ int main()
 	auto distance = 1_m;
 	auto intensity = formula::sound_intensity(power, distance);
 	print(intensity);
+	print_equivalent(intensity);
 } {
 	// Here's the basic principle:
 	quantity x = 42;        // <- x contains a dimensionless number (no unit)
