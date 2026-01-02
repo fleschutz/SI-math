@@ -75,7 +75,8 @@ CONST( F,            96485.33212, coulombs_per_mol); // Faraday constant
 TODO( c_1,       3.741771852e-16, units::W * units::m2); // first radiation constant
 TODO( c_1L,      1.191042972e-16, units::W * units::m2 / units::sr); // first radiation constant for spectral radiance
 TODO( n_0,        2.651645804e25, / units::m3); // Loschmidt constant
-TODO( R,             8.314462618, units::J / units::mol / units::K); // gas constant
+CONST( R,            8.314462618, joules_per_kelvin_per_mol); // gas constant
+CONST( R_dry_air,   287.050'0676, joules_per_kilogram_per_kelvin); // specific gas constant for dry air
 TODO( N_Ah,      3.990312712e-10, units::J / units::Hz / units::mol); // molar Planck constant
 TODO( M_u,         0.99999999e-3, kilograms_per_mol); // molar mass constant
 TODO( V_m,        22.71095464e-3, units::m3 / units::mol); // molar volume of an ideal gas

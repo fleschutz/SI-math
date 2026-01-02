@@ -216,8 +216,7 @@ namespace SI
 		// Calculates the density of dry air, see: https://en.wikipedia.org/wiki/Density_of_air
 		density density_of_dry_air(pressure air_pressure, temperature air_temperature)
 		{
-			auto Rspecific = joules_per_kilogram_per_kelvin(287.050'0676);
-			return air_pressure / (Rspecific * air_temperature);
+			return air_pressure / (constant::R_dry_air * air_temperature);
 		}
 
 		// Calculates the body-mass index (BMI).

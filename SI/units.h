@@ -763,12 +763,13 @@ namespace SI
 	SI_INLINE_CONSTEXPR auto newtonsecond= newton * second;
 
 	SI_INLINE_CONSTEXPR auto joule      = unit<energy>();
-
 	SI_INLINE_CONSTEXPR auto joulesecond = joule * second;
 	SI_INLINE_CONSTEXPR auto joules_per_second = joule / second;
 	SI_INLINE_CONSTEXPR auto joules_per_kelvin = joule / kelvin;
 	SI_INLINE_CONSTEXPR auto joules_per_second_per_kilogram = joule / second / kilogram;
 	SI_INLINE_CONSTEXPR auto joules_per_kilogram_per_kelvin = joule / kilogram / kelvin;
+	SI_INLINE_CONSTEXPR auto joules_per_kelvin_per_mol = joule / kelvin / mol;
+
 	SI_INLINE_CONSTEXPR auto gray = joule / kilogram;
 	SI_INLINE_CONSTEXPR auto sievert = joule / kilogram;
 
