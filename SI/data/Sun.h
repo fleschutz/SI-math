@@ -21,7 +21,7 @@ SET( photosphere_temperature,        5'772, kelvin);
 SET( corona_temperature,         5'000'000, kelvin);
 SET( human_population,                   0, dimensionless); 
 
-}	}
+} } // SI::Sun
 #undef SET
 
 // Sources

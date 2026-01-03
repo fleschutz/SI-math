@@ -70,7 +70,7 @@ SET( Eiffel_Tower_height,             330, meter);
 SET( Great_Wall_in_China_length,     6430, kilometer); // (approximately)
 // ...
 
-}	}
+} } // SI::Earth
 #undef SET
 
 // Sources

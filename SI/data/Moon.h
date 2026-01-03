@@ -20,7 +20,7 @@ SET( equatorial_rotation_velocity,     4.627, meters_per_second);
 SET( day,                    708.7 * 60 * 60, second); 
 SET( human_population,                     0, dimensionless);
 
-}	}
+} } // SI::Moon
 #undef SET
 
 // Sources

@@ -16,7 +16,7 @@ SET( D0,     18.354, hertz);
 SET( Bb9, 14917.240, hertz);
 SET( B9,  15804.264, hertz);
 
-}	}
+} } // SI::music
 #undef SET
 
 // Sources

@@ -17,7 +17,7 @@ SET( day,               4222.6 * 60 * 60, second);
 SET( satellites,                       0, dimensionless);
 SET( human_population,                 0, dimensionless);
 
-} }
+} } // SI::Mercury
 #undef SET
 
 // Sources

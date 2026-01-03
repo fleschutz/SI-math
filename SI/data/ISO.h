@@ -38,7 +38,7 @@ SET( container_1AA_ext_width,       2.438, meter);
 SET( container_1AA_max_gross_mass, 36'000, kilogram);
 //...
 
-} }
+} } // SI::ISO
 #undef SET
 
 // Sources

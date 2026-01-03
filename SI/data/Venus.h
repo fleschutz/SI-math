@@ -17,7 +17,7 @@ SET( day,               24.7 * 60 * 60, second);
 SET( satellites,                     0, dimensionless);
 SET( human_population,               0, dimensionless); 
 
-}	}
+} } // SI::Venus
 #undef SET
 
 // Sources

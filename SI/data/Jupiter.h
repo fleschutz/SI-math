@@ -19,7 +19,7 @@ SET( day,                   9.9 * 60 * 60, second);
 SET( satellites,                       97, dimensionless);
 SET( human_population,                  0, dimensionless);
 
-} }
+} } // SI::Jupiter
 #undef SET
 
 // Sources
