@@ -11,7 +11,7 @@ Apply math based on SI units correct, with high precision and as easy as possibl
 * **Highest precision** by using 'long double' in SI base units internally, **without runtime overhead** (compiles to nothing but simple long doubles).
 * **Supports** SI base units, derived SI units, Imperial units, and many more.
 * **Platform-independent** (requires C++11 or higher), tested on Linux (gcc 15.2 & clang 20.1.8) and on Windows (VS2017 & VS2026).
-* **Modern C++ lib**, header only, own namespace ("SI::"), with [unit tests](SI/tests.h).
+* **Modern C++ lib**: compact, header only, own namespace ("SI::"), no external dependencies, with [unit tests](SI/tests.h).
 
 Code Example
 ------------
