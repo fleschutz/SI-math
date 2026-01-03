@@ -22,6 +22,8 @@ namespace SI
 
 	static_assert(1_Mach == 330_m_per_s);
 
+	static_assert(1_Mach * 10_percent == 33_m_per_s);
+
 
 	// Checking the 7 SI Base Units
 	// ----------------------------

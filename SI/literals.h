@@ -306,6 +306,7 @@ SET( bar,                                1e5, pascal_);  // 1_bar
 SET( mmHg,                          133.3224, pascal_);  // 1_mmHg (millimeter mercury)
 SET( Ang,                              1e-10, meter);    // 1_Ang  (angstrom)
 SET( smoot,                           1.7018, meter);    // 1_smoot (one Oliver R. Smoot height, fun unit)
+SET( percent,                           0.01, dimensionless); // 1_percent
 
 } // SI::
 #undef SET
