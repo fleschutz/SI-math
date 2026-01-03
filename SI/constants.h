@@ -2,7 +2,7 @@
 #pragma once
 
 #include "units.h"
-#define SET(_name, _value, _baseUnit) const auto _name = _baseUnit(_value##L)
+#define SET(_name, _value, _baseUnit) const auto _name = _baseUnit(_value ## L)
 
 namespace SI { namespace constant {
 

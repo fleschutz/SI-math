@@ -2,7 +2,7 @@
 #pragma once
 
 #include "../../SI/units.h"
-#define SET(_name, _value, _unit)  const auto _name = _unit(_value)
+#define SET(_name, _value, _unit)  const auto _name = _unit(_value ## L)
 
 namespace SI { namespace Earth {
 
@@ -26,9 +26,9 @@ SET( human_population,              8.2e9, dimensionless);
 SET( solar_constant,                 1361, watts_per_meter2); // amount of Sun energy per square meter
 SET( magnetic_field,               3.2e-5, tesla); // strength of Earth's magnetic field at 0° lat, 0° long.
 SET( day,                    24 * 60 * 60, second); 
-SET( week,         7 * second(Earth::day), second);
-SET( year,    365.25 * second(Earth::day), second); // (on average)
-SET( age,    4.5e12 * second(Earth::year), second);
+SET( week,         second(Earth::day) * 7, second);
+SET( year,    second(Earth::day) * 365.25, second); // (on average)
+SET( age,    second(Earth::year) * 4.5e12, second);
 
 // Mountains:  (heights above MSL, sorted by height)
 SET( Mount_Everest_height,           8849, meter);

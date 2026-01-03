@@ -2,7 +2,7 @@
 #pragma once
 
 #include "../../SI/units.h"
-#define SET(_name, _value, _unit) const auto _name = _unit(_value)
+#define SET(_name, _value, _unit) const auto _name = _unit(_value ## L)
 
 namespace SI { namespace Sun {
 
