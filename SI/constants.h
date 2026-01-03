@@ -23,25 +23,20 @@ SET(K_cd,                            683, lumens_per_watt); // the luminous effi
 // Universal constants
 SET(min_temperature,                   0, kelvin); // the lowest possible temperature (Absolute zero)
 SET(Z_0,                   376.730313667, ohm); // characteristic impedance of vacuum
-SET(epsilon_0,  8.854'187'817'620'39e-12, farads_per_meter); // electric constant (vacuum permittivity)
-//SET(ε_0,      8.854'187'817'620'39e-12, farads_per_meter); // (the symbol)
-//SET(mu_0,              1.256'637'06e-6, units::N / units::A2); // magnetic constant (vacuum permeability)
-//SET(μ_0,               1.256'637'06e-6, units::N / units::A2); // (the symbol)
+SET(epsilon_0,  8.854'187'817'620'39e-12, farads_per_meter); // electric constant (vacuum permittivity, symbol: ε_0)
+//SET(mu_0,              1.256'637'06e-6, units::N / units::A2); // magnetic constant (vacuum permeability, symbol: μ_0)
 //SET(G,                     6.67408e-11, units::m3 / units::kg / units::s2); // Newtonian constant of gravitation
 SET(h_bar,             1.054'571'817e-34, joulesecond); // reduced Planck constant
 
 // Electromagnetic constants
-SET(mu_B,                  9.2740100e-24, joules_per_tesla); // Bohr magneton
-//SET(μ_B,                 9.2740100e-24, joules_per_tesla); // (the symbol)
+SET(mu_B,                  9.2740100e-24, joules_per_tesla); // Bohr magneton (symbol: µB)
 SET(G_0,                  7.748091729e-5, siemens); // conductance quantum
 //SET(K_Jm90,                    48359e9, units::Hz / units::V); // conventional value of Josephson constant
 SET(R_Km90,                    25812.807, ohm); // conventional value of von Klitzing constant
 SET(G_0_inv,                 12906.40372, ohm); // inverse conductance quantum
 //SET(K_J,                 483597.8484e9, units::Hz / units::V); // Josephson constant
-SET(Phi_0,               2.067833848e-15, weber); // magnetic flux quantum
-//SET(Φ_0,               2.067833848e-15, weber); // (Unicode symbol)
-SET(mu_N,                  5.0507837e-27, joules_per_tesla); // nuclear magneton
-//SET(μ_N,                 5.0507837e-27, joules_per_tesla); // (the symbol)
+SET(Phi_0,               2.067833848e-15, weber); // magnetic flux quantum (symbol: Φ_0)
+SET(mu_N,                  5.0507837e-27, joules_per_tesla); // nuclear magneton (symbol: μ_N)
 SET(R_K,                     25812.80745, ohm); // von Klitzing constant
 //SET(k_e,      1.0 / (4*M_PI*epsilon_0), dimensionless);
 
@@ -95,14 +90,11 @@ SET(speed_of_sound_in_iron,         5120, meters_per_second);
 SET(speed_of_sound_in_diamonds,   12'000, meters_per_second);
 
 // Mathematical constants
-SET(pi,           3.14159265358979323846, radian);
-//SET(π,          3.14159265358979323846, radian); // (Unicode symbol for pi)
+SET(pi,           3.14159265358979323846, radian); // (symbol: π)
 SET(half_pi,      1.57079632679489661923, radian);
 SET(quarter_pi,   0.78539816339744830961, radian);
-SET(tau,          6.28318530717958647692, radian);
-//SET( τ,         6.28318530717958647692, radian); // (Unicode symbol for tau)
-SET(phi,          1.61803398874989484820, dimensionless);
-//SET( φ,         1.61803398874989484820, dimensionless); // (Unicode symbol for phi)
+SET(tau,          6.28318530717958647692, radian); // (symbol: τ)
+SET(phi,          1.61803398874989484820, dimensionless); // (symbol: φ)
 SET(Eulers_number,2.71828182845904523536, dimensionless);
 
 //SET(σ_e,                 6.6524587e-29, meter2); // Thomson cross section
