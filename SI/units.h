@@ -647,11 +647,9 @@ namespace SI
 	namespace detail { using name_ ## _dimension = dimension<length_, mass_, time_, temperature_, current_>; }\
 	template <class T> using name_ ## _t = detail::quantity<detail:: name_ ## _dimension, T>;		\
 	using name_ = name_ ## _t<double_t>;									\
-	using name_ ## f = name_ ## _t<float_t>;								\
 	using name_ ## 2 = name_ ## _t<detail::vec2<double_t>>;							\
-	using name_ ## 2f = name_ ## _t<detail::vec2<float_t>>;							\
-	using name_ ## 3 = name_ ## _t<detail::vec3<double_t>>;							\
-	using name_ ## 3f = name_ ## _t<detail::vec3<float_t>>															
+	using name_ ## 3 = name_ ## _t<detail::vec3<double_t>>
+
 	// The 7 SI Base Dimensions
 	// ------------------------ l  m  t  T  A  s  i
 	SI_DIM(length,              1, 0, 0, 0, 0, 0, 0);

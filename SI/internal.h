@@ -10,7 +10,6 @@ namespace SI
 {
 	typedef float float_t;        // <-- internal datatype to hold float values
 	typedef double double_t;      // <-- internal datatype to hold double values
-	typedef long long cardinal_t; // <-- internal datatype to hold cardinal values
 
 	namespace internal
 	{
