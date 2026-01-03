@@ -3,7 +3,7 @@
 
 #include <string>
 #include "literals.h"
-#include "values/Earth.h"
+#include "data/Earth.h"
 
 namespace SI
 {
