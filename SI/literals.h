@@ -1,8 +1,8 @@
-// SI/literals.h - type-safe literals based on SI units, e.g. 7_km (requires C++11 or higher)
+// SI/literals.h - literals based on type-safe SI units, e.g. 7_km (requires C++11 or higher)
 #pragma once
 
 #include "units.h"
-#define LITERAL(_symbol, _factor, _baseUnit) \
+#define SET(_symbol, _factor, _baseUnit) \
   constexpr auto operator "" _ ## _symbol(long double x) { return _baseUnit(static_cast<double_t>(x) * static_cast<double_t>(_factor)); } \
   constexpr auto operator "" _ ## _symbol(unsigned long long x) { return _baseUnit(static_cast<double_t>(x) * static_cast<double_t>(_factor)); }
 
@@ -10,309 +10,305 @@ namespace SI
 {
 // The 7 SI Base Units
 // -------------------
-// SYMBOL     FACTOR  BASE UNIT                EXAMPLE  (units sorted from big to small)
+// SYMBOL FACTOR  BASE UNIT                EXAMPLE  (units sorted from big to small)
 // Length in...
-LITERAL( Gm,     1e9, meter);               // 1_Gm (gigameter)
-LITERAL( Mm,     1e6, meter);               // 1_Mm (megameter)
-LITERAL( km,     1e3, meter);               // 1_km (kilometer)
-LITERAL( m,        1, meter);               // 1_m
-LITERAL( meter,    1, meter);               // 1_meter
-LITERAL( dm,    1e-1, meter);               // 1_dm (decimeter)
-LITERAL( cm,    1e-2, meter);               // 1_cm (centimeter)
-LITERAL( mm,    1e-3, meter);               // 1_mm (millimeter)
-LITERAL( um,    1e-6, meter);               // 1_um (micrometer)
-LITERAL( nm,    1e-9, meter);               // 1_nm (nanometer)
-LITERAL( pm,   1e-12, meter);               // 1_pm (picometer)
+SET( Gm,     1e9, meter);               // 1_Gm (gigameter)
+SET( Mm,     1e6, meter);               // 1_Mm (megameter)
+SET( km,     1e3, meter);               // 1_km (kilometer)
+SET( m,        1, meter);               // 1_m
+SET( meter,    1, meter);               // 1_meter
+SET( dm,    1e-1, meter);               // 1_dm (decimeter)
+SET( cm,    1e-2, meter);               // 1_cm (centimeter)
+SET( mm,    1e-3, meter);               // 1_mm (millimeter)
+SET( um,    1e-6, meter);               // 1_um (micrometer)
+SET( nm,    1e-9, meter);               // 1_nm (nanometer)
+SET( pm,   1e-12, meter);               // 1_pm (picometer)
 // Time in...
-LITERAL( h,     3600, second);              // 1_h   (hour)
-LITERAL( min,     60, second);              // 1_min (minute)
-LITERAL( s,        1, second);              // 1_s   (second)
-LITERAL( sec,      1, second);              // 1_sec
-LITERAL( second,   1, second);              // 1_second
-LITERAL( ms,    1e-3, second);              // 1_ms  (millisecond)
-LITERAL( us,    1e-6, second);              // 1_us  (microsecond)
-LITERAL( ns,    1e-9, second);              // 1_ns  (nanosecond)
-LITERAL( ps,   1e-12, second);              // 1_ps  (picosecond)
+SET( h,     3600, second);              // 1_h   (hour)
+SET( min,     60, second);              // 1_min (minute)
+SET( s,        1, second);              // 1_s   (second)
+SET( sec,      1, second);              // 1_sec
+SET( second,   1, second);              // 1_second
+SET( ms,    1e-3, second);              // 1_ms  (millisecond)
+SET( us,    1e-6, second);              // 1_us  (microsecond)
+SET( ns,    1e-9, second);              // 1_ns  (nanosecond)
+SET( ps,   1e-12, second);              // 1_ps  (picosecond)
 // Mass in...
-LITERAL( Gt,    1e12, kilogram);            // 1_Gt (metric gigaton)
-LITERAL( Mt,     1e9, kilogram);            // 1_Mt (metric megaton)
-LITERAL( kt,     1e6, kilogram);            // 1_kt (metric kiloton)
-LITERAL( t,      1e3, kilogram);            // 1_t  (metric ton)
-LITERAL( kg,       1, kilogram);            // 1_kg
-LITERAL( g,     1e-3, kilogram);            // 1_g  (gram)
-LITERAL( mg,    1e-6, kilogram);            // 1_mg (milligram)
-LITERAL( ug,    1e-9, kilogram);            // 1_ug (microgram)
-LITERAL( ng,   1e-12, kilogram);            // 1_ng (nanogram)
+SET( Gt,    1e12, kilogram);            // 1_Gt (metric gigaton)
+SET( Mt,     1e9, kilogram);            // 1_Mt (metric megaton)
+SET( kt,     1e6, kilogram);            // 1_kt (metric kiloton)
+SET( t,      1e3, kilogram);            // 1_t  (metric ton)
+SET( kg,       1, kilogram);            // 1_kg
+SET( g,     1e-3, kilogram);            // 1_g  (gram)
+SET( mg,    1e-6, kilogram);            // 1_mg (milligram)
+SET( ug,    1e-9, kilogram);            // 1_ug (microgram)
+SET( ng,   1e-12, kilogram);            // 1_ng (nanogram)
 // Thermodynamic temperature in...
-LITERAL( GK,     1e9, kelvin);              // 1_GK (gigakelvin)
-LITERAL( MK,     1e6, kelvin);              // 1_MK (megakelvin)
-LITERAL( kK,     1e3, kelvin);              // 1_kK (kilokelvin)
-LITERAL( K,        1, kelvin);              // 1_K
-LITERAL( mK,    1e-3, kelvin);              // 1_mK (millikelvin)
-LITERAL( uK,    1e-6, kelvin);              // 1_uK (microkelvin)
-LITERAL( nK,    1e-9, kelvin);              // 1_nK (nanokelvin)
+SET( GK,     1e9, kelvin);              // 1_GK (gigakelvin)
+SET( MK,     1e6, kelvin);              // 1_MK (megakelvin)
+SET( kK,     1e3, kelvin);              // 1_kK (kilokelvin)
+SET( K,        1, kelvin);              // 1_K
+SET( mK,    1e-3, kelvin);              // 1_mK (millikelvin)
+SET( uK,    1e-6, kelvin);              // 1_uK (microkelvin)
+SET( nK,    1e-9, kelvin);              // 1_nK (nanokelvin)
 // Electric current (I) in...
-LITERAL( GA,     1e9, ampere);              // 1_GA  (gigaampere)
-LITERAL( MA,     1e6, ampere);              // 1_MA  (megaampere)
-LITERAL( kA,     1e3, ampere);              // 1_kA  (kiloampere)
-LITERAL( A,        1, ampere);              // 1_A 
-LITERAL( mA,    1e-3, ampere);              // 1_mA  (milliampere)
-LITERAL( uA,    1e-6, ampere);              // 1_uA  (microampere)
-LITERAL( nA,    1e-9, ampere);              // 1_nA  (nanoampere)
-LITERAL( pA,   1e-12, ampere);              // 1_pA  (picoampere)
+SET( GA,     1e9, ampere);              // 1_GA  (gigaampere)
+SET( MA,     1e6, ampere);              // 1_MA  (megaampere)
+SET( kA,     1e3, ampere);              // 1_kA  (kiloampere)
+SET( A,        1, ampere);              // 1_A 
+SET( mA,    1e-3, ampere);              // 1_mA  (milliampere)
+SET( uA,    1e-6, ampere);              // 1_uA  (microampere)
+SET( nA,    1e-9, ampere);              // 1_nA  (nanoampere)
+SET( pA,   1e-12, ampere);              // 1_pA  (picoampere)
 // Amount of substance (N_A) in...
-LITERAL( kmol,   1e3, mol);                 // 1_kmol (kilomole)
-LITERAL( mol,      1, mol);                 // 1_mol
-LITERAL( mmol,  1e-3, mol);                 // 1_mmol (millimole)
-LITERAL( umol,  1e-6, mol);                 // 1_umol (micromole)
-LITERAL( nmol,  1e-9, mol);                 // 1_nmol (nanomole)
-LITERAL( pmol, 1e-12, mol);                 // 1_pmol (picomole)
-LITERAL( fmol, 1e-15, mol);                 // 1_fmol (femtomole)
+SET( kmol,   1e3, mol);                 // 1_kmol (kilomole)
+SET( mol,      1, mol);                 // 1_mol
+SET( mmol,  1e-3, mol);                 // 1_mmol (millimole)
+SET( umol,  1e-6, mol);                 // 1_umol (micromole)
+SET( nmol,  1e-9, mol);                 // 1_nmol (nanomole)
+SET( pmol, 1e-12, mol);                 // 1_pmol (picomole)
+SET( fmol, 1e-15, mol);                 // 1_fmol (femtomole)
 // Luminous intensity (J) in...
-LITERAL( kcd,    1e3, candela);             // 1_kcd (kilocandela)
-LITERAL( cd,       1, candela);             // 1_cd  (candela)
+SET( kcd,    1e3, candela);             // 1_kcd (kilocandela)
+SET( cd,       1, candela);             // 1_cd  (candela)
 
 // The 22 Derived SI Units
 // -----------------------
-// SYMBOL     FACTOR  BASE UNIT                EXAMPLE
+// SYMBOL FACTOR  BASE UNIT                EXAMPLE
 // Area in...
-LITERAL( km²,    1e6, meter2);              // 1_km² (square kilometer)
-LITERAL( hm²,    1e4, meter2);              // 1_hm² (hectare)
-LITERAL( m²,       1, meter2);              // 1_m²  (square meter)
-LITERAL( cm²,   1e-4, meter2);              // 1_cm² (square centimeter)
-LITERAL( mm²,   1e-6, meter2);              // 1_mm² (square millimeter)
-LITERAL( um²,   1e-9, meter2);              // 1_um² (square micrometer)
+SET( km²,    1e6, meter2);              // 1_km² (square kilometer)
+SET( hm²,    1e4, meter2);              // 1_hm² (hectare)
+SET( m²,       1, meter2);              // 1_m²  (square meter)
+SET( cm²,   1e-4, meter2);              // 1_cm² (square centimeter)
+SET( mm²,   1e-6, meter2);              // 1_mm² (square millimeter)
+SET( um²,   1e-9, meter2);              // 1_um² (square micrometer)
 // Per area in...
-LITERAL( per_km²,1e-6, per_meter2);         // 1_per_km² (per square kilometer)
-LITERAL( per_hm²,1e-4, per_meter2);         // 1_per_hm² (per hectare)
-LITERAL( per_m²,    1, per_meter2);         // 1_per_m²  (per square meter)
-LITERAL( per_cm², 1e4, per_meter2);         // 1_per_cm² (per square centimeter)
-LITERAL( per_mm², 1e6, per_meter2);         // 1_per_mm² (per square millimeter)
-LITERAL( per_μm², 1e9, per_meter2);         // 1_per μm² (per square micrometer)
+SET( per_km²,1e-6, per_meter2);         // 1_per_km² (per square kilometer)
+SET( per_hm²,1e-4, per_meter2);         // 1_per_hm² (per hectare)
+SET( per_m²,    1, per_meter2);         // 1_per_m²  (per square meter)
+SET( per_cm², 1e4, per_meter2);         // 1_per_cm² (per square centimeter)
+SET( per_mm², 1e6, per_meter2);         // 1_per_mm² (per square millimeter)
+SET( per_μm², 1e9, per_meter2);         // 1_per μm² (per square micrometer)
 // Volume in...
-LITERAL( km³,    1e9, meter3);              // 1_km³ (cubic kilometer)
-LITERAL( m³,       1, meter3);              // 1_m³  (cubic meter)
-LITERAL( dm³,   1e-3, meter3);              // 1_dm³ (cubic decimeter)
-LITERAL( cm³,   1e-6, meter3);              // 1_cm³ (cubic centimeter)
-LITERAL( mm³,   1e-9, meter3);              // 1_mm³ (cubic millimeter)
-LITERAL( um³,  1e-12, meter3);              // 1_um³ (cubic micrometer)
+SET( km³,    1e9, meter3);              // 1_km³ (cubic kilometer)
+SET( m³,       1, meter3);              // 1_m³  (cubic meter)
+SET( dm³,   1e-3, meter3);              // 1_dm³ (cubic decimeter)
+SET( cm³,   1e-6, meter3);              // 1_cm³ (cubic centimeter)
+SET( mm³,   1e-9, meter3);              // 1_mm³ (cubic millimeter)
+SET( um³,  1e-12, meter3);              // 1_um³ (cubic micrometer)
 // or in...
-LITERAL( hl,     0.1, meter3);              // 1_hl  (hectoliter)
-LITERAL( l,     1e-3, meter3);              // 1_l   (liter)
-LITERAL( ml,    1e-6, meter3);              // 1_ml  (milliliter)
-LITERAL( ul,    1e-9, meter3);              // 1_ul  (microliter)
-LITERAL( nl,   1e-12, meter3);              // 1_nl  (nanoliter)
-LITERAL( pl,   1e-15, meter3);              // 1_pl  (picoliter)
+SET( hl,     0.1, meter3);              // 1_hl  (hectoliter)
+SET( l,     1e-3, meter3);              // 1_l   (liter)
+SET( ml,    1e-6, meter3);              // 1_ml  (milliliter)
+SET( ul,    1e-9, meter3);              // 1_ul  (microliter)
+SET( nl,   1e-12, meter3);              // 1_nl  (nanoliter)
+SET( pl,   1e-15, meter3);              // 1_pl  (picoliter)
 // Velocity (v) in...
-LITERAL( km_per_s, 1e3, meters_per_second); // 1_km_per_s (km/s)
-LITERAL( m_per_s,  1, meters_per_second);   // 1_m_per_s (m/s)
-LITERAL( km_per_h, 1, kilometers_per_hour); // 1_km_per_h (km/h)
-LITERAL( mm_per_h, 1, millimeters_per_hour);// 1_mm_per_h (mm/h)
+SET( km_per_s, 1e3, meters_per_second); // 1_km_per_s (km/s)
+SET( m_per_s,  1, meters_per_second);   // 1_m_per_s (m/s)
+SET( km_per_h, 1, kilometers_per_hour); // 1_km_per_h (km/h)
+SET( mm_per_h, 1, millimeters_per_hour);// 1_mm_per_h (mm/h)
 // Acceleration (a) in...
-LITERAL( km_per_s²,1e3, meters_per_second2);// 1_km_per_s² (km/s²)
-LITERAL( m_per_s², 1, meters_per_second2);  // 1_m_per_s² (m/s²)
+SET( km_per_s²,1e3, meters_per_second2);// 1_km_per_s² (km/s²)
+SET( m_per_s², 1, meters_per_second2);  // 1_m_per_s² (m/s²)
 // Frequency (f) in...
-LITERAL( THz,   1e12, hertz);               // 1_THz (terahertz)
-LITERAL( GHz,    1e9, hertz);               // 1_GHz (gigahertz)
-LITERAL( MHz,    1e6, hertz);               // 1_MHz (megahertz)
-LITERAL( kHz,    1e3, hertz);               // 1_kHz (kilohertz)
-LITERAL( Hz,       1, hertz);               // 1_Hz  (hertz)
-LITERAL( mHz,   1e-3, hertz);               // 1_mHz (millihertz)
+SET( THz,   1e12, hertz);               // 1_THz (terahertz)
+SET( GHz,    1e9, hertz);               // 1_GHz (gigahertz)
+SET( MHz,    1e6, hertz);               // 1_MHz (megahertz)
+SET( kHz,    1e3, hertz);               // 1_kHz (kilohertz)
+SET( Hz,       1, hertz);               // 1_Hz  (hertz)
+SET( mHz,   1e-3, hertz);               // 1_mHz (millihertz)
 // Activity referred to a radionuclide (A) in...
-LITERAL( kBq,    1e3, hertz);               // 1_kBq
-LITERAL( Bq,       1, hertz);               // 1_Bq (Bequerel)
+SET( kBq,    1e3, hertz);               // 1_kBq
+SET( Bq,       1, hertz);               // 1_Bq (Bequerel)
 // Mass per area in...
-LITERAL( t_per_m², 1e3, kilograms_per_meter2);// 1_t_per_m²
-LITERAL( kg_per_m²,  1, kilograms_per_meter2);// 1_kg_per_m²
+SET( t_per_m², 1e3, kilograms_per_meter2);// 1_t_per_m²
+SET( kg_per_m²,  1, kilograms_per_meter2);// 1_kg_per_m²
 // Mass per volume in...
-LITERAL( kg_per_m³,  1, kilograms_per_meter3);// 1_kg_per_m³
-LITERAL( t_per_m³, 1e3, kilograms_per_meter3);// 1_t_per_m³
+SET( kg_per_m³,  1, kilograms_per_meter3);// 1_kg_per_m³
+SET( t_per_m³, 1e3, kilograms_per_meter3);// 1_t_per_m³
 // Electric potential (U) in...
-LITERAL( GV,     1e9, volt);                // 1_GV (gigavolt)
-LITERAL( MV,     1e6, volt);                // 1_MV (megavolt)
-LITERAL( kV,     1e3, volt);                // 1_kV (kilovolt)
-LITERAL( V,        1, volt);                // 1_V 
-LITERAL( mV,    1e-3, volt);                // 1_mV (millivolt)
-LITERAL( uV,    1e-6, volt);                // 1_uV (microvolt)
-LITERAL( nV,    1e-9, volt);                // 1_nV (nanovolt)
-LITERAL( pV,   1e-12, volt);                // 1_pV (picovolt)
+SET( GV,     1e9, volt);                // 1_GV (gigavolt)
+SET( MV,     1e6, volt);                // 1_MV (megavolt)
+SET( kV,     1e3, volt);                // 1_kV (kilovolt)
+SET( V,        1, volt);                // 1_V 
+SET( mV,    1e-3, volt);                // 1_mV (millivolt)
+SET( uV,    1e-6, volt);                // 1_uV (microvolt)
+SET( nV,    1e-9, volt);                // 1_nV (nanovolt)
+SET( pV,   1e-12, volt);                // 1_pV (picovolt)
 // Electric resistance (R) in...
-LITERAL( GOhm,   1e9, ohm);                 // 1_GOhm (gigaohm)
-LITERAL( MOhm,   1e6, ohm);                 // 1_MOhm (megaohm)
-LITERAL( kOhm,   1e3, ohm);                 // 1_kOhm (kiloohm)
-LITERAL( Ohm,      1, ohm);                 // 1_Ohm
-LITERAL( mOhm,  1e-3, ohm);                 // 1_mOhm (milliohm)
-LITERAL( uOhm,  1e-6, ohm);                 // 1_uOhm (microohm)
+SET( GOhm,   1e9, ohm);                 // 1_GOhm (gigaohm)
+SET( MOhm,   1e6, ohm);                 // 1_MOhm (megaohm)
+SET( kOhm,   1e3, ohm);                 // 1_kOhm (kiloohm)
+SET( Ohm,      1, ohm);                 // 1_Ohm
+SET( mOhm,  1e-3, ohm);                 // 1_mOhm (milliohm)
+SET( uOhm,  1e-6, ohm);                 // 1_uOhm (microohm)
 // Electric resistance meter in...
-LITERAL( Ohm_m,    1, ohm_meter);           // 1_Ohm_m (ohm meter)
+SET( Ohm_m,    1, ohm_meter);           // 1_Ohm_m (ohm meter)
 // Electric conductance (G) in...
-LITERAL( MS,     1e6, siemens);             // 1_MS   (megasiemens)
-LITERAL( kS,     1e3, siemens);             // 1_kS   (kilosiemens)
-LITERAL( S,        1, siemens);             // 1_S    (siemens)
-LITERAL( mS,    1e-3, siemens);             // 1_mS   (millisiemens)
-LITERAL( uS,    1e-6, siemens);             // 1_uS   (microsiemens)
+SET( MS,     1e6, siemens);             // 1_MS   (megasiemens)
+SET( kS,     1e3, siemens);             // 1_kS   (kilosiemens)
+SET( S,        1, siemens);             // 1_S    (siemens)
+SET( mS,    1e-3, siemens);             // 1_mS   (millisiemens)
+SET( uS,    1e-6, siemens);             // 1_uS   (microsiemens)
 // Electric conductivity (σ) in...
-LITERAL( MS_per_m,1e6, siemens_per_meter);  // 1_MS_per_m (MS/m, megasiemens per meter)
-LITERAL( kS_per_m,1e3, siemens_per_meter);  // 1_kS_per_m (kS/m, kilosiemens per meter)
-LITERAL( S_per_m,  1, siemens_per_meter);   // 1_S_per_m (S/m, siemens per meter)
+SET( MS_per_m,1e6, siemens_per_meter);  // 1_MS_per_m (MS/m, megasiemens per meter)
+SET( kS_per_m,1e3, siemens_per_meter);  // 1_kS_per_m (kS/m, kilosiemens per meter)
+SET( S_per_m,  1, siemens_per_meter);   // 1_S_per_m (S/m, siemens per meter)
 // Electric charge (Q) in...
-LITERAL( C,        1, coulomb);             // 1_C   (coulomb)
-LITERAL( GAh,    1e9, ampere_hours);        // 1_GAh (gigaampere-hours)
-LITERAL( MAh,    1e6, ampere_hours);        // 1_MAh (megaampere-hours)
-LITERAL( kAh,    1e3, ampere_hours);        // 1_kAh (kiloampere-hours)
-LITERAL( Ah,       1, ampere_hours);        // 1_Ah  (ampere-hours)
-LITERAL( mAh,   1e-3, ampere_hours);        // 1_mAh (milliampere-hours)
-LITERAL( uAh,   1e-6, ampere_hours);        // 1_uAh (microampere-hours)
+SET( C,        1, coulomb);             // 1_C   (coulomb)
+SET( GAh,    1e9, ampere_hours);        // 1_GAh (gigaampere-hours)
+SET( MAh,    1e6, ampere_hours);        // 1_MAh (megaampere-hours)
+SET( kAh,    1e3, ampere_hours);        // 1_kAh (kiloampere-hours)
+SET( Ah,       1, ampere_hours);        // 1_Ah  (ampere-hours)
+SET( mAh,   1e-3, ampere_hours);        // 1_mAh (milliampere-hours)
+SET( uAh,   1e-6, ampere_hours);        // 1_uAh (microampere-hours)
 // Electric capacitance (C) in...
-LITERAL( F,        1, farad);               // 1_F   (farad)
-LITERAL( mF,    1e-3, farad);               // 1_mF  (millifarad)
-LITERAL( uF,    1e-6, farad);               // 1_uF  (microfarad)
-LITERAL( nF,    1e-9, farad);               // 1_nF  (nanofarad)
-LITERAL( pF,   1e-12, farad);               // 1_pF  (picofarad)
+SET( F,        1, farad);               // 1_F   (farad)
+SET( mF,    1e-3, farad);               // 1_mF  (millifarad)
+SET( uF,    1e-6, farad);               // 1_uF  (microfarad)
+SET( nF,    1e-9, farad);               // 1_nF  (nanofarad)
+SET( pF,   1e-12, farad);               // 1_pF  (picofarad)
 // Electric inductance (L) in...
-LITERAL( H,        1, henry);               // 1_H   (henry)
-LITERAL( mH,    1e-3, henry);               // 1_mH  (millihenry)
-LITERAL( uH,    1e-6, henry);               // 1_uH  (microhenry)
+SET( H,        1, henry);               // 1_H   (henry)
+SET( mH,    1e-3, henry);               // 1_mH  (millihenry)
+SET( uH,    1e-6, henry);               // 1_uH  (microhenry)
 // Magnetic flux in...
-LITERAL( Wb,       1, weber);               // 1_Wb  (weber)
+SET( Wb,       1, weber);               // 1_Wb  (weber)
 // Magnetic field (B) in...
-LITERAL( T,        1, tesla);               // 1_T  (tesla)
-LITERAL( mT,    1e-3, tesla);               // 1_mT (millitesla)
-LITERAL( uT,    1e-6, tesla);               // 1_uT (microtesla)
-LITERAL( nT,    1e-9, tesla);               // 1_nT (nanotesla)
+SET( T,        1, tesla);               // 1_T  (tesla)
+SET( mT,    1e-3, tesla);               // 1_mT (millitesla)
+SET( uT,    1e-6, tesla);               // 1_uT (microtesla)
+SET( nT,    1e-9, tesla);               // 1_nT (nanotesla)
 // Energy (E) in...
-LITERAL( PJ,    1e15, joule);               // 1_PJ  (petajoule)
-LITERAL( TJ,    1e12, joule);               // 1_TJ  (terajoule)
-LITERAL( GJ,     1e9, joule);               // 1_GJ  (gigajoule)
-LITERAL( MJ,     1e6, joule);               // 1_MJ  (megajoule)
-LITERAL( kJ,     1e3, joule);               // 1_kJ  (kilojoule)
-LITERAL( J,        1, joule);               // 1_J   (joule)
-LITERAL( mJ,    1e-3, joule);               // 1_mJ  (millijoule)
+SET( PJ,    1e15, joule);               // 1_PJ  (petajoule)
+SET( TJ,    1e12, joule);               // 1_TJ  (terajoule)
+SET( GJ,     1e9, joule);               // 1_GJ  (gigajoule)
+SET( MJ,     1e6, joule);               // 1_MJ  (megajoule)
+SET( kJ,     1e3, joule);               // 1_kJ  (kilojoule)
+SET( J,        1, joule);               // 1_J   (joule)
+SET( mJ,    1e-3, joule);               // 1_mJ  (millijoule)
 // or in...
-LITERAL( cal, 4.1868, joule);               // 1_cal (calorie)
-LITERAL( kcal,4186.8, joule);               // 1_kcal (kilocalorie)
+SET( cal, 4.1868, joule);               // 1_cal (calorie)
+SET( kcal,4186.8, joule);               // 1_kcal (kilocalorie)
 // Active power (P) in...
-LITERAL( TW,    1e12, watt);                // 1_TW  (terawatt)
-LITERAL( GW,     1e9, watt);                // 1_GW  (gigawatt)
-LITERAL( MW,     1e6, watt);                // 1_MW  (megawatt)
-LITERAL( kW,     1e3, watt);                // 1_kW  (kilowatt)
-LITERAL( W,        1, watt);                // 1_W   (Watt)
-LITERAL( mW,    1e-3, watt);                // 1_mW  (milliwatt)
-LITERAL( uW,    1e-6, watt);                // 1_uW  (microwatt)
-LITERAL( TWh, 3.6e15, watt);                // 1_TWh (terawatt-hour)
-LITERAL( GWh, 3.6e12, watt);                // 1_GWh (gigawatt-hour)
-LITERAL( MWh,  3.6e9, watt);                // 1_MWh (megawatt-hour)
-LITERAL( kWh,  3.6e6, watt);                // 1_kWh (kilowatt-hour)
-LITERAL( Wh,   3.6e3, watt);                // 1_Wh  (watt-hour)
+SET( TW,    1e12, watt);                // 1_TW  (terawatt)
+SET( GW,     1e9, watt);                // 1_GW  (gigawatt)
+SET( MW,     1e6, watt);                // 1_MW  (megawatt)
+SET( kW,     1e3, watt);                // 1_kW  (kilowatt)
+SET( W,        1, watt);                // 1_W   (Watt)
+SET( mW,    1e-3, watt);                // 1_mW  (milliwatt)
+SET( uW,    1e-6, watt);                // 1_uW  (microwatt)
+SET( TWh, 3.6e15, watt);                // 1_TWh (terawatt-hour)
+SET( GWh, 3.6e12, watt);                // 1_GWh (gigawatt-hour)
+SET( MWh,  3.6e9, watt);                // 1_MWh (megawatt-hour)
+SET( kWh,  3.6e6, watt);                // 1_kWh (kilowatt-hour)
+SET( Wh,   3.6e3, watt);                // 1_Wh  (watt-hour)
 // Active power per mass in...
-LITERAL( kWh_per_kg, 3.6e6, joules_per_second_per_kilogram);  // 1_kWh_per_kg (kilowatt-hour per kilogram)
-LITERAL( Wh_per_kg,  3.6e3, joules_per_second_per_kilogram);  // 1_Wh_per_kg (watt-hour per kilogram)
+SET( kWh_per_kg, 3.6e6, joules_per_second_per_kilogram);  // 1_kWh_per_kg (kilowatt-hour per kilogram)
+SET( Wh_per_kg,  3.6e3, joules_per_second_per_kilogram);  // 1_Wh_per_kg (watt-hour per kilogram)
 // Power intensity (I) in...
-LITERAL( MW_per_m²,1e6, watts_per_meter2);  // 1_MW_per_m² (kilowatt per square metre)
-LITERAL( kW_per_m²,1e3, watts_per_meter2);  // 1_kW_per_m² (kilowatt per square metre)
-LITERAL( W_per_m², 1, watts_per_meter2);    // 1_W_per_m² (watt per square metre)
-LITERAL( mW_per_m²,1e-3, watts_per_meter2); // 1_mW_per_m² (milliwatt per square metre)
-LITERAL( uW_per_m²,1e-6, watts_per_meter2); // 1_uW_per_m² (milliwatt per square metre)
+SET( MW_per_m²,1e6, watts_per_meter2);  // 1_MW_per_m² (kilowatt per square metre)
+SET( kW_per_m²,1e3, watts_per_meter2);  // 1_kW_per_m² (kilowatt per square metre)
+SET( W_per_m², 1, watts_per_meter2);    // 1_W_per_m² (watt per square metre)
+SET( mW_per_m²,1e-3, watts_per_meter2); // 1_mW_per_m² (milliwatt per square metre)
+SET( uW_per_m²,1e-6, watts_per_meter2); // 1_uW_per_m² (milliwatt per square metre)
 // Equivalent dose (H) in...
-LITERAL( Sv,       1, sievert);             // 1_Sv  (sievert)
-LITERAL( mSv,   1e-3, sievert);             // 1_mSv (millisievert)
-LITERAL( uSv,   1e-6, sievert);             // 1_uSv (microsievert)
+SET( Sv,       1, sievert);             // 1_Sv  (sievert)
+SET( mSv,   1e-3, sievert);             // 1_mSv (millisievert)
+SET( uSv,   1e-6, sievert);             // 1_uSv (microsievert)
 // Absorbed dose (D), kerma in...
-LITERAL( Gy,       1, gray);                // 1_Gy (gray)
+SET( Gy,       1, gray);                // 1_Gy (gray)
 // Pressure (p) in...
-LITERAL( MPa,    1e6, pascal_);             // 1_MPa  (megapascal) 
-LITERAL( kPa,    1e3, pascal_);             // 1_kPa  (kilopascal) 
-LITERAL( hPa,    1e2, pascal_);             // 1_hPa  (hectopascal) 
-LITERAL( Pa,       1, pascal_);             // 1_Pa   (pascal) 
-LITERAL( mPa,   1e-3, pascal_);             // 1_mPa  (millipascal) 
-LITERAL( uPa,   1e-6, pascal_);             // 1_uPa  (micropascal) 
+SET( MPa,    1e6, pascal_);             // 1_MPa  (megapascal) 
+SET( kPa,    1e3, pascal_);             // 1_kPa  (kilopascal) 
+SET( hPa,    1e2, pascal_);             // 1_hPa  (hectopascal) 
+SET( Pa,       1, pascal_);             // 1_Pa   (pascal) 
+SET( mPa,   1e-3, pascal_);             // 1_mPa  (millipascal) 
+SET( uPa,   1e-6, pascal_);             // 1_uPa  (micropascal) 
 // Force (F) in...
-LITERAL( GN,     1e9, newton);              // 1_GN (giganewton)
-LITERAL( MN,     1e6, newton);              // 1_MN (meganewton)
-LITERAL( kN,     1e3, newton);              // 1_kN (kilonewton)
-LITERAL( N,        1, newton);              // 1_N
-LITERAL( mN,    1e-3, newton);              // 1_mN (millinewton)
-LITERAL( uN,    1e-6, newton);              // 1_uN (micronewton)
-LITERAL( pN,    1e-9, newton);              // 1_pN (piconewton)
+SET( GN,     1e9, newton);              // 1_GN (giganewton)
+SET( MN,     1e6, newton);              // 1_MN (meganewton)
+SET( kN,     1e3, newton);              // 1_kN (kilonewton)
+SET( N,        1, newton);              // 1_N
+SET( mN,    1e-3, newton);              // 1_mN (millinewton)
+SET( uN,    1e-6, newton);              // 1_uN (micronewton)
+SET( pN,    1e-9, newton);              // 1_pN (piconewton)
 // Luminous flux (m) in...
-LITERAL( lm,       1, lumen);               // 1_lm (lumen)
-LITERAL( lm_s,     1, lumen_second);        // 1_lm_s (lumen second)
-LITERAL( lm_per_W, 1, lumens_per_watt);     // 1_lm_per_W (lumen per watt)
+SET( lm,       1, lumen);               // 1_lm (lumen)
+SET( lm_s,     1, lumen_second);        // 1_lm_s (lumen second)
+SET( lm_per_W, 1, lumens_per_watt);     // 1_lm_per_W (lumen per watt)
 // Surface flow (s) in...
-LITERAL( m²_per_s, 1, meter2_per_second);   // 1_m²/s (square meter per second)
+SET( m²_per_s, 1, meter2_per_second);   // 1_m²/s (square meter per second)
 // Volumetric flow (V) in...
-LITERAL( m³_per_s, 1, meter3_per_second);   // 1_m³/s (cubic meter per second)
+SET( m³_per_s, 1, meter3_per_second);   // 1_m³/s (cubic meter per second)
 // Other...
-LITERAL( Nm,       1, newtonmeter);         // 1_Nm  (newtonmeter)
+SET( Nm,       1, newtonmeter);         // 1_Nm  (newtonmeter)
 // SI supplementary units in...
-LITERAL( rad,      1, radian);              // 1_rad  (radian)
-LITERAL( deg,0.01745329251994329576923690768489, radian); // 1_deg  (angle degree)
-LITERAL( sr,       1, steradian);           // 1_sr   (steradian)
-
-#define CARDINAL(_symbol, _factor, _baseUnit) \
-  constexpr auto operator "" _ ## _symbol(unsigned long long x) { return _baseUnit(static_cast<long long>(x) * _factor); }
+SET( rad,      1, radian);              // 1_rad  (radian)
+SET( deg,0.01745329251994329576923690768489, radian); // 1_deg  (angle degree)
+SET( sr,       1, steradian);           // 1_sr   (steradian)
 
 // Non-SI Units
 // ------------
-//       SYMBOL           FACTOR                  BASE UNIT   EXAMPLE
+//   SYMBOL           FACTOR                  BASE UNIT   EXAMPLE
 // Astronomical distances in...
-LITERAL( Mly,        9'460'730'472'580'800 * 1e6, meter);  // 1_Mly (megalight-year)
-LITERAL( ly,               9'460'730'472'580'800, meter);  // 1_ly (light-year)
-LITERAL( au,                     149'597'870'700, meter);  // 1_au (astronomical unit)
-LITERAL( pc,              30'856'775'814'913'700, meter);  // 1_pc (parsec)
+SET( Mly,        9'460'730'472'580'800 * 1e6, meter);  // 1_Mly (megalight-year)
+SET( ly,               9'460'730'472'580'800, meter);  // 1_ly (light-year)
+SET( au,                     149'597'870'700, meter);  // 1_au (astronomical unit)
+SET( pc,              30'856'775'814'913'700, meter);  // 1_pc (parsec)
 // Imperial units in...
-LITERAL( degF,                                 1, fahrenheit); // 1_degF (°Fahrenheit)
-LITERAL( ft,                               .3048, meter);  // 1_ft (feet)
-LITERAL( ft_per_min,                     0.00508, meters_per_second); // 1_ft_per_min (feet/min)
-LITERAL( in,                              0.0254, meter);  // 1_in (inch)
-LITERAL( in_per_s,                        0.0254, meters_per_second); // 1_in_per_s (inch/sec)
-LITERAL( in_per_h,                  0.0000070556, meters_per_second); // 1_in_per_h (inch/hour)
-LITERAL( kn,                               1.852, kilometers_per_hour); // 1_kn (knots)
-LITERAL( lb,                          453.592'37, gram);   // 1_lb
-LITERAL( oz,                      28.349'523'125, gram);   // 1_oz
-LITERAL( mi,                           1'609.344, meter);  // 1_mi (statute mile)
-LITERAL( mph,                             .44704, meters_per_second); // 1_mph (miles per hour)
-LITERAL( NM,                               1'852, meter);  // 1_NM (nautical mile)
-LITERAL( nmi,                              1'852, meter);  // 1_nmi (nautical mile)
-LITERAL( yd,                               .9144, meter);  // 1_yd (yard)
+SET( degF,                                 1, fahrenheit); // 1_degF (°Fahrenheit)
+SET( ft,                               .3048, meter);  // 1_ft (feet)
+SET( ft_per_min,                     0.00508, meters_per_second); // 1_ft_per_min (feet/min)
+SET( in,                              0.0254, meter);  // 1_in (inch)
+SET( in_per_s,                        0.0254, meters_per_second); // 1_in_per_s (inch/sec)
+SET( in_per_h,                  0.0000070556, meters_per_second); // 1_in_per_h (inch/hour)
+SET( kn,                               1.852, kilometers_per_hour); // 1_kn (knots)
+SET( lb,                          453.592'37, gram);   // 1_lb
+SET( oz,                      28.349'523'125, gram);   // 1_oz
+SET( mi,                           1'609.344, meter);  // 1_mi (statute mile)
+SET( mph,                             .44704, meters_per_second); // 1_mph (miles per hour)
+SET( NM,                               1'852, meter);  // 1_NM (nautical mile)
+SET( nmi,                              1'852, meter);  // 1_nmi (nautical mile)
+SET( yd,                               .9144, meter);  // 1_yd (yard)
 // Digital units in...
-CARDINAL( byte,                               1, byte);    // 1_byte
-CARDINAL( kB,                               1e3, byte);    // 1_kB (kilobyte)
-CARDINAL( MB,                               1e6, byte);    // 1_MB (megabyte)
-CARDINAL( GB,                               1e9, byte);    // 1_GB (gigabyte)
-CARDINAL( TB,                              1e12, byte);    // 1_TB (terabyte)
-CARDINAL( PB,                              1e15, byte);    // 1_PB (terabyte)
-CARDINAL( EB,                              1e18, byte);    // 1_EB (exabyte)
-CARDINAL( ZB,                              1e21, byte);    // 1_ZB (zettabyte)
-CARDINAL( YB,                              1e24, byte);    // 1_ZY (yottabyte)
-CARDINAL( RB,                              1e27, byte);    // 1_RY (ronnabyte)
-CARDINAL( QB,                              1e30, byte);    // 1_QY (quettabyte)
-LITERAL( KBps,                              1e3, bytes_per_second); // 1_KBps (kilobyte/sec)
-LITERAL( MBps,                              1e6, bytes_per_second); // 1_MBps (megabyte/sec)
-LITERAL( GBps,                              1e9, bytes_per_second); // 1_GBps (gigabyte/sec)
-LITERAL( TBps,                             1e12, bytes_per_second); // 1_TBps (terabyte/sec)
-LITERAL( Kbps,                          1e3 / 8, bytes_per_second); // 1_Kbps (kilobit/sec)
-LITERAL( Mbps,                          1e6 / 8, bytes_per_second); // 1_Mbps (megabit/sec)
-LITERAL( Gbps,                          1e9 / 8, bytes_per_second); // 1_Gbps (gigabit/sec)
-LITERAL( Tbps,                         1e12 / 8, bytes_per_second); // 1_Tbps (terabit/sec)
+SET( byte,                                 1, byte);    // 1_byte
+SET( kB,                                 1e3, byte);    // 1_kB (kilobyte)
+SET( MB,                                 1e6, byte);    // 1_MB (megabyte)
+SET( GB,                                 1e9, byte);    // 1_GB (gigabyte)
+SET( TB,                                1e12, byte);    // 1_TB (terabyte)
+SET( PB,                                1e15, byte);    // 1_PB (terabyte)
+SET( EB,                                1e18, byte);    // 1_EB (exabyte)
+SET( ZB,                                1e21, byte);    // 1_ZB (zettabyte)
+SET( YB,                                1e24, byte);    // 1_ZY (yottabyte)
+SET( RB,                                1e27, byte);    // 1_RY (ronnabyte)
+SET( QB,                                1e30, byte);    // 1_QY (quettabyte)
+SET( KBps,                               1e3, bytes_per_second); // 1_KBps (kilobyte/sec)
+SET( MBps,                               1e6, bytes_per_second); // 1_MBps (megabyte/sec)
+SET( GBps,                               1e9, bytes_per_second); // 1_GBps (gigabyte/sec)
+SET( TBps,                              1e12, bytes_per_second); // 1_TBps (terabyte/sec)
+SET( Kbps,                           1e3 / 8, bytes_per_second); // 1_Kbps (kilobit/sec)
+SET( Mbps,                           1e6 / 8, bytes_per_second); // 1_Mbps (megabit/sec)
+SET( Gbps,                           1e9 / 8, bytes_per_second); // 1_Gbps (gigabit/sec)
+SET( Tbps,                          1e12 / 8, bytes_per_second); // 1_Tbps (terabit/sec)
 // Various units in...
-LITERAL( degC,                                1, celsius);  // 1_degC (°Celsius)
-LITERAL( degR,                          5.0/9.0, kelvin);   // 1_degR (°Rankine)
-LITERAL( Mach,                              330, meters_per_second); // 1_Mach
-LITERAL( Da,                1.6605390689252e-27, kilogram); // 1_Da   (dalton)
-LITERAL( eV,                    1.602176634e-19, joule);    // 1_eV   (electronvolt)
-LITERAL( hp,                 745.69987158227022, watt);     // 1_hp   (horsepower)
-LITERAL( PS,                          735.49875, watt);     // 1_PS   ('Pferdestärke', german horsepower)
-LITERAL( at,                           98'066.5, pascal_);  // 1_at   (atmosphere)
-LITERAL( bar,                               1e5, pascal_);  // 1_bar 
-LITERAL( mmHg,                         133.3224, pascal_);  // 1_mmHg (millimeter mercury)
-LITERAL( Ang,                             1e-10, meter);    // 1_Ang  (angstrom)
-LITERAL( smoot,                          1.7018, meter);    // 1_smoot (one Oliver R. Smoot height, fun unit)
-}
+SET( degC,                                 1, celsius);  // 1_degC (°Celsius)
+SET( degR,                           5.0/9.0, kelvin);   // 1_degR (°Rankine)
+SET( Mach,                               330, meters_per_second); // 1_Mach
+SET( Da,                 1.6605390689252e-27, kilogram); // 1_Da   (dalton)
+SET( eV,                     1.602176634e-19, joule);    // 1_eV   (electronvolt)
+SET( hp,                  745.69987158227022, watt);     // 1_hp   (horsepower)
+SET( PS,                           735.49875, watt);     // 1_PS   ('Pferdestärke', german horsepower)
+SET( at,                            98'066.5, pascal_);  // 1_at   (atmosphere)
+SET( bar,                                1e5, pascal_);  // 1_bar 
+SET( mmHg,                          133.3224, pascal_);  // 1_mmHg (millimeter mercury)
+SET( Ang,                              1e-10, meter);    // 1_Ang  (angstrom)
+SET( smoot,                           1.7018, meter);    // 1_smoot (one Oliver R. Smoot height, fun unit)
+
+} // SI::
+#undef SET
 
 // Sources
 // -------
-// * https://en.wikipedia.org/wiki/International_System_of_Units
-
-#undef LITERAL
-#undef CARDINAL
+// 1. https://en.wikipedia.org/wiki/International_System_of_Units
