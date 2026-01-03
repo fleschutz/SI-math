@@ -1,4 +1,4 @@
-// SI/formulas.h - 43 type-safe common formulas based on SI units
+// SI/formulas.h - 43 common formulas based on type-safe SI units
 //                 (sorted by 2D, 3D, moving objects, vehicles, aircrafts, various)
 #pragma once
 
