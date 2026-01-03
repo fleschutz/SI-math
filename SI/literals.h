@@ -6,12 +6,12 @@
 constexpr auto operator "" _ ## _symbol(long double x) { return _baseUnit(static_cast<double_t>(_factor ## L * x)); } \
 constexpr auto operator "" _ ## _symbol(unsigned long long x) { return _baseUnit(static_cast<double_t>(_factor ## L * x)); }
 
-namespace SI
-{
+namespace SI {
+
 // The 7 SI Base Units
 // -------------------
 // SYMBOL FACTOR  BASE UNIT                EXAMPLE  (units sorted from big to small)
-// Length in...
+// length in...
 SET( Gm,     1e9, meter);               // 1_Gm (gigameter)
 SET( Mm,     1e6, meter);               // 1_Mm (megameter)
 SET( km,     1e3, meter);               // 1_km (kilometer)
@@ -23,7 +23,7 @@ SET( mm,    1e-3, meter);               // 1_mm (millimeter)
 SET( um,    1e-6, meter);               // 1_um (micrometer)
 SET( nm,    1e-9, meter);               // 1_nm (nanometer)
 SET( pm,   1e-12, meter);               // 1_pm (picometer)
-// Time in...
+// time in...
 SET( h,     3600, second);              // 1_h   (hour)
 SET( min,     60, second);              // 1_min (minute)
 SET( s,        1, second);              // 1_s   (second)
@@ -33,7 +33,7 @@ SET( ms,    1e-3, second);              // 1_ms  (millisecond)
 SET( us,    1e-6, second);              // 1_us  (microsecond)
 SET( ns,    1e-9, second);              // 1_ns  (nanosecond)
 SET( ps,   1e-12, second);              // 1_ps  (picosecond)
-// Mass in...
+// mass in...
 SET( Gt,    1e12, kilogram);            // 1_Gt (metric gigaton)
 SET( Mt,     1e9, kilogram);            // 1_Mt (metric megaton)
 SET( kt,     1e6, kilogram);            // 1_kt (metric kiloton)
@@ -43,7 +43,7 @@ SET( g,     1e-3, kilogram);            // 1_g  (gram)
 SET( mg,    1e-6, kilogram);            // 1_mg (milligram)
 SET( ug,    1e-9, kilogram);            // 1_ug (microgram)
 SET( ng,   1e-12, kilogram);            // 1_ng (nanogram)
-// Thermodynamic temperature in...
+// thermodynamic temperature in...
 SET( GK,     1e9, kelvin);              // 1_GK (gigakelvin)
 SET( MK,     1e6, kelvin);              // 1_MK (megakelvin)
 SET( kK,     1e3, kelvin);              // 1_kK (kilokelvin)
@@ -51,7 +51,7 @@ SET( K,        1, kelvin);              // 1_K
 SET( mK,    1e-3, kelvin);              // 1_mK (millikelvin)
 SET( uK,    1e-6, kelvin);              // 1_uK (microkelvin)
 SET( nK,    1e-9, kelvin);              // 1_nK (nanokelvin)
-// Electric current (I) in...
+// electric current (I) in...
 SET( GA,     1e9, ampere);              // 1_GA  (gigaampere)
 SET( MA,     1e6, ampere);              // 1_MA  (megaampere)
 SET( kA,     1e3, ampere);              // 1_kA  (kiloampere)
@@ -60,7 +60,7 @@ SET( mA,    1e-3, ampere);              // 1_mA  (milliampere)
 SET( uA,    1e-6, ampere);              // 1_uA  (microampere)
 SET( nA,    1e-9, ampere);              // 1_nA  (nanoampere)
 SET( pA,   1e-12, ampere);              // 1_pA  (picoampere)
-// Amount of substance (N_A) in...
+// amount of substance (N_A) in...
 SET( kmol,   1e3, mol);                 // 1_kmol (kilomole)
 SET( mol,      1, mol);                 // 1_mol
 SET( mmol,  1e-3, mol);                 // 1_mmol (millimole)
@@ -68,28 +68,28 @@ SET( umol,  1e-6, mol);                 // 1_umol (micromole)
 SET( nmol,  1e-9, mol);                 // 1_nmol (nanomole)
 SET( pmol, 1e-12, mol);                 // 1_pmol (picomole)
 SET( fmol, 1e-15, mol);                 // 1_fmol (femtomole)
-// Luminous intensity (J) in...
+// luminous intensity (J) in...
 SET( kcd,    1e3, candela);             // 1_kcd (kilocandela)
 SET( cd,       1, candela);             // 1_cd  (candela)
 
 // The 22 Derived SI Units
 // -----------------------
 // SYMBOL FACTOR  BASE UNIT                EXAMPLE
-// Area in...
+// area in...
 SET( km²,    1e6, meter2);              // 1_km² (square kilometer)
 SET( hm²,    1e4, meter2);              // 1_hm² (hectare)
 SET( m²,       1, meter2);              // 1_m²  (square meter)
 SET( cm²,   1e-4, meter2);              // 1_cm² (square centimeter)
 SET( mm²,   1e-6, meter2);              // 1_mm² (square millimeter)
 SET( um²,   1e-9, meter2);              // 1_um² (square micrometer)
-// Per area in...
+// per area in...
 SET( per_km²,1e-6, per_meter2);         // 1_per_km² (per square kilometer)
 SET( per_hm²,1e-4, per_meter2);         // 1_per_hm² (per hectare)
 SET( per_m²,    1, per_meter2);         // 1_per_m²  (per square meter)
 SET( per_cm², 1e4, per_meter2);         // 1_per_cm² (per square centimeter)
 SET( per_mm², 1e6, per_meter2);         // 1_per_mm² (per square millimeter)
 SET( per_μm², 1e9, per_meter2);         // 1_per μm² (per square micrometer)
-// Volume in...
+// volume in...
 SET( km³,    1e9, meter3);              // 1_km³ (cubic kilometer)
 SET( m³,       1, meter3);              // 1_m³  (cubic meter)
 SET( dm³,   1e-3, meter3);              // 1_dm³ (cubic decimeter)
@@ -103,31 +103,31 @@ SET( ml,    1e-6, meter3);              // 1_ml  (milliliter)
 SET( ul,    1e-9, meter3);              // 1_ul  (microliter)
 SET( nl,   1e-12, meter3);              // 1_nl  (nanoliter)
 SET( pl,   1e-15, meter3);              // 1_pl  (picoliter)
-// Velocity (v) in...
+// velocity (v) in...
 SET( km_per_s, 1e3, meters_per_second); // 1_km_per_s (km/s)
 SET( m_per_s,  1, meters_per_second);   // 1_m_per_s (m/s)
 SET( km_per_h, 1, kilometers_per_hour); // 1_km_per_h (km/h)
 SET( mm_per_h, 1, millimeters_per_hour);// 1_mm_per_h (mm/h)
-// Acceleration (a) in...
+// acceleration (a) in...
 SET( km_per_s²,1e3, meters_per_second2);// 1_km_per_s² (km/s²)
 SET( m_per_s², 1, meters_per_second2);  // 1_m_per_s² (m/s²)
-// Frequency (f) in...
+// frequency (f) in...
 SET( THz,   1e12, hertz);               // 1_THz (terahertz)
 SET( GHz,    1e9, hertz);               // 1_GHz (gigahertz)
 SET( MHz,    1e6, hertz);               // 1_MHz (megahertz)
 SET( kHz,    1e3, hertz);               // 1_kHz (kilohertz)
 SET( Hz,       1, hertz);               // 1_Hz  (hertz)
 SET( mHz,   1e-3, hertz);               // 1_mHz (millihertz)
-// Activity referred to a radionuclide (A) in...
+// activity referred to a radionuclide (A) in...
 SET( kBq,    1e3, hertz);               // 1_kBq
 SET( Bq,       1, hertz);               // 1_Bq (Bequerel)
-// Mass per area in...
+// mass per area in...
 SET( t_per_m², 1e3, kilograms_per_meter2);// 1_t_per_m²
 SET( kg_per_m²,  1, kilograms_per_meter2);// 1_kg_per_m²
-// Mass per volume in...
+// mass per volume in...
 SET( kg_per_m³,  1, kilograms_per_meter3);// 1_kg_per_m³
 SET( t_per_m³, 1e3, kilograms_per_meter3);// 1_t_per_m³
-// Electric potential (U) in...
+// electric potential (U) in...
 SET( GV,     1e9, volt);                // 1_GV (gigavolt)
 SET( MV,     1e6, volt);                // 1_MV (megavolt)
 SET( kV,     1e3, volt);                // 1_kV (kilovolt)
@@ -136,26 +136,26 @@ SET( mV,    1e-3, volt);                // 1_mV (millivolt)
 SET( uV,    1e-6, volt);                // 1_uV (microvolt)
 SET( nV,    1e-9, volt);                // 1_nV (nanovolt)
 SET( pV,   1e-12, volt);                // 1_pV (picovolt)
-// Electric resistance (R) in...
+// electric resistance (R) in...
 SET( GOhm,   1e9, ohm);                 // 1_GOhm (gigaohm)
 SET( MOhm,   1e6, ohm);                 // 1_MOhm (megaohm)
 SET( kOhm,   1e3, ohm);                 // 1_kOhm (kiloohm)
 SET( Ohm,      1, ohm);                 // 1_Ohm
 SET( mOhm,  1e-3, ohm);                 // 1_mOhm (milliohm)
 SET( uOhm,  1e-6, ohm);                 // 1_uOhm (microohm)
-// Electric resistance meter in...
+// electric resistance meter in...
 SET( Ohm_m,    1, ohm_meter);           // 1_Ohm_m (ohm meter)
-// Electric conductance (G) in...
+// electric conductance (G) in...
 SET( MS,     1e6, siemens);             // 1_MS   (megasiemens)
 SET( kS,     1e3, siemens);             // 1_kS   (kilosiemens)
 SET( S,        1, siemens);             // 1_S    (siemens)
 SET( mS,    1e-3, siemens);             // 1_mS   (millisiemens)
 SET( uS,    1e-6, siemens);             // 1_uS   (microsiemens)
-// Electric conductivity (σ) in...
+// electric conductivity (σ) in...
 SET( MS_per_m,1e6, siemens_per_meter);  // 1_MS_per_m (MS/m, megasiemens per meter)
 SET( kS_per_m,1e3, siemens_per_meter);  // 1_kS_per_m (kS/m, kilosiemens per meter)
 SET( S_per_m,  1, siemens_per_meter);   // 1_S_per_m (S/m, siemens per meter)
-// Electric charge (Q) in...
+// electric charge (Q) in...
 SET( C,        1, coulomb);             // 1_C   (coulomb)
 SET( GAh,    1e9, ampere_hours);        // 1_GAh (gigaampere-hours)
 SET( MAh,    1e6, ampere_hours);        // 1_MAh (megaampere-hours)
@@ -163,24 +163,24 @@ SET( kAh,    1e3, ampere_hours);        // 1_kAh (kiloampere-hours)
 SET( Ah,       1, ampere_hours);        // 1_Ah  (ampere-hours)
 SET( mAh,   1e-3, ampere_hours);        // 1_mAh (milliampere-hours)
 SET( uAh,   1e-6, ampere_hours);        // 1_uAh (microampere-hours)
-// Electric capacitance (C) in...
+// electric capacitance (C) in...
 SET( F,        1, farad);               // 1_F   (farad)
 SET( mF,    1e-3, farad);               // 1_mF  (millifarad)
 SET( uF,    1e-6, farad);               // 1_uF  (microfarad)
 SET( nF,    1e-9, farad);               // 1_nF  (nanofarad)
 SET( pF,   1e-12, farad);               // 1_pF  (picofarad)
-// Electric inductance (L) in...
+// electric inductance (L) in...
 SET( H,        1, henry);               // 1_H   (henry)
 SET( mH,    1e-3, henry);               // 1_mH  (millihenry)
 SET( uH,    1e-6, henry);               // 1_uH  (microhenry)
-// Magnetic flux in...
+// magnetic flux in...
 SET( Wb,       1, weber);               // 1_Wb  (weber)
-// Magnetic field (B) in...
+// magnetic field (B) in...
 SET( T,        1, tesla);               // 1_T  (tesla)
 SET( mT,    1e-3, tesla);               // 1_mT (millitesla)
 SET( uT,    1e-6, tesla);               // 1_uT (microtesla)
 SET( nT,    1e-9, tesla);               // 1_nT (nanotesla)
-// Energy (E) in...
+// energy (E) in...
 SET( PJ,    1e15, joule);               // 1_PJ  (petajoule)
 SET( TJ,    1e12, joule);               // 1_TJ  (terajoule)
 SET( GJ,     1e9, joule);               // 1_GJ  (gigajoule)
@@ -191,7 +191,7 @@ SET( mJ,    1e-3, joule);               // 1_mJ  (millijoule)
 // or in...
 SET( cal, 4.1868, joule);               // 1_cal (calorie)
 SET( kcal,4186.8, joule);               // 1_kcal (kilocalorie)
-// Active power (P) in...
+// active power (P) in...
 SET( TW,    1e12, watt);                // 1_TW  (terawatt)
 SET( GW,     1e9, watt);                // 1_GW  (gigawatt)
 SET( MW,     1e6, watt);                // 1_MW  (megawatt)
@@ -204,29 +204,29 @@ SET( GWh, 3.6e12, watt);                // 1_GWh (gigawatt-hour)
 SET( MWh,  3.6e9, watt);                // 1_MWh (megawatt-hour)
 SET( kWh,  3.6e6, watt);                // 1_kWh (kilowatt-hour)
 SET( Wh,   3.6e3, watt);                // 1_Wh  (watt-hour)
-// Active power per mass in...
+// active power per mass in...
 SET( kWh_per_kg, 3.6e6, joules_per_second_per_kilogram);  // 1_kWh_per_kg (kilowatt-hour per kilogram)
 SET( Wh_per_kg,  3.6e3, joules_per_second_per_kilogram);  // 1_Wh_per_kg (watt-hour per kilogram)
-// Power intensity (I) in...
+// power intensity (I) in...
 SET( MW_per_m²,1e6, watts_per_meter2);  // 1_MW_per_m² (kilowatt per square metre)
 SET( kW_per_m²,1e3, watts_per_meter2);  // 1_kW_per_m² (kilowatt per square metre)
 SET( W_per_m², 1, watts_per_meter2);    // 1_W_per_m² (watt per square metre)
 SET( mW_per_m²,1e-3, watts_per_meter2); // 1_mW_per_m² (milliwatt per square metre)
 SET( uW_per_m²,1e-6, watts_per_meter2); // 1_uW_per_m² (milliwatt per square metre)
-// Equivalent dose (H) in...
+// equivalent dose (H) in...
 SET( Sv,       1, sievert);             // 1_Sv  (sievert)
 SET( mSv,   1e-3, sievert);             // 1_mSv (millisievert)
 SET( uSv,   1e-6, sievert);             // 1_uSv (microsievert)
-// Absorbed dose (D), kerma in...
+// absorbed dose (D), kerma in...
 SET( Gy,       1, gray);                // 1_Gy (gray)
-// Pressure (p) in...
+// pressure (p) in...
 SET( MPa,    1e6, pascal_);             // 1_MPa  (megapascal) 
 SET( kPa,    1e3, pascal_);             // 1_kPa  (kilopascal) 
 SET( hPa,    1e2, pascal_);             // 1_hPa  (hectopascal) 
 SET( Pa,       1, pascal_);             // 1_Pa   (pascal) 
 SET( mPa,   1e-3, pascal_);             // 1_mPa  (millipascal) 
 SET( uPa,   1e-6, pascal_);             // 1_uPa  (micropascal) 
-// Force (F) in...
+// force (F) in...
 SET( GN,     1e9, newton);              // 1_GN (giganewton)
 SET( MN,     1e6, newton);              // 1_MN (meganewton)
 SET( kN,     1e3, newton);              // 1_kN (kilonewton)
@@ -234,15 +234,15 @@ SET( N,        1, newton);              // 1_N
 SET( mN,    1e-3, newton);              // 1_mN (millinewton)
 SET( uN,    1e-6, newton);              // 1_uN (micronewton)
 SET( pN,    1e-9, newton);              // 1_pN (piconewton)
-// Luminous flux (m) in...
+// luminous flux (m) in...
 SET( lm,       1, lumen);               // 1_lm (lumen)
 SET( lm_s,     1, lumen_second);        // 1_lm_s (lumen second)
 SET( lm_per_W, 1, lumens_per_watt);     // 1_lm_per_W (lumen per watt)
-// Surface flow (s) in...
+// surface flow (s) in...
 SET( m²_per_s, 1, meter2_per_second);   // 1_m²/s (square meter per second)
-// Volumetric flow (V) in...
+// volumetric flow (V) in...
 SET( m³_per_s, 1, meter3_per_second);   // 1_m³/s (cubic meter per second)
-// Other...
+// other...
 SET( Nm,       1, newtonmeter);         // 1_Nm  (newtonmeter)
 // SI supplementary units in...
 SET( rad,      1, radian);              // 1_rad  (radian)
@@ -252,12 +252,12 @@ SET( sr,       1, steradian);           // 1_sr   (steradian)
 // Non-SI Units
 // ------------
 //   SYMBOL           FACTOR                  BASE UNIT   EXAMPLE
-// Astronomical distances in...
+// astronomical distances in...
 SET( Mly,        9'460'730'472'580'800 * 1e6, meter);  // 1_Mly (megalight-year)
 SET( ly,               9'460'730'472'580'800, meter);  // 1_ly (light-year)
 SET( au,                     149'597'870'700, meter);  // 1_au (astronomical unit)
 SET( pc,              30'856'775'814'913'700, meter);  // 1_pc (parsec)
-// Imperial units in...
+// imperial units in...
 SET( degF,                                 1, fahrenheit); // 1_degF (°Fahrenheit)
 SET( ft,                               .3048, meter);  // 1_ft (feet)
 SET( ft_per_min,                     0.00508, meters_per_second); // 1_ft_per_min (feet/min)
@@ -272,7 +272,7 @@ SET( mph,                             .44704, meters_per_second); // 1_mph (mile
 SET( NM,                               1'852, meter);  // 1_NM (nautical mile)
 SET( nmi,                              1'852, meter);  // 1_nmi (nautical mile)
 SET( yd,                               .9144, meter);  // 1_yd (yard)
-// Digital units in...
+// digital units in...
 SET( byte,                                 1, byte);    // 1_byte
 SET( kB,                                 1e3, byte);    // 1_kB (kilobyte)
 SET( MB,                                 1e6, byte);    // 1_MB (megabyte)
@@ -292,7 +292,7 @@ SET( Kbps,                           1e3 / 8, bytes_per_second); // 1_Kbps (kilo
 SET( Mbps,                           1e6 / 8, bytes_per_second); // 1_Mbps (megabit/sec)
 SET( Gbps,                           1e9 / 8, bytes_per_second); // 1_Gbps (gigabit/sec)
 SET( Tbps,                          1e12 / 8, bytes_per_second); // 1_Tbps (terabit/sec)
-// Various units in...
+// various units in...
 SET( degC,                                 1, celsius);  // 1_degC (°Celsius)
 SET( degR,                           5.0/9.0, kelvin);   // 1_degR (°Rankine)
 SET( Mach,                               330, meters_per_second); // 1_Mach
