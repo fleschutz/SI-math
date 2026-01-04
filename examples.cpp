@@ -201,10 +201,22 @@ int main()
 	length L = V / (constant::pi * square(filament_diameter / 2));
 	print(L);
 } {
+	print("\nWhat's the max diving time in 10m salt water using a 10l bottle? It's... ");
+	auto average_breathing = 20_l_per_min;
+	auto bottle_volume = 10_l;
+	auto bottle_pressure = 150_bar;
+	auto dive_depth = 10_m;
+	auto salt_water_density = 1033.23_kg_per_m³;
+	auto air_pressure = 1013.25_hPa;
+	auto water_pressure = salt_water_density * constant::g_0 * dive_depth + air_pressure;
+	auto max_time = (bottle_volume * bottle_pressure) / (average_breathing * water_pressure);
+	print(max_time);
+} {
 	// Here's the basic principle:
 	dimensionless x = 42;        // <- x contains a dimensionless number (no unit)
 	SI::time t = x * 1_sec;      // <- t is now 42 seconds
 	dimensionless y = t / 1_sec; // <- y again contains a dimensionless number (no unit)
+	// NOTE: this does not work for celsius and fahrenheit due to the offset!
 }
 	return 0;
 }

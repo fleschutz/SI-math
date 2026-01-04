@@ -103,6 +103,9 @@ SET( ml,    1e-6, meter3);              // 1_ml  (milliliter)
 SET( ul,    1e-9, meter3);              // 1_ul  (microliter)
 SET( nl,   1e-12, meter3);              // 1_nl  (nanoliter)
 SET( pl,   1e-15, meter3);              // 1_pl  (picoliter)
+// volume per time...
+SET( l_per_s,  1, meter3_per_second);   // 1_l_per_s (liter per second)
+SET( l_per_min,1.0/60000.0, meter3_per_second);   // 1_l_per_min (liter per minute)
 // velocity (v) in...
 SET( km_per_s, 1e3, meters_per_second); // 1_km_per_s (km/s)
 SET( m_per_s,  1, meters_per_second);   // 1_m_per_s (m/s)
@@ -127,6 +130,7 @@ SET( kg_per_m²,  1, kilograms_per_meter2);// 1_kg_per_m²
 // mass per volume in...
 SET( t_per_m³, 1e3, kilograms_per_meter3);// 1_t_per_m³
 SET( kg_per_m³,  1, kilograms_per_meter3);// 1_kg_per_m³
+SET( kg_per_cm³,1e-6, kilograms_per_meter3);// 1_kg_per_cm³
 SET( g_per_cm³,1e3, kilograms_per_meter3);// 1_g_per_cm³
 // electric potential (U) in...
 SET( GV,     1e9, volt);                // 1_GV (gigavolt)
@@ -223,7 +227,7 @@ SET( Gy,       1, gray);                // 1_Gy (gray)
 // pressure (p) in...
 SET( MPa,    1e6, pascal_);             // 1_MPa  (megapascal) 
 SET( kPa,    1e3, pascal_);             // 1_kPa  (kilopascal) 
-SET( hPa,    1e2, pascal_);             // 1_hPa  (hectopascal) 
+SET( hPa,    100, pascal_);             // 1_hPa  (hectopascal) 
 SET( Pa,       1, pascal_);             // 1_Pa   (pascal) 
 SET( mPa,   1e-3, pascal_);             // 1_mPa  (millipascal) 
 SET( uPa,   1e-6, pascal_);             // 1_uPa  (micropascal) 

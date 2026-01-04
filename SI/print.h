@@ -167,4 +167,9 @@ namespace SI
 	{
 		print(m); print(", "); print(e);
 	}
+
+	void print(pressure p, time t)
+	{
+		print(p); print(", "); print(t);
+	}
 }
