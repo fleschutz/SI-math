@@ -1,4 +1,4 @@
-// SI/print.h - simple print to the console interface
+// SI/print.h - convenient print to the console functions (single values, equivalents, and multiple values).
 #pragma once
 
 #include <iostream>
@@ -6,23 +6,13 @@
 
 namespace SI
 {
+	// Print arbitrary text:
 	void print(const std::string& text)
 	{
 		std::cout << text;
 	}
 
-	void print(dimensionless value)
-	{
-		std::cout << value << " ";
-	}
-
-	void print(dimensionless value, const std::string& unit)
-	{
-		std::cout << value << unit << " ";
-	}
-
-	// The 7 SI Base Units
-	// -------------------
+	// Print the 7 SI base units:
 	void print(length d)
 	{
 		print(to_string(d));
@@ -48,8 +38,7 @@ namespace SI
 		print(to_string(I));
 	}
 
-	// The 22 Derived SI Units
-	// -----------------------
+	// Print the 22 derived SI Units:
 	void print(area a)
 	{
 		print(to_string(a));
@@ -95,20 +84,6 @@ namespace SI
 		print(to_string(E));
 	}
 
-	void print_equivalent(energy E)
-	{
-		const auto one_kg_TNT = 4.184_MJ; // (explosion energy of 1kg Trinitrotoluol))
-		const auto Hiroshima_bomb = 62_TJ; // (explosion energy of the Hiroshima bomb)
-						  //
-		print(" (=");
-		auto TNT_mass = kilogram(E / one_kg_TNT);
-		print(TNT_mass);
-		print(" TNT, ");
-
-		dimensionless factor = E / Hiroshima_bomb;
-		print(factor, " Hiroshima bombs)");
-	}
-
 	void print(power P)
 	{
 		print(to_string(P));
@@ -117,13 +92,6 @@ namespace SI
 	void print(power_intensity I)
 	{
 		print(to_string(I));
-	}
-
-	void print_equivalent(power_intensity I)
-	{
-		dimensionless decibel = 10.0 * std::log10((I / 1_W_per_m²) / 1e-12);
-		print(" (=");
-		print(decibel, " dB)");
 	}
 
 	void print(pressure p)
@@ -146,8 +114,39 @@ namespace SI
 		print(to_string(a));
 	}
 
-	// Multiple Units
-	// --------------
+	void print(dimensionless value)
+	{
+		std::cout << value;
+	}
+
+	// Print equivalents:
+	void print(dimensionless value, const std::string& unit)
+	{
+		std::cout << value << unit << " ";
+	}
+
+	void print_equivalent(energy E)
+	{
+		const auto one_kg_TNT = 4.184_MJ; // (explosion energy of 1kg Trinitrotoluol))
+		const auto Hiroshima_bomb = 62_TJ; // (explosion energy of the Hiroshima bomb)
+
+		print(" (=");
+		auto TNT_mass = kilogram(E / one_kg_TNT);
+		print(TNT_mass);
+		print(" TNT, ");
+
+		dimensionless factor = E / Hiroshima_bomb;
+		print(factor, " Hiroshima bombs)");
+	}
+
+	void print_equivalent(power_intensity I)
+	{
+		dimensionless decibel = 10.0 * std::log10((I / 1_W_per_m²) / 1e-12);
+		print(" (=");
+		print(decibel, " dB)");
+	}
+
+	// Print multiple units:
 	void print(area a, volume v, mass m)
 	{
 		print(a); print(", "); print(v); print(", "); print(m);
