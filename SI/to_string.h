@@ -1,4 +1,4 @@
-// SI/to_string.h - convert any SI unit to a string, e.g. str = to_string(length); 
+// SI/to_string.h - convert a SI datatype into a string, e.g. std::string str = to_string(12_m); 
 #pragma once
 
 #include <string>
@@ -7,7 +7,7 @@
 
 namespace SI
 {
-	const char* format_of_to_string = "%.1LF %s"; // <-- configurable (precision? whitespace?)
+	const char* format_of_to_string = "%.1LF %s"; // <-- configurable (precision and whitespace)
 
 	// Internal function to join and convert both value and unit into a string.
 	std::string _join(long double value, const std::string& unit)
@@ -17,8 +17,7 @@ namespace SI
 		return std::string(buf);
 	}
 
-	// The 7 SI Base Units
-	// -------------------
+	// Convert the 7 SI base units:
 	std::string to_string(length d)
 	{
 		if (d <= -1_Mly || d >= 1_Mly)
@@ -129,8 +128,7 @@ namespace SI
 		return _join(I / 1_pA, "pA");
 	}
 
-	// The 22 Derived SI Units
-	// -----------------------
+	// Convert the 22 derived SI units:
 	std::string to_string(area a)
 	{
 		if (a <= -1_km² || a >= 1_km²)
