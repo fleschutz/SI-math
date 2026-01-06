@@ -746,7 +746,8 @@ namespace SI
 	SI_INLINE_CONSTEXPR auto kilometer3  = kilo * kilo * kilo * meter3;
 	SI_INLINE_CONSTEXPR auto centimeter3 = centi * centi * centi * meter3;
 
-	SI_INLINE_CONSTEXPR auto meter3_per_second = meter3 / second;
+	SI_INLINE_CONSTEXPR auto meters3_per_second = meter3 / second;
+	SI_INLINE_CONSTEXPR auto meters3_per_kilogram_per_second2 = meter3 / kilogram / (second * second);
 	SI_INLINE_CONSTEXPR auto kilograms_per_meter3 = kilogram / meter3;
 	SI_INLINE_CONSTEXPR auto grams_per_centimeter3 = gram / centimeter3;
 

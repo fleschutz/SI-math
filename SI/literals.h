@@ -91,6 +91,8 @@ SET( per_m²,    1, per_meter2);         // 1_per_m²  (per square meter)
 SET( per_cm², 1e4, per_meter2);         // 1_per_cm² (per square centimeter)
 SET( per_mm², 1e6, per_meter2);         // 1_per_mm² (per square millimeter)
 SET( per_μm², 1e9, per_meter2);         // 1_per μm² (per square micrometer)
+// surface flow (s) in...
+SET( m²_per_s, 1, meter2_per_second);   // 1_m²/s (square meter per second)
 // volume in...
 SET( km³,    1e9, meter3);              // 1_km³ (cubic kilometer)
 SET( m³,       1, meter3);              // 1_m³  (cubic meter)
@@ -105,9 +107,10 @@ SET( ml,    1e-6, meter3);              // 1_ml  (milliliter)
 SET( ul,    1e-9, meter3);              // 1_ul  (microliter)
 SET( nl,   1e-12, meter3);              // 1_nl  (nanoliter)
 SET( pl,   1e-15, meter3);              // 1_pl  (picoliter)
-// volume per time...
-SET( l_per_s,  1, meter3_per_second);   // 1_l_per_s (liter per second)
-SET( l_per_min,1.0/60000.0, meter3_per_second);   // 1_l_per_min (liter per minute)
+// volumetric flow (V) in...
+SET( m³_per_s, 1, meters3_per_second);   // 1_m³/s (cubic meter per second)
+SET( l_per_min,1.0/60000.0, meters3_per_second);   // 1_l_per_min (liter per minute)
+SET( l_per_s, 1e-3, meters3_per_second); // 1_l_per_s (liter per second)
 // velocity (v) in...
 SET( km_per_s, 1e3, meters_per_second); // 1_km_per_s (km/s)
 SET( m_per_s,  1, meters_per_second);   // 1_m_per_s (m/s)
@@ -245,10 +248,6 @@ SET( pN,    1e-9, newton);              // 1_pN (piconewton)
 SET( lm,       1, lumen);               // 1_lm (lumen)
 SET( lm_s,     1, lumen_second);        // 1_lm_s (lumen second)
 SET( lm_per_W, 1, lumens_per_watt);     // 1_lm_per_W (lumen per watt)
-// surface flow (s) in...
-SET( m²_per_s, 1, meter2_per_second);   // 1_m²/s (square meter per second)
-// volumetric flow (V) in...
-SET( m³_per_s, 1, meter3_per_second);   // 1_m³/s (cubic meter per second)
 // other...
 SET( Nm,       1, newtonmeter);         // 1_Nm  (newtonmeter)
 // SI supplementary units in...

@@ -25,7 +25,7 @@ SET(min_temperature,                   0, kelvin); // the lowest possible temper
 SET(Z_0,                   376.730313667, ohm); // characteristic impedance of vacuum
 SET(epsilon_0,  8.854'187'817'620'39e-12, farads_per_meter); // electric constant (vacuum permittivity, symbol: ε_0)
 //SET(mu_0,              1.256'637'06e-6, units::N / units::A2); // magnetic constant (vacuum permeability, symbol: μ_0)
-//SET(G,                     6.67408e-11, units::m3 / units::kg / units::s2); // Newtonian constant of gravitation
+SET(G,                       6.67408e-11, meters3_per_kilogram_per_second2); // Newtonian constant of gravitation
 SET(h_bar,             1.054'571'817e-34, joulesecond); // reduced Planck constant
 
 // Electromagnetic constants
@@ -83,7 +83,7 @@ SET(atm,                          101325, pascal_); // standard atmosphere
 // Physical constants
 SET(standard_gravity,            9.80665, meters_per_second2); // standard gravitational acceleration (G) for the surface of the Earth, defined in the third General Conference on Weights and Measures (1901, CR 70).
 SET(g_0,                         9.80665, meters_per_second2); // (the symbol)
-//SET(Gravitational_constant,   6.6743015e−11, si::m3 / si::kilogram / si::s2);
+SET(gravitational_constant,6.6743015e-11, meters3_per_kilogram_per_second2);
 SET(speed_of_sound,                  343, meters_per_second); // speed of sound in dry air at 20°C (68°F)
 SET(speed_of_sound_in_fresh_water,  1481, meters_per_second); // at 20°C (68°F)
 SET(speed_of_sound_in_iron,         5120, meters_per_second);

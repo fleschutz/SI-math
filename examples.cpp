@@ -227,6 +227,10 @@ int main()
 	auto avg_speed = distance / time;
 	print(avg_speed);
 } {
+	print("\n37) What's the min speed to escape from the Moon? It's... ");
+	auto speed = formula::escape_speed(Moon::mass, Moon::mean_radius);
+	print(speed);
+} {
 	// Here's the basic principle:
 	dimensionless x = 42;        // <- x contains a dimensionless number (no unit)
 	SI::time t = x * 1_sec;      // <- t is now 42 seconds
