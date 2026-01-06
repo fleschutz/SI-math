@@ -21,7 +21,7 @@ auto c = constant::speed_of_light;
 auto E = m * c * c;
 print(E);
 ```
-More examples in [examples.cpp](examples.cpp). Executing: `cmake . && make && ./examples` generates the following output:
+See all 35 examples in [examples.cpp](examples.cpp). Executing: `cmake . && make && ./examples` generates the following:
 
 ```
 What's the potential energy of just 1g mass? It's... 89.9 TJ
