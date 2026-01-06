@@ -253,22 +253,22 @@ auto sound_intensity(power power_of_sound_source, length distance_from_sound_sou
 	return power_of_sound_source / (4.0 * constant::pi * square(distance_from_sound_source));
 }
 
-// Calculates the max height of a bullet (without force of drag), based on:
-// initial launch velocity (v0), initial height (h), launch angle (a), and earth acceleration (g).
+// Calculates the max height of a bullet (without force of drag, wind, etc.), based on:
+// initial launch velocity (v0), initial height (h), launch angle (a), and gravitation (g).
 length ballistic_max_height(velocity v0, length h, angle a, acceleration g)
 {
 	return h + square(v0 * sin(a)) / (2.0 * g);
 }
 
-// Calculates the max range of a bullet (without force of drag), based on:
-// initial launch velocity (v0), initial height (h), launch angle (a), and earth acceleration (g).
+// Calculates the max range of a bullet (without force of drag, wind, etc.), based on:
+// initial launch velocity (v0), initial height (h), launch angle (a), and gravitation (g).
 length ballistic_max_range(velocity v0, length h, angle a, acceleration g)
 {
 	return ((v0 * sin(a) + sqrt(square(v0 * sin(a)) + 2.0 * g * h)) / g) * cos(a) * v0;
 }
 
-// Calculates the flight time of a bullet (without force of drag), based on:
-// initial launch velocity (v0), initial height (h), launch angle (a), and earth acceleration (g).
+// Calculates the flight time of a bullet (without force of drag, wind, etc.), based on:
+// initial launch velocity (v0), initial height (h), launch angle (a), and gravitation (g).
 time ballistic_travel_time(velocity v0, length h, angle a, acceleration g)
 {
 	return (v0 * sin(a) + sqrt(square(v0 * sin(a)) + 2.0 * g * h)) / g;

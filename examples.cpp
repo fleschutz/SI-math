@@ -212,13 +212,13 @@ int main()
 	auto max_time = (bottle_volume * bottle_pressure) / (average_breathing * water_pressure);
 	print(max_time);
 } {
-	print("\nWhat's the ballistic max height/range/flight time of a bullet fired 45° as sea level? It's... ");
+	print("\nWhat's the ballistic max height/range/flight time of a bullet fired 45° on Moon's surface? It's... ");
 	auto muzzle_velocity = 1000_m_per_s;
 	auto initial_height = 0_m;
 	auto launch_angle = 45_deg;
-	auto max_height = formula::ballistic_max_height(muzzle_velocity, initial_height, launch_angle, constant::g_0);
-	auto max_range = formula::ballistic_max_range(muzzle_velocity, initial_height, launch_angle, constant::g_0);
-	auto flight_time = formula::ballistic_travel_time(muzzle_velocity, initial_height, launch_angle, constant::g_0);
+	auto max_height = formula::ballistic_max_height(muzzle_velocity, initial_height, launch_angle, Moon::surface_gravity);
+	auto max_range = formula::ballistic_max_range(muzzle_velocity, initial_height, launch_angle, Moon::surface_gravity);
+	auto flight_time = formula::ballistic_travel_time(muzzle_velocity, initial_height, launch_angle, Moon::surface_gravity);
 	print(max_height, max_range, flight_time);
 } {
 	// Here's the basic principle:
