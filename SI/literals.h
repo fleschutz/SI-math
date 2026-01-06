@@ -24,6 +24,8 @@ SET( um,    1e-6, meter);               // 1_um (micrometer)
 SET( nm,    1e-9, meter);               // 1_nm (nanometer)
 SET( pm,   1e-12, meter);               // 1_pm (picometer)
 // time in...
+SET( day,  86400, second);              // 1_day (day on Earth)
+SET( days, 86400, second);              // 2_days(day on Earth)
 SET( h,     3600, second);              // 1_h   (hour)
 SET( min,     60, second);              // 1_min (minute)
 SET( s,        1, second);              // 1_s   (second)

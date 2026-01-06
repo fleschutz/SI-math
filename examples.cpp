@@ -222,8 +222,8 @@ int main()
 	print(max_height, max_range, flight_time);
 } {
 	print("\n36) What's the average speed to travel around the Earth in 80 days? It's... ");
-	auto time = 80.0 * Earth::day;
 	auto distance = Earth::equatorial_circumference;
+	auto time = 80_days;
 	auto avg_speed = distance / time;
 	print(avg_speed);
 } {
