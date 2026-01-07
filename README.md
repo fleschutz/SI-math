@@ -32,7 +32,7 @@ Please find all 37 examples in: [examples.cpp](examples.cpp). Executing: `cmake 
 6) What's the average speed here? 1002.02km/h
 7) What's the wavelength of H2 in vacuum? 21.11cm
 8) What's the frequency and wavelength of the high 'c' music note? 1.05kHz, 32.78cm
-9)What's a radar's geometrical horizon (the distance it can see)? 10.79km
+9) What's a radar's geometrical horizon (the distance it can see)? 10.79km
 10) What's the time needed to fly non-stop around the Earth at Mach 1? 1.41days
 11) What's the travel time of sun light to Earth? 8.32min
 12) What's the sum of 1 byte + 1kB + 1GB...(and so on)? 1.001e+30
