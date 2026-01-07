@@ -9,7 +9,7 @@ namespace SI
 {
 	std::string format_of_to_string = "%.2Lf%s"; // <-- configurable (precision / whitespace)
 
-	// Internal function to join and convert both value and unit into a string.
+	// internal function to join and convert both value and unit into a string.
 	std::string _join(long double value, const std::string& unit)
 	{
 		char buf[256];
@@ -17,7 +17,7 @@ namespace SI
 		return std::string(buf);
 	}
 
-	// Convert the 7 SI base units:
+	// convert the 7 SI base units:
 	std::string to_string(length d)
 	{
 		if (d <= -1_Gpc || d >= 1_Gpc)
@@ -338,5 +338,15 @@ namespace SI
 	std::string to_string(angle a)
 	{
 		return _join(a / 1_deg, "°");
+	}
+
+	std::string to_string(dimensionless value)
+	{
+		return _join(value, "");
+	}
+
+	std::string to_string(const std::string& text)
+	{
+		return text;
 	}
 }
