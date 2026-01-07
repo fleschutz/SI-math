@@ -44,7 +44,7 @@ int main()
 	auto wavelength = formula::wavelength(constant::speed_of_sound, high_c_frequency);
 	print(high_c_frequency, wavelength);
 } {
-	print("\n9)What's a radar's geometrical horizon (the distance it can see)? ");
+	print("\n9) What's a radar's geometrical horizon (the distance it can see)? ");
 	auto Earth_radius = 6371.009_km;
 	auto Radar_station_height = 30_ft;
 	auto distance = sqrt((Earth_radius + Radar_station_height) * (Earth_radius + Radar_station_height) - Earth_radius * Earth_radius);
