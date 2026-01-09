@@ -16,7 +16,7 @@ Apply math based on SI units correct, with high precision, and as easy as possib
 🔎 Code Example
 ---------------
 ```cpp
-#include "SI/all.h"
+#include <SI/all.h>
 using namespace SI;
 
 int main()
