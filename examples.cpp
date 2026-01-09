@@ -2,30 +2,30 @@
 using namespace SI;
 
 int main()
-{ {	
+{ 
 	print("1) What's the potential energy of just 1g mass? ");
 	auto m = 1_g;
 	auto c = constant::speed_of_light;
 	auto E = m * c * c;
 	print(E);
-} {
+
 	print("\n2) What's the average speed of Kiptum's world record in Marathon? ");
 	auto distance = 42.195_km;
 	auto Kiptums_time = 2_h;
 	auto avg_speed = distance / Kiptums_time;
 	print(avg_speed);
-} {
+
 	print("\n3) What's the free fall time from Burj Khalifa tower in Dubai? ");
 	auto tower_height = 828_m;
 	auto time = formula::time_of_free_fall(tower_height, Earth::surface_gravity);
 	print(time);
-} {
+
  	print("\n4) What's the kinetic energy of a car at 50 km/h? ");
 	auto car_mass = 1300_kg;
 	auto speed_limit = 50_km_per_h;
 	auto KE = formula::kinetic_energy(car_mass, speed_limit);
 	print(KE);
-} {
+{
 	print("\n5) What's the average temperature of 0°C, 32°F, 491.67°R, and 273.15K? ");
 	auto average = (0_degC + 32_degF + 491.67_degR + 273.15_K) / 4;
 	print(average);
