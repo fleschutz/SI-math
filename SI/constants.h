@@ -11,10 +11,10 @@ SET(caesium_frequency,     9'192'631'770, hertz); // the unperturbed ground stat
 SET(delta_v_Cs,            9'192'631'770, hertz); // (the symbol)
 SET(speed_of_light,          299'792'458, meters_per_second); // the speed of light in vacuum
 SET(c,                       299'792'458, meters_per_second); // (the symbol)
-SET(Planck,             6.626'070'15e-34, joulesecond); // the Planck constant
-SET(h,                  6.626'070'15e-34, joulesecond); // (the symbol)
-SET(elementary_charge, 1.602'176'634e-19, coulomb); // the elementary charge
-SET(e,                 1.602'176'634e-19, coulomb); // (the symbol)
+SET(Planck,             6.626'070'15e-34, jouleseconds); // the Planck constant
+SET(h,                  6.626'070'15e-34, jouleseconds); // (the symbol)
+SET(elementary_charge, 1.602'176'634e-19, coulombs); // the elementary charge
+SET(e,                 1.602'176'634e-19, coulombs); // (the symbol)
 SET(Boltzmann,             1.380'649e-23, joules_per_kelvin); // the Boltzmann constant
 SET(k,                     1.380'649e-23, joules_per_kelvin); // (the symbol)
 SET(N_A,                   6.02214076e23, per_mol); // the Avogadro constant
@@ -26,7 +26,7 @@ SET(Z_0,                   376.730313667, ohm); // characteristic impedance of v
 SET(epsilon_0,  8.854'187'817'620'39e-12, farads_per_meter); // electric constant (vacuum permittivity, symbol: ε_0)
 //SET(mu_0,              1.256'637'06e-6, units::N / units::A2); // magnetic constant (vacuum permeability, symbol: μ_0)
 SET(G,                       6.67408e-11, meters3_per_kilogram_per_second2); // Newtonian constant of gravitation
-SET(h_bar,             1.054'571'817e-34, joulesecond); // reduced Planck constant
+SET(h_bar,             1.054'571'817e-34, jouleseconds); // reduced Planck constant
 
 // Electromagnetic constants
 SET(mu_B,                  9.2740100e-24, joules_per_tesla); // Bohr magneton (symbol: µB)
@@ -53,17 +53,17 @@ SET(r_e,                   2.8179403e-15, meter);    // classical electron radiu
 SET(g_e,               -2.00231930436256, dimensionless); // electron g-factor
 SET(alpha,                  7.2973525e-3, dimensionless); // fine-structure constant
 SET(alpha_inv,             137.035999084, dimensionless); // inverse fine-structure constant
-SET(E_h,                4.3597447222e-18, joule);    // Hartree energy
+SET(E_h,                4.3597447222e-18, joules);    // Hartree energy
 SET(sin2Theta_W,                 0.22290, dimensionless); // weak mixing angle
 //SET(G0_F,                    1.1663e-5, / units::GeV  / units::GeV); // Fermi coupling constant
-SET(h_2me,                  3.6369475e-4, meter2_per_second); // quantum of circulation
+SET(h_2me,                  3.6369475e-4, meters2_per_second); // quantum of circulation
 SET(R_inf,               10973731.568160, per_meter); // Rydberg constant
 SET(sigma_e,               6.6524587e-29, meter2); // Thomson cross section
 
 // Physico-chemical constants
 SET(m_u,                  1.66053906e-27, kilogram); // Atomic mass constant
 SET(F,                       96485.33212, coulombs_per_mol); // Faraday constant
-SET(c_1,                 3.741771852e-16, wattmeter2); // first radiation constant
+SET(c_1,                 3.741771852e-16, wattmeters2); // first radiation constant
 SET(c_1L,                1.191042972e-16, watts_per_meter2); // first radiation constant for spectral radiance
 //SET(n_0,                2.651645804e25, / units::m3); // Loschmidt constant
 SET(R,                       8.314462618, joules_per_kelvin_per_mol); // gas constant
@@ -78,7 +78,7 @@ SET(R_dry_air,              287.050'0676, joules_per_kilogram_per_kelvin); // sp
 SET(S_0_by_R,             -1.15170753706, dimensionless); // Sackur–Tetrode constant
 
 // Adopted values
-SET(atm,                          101325, pascal_); // standard atmosphere
+SET(atm,                          101325, pascals); // standard atmosphere
    
 // Physical constants
 SET(standard_gravity,            9.80665, meters_per_second2); // standard gravitational acceleration (G) for the surface of the Earth, defined in the third General Conference on Weights and Measures (1901, CR 70).

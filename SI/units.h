@@ -652,37 +652,37 @@ namespace SI
 
 	// The 7 SI Base Dimensions
 	// ------------------------ l  m  t  T  A  s  i
-	SI_DIM(length,              1, 0, 0, 0, 0, 0, 0);
-	SI_DIM(mass,                0, 1, 0, 0, 0, 0, 0);
-	SI_DIM(time,                0, 0, 1, 0, 0, 0, 0);
-	SI_DIM(temperature,         0, 0, 0, 1, 0, 0, 0); // (thermodynamic temperature)
-	SI_DIM(electric_current,    0, 0, 0, 0, 1, 0, 0);
-	SI_DIM(amount_of_substance, 0, 0, 0, 0, 1, 1, 0);
-	SI_DIM(luminous_intensity,  0, 0, 0, 0, 1, 0, 1);
+	SI_DIM(length,              1, 0, 0, 0, 0, 0, 0); // in m
+	SI_DIM(mass,                0, 1, 0, 0, 0, 0, 0); // in kg
+	SI_DIM(time,                0, 0, 1, 0, 0, 0, 0); // in s
+	SI_DIM(temperature,         0, 0, 0, 1, 0, 0, 0); // in K (thermodynamic temperature)
+	SI_DIM(electric_current,    0, 0, 0, 0, 1, 0, 0); // in A
+	SI_DIM(amount_of_substance, 0, 0, 0, 0, 1, 1, 0); // in mol
+	SI_DIM(luminous_intensity,  0, 0, 0, 0, 1, 0, 1); // in cal
 
 	// The 22 Derived SI Dimensions
 	// ----------------------------
-	SI_DIM(per_length,         -1, 0,  0, 0, 0, 0, 0); // (per m, reciprocal)
-	SI_DIM(area,                2, 0,  0, 0, 0, 0, 0); // (in m²)
-	SI_DIM(per_area,           -2, 0,  0, 0, 0, 0, 0); // (per m², reciprocal)
-	SI_DIM(volume,              3, 0,  0, 0, 0, 0, 0); // (in m³)
-	SI_DIM(frequency,           0, 0, -1, 0, 0, 0, 0); // (per second)
-	SI_DIM(velocity,            1, 0, -1, 0, 0, 0, 0); // (in m/s)
-	SI_DIM(acceleration,        1, 0, -2, 0, 0, 0, 0); // (in m/s²)
+	SI_DIM(per_length,         -1, 0,  0, 0, 0, 0, 0); // per m (reciprocal)
+	SI_DIM(area,                2, 0,  0, 0, 0, 0, 0); // in m²
+	SI_DIM(per_area,           -2, 0,  0, 0, 0, 0, 0); // per m² (reciprocal)
+	SI_DIM(volume,              3, 0,  0, 0, 0, 0, 0); // in m³
+	SI_DIM(frequency,           0, 0, -1, 0, 0, 0, 0); // per s (reciprocal)
+	SI_DIM(velocity,            1, 0, -1, 0, 0, 0, 0); // in m/s
+	SI_DIM(acceleration,        1, 0, -2, 0, 0, 0, 0); // in m/s²
 	SI_DIM(jerk,                1, 0, -3, 0, 0, 0, 0);
-	SI_DIM(force,               1, 1, -2, 0, 0, 0, 0); // (in newton)
-	SI_DIM(energy,              2, 1, -2, 0, 0, 0, 0); // (in newton-meter)
+	SI_DIM(force,               1, 1, -2, 0, 0, 0, 0); // in N
+	SI_DIM(energy,              2, 1, -2, 0, 0, 0, 0); // in Nm
 	SI_DIM(impulse,             1, 1, -1, 0, 0, 0, 0);
-	SI_DIM(pressure,           -1, 1, -2, 0, 0, 0, 0);
+	SI_DIM(pressure,           -1, 1, -2, 0, 0, 0, 0); // in Pa
 	SI_DIM(torque,              2, 1, -2, 0, 0, 0, 0);
-	SI_DIM(power,               2, 1, -3, 0, 0, 0, 0); // (in W)
-	SI_DIM(power_intensity,     0, 1, -3, 0, 0, 0, 0); // (in W/m²)
-	SI_DIM(density,            -3, 1,  0, 0, 0, 0, 0); // (mass per length³)
-	SI_DIM(electric_potential,  2, 1, -3, 0,-1, 0, 0); // (in volt)
+	SI_DIM(power,               2, 1, -3, 0, 0, 0, 0); // in W
+	SI_DIM(power_intensity,     0, 1, -3, 0, 0, 0, 0); // in W/m²
+	SI_DIM(density,            -3, 1,  0, 0, 0, 0, 0); // in kg/m³
+	SI_DIM(electric_potential,  2, 1, -3, 0,-1, 0, 0); // in V
 	SI_DIM(electric_charge,     0, 0,  1, 0, 1, 0, 0); // (electric current and time)
-	SI_DIM(mass_per_area,      -2, 1,  0, 0, 0, 0, 0); // (kg per m²)
-	SI_DIM(per_amount_of_substance,0, 0,  0, 0,-1, 0, 0);// (per mol, reciprocal)
-	SI_DIM(angular_speed,       0, 0, -1, 0, 1, 0, 0); // (in °/s)
+	SI_DIM(mass_per_area,      -2, 1,  0, 0, 0, 0, 0); // in kg/m²)
+	SI_DIM(per_amount_of_substance,0, 0,  0, 0,-1, 0, 0);// per mol (reciprocal)
+	SI_DIM(angular_speed,       0, 0, -1, 0, 1, 0, 0); // in °/s
 
 	using position2d = length2;
 	using position = length3;
@@ -727,7 +727,7 @@ namespace SI
 	// amount of substance in...
 	SI_INLINE_CONSTEXPR auto mol         = unit<amount_of_substance>(); 
 	// luminous intensity in...
-	SI_INLINE_CONSTEXPR auto candela     = unit<luminous_intensity>();
+	SI_INLINE_CONSTEXPR auto candelas    = unit<luminous_intensity>();
 
 	// The 22 SI Derived Units
 	// -----------------------
@@ -739,7 +739,7 @@ namespace SI
 	SI_INLINE_CONSTEXPR auto millimeter2 = milli * milli * meter2;
 	SI_INLINE_CONSTEXPR auto per_meter2  = unit<per_area>();
 
-	SI_INLINE_CONSTEXPR auto meter2_per_second = meter2 / second;
+	SI_INLINE_CONSTEXPR auto meters2_per_second = meter2 / second;
 	SI_INLINE_CONSTEXPR auto kilograms_per_meter2 = kilogram / meter2;
 
 	SI_INLINE_CONSTEXPR auto meter3      = unit<volume>(); // (cubic meter)
@@ -758,35 +758,35 @@ namespace SI
 	SI_INLINE_CONSTEXPR auto meters_per_second2 = unit<acceleration>();
 
 	SI_INLINE_CONSTEXPR auto newton      = unit<force>();
-	SI_INLINE_CONSTEXPR auto newtonmeter = newton * meter;
-	SI_INLINE_CONSTEXPR auto newtonsecond= newton * second;
+	SI_INLINE_CONSTEXPR auto newtonmeters = newton * meter;
+	SI_INLINE_CONSTEXPR auto newtonseconds= newton * second;
 
-	SI_INLINE_CONSTEXPR auto joule      = unit<energy>();
-	SI_INLINE_CONSTEXPR auto joulesecond = joule * second;
-	SI_INLINE_CONSTEXPR auto joules_per_second = joule / second;
-	SI_INLINE_CONSTEXPR auto joules_per_kelvin = joule / kelvin;
-	SI_INLINE_CONSTEXPR auto joules_per_second_per_kilogram = joule / second / kilogram;
-	SI_INLINE_CONSTEXPR auto joules_per_kilogram_per_kelvin = joule / kilogram / kelvin;
-	SI_INLINE_CONSTEXPR auto joules_per_kelvin_per_mol = joule / kelvin / mol;
+	SI_INLINE_CONSTEXPR auto joules     = unit<energy>();
+	SI_INLINE_CONSTEXPR auto jouleseconds = joules * second;
+	SI_INLINE_CONSTEXPR auto joules_per_second = joules / second;
+	SI_INLINE_CONSTEXPR auto joules_per_kelvin = joules / kelvin;
+	SI_INLINE_CONSTEXPR auto joules_per_second_per_kilogram = joules / second / kilogram;
+	SI_INLINE_CONSTEXPR auto joules_per_kilogram_per_kelvin = joules / kilogram / kelvin;
+	SI_INLINE_CONSTEXPR auto joules_per_kelvin_per_mol = joules / kelvin / mol;
 
-	SI_INLINE_CONSTEXPR auto gray = joule / kilogram;
-	SI_INLINE_CONSTEXPR auto sievert = joule / kilogram;
+	SI_INLINE_CONSTEXPR auto gray = joules / kilogram;
+	SI_INLINE_CONSTEXPR auto sievert = joules / kilogram;
 
-	SI_INLINE_CONSTEXPR auto watt        = unit<power>();
-	SI_INLINE_CONSTEXPR auto wattmeter2  = watt * meter2;
-	SI_INLINE_CONSTEXPR auto watts_per_meter2 = watt / meter2;
+	SI_INLINE_CONSTEXPR auto watts       = unit<power>();
+	SI_INLINE_CONSTEXPR auto wattmeters2 = watts * meter2;
+	SI_INLINE_CONSTEXPR auto watts_per_meter2 = watts / meter2;
 
-	SI_INLINE_CONSTEXPR auto pascal_     = unit<pressure>();
+	SI_INLINE_CONSTEXPR auto pascals     = unit<pressure>();
 
-	SI_INLINE_CONSTEXPR auto ampere_per_meter = ampere / meter;
-	SI_INLINE_CONSTEXPR auto ampere_per_meter2 = ampere / (meter * meter);
+	SI_INLINE_CONSTEXPR auto amperes_per_meter = ampere / meter;
+	SI_INLINE_CONSTEXPR auto amperes_per_meter2 = ampere / (meter * meter);
 	SI_INLINE_CONSTEXPR auto ampere_hours= ampere * hour;
 
-	SI_INLINE_CONSTEXPR auto coulomb     = unit<electric_charge>();
-	SI_INLINE_CONSTEXPR auto coulombs_per_mol = coulomb / mol;
+	SI_INLINE_CONSTEXPR auto coulombs     = unit<electric_charge>();
+	SI_INLINE_CONSTEXPR auto coulombs_per_mol = coulombs / mol;
 
 	SI_INLINE_CONSTEXPR auto volt        = unit<electric_potential>();
-	SI_INLINE_CONSTEXPR auto farad       = coulomb / volt;
+	SI_INLINE_CONSTEXPR auto farad       = coulombs / volt;
 	SI_INLINE_CONSTEXPR auto farads_per_meter = farad / meter;
 	SI_INLINE_CONSTEXPR auto ohm         = volt / ampere;
 	SI_INLINE_CONSTEXPR auto ohm_meter   = ohm * meter;
@@ -795,13 +795,13 @@ namespace SI
 	SI_INLINE_CONSTEXPR auto henry       = volt * second / ampere;
 	SI_INLINE_CONSTEXPR auto weber       = volt * second;
 	SI_INLINE_CONSTEXPR auto tesla       = kilogram / (ampere * second * second);
-	SI_INLINE_CONSTEXPR auto joules_per_tesla = joule / tesla;
+	SI_INLINE_CONSTEXPR auto joules_per_tesla = joules / tesla;
 
 	SI_INLINE_CONSTEXPR auto steradian   = unit<detail::dimensionless>();
 
-	SI_INLINE_CONSTEXPR auto lumen       = candela * steradian; 
-	SI_INLINE_CONSTEXPR auto lumen_second = lumen * second;
-	SI_INLINE_CONSTEXPR auto lumens_per_watt = lumen / watt; 
+	SI_INLINE_CONSTEXPR auto lumens      = candelas * steradian; 
+	SI_INLINE_CONSTEXPR auto lumenseconds= lumens * second;
+	SI_INLINE_CONSTEXPR auto lumens_per_watt = lumens / watts; 
 
 	SI_INLINE_CONSTEXPR auto kilograms_per_mol = kilogram / mol;
 	SI_INLINE_CONSTEXPR auto mols_per_meter3 = mol / meter3;
@@ -822,8 +822,8 @@ namespace SI
 	// VARIOUS UNITS
 	SI_INLINE_CONSTEXPR auto celsius     = detail::unit<detail::temperature_dimension, detail::tag_celsius>();
 
-	SI_INLINE_CONSTEXPR auto byte        = unit<detail::dimensionless>();
-	SI_INLINE_CONSTEXPR auto bytes_per_second = byte / second;
+	SI_INLINE_CONSTEXPR auto bytes       = unit<detail::dimensionless>();
+	SI_INLINE_CONSTEXPR auto bytes_per_second = bytes / second;
 
 	// ANGLE (DIMENSIONLESS)
 	typedef long double angle;
