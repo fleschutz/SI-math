@@ -9,16 +9,16 @@ int main()
 	auto E = m * c * c;
 	print(E);
 
-	print("\n2) What's the average speed of Kiptum's world record in Marathon? ");
-	auto distance = 42.195_km;
-	auto Kiptums_time = 2_h;
-	auto avg_speed = distance / Kiptums_time;
-	print(avg_speed);
-
-	print("\n3) What's the free fall time from Burj Khalifa tower in Dubai? ");
+	print("\n2) What's the free fall time from Burj Khalifa tower in Dubai? ");
 	auto tower_height = 828_m;
 	auto time = formula::time_of_free_fall(tower_height, Earth::surface_gravity);
 	print(time);
+
+	print("\n3) What's the average speed of Kiptum's world record in Marathon? ");
+	auto Marathon_length = 42.195_km;
+	auto Kiptums_time = 2_h;
+	auto avg_speed = Marathon_length / Kiptums_time;
+	print(avg_speed);
 
  	print("\n4) What's the kinetic energy of a car at 50 km/h? ");
 	auto car_mass = 1300_kg;

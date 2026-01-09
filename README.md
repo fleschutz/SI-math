@@ -32,8 +32,8 @@ Please find all 37 examples in: [examples.cpp](examples.cpp). Executing: `cmake 
 
 ```
 1) What's the potential energy of just 1g mass? 89.88TJ
-2) What's the average speed of Kiptum's world record in Marathon? 21.10km/h
-3) What's the free fall time from Burj Khalifa tower in Dubai? 12.99sec
+2) What's the free fall time from Burj Khalifa tower in Dubai? 12.99sec
+3) What's the average speed of Kiptum's world record in Marathon? 21.10km/h
 4) What's the kinetic energy of a car at 50 km/h? 125.39kJ
 5) What's the average temperature of 0°C, 32°F, 491.67°R, and 273.15K? 0.00°C (32.00°F)
 6) What's the average speed here? 1002.02km/h
