@@ -107,7 +107,7 @@ SET(Eulers_number,2.71828182845904523536, dimensionless);
 SET(AU,                  149'597'870'691, meter); // astronomical unit
 SET(parsec,       30'856'775'814'913'700, meter); // Parsec (symbol: pc)
 SET(lightyear,     9'460'730'777'119'564, meter); 
-//SET(Hubble,                       70.1, /*km s−1 Mpc−1*/); // symbol: H0
+//SET(Hubble,                       70.1, km s−1 Mpc−1); // symbol: H0
 
 // Various constants
 SET(Marathon_length,              42'195, meter);
