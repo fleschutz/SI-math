@@ -3,7 +3,6 @@
 
 #include <string>
 #include "literals.h"
-#include "data/Earth.h"
 
 namespace SI
 {
@@ -50,12 +49,12 @@ namespace SI
 
 	std::string to_string(time t)
 	{
-		if (abs(t) >= Earth::year)
-			return _join(t / Earth::year, " year(s)");
-		if (abs(t) >= Earth::week)
-			return _join(t / Earth::week, " week(s)");
-		if (abs(t) > Earth::day)
-			return _join(t / Earth::day, "days");
+		if (abs(t) >= 365.25_days)
+			return _join(t / 365.25_days, " year(s)");
+		if (abs(t) >= 7_days)
+			return _join(t / 7_days, " week(s)");
+		if (abs(t) > 1_day)
+			return _join(t / 1_day, "days");
 		if (t <= -1_h || t >= 1_h)
 			return _join(t / 1_h, "h");
 		if (t <= -1_min || t >= 1_min)

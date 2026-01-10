@@ -274,8 +274,8 @@ time ballistic_travel_time(velocity v0, length h, angle a, acceleration g)
 	return (v0 * sin(a) + sqrt(square(v0 * sin(a)) + 2.0 * g * h)) / g;
 }
 
-// Calculates the speed to escape from a Mass (M) of body (e.g. a planet) with radius of body (r).
-velocity gravitational_escape_speed(mass M, length r)
+// Calculates the escape velocity from a Mass (M) of body (e.g. a planet) with radius of body (r).
+velocity gravitational_escape_velocity(mass M, length r)
 {
 	return sqrt((2.0 * constant::G * M) / r);
 }

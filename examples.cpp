@@ -11,7 +11,7 @@ int main()
 
 	print("\n2. What's the free fall time from Burj Khalifa tower in Dubai? ");
 	auto tower_height = 828_m;
-	auto time = formula::time_of_free_fall(tower_height, Earth::surface_gravity);
+	auto time = formula::time_of_free_fall(tower_height, data::Earth.surface_gravity);
 	print(time);
 
 	print("\n3. What's the average speed of Kiptum's world record in Marathon? ");
@@ -37,11 +37,13 @@ int main()
 	print(high_c_frequency, wavelength);
 
 	print("\n7. What's the population density on Earth (people per km² of land area)? ");
-	auto density = Earth::human_population / Earth::land_area;
+	dimensionless Earth_population = 8.2e9;
+	auto Earth_land_area = 148'940'000_km²;
+	auto density = Earth_population / Earth_land_area;
 	print(density);
 
 	print("\n8. How much land area would be available for each person on Earth? ");
-	auto per_person = Earth::land_area / Earth::human_population;
+	auto per_person = Earth_land_area / Earth_population;
 	print(per_person);
 
 	print("\n9. How long takes a 1TB download at 100MBit speed? ");
@@ -57,11 +59,11 @@ int main()
 	print(glide_path);
 
 	print("\n11. What's the min speed required to escape from the Moon? ");
-	auto escape_speed = formula::gravitational_escape_speed(data::Moon.mass, data::Moon.mean_radius);
+	auto escape_speed = formula::gravitational_escape_velocity(data::Moon.mass, data::Moon.mean_radius);
 	print(escape_speed);
 
 	print("\n12. What's the average speed to travel around the Earth in 80 days? ");
-	auto travel_distance = Earth::equatorial_circumference;
+	auto travel_distance = data::Earth.equatorial_circumference;
 	auto travel_time = 80_days;
 	auto speed_on_average = travel_distance / travel_time;
 	print(speed_on_average);
@@ -90,7 +92,7 @@ int main()
 	print(distance);
 } {
 	print("\n17. What's the time needed to fly non-stop around the Earth at Mach 1? ");
-	auto distance = Earth::equatorial_circumference;
+	auto distance = data::Earth.equatorial_circumference;
 	auto speed = 1_Mach;
 	auto time = distance / speed;
 	print(time);
@@ -124,7 +126,9 @@ int main()
 	print("\n23. What's the distance the Earth has travelled so far? ");
 	auto distance_Earth_to_Sun = constant::AU;
 	auto distance_per_year = formula::circumference_of_circle(distance_Earth_to_Sun);
-	auto distance_total = distance_per_year * (Earth::age / Earth::year);
+	auto Earth_year = 365.25_days;
+	auto Earth_age = Earth_year * 4.5e12;
+	auto distance_total = distance_per_year * (Earth_age / Earth_year);
 	print(distance_total);
 } {
 	print("\n24. What's a car's braking distance on dry asphalt from 100km/h? ");
