@@ -4,7 +4,13 @@
 #include <cmath>
 #include <type_traits>
 #define SI_INLINE inline 
-#define SI_INLINE_CONSTEXPR constexpr inline
+#define SI_INLINE_CONSTEXPR constexpr SI_INLINE
+#define SI_DATATYPE(name_, length_, mass_, time_, temperature_, current_, substance_, intensity_)		\
+	namespace detail { using name_ ## _dimension = dimension<length_, mass_, time_, temperature_, current_>; }\
+	template <class T> using name_ ## _t = detail::quantity<detail:: name_ ## _dimension, T>;		\
+	using name_ = name_ ## _t<SIfloat>;									\
+	using name_ ## 2 = name_ ## _t<detail::vec2<SIfloat>>;							\
+	using name_ ## 3 = name_ ## _t<detail::vec3<SIfloat>>
 
 namespace SI
 {
@@ -825,7 +831,22 @@ namespace SI
 			return unit<dimension_subtract<DimensionLhs, DimensionRhs>, ratio_quotient<RatioLhs, RatioRhs>>();
 		}
 	}
-}
 
-#undef SI_INLINE
-#undef SI_INLINE_CONSTEXPR
+	SI_INLINE_CONSTEXPR detail::zero_t zero;
+
+	template <class Dimension, long Numerator = 1, long Denumerator = 1>
+	using unit = detail::unit<detail::dimension_of_t<Dimension>, detail::ratio<Numerator, Denumerator>>;
+
+	using detail::abs;
+	using detail::normalize;
+	using detail::norm;
+	using detail::distance;
+	using detail::pow;
+	using detail::root;
+	using detail::sqrt;
+	using detail::dot;
+	using detail::clamp;
+	using detail::deangle;
+	using detail::is_si;
+	using detail::is_si_v;
+}
