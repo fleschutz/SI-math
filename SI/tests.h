@@ -26,6 +26,7 @@ namespace SI
 
 	static_assert(1_Mach * 10_percent == 33_m_per_s);
 
+	static_assert((0_degC + 32_degF + 491.67_degR + 273.15_K) / 4 == 273.15_K);
 
 	// Let's check the 7 SI base units:
 	// length in...
