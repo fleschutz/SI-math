@@ -79,7 +79,7 @@ Please find all 37 examples in: [examples.cpp](examples.cpp). Executing: `cmake 
 ❔ FAQ
 -------
 * **What is SI?** It's the [International System of Units](https://en.wikipedia.org/wiki/International_System_of_Units).
-* **Is SI-lib feature-complete?** Not yet, but the base work has been done. Please help if you find something's missing.
+* **Is libSI feature-complete?** Not yet, but the base work has been done. Please help if you find something's missing.
 
 🤝 Contributing
 ---------------
