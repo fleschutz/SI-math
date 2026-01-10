@@ -734,9 +734,7 @@ namespace SI
 	SI_INLINE_CONSTEXPR auto hertz       = unit<frequency>();
 
 	SI_INLINE_CONSTEXPR auto meter2      = unit<area>(); // (square meter)
-	SI_INLINE_CONSTEXPR auto kilometer2  = kilo * kilo * meter2;
-	SI_INLINE_CONSTEXPR auto centimeter2 = centi * centi * meter2;
-	SI_INLINE_CONSTEXPR auto millimeter2 = milli * milli * meter2;
+	SI_INLINE_CONSTEXPR auto kilometers2  = kilo * kilo * meter2;
 	SI_INLINE_CONSTEXPR auto per_meter2  = unit<per_area>();
 
 	SI_INLINE_CONSTEXPR auto meters2_per_second = meter2 / second;

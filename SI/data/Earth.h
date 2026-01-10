@@ -15,9 +15,9 @@ SET( polar_diameter,     polar_radius * 2, meter);
 SET( polar_circumference,   40007.8629173, kilometer);
 SET( mean_radius,                    6371, kilometer);      // (2*a+b) / 3
 SET( mean_diameter,       mean_radius * 2, meter);
-SET( surface_area,            510'072'000, kilometer2);
-SET( land_area,               148'940'000, kilometer2);
-SET( water_area,              361'132'000, kilometer2);
+SET( surface_area,            510'072'000, kilometers2);
+SET( land_area,               148'940'000, kilometers2);
+SET( water_area,              361'132'000, kilometers2);
 SET( volume,                   1.08321e12, kilometers3);
 SET( mass,                      5.9723e24, kilogram);
 SET( equatorial_rotation_velocity, 1674.4, kilometers_per_hour);

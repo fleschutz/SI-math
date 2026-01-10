@@ -12,7 +12,7 @@ SET( mean_radius,                    1'737.4, kilometer);
 SET( mean_diameter,          mean_radius * 2, meter);
 SET( flattening,                      0.0012, dimensionless);
 SET( equatorial_circumference,        10'921, kilometer);
-SET( surface_area,                   3.793e7, kilometer2);
+SET( surface_area,                   3.793e7, kilometers2);
 SET( volume,                       2.1958e10, kilometers3);
 SET( mass,                          7.346e22, kilogram);
 SET( surface_gravity,                  1.622, meters_per_second2);
