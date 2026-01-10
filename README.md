@@ -35,17 +35,15 @@ Please find all 37 examples in: [examples.cpp](examples.cpp). Executing: `cmake 
 2. What's the free fall time from Burj Khalifa tower in Dubai? 12.99sec
 3. What's the average speed of Kiptum's world record in Marathon? 21.10km/h
 4. What's the kinetic energy of a car at 50 km/h? 125.39kJ
-5. What's the average temperature of 0°C, 32°F, 491.67°R, and 273.15K? 0.00°C (32.00°F)
-6. What's the average speed here? 1002.02km/h
-7. What's the wavelength of H2 in vacuum? 21.11cm
-8. What's the frequency and wavelength of the high 'c' music note? 1.05kHz, 32.78cm
-9. What's a radar's geometrical horizon (the distance it can see)? 10.79km
-10. What's the time needed to fly non-stop around the Earth at Mach 1? 1.41days
-11. What's the travel time of sun light to Earth? 8.32min
-12. What's the sum of 1 byte + 1kB + 1GB...(and so on)? 1.001e+30
-13. What's the sum of 1m + 1NM + 1ft? 1.85km
-14. What's the population density on Earth (people per km² of land area)? 55.06/km²
-15. How much land area would be available for each person on Earth? 1.82hm²
+5. What's the wavelength of H2 in vacuum? 21.11cm
+6. What's the frequency and wavelength of the high 'c' music note? 1.05kHz, 32.78cm
+7. What's the population density on Earth (people per km² of land area)? 55.06/km²
+8. How much land area would be available for each person on Earth? 1.82hm²
+9. How long takes a 1TB download at 100MBit speed? 22.22h
+10. What's an aircraft's glide path on final at 10NM distance in 3000ft height? 2.83°
+11. What's the min speed required to escape from the Moon? 8552.41km/h
+12. What's the average speed to travel around the Earth in 80 days? 20.87km/h
+13. What's Donald Trump's body-mass index (BMI)? 28.25kg/m²
 ...
 ```
 
