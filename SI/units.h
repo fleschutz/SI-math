@@ -1,4 +1,4 @@
-// SI/units.h - defines type-safe SI units
+// SI/units.h - type-safe SI datatypes & units, e.g. SI::mass
 #pragma once
 
 #include <type_traits>
@@ -11,7 +11,7 @@
 
 namespace SI
 {
-	// The 7 SI Base Datatypes
+	// The 7 Base SI Datatypes
 	// -----------------------       l  m  t  T  A  s  i
 	SI_DATATYPE(length,              1, 0, 0, 0, 0, 0, 0); // in m
 	SI_DATATYPE(mass,                0, 1, 0, 0, 0, 0, 0); // in kg
@@ -21,8 +21,8 @@ namespace SI
 	SI_DATATYPE(amount_of_substance, 0, 0, 0, 0, 1, 1, 0); // in mol
 	SI_DATATYPE(luminous_intensity,  0, 0, 0, 0, 1, 0, 1); // in cal
 
-	// The 22 Derived SI Datatypes
-	// ---------------------------
+	// The Derived SI Datatypes
+	// ------------------------
 	SI_DATATYPE(per_length,         -1, 0,  0, 0, 0, 0, 0); // per m (reciprocal)
 	SI_DATATYPE(area,                2, 0,  0, 0, 0, 0, 0); // in m²
 	SI_DATATYPE(per_area,           -2, 0,  0, 0, 0, 0, 0); // per m² (reciprocal)
@@ -62,7 +62,7 @@ namespace SI
 	//SI_INLINE_CONSTEXPR auto pico  = unit<detail::dimensionless, 1, 1000000000000>();
 	//SI_INLINE_CONSTEXPR auto femto = unit<detail::dimensionless, 1, 1000000000000000>();
 
-	// The 7 SI Base Units
+	// The 7 Base SI Units
 	// -------------------
 	// length in...
 	SI_INLINE_CONSTEXPR auto meter       = unit<length>();
@@ -87,16 +87,16 @@ namespace SI
 	// luminous intensity in...
 	SI_INLINE_CONSTEXPR auto candelas    = unit<luminous_intensity>();
 
-	// The 22 SI Derived Units
-	// -----------------------
+	// The Derived SI Units
+	// --------------------
 	SI_INLINE_CONSTEXPR auto hertz       = unit<frequency>();
 
-	SI_INLINE_CONSTEXPR auto meter2      = unit<area>(); // (square meter)
-	SI_INLINE_CONSTEXPR auto kilometers2  = kilo * kilo * meter2;
+	SI_INLINE_CONSTEXPR auto meters2     = unit<area>(); // (square meter)
+	SI_INLINE_CONSTEXPR auto kilometers2  = kilo * kilo * meters2;
 	SI_INLINE_CONSTEXPR auto per_meter2  = unit<per_area>();
 
-	SI_INLINE_CONSTEXPR auto meters2_per_second = meter2 / second;
-	SI_INLINE_CONSTEXPR auto kilograms_per_meter2 = kilogram / meter2;
+	SI_INLINE_CONSTEXPR auto meters2_per_second = meters2 / second;
+	SI_INLINE_CONSTEXPR auto kilograms_per_meter2 = kilogram / meters2;
 
 	SI_INLINE_CONSTEXPR auto meters3     = unit<volume>(); // (cubic meter)
 	SI_INLINE_CONSTEXPR auto kilometers3 = kilo * kilo * kilo * meters3;
@@ -129,8 +129,8 @@ namespace SI
 	SI_INLINE_CONSTEXPR auto sievert = joules / kilogram;
 
 	SI_INLINE_CONSTEXPR auto watts       = unit<power>();
-	SI_INLINE_CONSTEXPR auto wattmeters2 = watts * meter2;
-	SI_INLINE_CONSTEXPR auto watts_per_meter2 = watts / meter2;
+	SI_INLINE_CONSTEXPR auto wattmeters2 = watts * meters2;
+	SI_INLINE_CONSTEXPR auto watts_per_meter2 = watts / meters2;
 
 	SI_INLINE_CONSTEXPR auto pascals     = unit<pressure>();
 

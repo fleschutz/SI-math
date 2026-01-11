@@ -79,12 +79,12 @@ SET( cd,       1, candelas);            // 1_cd  (candela)
 // -----------------------
 // SYMBOL FACTOR  BASE UNIT                EXAMPLE
 // area in...
-SET( km²,    1e6, meter2);              // 1_km² (square kilometer)
-SET( hm²,    1e4, meter2);              // 1_hm² (hectare)
-SET( m²,       1, meter2);              // 1_m²  (square meter)
-SET( cm²,   1e-4, meter2);              // 1_cm² (square centimeter)
-SET( mm²,   1e-6, meter2);              // 1_mm² (square millimeter)
-SET( um²,   1e-9, meter2);              // 1_um² (square micrometer)
+SET( km²,    1e6, meters2);             // 1_km² (square kilometer)
+SET( hm²,    1e4, meters2);             // 1_hm² (hectare)
+SET( m²,       1, meters2);             // 1_m²  (square meter)
+SET( cm²,   1e-4, meters2);             // 1_cm² (square centimeter)
+SET( mm²,   1e-6, meters2);             // 1_mm² (square millimeter)
+SET( um²,   1e-9, meters2);             // 1_um² (square micrometer)
 // per area in...
 SET( per_km²,1e-6, per_meter2);         // 1_per_km² (per square kilometer)
 SET( per_hm²,1e-4, per_meter2);         // 1_per_hm² (per hectare)

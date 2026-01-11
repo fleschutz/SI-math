@@ -58,7 +58,7 @@ SET(sin2Theta_W,                 0.22290, dimensionless); // weak mixing angle
 //SET(G0_F,                    1.1663e-5, / units::GeV  / units::GeV); // Fermi coupling constant
 SET(h_2me,                  3.6369475e-4, meters2_per_second); // quantum of circulation
 SET(R_inf,               10973731.568160, per_meter); // Rydberg constant
-SET(sigma_e,               6.6524587e-29, meter2); // Thomson cross section
+SET(sigma_e,               6.6524587e-29, meters2); // Thomson cross section (symbol: σ_e)
 
 // Physico-chemical constants
 SET(m_u,                  1.66053906e-27, kilogram); // Atomic mass constant
@@ -97,7 +97,6 @@ SET(tau,          6.28318530717958647692, radians); // (symbol: τ)
 SET(phi,          1.61803398874989484820, dimensionless); // (symbol: φ)
 SET(Eulers_number,2.71828182845904523536, dimensionless);
 
-//SET(σ_e,                 6.6524587e-29, meter2); // Thomson cross section
 //SET(σ,                  5.670374419e-8, units::W / units::m2 / units::K2); // Stefan–Boltzmann constant
 //SET(α,                    7.2973525e-3, dimensionless); // fine-structure constant
 //SET(α_inv,               137.035999084, dimensionless); // inverse fine-structure constant
