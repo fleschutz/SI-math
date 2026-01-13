@@ -8,7 +8,7 @@ Apply math based on SI units correct, with high precision, and as easy as possib
 * **Type-safe** [units](SI/units.h) (can't add a mass to a length), [constants](SI/constants.h) (e.g. constant::sigma), and [formulas](SI/formulas.h) (e.g. formula::wavelength())
 * **Convenient** [literals](SI/literals.h) (e.g. 24_h or 3_GWh), [from_string()](SI/from_string.h), [to_string()](SI/to_string.h), and [print()](SI/print.h) functions.
 * **High precision** by using 'double' internally, **without runtime overhead** (compiles to nothing but simple doubles).
-* **With real-world data** in SI units: [stars](SI/data/stars.h), [planets](SI/data/planets.h), [moons](SI/data/moons.h), [materials](SI/data/materials.h), [ISO standards](SI/data/ISO.h), and [more...](SI/data/)
+* **With data** in SI units: [stars](SI/data/stars.h), [planets](SI/data/planets.h), [moons](SI/data/moons.h), [materials](SI/data/materials.h), [ISO standards](SI/data/ISO.h), and [more...](SI/data/)
 * **Supports** SI base units, derived SI units, Imperial units, and many more.
 * **Wide compatibility** (just requires C++17 or higher) with **cross-platform** support (e.g. Linux gcc & clang, Windows VS2017-VS2026).
 * **Modern C++ lib**: header only, compact, own namespace ("SI::"), no external dependencies, with [unit tests](SI/tests.h).
@@ -51,7 +51,7 @@ Please find 34 more examples in: [examples.cpp](examples.cpp). Executing: `cmake
 -------------------------
 1. **SI datatypes** such as SI::length, SI::mass or SI::time in [units.h](SI/units.h).
 2. **Units** such as SI::meters, SI::kilograms or SI::seconds in [units.h](SI/units.h).
-3. **Literals** such as 100_m, 70_kg or 24_h in [literals.h](SI/literals.h).
+3. **Literals** such as 100_m, 50_kg or 60_sec in [literals.h](SI/literals.h).
 4. **Constants** such as SI::constant::speed_of_light in [constants.h](SI/constants.h).
 5. **Formulas** such as SI::formula::wavelength() in [formulas.h](SI/formulas.h).
 6. **Import/export** by SI::from_string() and SI::to_string() in [from_string.h](SI/from_string.h) and [to_string.h](SI/to_string.h).
