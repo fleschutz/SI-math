@@ -55,7 +55,7 @@ Please find 34 more examples in: [examples.cpp](examples.cpp). Executing: `cmake
 5. **Formulas** such as SI::formula::wavelength() in [formulas.h](SI/formulas.h).
 6. **Import/export** with [SI::from_string()](SI/from_string.h), [SI::to_string()](SI/to_string.h), and [print()](SI/print.h).
 7. **Data** such as SI::data::planets in [data/](SI/data/).
-8. **Unit tests** at compile-time in [tests.h](SI/tests.h).
+8. **[Unit tests](SI/tests.h)** at compile-time.
 
 📁 Project Structure
 --------------------
