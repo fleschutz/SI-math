@@ -1,4 +1,4 @@
-// SI/print.h - simple print to the console functions (single and multiple values, and equivalents).
+// SI/print.h - print to the console functions: single and multiple SI datatypes, equivalents, and text.
 #pragma once
 
 #include <iostream>
