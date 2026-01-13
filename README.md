@@ -47,7 +47,7 @@ Please find 34 more examples in: [examples.cpp](examples.cpp). Executing: `cmake
 ...
 ```
 
-🧱 The 7 Layers of libSI
+🧱 The 8 Layers of libSI
 -------------------------
 1. **SI datatypes** such as SI::length, SI::mass or SI::time in [units.h](SI/units.h).
 2. **Units** such as SI::meters, SI::kilograms or SI::seconds in [units.h](SI/units.h).
@@ -56,6 +56,7 @@ Please find 34 more examples in: [examples.cpp](examples.cpp). Executing: `cmake
 5. **Formulas** such as SI::formula::wavelength() in [formulas.h](SI/formulas.h).
 6. **Import/export** with SI::from_string() and SI::to_string() in [from_string.h](SI/from_string.h) and [to_string.h](SI/to_string.h).
 7. **Data** such as SI::data::planets in [data/](SI/data/).
+8. **Unit tests** at compile-time in [tests.h](SI/tests.h).
 
 📁 Project Structure
 --------------------
