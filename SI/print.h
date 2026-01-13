@@ -6,38 +6,45 @@
 
 namespace SI
 {
-	// internal print function
+	// the internal print function
 	void _print(const std::string& text)
 	{
 		std::cout << text;
 	}
 
-	// print a single arbitrary value
+	// print a single SI datatype
 	template <typename T>
 	void print(T x)
 	{
 		_print(to_string(x));
 	}
 
-	// print two arbitrary values
+	// print two SI datatypes
 	template <typename T1, typename T2>
 	void print(T1 val1, T2 val2)
 	{
 		_print(to_string(val1)); _print(", "); _print(to_string(val2));
 	}
 
-	// print three arbitrary values
+	// print three SI datatypes
 	template <typename T1, typename T2, typename T3>
 	void print(T1 val1, T2 val2, T3 val3)
 	{
 		_print(to_string(val1)); _print(", "); _print(to_string(val2)); _print(", "); _print(to_string(val3));
 	}
 
-	// print four arbitrary values
+	// print four SI datatypes
 	template <typename T1, typename T2, typename T3, typename T4>
 	void print(T1 val1, T2 val2, T3 val3, T4 val4)
 	{
 		_print(to_string(val1)); _print(", "); _print(to_string(val2)); _print(", "); _print(to_string(val3)); _print(", "); _print(to_string(val4));
+	}
+
+	// print five SI datatypes
+	template <typename T1, typename T2, typename T3, typename T4, typename T5>
+	void print(T1 val1, T2 val2, T3 val3, T4 val4, T5 val5)
+	{
+		_print(to_string(val1)); _print(", "); _print(to_string(val2)); _print(", "); _print(to_string(val3)); _print(", "); _print(to_string(val4)); _print(", "); _print(to_string(val5));
 	}
 
 	// print equivalent information
