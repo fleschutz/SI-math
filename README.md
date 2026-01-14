@@ -40,17 +40,14 @@ Please find 34 more examples in: [examples.cpp](examples.cpp). Executing: `cmake
 7. What's the population density on Earth (people per km² of land area)? 55.06/km²
 8. How much land area would be available for each person on Earth? 1.82hm²
 9. How long takes a 1TB download at 100MBit speed? 22.22h
-10. What's an aircraft's glide path on final at 10NM distance in 3000ft height? 2.83°
-11. What's the min speed required to escape from the Moon? 8552.41km/h
-12. What's the average speed to travel around the Earth in 80 days? 20.87km/h
 ...
 ```
 
 🧱 The 8 Layers of libSI
 -------------------------
-1. **SI datatypes** such as SI::length, SI::mass or SI::time in [datatypes.h](SI/datatypes.h)
-2. **Units** such as SI::meters, SI::kilograms or SI::seconds in [units.h](SI/units.h)
-3. **Literals** such as 100_m, 50_kg or 60_sec in [literals.h](SI/literals.h)
+1. **SI datatypes** such as SI::length or SI::time in [datatypes.h](SI/datatypes.h)
+2. **Units** such as SI::meters or SI::seconds in [units.h](SI/units.h)
+3. **Literals** such as 100_m or 60_sec in [literals.h](SI/literals.h)
 4. **Constants** such as SI::constant::speed_of_light in [constants.h](SI/constants.h)
 5. **Formulas** such as SI::formula::wavelength() in [formulas.h](SI/formulas.h)
 6. **I/O** with print(), from_string(), to_string() in [print.h](SI/print.h)
