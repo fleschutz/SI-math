@@ -42,15 +42,15 @@ CONSTANT(R_K,                     25812.80745, ohms); // von Klitzing constant
 //CONSTANT(k_e,      1.0 / (4*M_PI*epsilon_0), dimensionless);
 
 // Atomic and nuclear constants
-CONSTANT(electron_mass,      9.1093837139e-31, kilogram);
-CONSTANT(m_e,                9.1093837139e-31, kilogram); // electron mass
-CONSTANT(muon_mass,           1.883531627e-28, kilogram);
-CONSTANT(tau_mass,                3.16754e-27, kilogram);
-CONSTANT(proton_mass,       1.67262192595e-27, kilogram);
-CONSTANT(m_p,               1.67262192595e-27, kilogram);
-CONSTANT(neutron_mass,      1.67492750056e-27, kilogram);
-CONSTANT(a_0,                  5.29177210e-11, meter);    // Bohr radius
-CONSTANT(r_e,                   2.8179403e-15, meter);    // classical electron radius
+CONSTANT(electron_mass,      9.1093837139e-31, kilograms);
+CONSTANT(m_e,                9.1093837139e-31, kilograms); // electron mass
+CONSTANT(muon_mass,           1.883531627e-28, kilograms);
+CONSTANT(tau_mass,                3.16754e-27, kilograms);
+CONSTANT(proton_mass,       1.67262192595e-27, kilograms);
+CONSTANT(m_p,               1.67262192595e-27, kilograms);
+CONSTANT(neutron_mass,      1.67492750056e-27, kilograms);
+CONSTANT(a_0,                  5.29177210e-11, meters);   // Bohr radius
+CONSTANT(r_e,                   2.8179403e-15, meters);   // classical electron radius
 CONSTANT(g_e,               -2.00231930436256, dimensionless); // electron g-factor
 CONSTANT(alpha,                  7.2973525e-3, dimensionless); // fine-structure constant
 CONSTANT(alpha_inv,             137.035999084, dimensionless); // inverse fine-structure constant
@@ -62,7 +62,7 @@ CONSTANT(R_inf,               10973731.568160, per_meter); // Rydberg constant
 CONSTANT(sigma_e,               6.6524587e-29, meters2); // Thomson cross section (symbol: σ_e)
 
 // Physico-chemical constants
-CONSTANT(m_u,                  1.66053906e-27, kilogram); // Atomic mass constant
+CONSTANT(m_u,                  1.66053906e-27, kilograms); // Atomic mass constant
 CONSTANT(F,                       96485.33212, coulombs_per_mol); // Faraday constant
 CONSTANT(c_1,                 3.741771852e-16, wattmeters2); // first radiation constant
 CONSTANT(c_1L,                1.191042972e-16, watts_per_meter2); // first radiation constant for spectral radiance
@@ -74,7 +74,7 @@ CONSTANT(R_dry_air,              287.050'0676, joules_per_kilogram_per_kelvin); 
 //CONSTANT(V_m,                22.71095464e-3, units::m3 / units::mol); // molar volume of an ideal gas
 //CONSTANT(c_2,                1.438776877e-2, units::m * units::K); // second radiation constant
 //CONSTANT(sigma,              5.670374419e-8, units::W / units::m2 / units::K2); // Stefan–Boltzmann constant
-//CONSTANT(b,                  2.897771955e-3, units::m * units::K); // Wien wavelength displacement law constant
+CONSTANT(b,                    2.897771955e-3, meter_kelvins); // Wien wavelength displacement law constant
 //CONSTANT(b_prime,            5.878925757e10, units::Hz / units::K); // Wien frequency displacement law constant
 CONSTANT(S_0_by_R,             -1.15170753706, dimensionless); // Sackur–Tetrode constant
 
@@ -104,14 +104,14 @@ CONSTANT(Eulers_number,2.71828182845904523536, dimensionless);
 //CONSTANT(sin2θ_W,                   0.22290, dimensionless); // weak mixing angle
 
 // Astronomical constants
-CONSTANT(AU,                  149'597'870'691, meter); // astronomical unit
-CONSTANT(parsec,       30'856'775'814'913'700, meter); // Parsec (symbol: pc)
-CONSTANT(lightyear,     9'460'730'777'119'564, meter); 
+CONSTANT(AU,                  149'597'870'691, meters); // astronomical unit
+CONSTANT(parsec,       30'856'775'814'913'700, meters); // Parsec (symbol: pc)
+CONSTANT(lightyear,     9'460'730'777'119'564, meters); 
 //CONSTANT(Hubble,                       70.1, km s−1 Mpc−1); // symbol: H0
 
 // Various constants
-CONSTANT(Marathon_length,              42'195, meter);
-CONSTANT(quarter_mile,                 402.34, meter);
+CONSTANT(Marathon_length,              42'195, meters);
+CONSTANT(quarter_mile,                 402.34, meters);
 
 #undef CONSTANT
 

@@ -52,7 +52,7 @@ namespace SI
 	{
 		const auto one_kg_TNT = 4.184_MJ; // (explosion energy of 1kg Trinitrotoluol))
 		const auto Hiroshima_bomb = 62_TJ; // (explosion energy of the Hiroshima bomb)
-		mass TNT = kilogram(E / one_kg_TNT);
+		mass TNT = kilograms(E / one_kg_TNT);
 		dimensionless factor = E / Hiroshima_bomb;
 
 		_print(" (=");

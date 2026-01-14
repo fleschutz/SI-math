@@ -42,4 +42,20 @@ namespace SI
 	SI_DATATYPE(per_amount_of_substance,0, 0,  0, 0,-1, 0, 0); // per mol (reciprocal)
 	SI_DATATYPE(angular_speed,          0, 0, -1, 0, 1, 0, 0); // in °/s
 
+	// The SI Prefixes
+	// ---------------
+	//SI_INLINE_CONSTEXPR auto exa   = unit<detail::dimensionless, 1000000000000000000>();
+	//SI_INLINE_CONSTEXPR auto peta  = unit<detail::dimensionless, 1000000000000000>();
+	//SI_INLINE_CONSTEXPR auto tera  = unit<detail::dimensionless, 1000000000000>();
+	SI_INLINE_CONSTEXPR auto giga  = unit<detail::dimensionless, 1000000000>();
+	SI_INLINE_CONSTEXPR auto mega  = unit<detail::dimensionless, 1000000>();
+	SI_INLINE_CONSTEXPR auto kilo  = unit<detail::dimensionless, 1000>();
+	SI_INLINE_CONSTEXPR auto hecto = unit<detail::dimensionless, 100>();
+
+	SI_INLINE_CONSTEXPR auto centi = unit<detail::dimensionless, 1, 100>();
+	SI_INLINE_CONSTEXPR auto milli = unit<detail::dimensionless, 1, 1000>();
+	SI_INLINE_CONSTEXPR auto micro = unit<detail::dimensionless, 1, 1000000>();
+	SI_INLINE_CONSTEXPR auto nano  = unit<detail::dimensionless, 1, 1000000000>();
+	//SI_INLINE_CONSTEXPR auto pico  = unit<detail::dimensionless, 1, 1000000000000>();
+	//SI_INLINE_CONSTEXPR auto femto = unit<detail::dimensionless, 1, 1000000000000000>();
 }

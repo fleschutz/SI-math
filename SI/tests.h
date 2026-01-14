@@ -7,7 +7,7 @@
 namespace SI { namespace tests {
 
 	// Demo checks to see what's possible: (the serious checks follow below)
-	static_assert(1_m == meter(1));
+	static_assert(3_m == meters(3));
 
 	static_assert(1_km + 1_m + 1_dm + 1_cm + 1_mm == 1001.111_m);
 
