@@ -4,10 +4,9 @@
 #include <cassert>
 #include "literals.h"
 
-namespace SI
-{
-	// Let's begin with some sample checks to demonstrate what's possible: (the serious checks follow below)
+namespace SI { namespace tests {
 
+	// Demo checks to see what's possible: (the serious checks follow below)
 	static_assert(1_m == meter(1));
 
 	static_assert(1_km + 1_m + 1_dm + 1_cm + 1_mm == 1001.111_m);
@@ -28,7 +27,11 @@ namespace SI
 
 	static_assert((0_degC + 32_degF + 491.67_degR + 273.15_K) / 4 == 273.15_K);
 
-	// Let's check the 7 SI base units:
+	// Basic C++ checks:
+	static_assert(sizeof(char) <= sizeof(short) && sizeof(short) <= sizeof(int) && sizeof(int) <= sizeof(long) && sizeof(long) <= sizeof(long long));
+	static_assert(sizeof(float) <= sizeof(double) && sizeof(double) <= sizeof(long double));
+
+	// Basic SI base units check:
 	// length in...
 	static_assert(1_Gm == 1000_Mm);
 	static_assert(1_Mm == 1000_km);
@@ -84,7 +87,7 @@ namespace SI
 	static_assert(1_kcd == 1000_cd);
 	static_assert(1_cd == 0.001_kcd);
 
-	// Let's check the 22 derived SI Units:
+	// Checking the derived SI Units:
 	// area in...
 	static_assert(1_km² == 100_hm²);
 	static_assert(1_hm² == 10000_m²);
@@ -217,4 +220,4 @@ namespace SI
 	static_assert(1_Mbar == 1000_kbar);
 	static_assert(1_kbar == 1000_bar);
 	static_assert(1_bar  == 1000_mbar);
-}
+} } // SI::tests
