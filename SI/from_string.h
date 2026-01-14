@@ -53,7 +53,7 @@ namespace SI
 		else if (unit == "m" || unit == "min")
 			result = 1_min * value;
 		else if (unit == "s" || unit == "sec" || unit == "seconds")
-			result = 1_sec * value;
+			result = 1_s * value;
 		else if (unit == "ms")
 			result = 1_ms * value;
 		else if (unit == "us")

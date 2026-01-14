@@ -250,9 +250,9 @@ int main()
 	print(data::Aluminium.density);
 } {
 	// Here's the basic principle:
-	dimensionless x = 42;        // <- x contains a dimensionless number (no unit)
-	SI::time t = x * 1_sec;      // <- t is now 42 seconds
-	dimensionless y = t / 1_sec; // <- y again contains a dimensionless number (no unit)
+	dimensionless x = 42;      // <- x contains a dimensionless number (no unit)
+	SI::time t = x * 1_s;      // <- t is now 42 seconds
+	dimensionless y = t / 1_s; // <- y again contains a dimensionless number (no unit)
 	// NOTE: this does not work for celsius and fahrenheit due to the offset!
 }
 	return 0;

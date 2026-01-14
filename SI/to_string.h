@@ -59,8 +59,8 @@ namespace SI
 			return _join(t / 1_h, "h");
 		if (t <= -1_min || t >= 1_min)
 			return _join(t / 1_min, "min");
-		if (t <= -1_sec || t >= 1_sec || t == 0.0_sec)
-			return _join(t / 1_sec, "sec");
+		if (t <= -1_s || t >= 1_s || t == 0.0_s)
+			return _join(t / 1_s, "s");
 		if (t <= -1_ms || t >= 1_ms)
 			return _join(t / 1_ms, "ms");
 		if (t <= -1_us || t >= 1_us)

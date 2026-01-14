@@ -32,9 +32,9 @@ namespace SI
 	// -------------------
 	// length in...
 	SI_INLINE_CONSTEXPR auto meter       = unit<length>();
-	SI_INLINE_CONSTEXPR auto kilometer   = kilo * meter; 
-	SI_INLINE_CONSTEXPR auto centimeter  = centi * meter;
-	SI_INLINE_CONSTEXPR auto millimeter  = milli * meter;
+	SI_INLINE_CONSTEXPR auto kilometers  = kilo * meter; 
+	SI_INLINE_CONSTEXPR auto centimeters = centi * meter;
+	SI_INLINE_CONSTEXPR auto millimeters = milli * meter;
 	SI_INLINE_CONSTEXPR auto per_meter   = unit<per_length>(); 
 	// time in...
 	SI_INLINE_CONSTEXPR auto second      = unit<time>();
@@ -47,7 +47,7 @@ namespace SI
 	// thermodynamic temperature in...
 	SI_INLINE_CONSTEXPR auto kelvin      = unit<temperature>();
 	// electric current in...
-	SI_INLINE_CONSTEXPR auto ampere      = unit<electric_current>();
+	SI_INLINE_CONSTEXPR auto amperes     = unit<electric_current>();
 	// amount of substance in...
 	SI_INLINE_CONSTEXPR auto moles       = unit<amount_of_substance>(); 
 	// luminous intensity in...
@@ -74,8 +74,8 @@ namespace SI
 	SI_INLINE_CONSTEXPR auto grams_per_centimeter3 = gram / centimeters3;
 
 	SI_INLINE_CONSTEXPR auto meters_per_second = unit<velocity>();
-	SI_INLINE_CONSTEXPR auto kilometers_per_hour = kilometer / hour;
-	SI_INLINE_CONSTEXPR auto millimeters_per_hour = millimeter / hour;
+	SI_INLINE_CONSTEXPR auto kilometers_per_hour = kilometers / hour;
+	SI_INLINE_CONSTEXPR auto millimeters_per_hour = millimeters / hour;
 
 	SI_INLINE_CONSTEXPR auto meters_per_second2 = unit<acceleration>();
 
@@ -100,9 +100,9 @@ namespace SI
 
 	SI_INLINE_CONSTEXPR auto pascals     = unit<pressure>();
 
-	SI_INLINE_CONSTEXPR auto amperes_per_meter = ampere / meter;
-	SI_INLINE_CONSTEXPR auto amperes_per_meter2 = ampere / (meter * meter);
-	SI_INLINE_CONSTEXPR auto ampere_hours= ampere * hour;
+	SI_INLINE_CONSTEXPR auto amperes_per_meter = amperes / meter;
+	SI_INLINE_CONSTEXPR auto amperes_per_meter2 = amperes / (meter * meter);
+	SI_INLINE_CONSTEXPR auto ampere_hours= amperes * hour;
 
 	SI_INLINE_CONSTEXPR auto coulombs     = unit<electric_charge>();
 	SI_INLINE_CONSTEXPR auto coulombs_per_mol = coulombs / moles;
@@ -110,13 +110,13 @@ namespace SI
 	SI_INLINE_CONSTEXPR auto volt        = unit<electric_potential>();
 	SI_INLINE_CONSTEXPR auto farad       = coulombs / volt;
 	SI_INLINE_CONSTEXPR auto farads_per_meter = farad / meter;
-	SI_INLINE_CONSTEXPR auto ohm         = volt / ampere;
+	SI_INLINE_CONSTEXPR auto ohm         = volt / amperes;
 	SI_INLINE_CONSTEXPR auto ohm_meter   = ohm * meter;
-	SI_INLINE_CONSTEXPR auto siemens     = ampere / volt;
+	SI_INLINE_CONSTEXPR auto siemens     = amperes / volt;
 	SI_INLINE_CONSTEXPR auto siemens_per_meter = siemens / meter;
-	SI_INLINE_CONSTEXPR auto henry       = volt * second / ampere;
+	SI_INLINE_CONSTEXPR auto henry       = volt * second / amperes;
 	SI_INLINE_CONSTEXPR auto weber       = volt * second;
-	SI_INLINE_CONSTEXPR auto tesla       = kilogram / (ampere * second * second);
+	SI_INLINE_CONSTEXPR auto tesla       = kilogram / (amperes * second * second);
 	SI_INLINE_CONSTEXPR auto joules_per_tesla = joules / tesla;
 
 	SI_INLINE_CONSTEXPR auto steradians  = unit<detail::dimensionless>();
