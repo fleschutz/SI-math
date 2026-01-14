@@ -3,11 +3,11 @@
 
 #include "units.h"
 
+namespace SI {
+
 #define LITERAL(_symbol, _factor, _base_unit) \
 constexpr auto operator "" _symbol(long double x) { return _base_unit(static_cast<double_t>(_factor ## L * x)); } \
 constexpr auto operator "" _symbol(unsigned long long x) { return _base_unit(static_cast<double_t>(_factor ## L * x)); }
-
-namespace SI {
 
 // The 7 SI Base Units
 // -------------------
@@ -321,9 +321,9 @@ LITERAL(_Ang,                              1e-10, meter);    // 1_Ang  (angstrom
 LITERAL(_smoot,                           1.7018, meter);    // 1_smoot (one Oliver R. Smoot height, fun unit)
 LITERAL(_percent,                           0.01, dimensionless); // 1_percent
 
-} // SI::
-
 #undef LITERAL
+
+} // SI::
 
 // Sources
 // -------
