@@ -11,125 +11,139 @@
 
 namespace SI
 {
-#define SI_UNIT(_name) inline constexpr auto _name
+#define UNIT(_name) inline constexpr auto _name
+
+	// The SI Prefixes
+	// ---------------
+	//UNIT(exa)  = unit<detail::dimensionless, 1000000000000000000>();
+	//UNIT(peta) = unit<detail::dimensionless, 1000000000000000>();
+	//UNIT(tera) = unit<detail::dimensionless, 1000000000000>();
+	UNIT(giga)   = unit<detail::dimensionless, 1000000000>();
+	UNIT(mega)   = unit<detail::dimensionless, 1000000>();
+	UNIT(kilo)   = unit<detail::dimensionless, 1000>();
+	UNIT(hecto)  = unit<detail::dimensionless, 100>();
+	UNIT(centi)  = unit<detail::dimensionless, 1, 100>();
+	UNIT(milli)  = unit<detail::dimensionless, 1, 1000>();
+	UNIT(micro)  = unit<detail::dimensionless, 1, 1000000>();
+	UNIT(nano)   = unit<detail::dimensionless, 1, 1000000000>();
+	UNIT(pico)   = unit<detail::dimensionless, 1, 1000000000000>();
+	UNIT(femto)  = unit<detail::dimensionless, 1, 1000000000000000>();
 
 	// The 7 Base SI Units
 	// -------------------
 	// length in...
-	SI_UNIT(meters)       = unit<length>();
-	SI_UNIT(kilometers)   = kilo * meters; 
-	SI_UNIT(centimeters)  = centi * meters;
-	SI_UNIT(millimeters)  = milli * meters;
-	SI_UNIT(per_meter)    = unit<per_length>();
+	UNIT(meters)       = unit<length>();
+	UNIT(kilometers)   = kilo * meters; 
+	UNIT(centimeters)  = centi * meters;
+	UNIT(millimeters)  = milli * meters;
+	UNIT(per_meter)    = unit<per_length>();
 	// time in...
-	SI_UNIT(seconds)      = unit<time>();
-	SI_UNIT(minutes)      = unit<time, 60>();
-	SI_UNIT(hours)        = unit<time, 60*60>();
+	UNIT(seconds)      = unit<time>();
+	UNIT(minutes)      = unit<time, 60>();
+	UNIT(hours)        = unit<time, 60*60>();
 	// mass in...
-	SI_UNIT(kilograms)    = unit<mass>();
-	SI_UNIT(grams)        = milli * kilograms;
+	UNIT(kilograms)    = unit<mass>();
+	UNIT(grams)        = milli * kilograms;
 	// thermodynamic temperature in...
-	SI_UNIT(kelvins)      = unit<temperature>();
+	UNIT(kelvins)      = unit<temperature>();
 	// electric current in...
-	SI_UNIT(amperes)      = unit<electric_current>();
+	UNIT(amperes)      = unit<electric_current>();
 	// amount of substance in...
-	SI_UNIT(moles)        = unit<amount_of_substance>();
+	UNIT(moles)        = unit<amount_of_substance>();
 	// luminous intensity in...
-	SI_UNIT(candelas)     = unit<luminous_intensity>();
+	UNIT(candelas)     = unit<luminous_intensity>();
 
 	// The Derived SI Units
 	// --------------------
-	SI_UNIT(hertz)        = unit<frequency>();
+	UNIT(hertz)        = unit<frequency>();
+	// area in...
+	UNIT(meters2)      = unit<area>(); // (square meter)
+	UNIT(kilometers2)  = kilo * kilo * meters2;
+	UNIT(per_meter2)   = unit<per_area>();
+	UNIT(meter_kelvins)= meters * kelvins;
+	UNIT(meters2_per_second) = meters2 / seconds;
+	UNIT(kilograms_per_meter2) = kilograms / meters2;
+	// volume in...
+	UNIT(meters3)      = unit<volume>(); // (cubic meter)
+	UNIT(kilometers3)  = kilo * kilo * kilo * meters3;
+	UNIT(centimeters3) = centi * centi * centi * meters3;
+	UNIT(meters3_per_second) = meters3 / seconds;
+	UNIT(meters3_per_kilogram_per_second2) = meters3 / kilograms / (seconds * seconds);
+	UNIT(kilograms_per_meter3) = kilograms / meters3;
+	UNIT(grams_per_centimeter3) = grams / centimeters3;
+	// velocity in...
+	UNIT(meters_per_second) = unit<velocity>();
+	UNIT(kilometers_per_hour) = kilometers / hours;
+	UNIT(millimeters_per_hour) = millimeters / hours;
+	// acceleration in...
+	UNIT(meters_per_second2) = unit<acceleration>();
+	// force in...
+	UNIT(newtons)      = unit<force>();
+	UNIT(newtonmeters) = newtons * meters;
+	UNIT(newtonseconds) = newtons * seconds;
+	// energy in...
+	UNIT(joules)       = unit<energy>();
+	UNIT(jouleseconds) = joules * seconds;
+	UNIT(joules_per_second) =  joules / seconds;
+	UNIT(joules_per_kelvin) = joules / kelvins;
+	UNIT(joules_per_second_per_kilogram) = joules / seconds / kilograms;
+	UNIT(joules_per_kilogram_per_kelvin) = joules / kilograms / kelvins;
+	UNIT(joules_per_kelvin_per_mol) = joules / kelvins / moles;
+	// pressure in...
+	UNIT(pascals)      = unit<pressure>();
 
-	SI_UNIT(meters2)      = unit<area>(); // (square meter)
-	SI_UNIT(kilometers2)  = kilo * kilo * meters2;
-	SI_UNIT(per_meter2)   = unit<per_area>();
-	SI_UNIT(meter_kelvins)= meters * kelvins;
+	UNIT(grays)        = joules / kilograms;
+	UNIT(sieverts)     = joules / kilograms;
 
-	SI_UNIT(meters2_per_second) = meters2 / seconds;
-	SI_UNIT(kilograms_per_meter2) = kilograms / meters2;
+	UNIT(watts)        = unit<power>();
+	UNIT(wattmeters2)  = watts * meters2;
+	UNIT(watts_per_meter2) = watts / meters2;
 
-	SI_UNIT(meters3)      = unit<volume>(); // (cubic meter)
-	SI_UNIT(kilometers3)  = kilo * kilo * kilo * meters3;
-	SI_UNIT(centimeters3) = centi * centi * centi * meters3;
+	UNIT(amperes_per_meter) = amperes / meters;
+	UNIT(amperes_per_meter2) = amperes / (meters * meters);
+	UNIT(ampere_hours) = amperes * hours;
 
-	SI_UNIT(meters3_per_second) = meters3 / seconds;
-	SI_UNIT(meters3_per_kilogram_per_second2) = meters3 / kilograms / (seconds * seconds);
-	SI_UNIT(kilograms_per_meter3) = kilograms / meters3;
-	SI_UNIT(grams_per_centimeter3) = grams / centimeters3;
+	UNIT(coulombs)     = unit<electric_charge>();
+	UNIT(coulombs_per_mol) = coulombs / moles;
 
-	SI_UNIT(meters_per_second) = unit<velocity>();
-	SI_UNIT(kilometers_per_hour) = kilometers / hours;
-	SI_UNIT(millimeters_per_hour) = millimeters / hours;
+	UNIT(volts)        = unit<electric_potential>();
+	UNIT(farads)       = coulombs / volts;
+	UNIT(farads_per_meter) = farads / meters;
+	UNIT(ohms)         = volts / amperes;
+	UNIT(ohm_meters)   = ohms * meters;
+	UNIT(siemens)      = amperes / volts;
+	UNIT(siemens_per_meter) = siemens / meters;
+	UNIT(henrys)       = volts * seconds / amperes;
+	UNIT(webers)       = volts * seconds;
+	UNIT(teslas)       = kilograms / (amperes * seconds * seconds);
+	UNIT(joules_per_tesla) = joules / teslas;
 
-	SI_UNIT(meters_per_second2) = unit<acceleration>();
+	UNIT(steradians)   = unit<detail::dimensionless>();
 
-	SI_UNIT(newtons)      = unit<force>();
-	SI_UNIT(newtonmeters) = newtons * meters;
-	SI_UNIT(newtonseconds) = newtons * seconds;
+	UNIT(lumens)       = candelas * steradians;
+	UNIT(lumenseconds) = lumens * seconds;
+	UNIT(lumens_per_watt) = lumens / watts;
 
-	SI_UNIT(joules)       = unit<energy>();
-	SI_UNIT(jouleseconds) = joules * seconds;
-	SI_UNIT(joules_per_second) =  joules / seconds;
-	SI_UNIT(joules_per_kelvin) = joules / kelvins;
-	SI_UNIT(joules_per_second_per_kilogram) = joules / seconds / kilograms;
-	SI_UNIT(joules_per_kilogram_per_kelvin) = joules / kilograms / kelvins;
-	SI_UNIT(joules_per_kelvin_per_mol) = joules / kelvins / moles;
-
-	SI_UNIT(grays)        = joules / kilograms;
-	SI_UNIT(sieverts)     = joules / kilograms;
-
-	SI_UNIT(watts)        = unit<power>();
-	SI_UNIT(wattmeters2)  = watts * meters2;
-	SI_UNIT(watts_per_meter2) = watts / meters2;
-
-	SI_UNIT(pascals)      = unit<pressure>();
-
-	SI_UNIT(amperes_per_meter) = amperes / meters;
-	SI_UNIT(amperes_per_meter2) = amperes / (meters * meters);
-	SI_UNIT(ampere_hours) = amperes * hours;
-
-	SI_UNIT(coulombs)     = unit<electric_charge>();
-	SI_UNIT(coulombs_per_mol) = coulombs / moles;
-
-	SI_UNIT(volts)        = unit<electric_potential>();
-	SI_UNIT(farads)       = coulombs / volts;
-	SI_UNIT(farads_per_meter) = farads / meters;
-	SI_UNIT(ohms)         = volts / amperes;
-	SI_UNIT(ohm_meters)   = ohms * meters;
-	SI_UNIT(siemens)      = amperes / volts;
-	SI_UNIT(siemens_per_meter) = siemens / meters;
-	SI_UNIT(henrys)       = volts * seconds / amperes;
-	SI_UNIT(webers)       = volts * seconds;
-	SI_UNIT(teslas)       = kilograms / (amperes * seconds * seconds);
-	SI_UNIT(joules_per_tesla) = joules / teslas;
-
-	SI_UNIT(steradians)   = unit<detail::dimensionless>();
-
-	SI_UNIT(lumens)       = candelas * steradians;
-	SI_UNIT(lumenseconds) = lumens * seconds;
-	SI_UNIT(lumens_per_watt) = lumens / watts;
-
-	SI_UNIT(kilograms_per_mol) = kilograms / moles;
-	SI_UNIT(mols_per_meter3) = moles / meters3;
-	SI_UNIT(mols_per_kilogram) = moles / kilograms;
-	SI_UNIT(mols_per_second) = moles / seconds;
-	SI_UNIT(per_mol)      = unit<per_amount_of_substance>();
+	UNIT(kilograms_per_mol) = kilograms / moles;
+	UNIT(mols_per_meter3) = moles / meters3;
+	UNIT(mols_per_kilogram) = moles / kilograms;
+	UNIT(mols_per_second) = moles / seconds;
+	UNIT(per_mol)      = unit<per_amount_of_substance>();
 
 	// IMPERIAL UNITS
-	SI_UNIT(pounds)       = unit<mass, 45359237, 100000000>();
-	SI_UNIT(feet)         = unit<length, 3048, 10000>();
-	SI_UNIT(nautical_miles) = unit<length, 1852, 100>();
-	SI_UNIT(inches)       = unit<length, 254, 10000>();
-	SI_UNIT(statute_miles)= unit<length, 1609344, 1000>();
-	SI_UNIT(fahrenheit)   = detail::unit<detail::temperature_dimension, detail::tag_fahrenheit>();
-	SI_UNIT(miles_per_hour) = statute_miles / hours;
-	SI_UNIT(knots)        = nautical_miles / hours;
+	UNIT(pounds)       = unit<mass, 45359237, 100000000>();
+	UNIT(feet)         = unit<length, 3048, 10000>();
+	UNIT(nautical_miles) = unit<length, 1852, 100>();
+	UNIT(inches)       = unit<length, 254, 10000>();
+	UNIT(statute_miles)= unit<length, 1609344, 1000>();
+	UNIT(fahrenheit)   = detail::unit<detail::temperature_dimension, detail::tag_fahrenheit>();
+	UNIT(miles_per_hour) = statute_miles / hours;
+	UNIT(knots)        = nautical_miles / hours;
 
 	// VARIOUS UNITS
-	SI_UNIT(celsius)      = detail::unit<detail::temperature_dimension, detail::tag_celsius>();
-	SI_UNIT(bytes)        = unit<detail::dimensionless>();
-	SI_UNIT(bytes_per_second) = bytes / seconds;
+	UNIT(celsius)      = detail::unit<detail::temperature_dimension, detail::tag_celsius>();
+	UNIT(bytes)        = unit<detail::dimensionless>();
+	UNIT(bytes_per_second) = bytes / seconds;
 
 	// ANGLE (DIMENSIONLESS)
 	typedef long double angle;
@@ -163,10 +177,9 @@ namespace SI
 	template <typename T>
 	[[nodiscard]] SI_INLINE_CONSTEXPR auto cube(T x) { return x * x * x; }
 
-#undef SI_UNIT
+#undef UNIT
 }
 
-#undef SI_DATATYPE
 #undef SI_RETURN_QUANTITY
 #undef SI_INLINE_CONSTEXPR
 #undef SI_INLINE

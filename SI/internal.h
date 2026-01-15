@@ -5,12 +5,6 @@
 #include <type_traits>
 #define SI_INLINE inline 
 #define SI_INLINE_CONSTEXPR constexpr SI_INLINE
-#define SI_DATATYPE(name_, length_, mass_, time_, temperature_, current_, substance_, intensity_)		\
-	namespace detail { using name_ ## _dimension = dimension<length_, mass_, time_, temperature_, current_>; }\
-	template <class T> using name_ ## _t = detail::quantity<detail:: name_ ## _dimension, T>;		\
-	using name_ = name_ ## _t<SIfloat>;									\
-	using name_ ## 2 = name_ ## _t<detail::vec2<SIfloat>>;							\
-	using name_ ## 3 = name_ ## _t<detail::vec3<SIfloat>>
 
 namespace SI
 {
