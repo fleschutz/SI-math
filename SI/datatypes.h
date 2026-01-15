@@ -8,12 +8,12 @@
 
 namespace SI
 {
-#define DATATYPE(_name, _length, _mass, _time, _temperature, _current, _substance, _intensity)                     \
-	namespace detail { using _name ## _dimension = dimension<_length, _mass, _time, _temperature, _current>; } \
-	template <class T> using _name ## _t = detail::quantity<detail:: _name ## _dimension, T>;                  \
-	using _name = _name ## _t<SIfloat>;                                                                        \
-	using _name ## 2 = _name ## _t<detail::vec2<SIfloat>>;                                                     \
-	using _name ## 3 = _name ## _t<detail::vec3<SIfloat>>
+#define DATATYPE(_name, _length, _mass, _time, _temperature, _current, _substance, _intensity)                 \
+    namespace detail { using _name ## _dimension = dimension<_length, _mass, _time, _temperature, _current>; } \
+    template <class T> using _name ## _t = detail::quantity<detail:: _name ## _dimension, T>;                  \
+    using _name = _name ## _t<SIfloat>;                                                                        \
+    using _name ## 2 = _name ## _t<detail::vec2<SIfloat>>;                                                     \
+    using _name ## 3 = _name ## _t<detail::vec3<SIfloat>>
 
 	// The 7 Base SI Datatypes
 	// -----------------------       l  m  t  T  c  s  i
