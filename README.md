@@ -3,9 +3,9 @@
 Type-safe SI Library in C++
 ===========================
 
-Apply math based on SI units correct, with high precision, and as easy as possible. This SI library provides the following features:
+This SI lib helps to apply math correct, with high precision, and as easy as possible. It provides:
 
-* **Strong type-safety** for units (can't add a mass to a length), constants, and formulas.
+* **Strong type-safety** for units, constants and formulas (can't add a mass to a length).
 * **Convenient** literals (e.g. 24_h or 3_GWh) and I/O functions.
 * **High precision** by using 'double' internally, **without runtime overhead** (compiles to nothing but simple doubles).
 * **With data** in SI units: [stars](SI/data/stars.h), [planets](SI/data/planets.h), [moons](SI/data/moons.h), [materials](SI/data/materials.h), [ISO standards](SI/data/ISO.h), and [more...](SI/data/)
