@@ -3,6 +3,7 @@
 
 #include "stars.h"
 #include "planets.h"
+#include "planets.hpp"
 #include "moons.h"
 #include "materials.h"
 #include "ISO.h"
