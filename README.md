@@ -20,8 +20,8 @@ This SI lib helps to apply math correct, with high precision, and as easy as pos
 4. **Constants** such as SI::constant::speed_of_light in [<SI/constants.h>](SI/constants.h)
 5. **Formulas** such as SI::formula::wavelength() in [<SI/formulas.h>](SI/formulas.h)
 6. **I/O** such as SI::print() in [<SI/IO.h>](SI/IO.h)
-7. **Datasets** such as chemical elements, satellites, exoplanets in 📂[SI/data/](SI/data/)
-8. **Tests** at compile-time to verify everything in [<SI/tests.h>](SI/tests.h).
+7. **Tests** at compile-time to verify everything in [<SI/tests.h>](SI/tests.h).
+8. **Datasets** such as chemical elements, satellites, exoplanets in 📂[datasets](datasets/)
 
 🔎 Quick Example
 ----------------
