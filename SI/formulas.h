@@ -5,8 +5,7 @@
 
 namespace SI { namespace formula {
 
-// 2D Formulas
-// -----------
+// *** FORMULAS FOR 2D ***
 // Calculates the hypotenuse in a right triangle, based on Pythagorean equation: a² + b² = c² 
 length hypotenuse_of_triangle(length a, length b)
 {
@@ -105,8 +104,7 @@ length distance(length x1, length y1, length x2, length y2)
 	return sqrt((dx * dx) + (dy * dy));
 }
 
-// 3D Formulas
-// -----------
+// *** FORMULAS FOR 3D ***
 area area_of_cube(length a)
 {
 	return 6. * a * a;
@@ -152,8 +150,7 @@ volume volume_of_prism(area base_area, length height)
 	return base_area * height;
 }
 
-// Formulas for Moving Objects
-// ---------------------------
+// *** FORMULAS FOR MOVING OBJECTS ***
 // Calculates the kinetic energy of a non-rotating object of mass m traveling at velocity v.
 energy kinetic_energy(mass m, velocity v)
 {
@@ -185,8 +182,7 @@ length turning_radius_of_vehicle(length wheelbase, angle steering_angle, length 
 	return wheelbase / sin(steering_angle) + tire_width / 2.0;
 }
 
-// Formulas for Aircrafts
-// ----------------------
+// *** FORMULAS FOR AIRCRAFTS ***
 // Calculates the lift force of an aircraft wing.
 force lift_force_of_wing(dimensionless lift_coefficient, area wing_surface, density air_density, velocity true_air_speed)
 {
@@ -203,9 +199,7 @@ length vertical_height(angle glide_path, length horizontal_distance)
 	return horizontal_distance * tan(glide_path);
 }
 
-// Various Formulas
-// ----------------
-
+// *** VARIOUS FORMULAS ***
 frequency frequency_of_chromatic_note(int note, int reference_note, frequency reference_frequency)
 {
 	return std::pow(std::pow(2., 1. / 12.), note - reference_note) * reference_frequency;
