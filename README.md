@@ -9,8 +9,8 @@ This SI lib helps to apply math correct, with high precision, and as easy as pos
 * **High precision** by using 'double', calculations on SI base units only, and **no runtime overhead** (compiles to nothing but simple doubles).
 * **Convenient** literals (e.g. 24_h or 3_GWh), conversions and I/O functions.
 * **Supports** SI base units, derived SI units, Imperial units, and many more.
-* **Wide compatibility** for C++17 or higher with **cross-platform** support for Linux (gcc & clang) and Windows (VS2017-VS2026).
-* **Modern C++ lib**: header only, compact, own namespace ("SI::"), no external dependencies.
+* **Modern C++ 17 lib**: header only, compact, own namespace ("SI::"), no external dependencies.
+* **Cross-platform** for Linux (gcc & clang) and Windows (VS2017-VS2026).
 
 🧱 Building Blocks
 ------------------
@@ -61,21 +61,20 @@ Please find 34 more examples in: [examples.cpp](examples.cpp). Executing: `cmake
 ├📄LICENSE 
 ├📄README.md
 ├📂SI
-  ├📄all.h 
-  ├📄constants.h 
-  ├📄formulas.h
-  ├📄internal.h 
-  ├📄IO.h
-  ├📄literals.h 
-  ├📄units.h
-  ├📄unit_tests.h
-  ├📂data
-    ├📄ISO.h
-    ├📄materials.h 
-    ├📄moons.h 
-    ├📄music.h
-    ├📄planets.h
-    ├📄stars.h
+|  ├📄all.h 
+|  ├📄constants.h 
+|  ├📄formulas.h
+|  ├📄internal.h 
+|  ├📄IO.h
+|  ├📄literals.h 
+|  ├📄units.h
+|  ├📄tests.h
+├📂datasets
+   ├📄all.h
+   ├📄chemical_elements.h 
+   ├📄exoplanets.h 
+   ├📄planets.h
+   ├📄satellites.h
     (21 files, 3 folders, 112K total)
 ```
 
