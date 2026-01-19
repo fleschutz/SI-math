@@ -260,14 +260,6 @@ int main()
 		printf("%s to '%s' in %s, ", to_string(exoplanet.distance).c_str(), exoplanet.name, exoplanet.hostname);
 	}
 } {
-	for (const auto& material : data::materials)
-	{
-		print("\n");
-		print(material.name);
-		print(": ");
-		print(material.density);
-	}
-} {
 	// Conversion example:
 	dimensionless x = 42;      // <- x contains a dimensionless number (no unit)
 	SI::time t = x * 1_s;      // <- t is now 42 seconds

@@ -2,6 +2,7 @@
 #pragma once
 
 #include "chemical_elements.h"
+#include "materials.h"
 #include "planets.h"
 #include "satellites.h"
 #include "exoplanets.h"
