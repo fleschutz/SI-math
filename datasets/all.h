@@ -2,3 +2,4 @@
 #pragma once
 
 #include "exoplanets.h"
+#include "satellites.h"
