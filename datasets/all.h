@@ -5,6 +5,7 @@
 #include "materials.h"
 #include "ISO_standards.h"
 
+#include "Earth.h"
 #include "planets.h"
 #include "Moon.h"
 #include "satellites.h"

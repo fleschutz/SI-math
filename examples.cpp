@@ -64,7 +64,7 @@ int main()
 	print(escape_speed);
 
 	print("\n12. What's the average speed to travel around the Earth in 80 days? ");
-	auto travel_distance = data::Earth.equatorial_circumference;
+	auto travel_distance = dataset::Earth.equatorial_circumference;
 	auto travel_time = 80_days;
 	auto speed_on_average = travel_distance / travel_time;
 	print(speed_on_average);
@@ -93,7 +93,7 @@ int main()
 	print(distance);
 } {
 	print("\n17. What's the time needed to fly non-stop around the Earth at Mach 1? ");
-	auto distance = data::Earth.equatorial_circumference;
+	auto distance = dataset::Earth.equatorial_circumference;
 	auto speed = 1_Mach;
 	auto time = distance / speed;
 	print(time);
