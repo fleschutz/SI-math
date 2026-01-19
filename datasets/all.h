@@ -1,5 +1,6 @@
 // <datasets/all.h> - includes all datasets. NOTE: convenient but slow
 #pragma once
 
-#include "exoplanets.h"
+#include "planets.h"
 #include "satellites.h"
+#include "exoplanets.h"
