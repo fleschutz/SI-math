@@ -6,7 +6,7 @@
 
 namespace SI { namespace unit_tests {
 
-	// Demo checks to see what's possible: (the serious checks follow below)
+	// #1 DEMO CHECKS (to show what's possible, the serious checks follow below)
 	static_assert(3_m == meters(3));
 
 	static_assert(1_km + 1_m + 1_dm + 1_cm + 1_mm == 1001.111_m);
@@ -27,11 +27,11 @@ namespace SI { namespace unit_tests {
 
 	static_assert((0_degC + 32_degF + 491.67_degR + 273.15_K) / 4 == 273.15_K);
 
-	// Basic C++ checks:
+	// #2 CHECK BASIC C++
 	static_assert(sizeof(char) <= sizeof(short) && sizeof(short) <= sizeof(int) && sizeof(int) <= sizeof(long) && sizeof(long) <= sizeof(long long));
 	static_assert(sizeof(float) <= sizeof(double) && sizeof(double) <= sizeof(long double));
 
-	// Basic SI base units check:
+	// #3 CHECK SI BASE UNITS 
 	// length in...
 	static_assert(1_Gm == 1000_Mm);
 	static_assert(1_Mm == 1000_km);
@@ -87,7 +87,7 @@ namespace SI { namespace unit_tests {
 	static_assert(1_kcd == 1000_cd);
 	static_assert(1_cd == 0.001_kcd);
 
-	// Checking the derived SI Units:
+	// #4 CHECK DERIVED UNITS
 	// area in...
 	static_assert(1_km² == 100_hm²);
 	static_assert(1_hm² == 10000_m²);
@@ -220,5 +220,17 @@ namespace SI { namespace unit_tests {
 	static_assert(1_Mbar == 1000_kbar);
 	static_assert(1_kbar == 1000_bar);
 	static_assert(1_bar  == 1000_mbar);
+
+	// #5 CHECK FUNCTIONS
+	static_assert(square(0_m) == 0_m²);
+	static_assert(square(1_m) == 1_m²);
+	static_assert(square(3_m) == 9_m²);
+
+	static_assert(cube(0_m) == 0_m³);
+	static_assert(cube(1_m) == 1_m³);
+	static_assert(cube(3_m) == 27_m³);
+
+	static_assert(clamp(3_m, 4_m,5_m) == 4_m);
+	static_assert(clamp(3_m, 1_m,2_m) == 2_m);
 
 } } // SI::unit_tests
