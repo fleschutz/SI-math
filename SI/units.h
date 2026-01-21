@@ -169,6 +169,11 @@ namespace SI
 		return std::atan2(meters(y), meters(x));
 	}
 
+	// BASIC FUNCTIONS (TEMPLATES)
+	// Computes the absolute value of x.
+	template <typename T>
+	[[nodiscard]] SI_INLINE_CONSTEXPR auto abs(T x) { return x < 0.0 ? -x : x; }
+
 	// Raise any number <x> to power of 2 (x² or x*x).
 	template <typename T>
 	[[nodiscard]] SI_INLINE_CONSTEXPR auto square(T x) { return x * x; }
