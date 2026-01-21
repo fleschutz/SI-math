@@ -169,13 +169,21 @@ namespace SI
 		return std::atan2(meters(y), meters(x));
 	}
 
-	// Raise any number to power of 2 (x² or x*x).
+	// Raise any number <x> to power of 2 (x² or x*x).
 	template <typename T>
 	[[nodiscard]] SI_INLINE_CONSTEXPR auto square(T x) { return x * x; }
 
-	// Raise any number to power of 3 (x³ or x*x*x).
+	// Raise any number <x> to power of 3 (x³ or x*x*x).
 	template <typename T>
 	[[nodiscard]] SI_INLINE_CONSTEXPR auto cube(T x) { return x * x * x; }
+
+	// Clamp any number <x> between min and max value.
+	template <typename T>
+	[[nodiscard]] SI_INLINE_CONSTEXPR auto clamp(T x, T min, T max) {
+		if (x < min) x = min;
+		if (x > max) x = max;
+		return x;
+	}
 
 #undef UNIT
 }

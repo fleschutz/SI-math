@@ -245,11 +245,11 @@ int main()
 	{
 		if (exoplanet.number_of_stars == 0)
 			continue; // too cold without a star
-		if (exoplanet.equilibrium_temperature > 50_degC)
+		if (exoplanet.equilibrium_temperature > 40_degC)
 			continue; // too hot
 		if (exoplanet.equilibrium_temperature > 0_K && exoplanet.equilibrium_temperature < -40_degC)
 			continue; // too cold
-		if (exoplanet.orbit_semimajor_axis > 2_au)
+		if (exoplanet.orbit_semimajor_axis > 5_au)
 			continue; // too far from star
 		if (exoplanet.eccentricity >= 0.02)
 			continue; // no circular orbit
@@ -257,7 +257,7 @@ int main()
 			continue; // too near or unknown
 		if (exoplanet.distance == 0_m || exoplanet.distance > 9_pc)
 			continue; // too far away
-		printf("%s to '%s' in %s, ", to_string(exoplanet.distance).c_str(), exoplanet.name, exoplanet.hostname);
+		printf("it's %s to '%s' in %s, ", to_string(exoplanet.distance).c_str(), exoplanet.name, exoplanet.hostname);
 	}
 } {
 	// Conversion example:

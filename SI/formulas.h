@@ -1,4 +1,4 @@
-// <SI/formulas.h> - 48 common formulas based on type-safe SI units (sorted by 2D, 3D, moving objects, vehicles, aircrafts, various)
+// <SI/formulas.h> - 50 common formulas based on type-safe SI units (sorted by 2D, 3D, moving objects, vehicles, aircrafts, various)
 #pragma once
 
 #include "constants.h"
@@ -182,6 +182,12 @@ length turning_radius_of_vehicle(length wheelbase, angle steering_angle, length 
 }
 
 // *** FORMULAS FOR AIRCRAFTS ***
+// Calculates the true airspeed (TAS).
+velocity true_airspeed(force lift_force, dimensionless lift_coefficient, area wing_surface, density air_density)
+{
+	return sqrt((2.0 * lift_force) / (lift_coefficient * wing_surface * air_density));
+}
+
 // Calculates the lift force of an aircraft wing.
 force lift_force_of_wing(dimensionless lift_coefficient, area wing_surface, density air_density, velocity true_air_speed)
 {
@@ -196,6 +202,11 @@ angle glide_path(length horizontal_distance, length vertical_change)
 length vertical_height(angle glide_path, length horizontal_distance)
 {
 	return horizontal_distance * tan(glide_path);
+}
+
+velocity climb_rate(velocity ground_speed, angle climb_angle)
+{
+	return sin(climb_angle) * ground_speed;
 }
 
 // *** VARIOUS FORMULAS ***
