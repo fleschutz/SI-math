@@ -561,11 +561,11 @@ namespace SI
 			SI_RETURN_QUANTITY(result_dimension, value2(lhs, rhs) / value2(rhs, lhs));
 		}
 
+		// Computes the absolute value of x.
 		template <class Dimension, class T>
 		SI_INLINE_CONSTEXPR quantity<Dimension, T> abs(const quantity<Dimension, T>& x)
 		{
-			using std::abs;
-			return { Dimension(), abs(value(x)) };
+			return value(x) < 0.0 ? -x : x;
 		}
 
 		template <class Lhs, class Rhs, class = enable_for_si<Lhs, Rhs>>
