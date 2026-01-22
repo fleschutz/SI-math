@@ -1,5 +1,5 @@
-# Cross-platform CMakefile for libSI
-# ==================================
+# Cross-platform CMake Instructions To Build libSI
+# ================================================
 
 cmake_minimum_required(VERSION 3.10)
 
