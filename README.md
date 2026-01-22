@@ -10,7 +10,7 @@ Apply math based on SI units correct, with high precision, and as easy as possib
 * **Convenient** literals (e.g. 24_h or 3_GWh), conversions and I/O functions.
 * **Supports** SI base units, derived SI units, Imperial units, and many more.
 * **Modern C++ 17 lib**: header only, compact, own namespace ("SI::"), no external dependencies.
-* **Cross-platform** for Linux (gcc & clang) and Windows (VS2017-VS2026).
+* **Cross-platform** support for Linux (gcc & clang) and Windows (VS2017-VS2026).
 
 🧱 Building Blocks
 ------------------
