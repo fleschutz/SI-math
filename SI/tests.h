@@ -27,9 +27,13 @@ namespace SI { namespace tests {
 
 	static_assert((0_degC + 32_degF + 491.67_degR + 273.15_K) / 4 == 273.15_K);
 
-	// #2 CHECK BASIC C++
-	static_assert(sizeof(char) <= sizeof(short) && sizeof(short) <= sizeof(int) && sizeof(int) <= sizeof(long) && sizeof(long) <= sizeof(long long));
-	static_assert(sizeof(float) <= sizeof(double) && sizeof(double) <= sizeof(long double));
+	// #2 CHECK C++ BASICS
+	static_assert(sizeof(char) <= sizeof(short));
+	static_assert(sizeof(short) <= sizeof(int));
+	static_assert(sizeof(int) <= sizeof(long));
+	static_assert(sizeof(long) <= sizeof(long long));
+	static_assert(sizeof(float) <= sizeof(double));
+	static_assert(sizeof(double) <= sizeof(long double));
 
 	// #3 CHECK SI BASE UNITS 
 	// length in...
@@ -199,16 +203,19 @@ namespace SI { namespace tests {
 	// TODO
 	// volumetric flow in...
 	// TODO
-	// astronomical distances in...
+
+	// #5 CHECK ASTRONOMICAL UNITS
 	static_assert(1_Gpc == 1000_Mpc);
 	static_assert(1_Mpc == 1000_kpc);
 	static_assert(1_kpc == 1000_pc);
-	// Imperial units in...
+
+	// #6 CHECK IMPERIAL UNITS
+	static_assert(1_ft == 12_in);
+	static_assert(1_nmi == 10_cable);
 	static_assert(1_nmi == 1852_m);
 	static_assert(1_ft == 0.3048_m);
-	// various units in...
-	//static_assert(0_deg == 273.15_K);
-	// digital units in...
+
+	// #7 CHECK DIGITAL UNITS
 	static_assert(1_ZB == 1000_EB);
 	static_assert(1_EB == 1000_PB);
 	static_assert(1_PB == 1000_TB);
@@ -216,12 +223,15 @@ namespace SI { namespace tests {
 	static_assert(1_GB == 1000_MB);
 	static_assert(1_MB == 1000_kB);
 	static_assert(1_kB == 1000_byte);
+
+	// #8 CHECK VARIOUS UNITS
+	//static_assert(0_deg == 273.15_K);
 	// pressure in...
 	static_assert(1_Mbar == 1000_kbar);
 	static_assert(1_kbar == 1000_bar);
 	static_assert(1_bar  == 1000_mbar);
 
-	// #5 CHECK FUNCTIONS
+	// #9 CHECK FUNCTIONS
 	static_assert(abs(-3.5_m) == 3.5_m);
 	static_assert(abs(-1_m) == 1_m);
 	static_assert(abs(0_m) == 0_m);
