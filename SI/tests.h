@@ -6,7 +6,7 @@
 
 namespace SI { namespace tests {
 
-	// #1 DEMO CHECKS (to show what's possible, the serious checks follow below)
+	// *** DEMO CHECKS *** (to show what's possible, the serious checks follow below)
 	static_assert(3_m == meters(3));
 
 	static_assert(1_km + 1_m + 1_dm + 1_cm + 1_mm == 1001.111_m);
@@ -27,7 +27,7 @@ namespace SI { namespace tests {
 
 	static_assert((0_degC + 32_degF + 491.67_degR + 273.15_K) / 4 == 273.15_K);
 
-	// #2 CHECK C++ BASICS
+	// *** BASIC C++ CHECKS ***
 	static_assert(sizeof(char) <= sizeof(short));
 	static_assert(sizeof(short) <= sizeof(int));
 	static_assert(sizeof(int) <= sizeof(long));
@@ -35,7 +35,7 @@ namespace SI { namespace tests {
 	static_assert(sizeof(float) <= sizeof(double));
 	static_assert(sizeof(double) <= sizeof(long double));
 
-	// #3 CHECK SI BASE UNITS 
+	// *** SI BASE UNITS CHECKS ***
 	// length in...
 	static_assert(1_Gm == 1000_Mm);
 	static_assert(1_Mm == 1000_km);
@@ -91,7 +91,7 @@ namespace SI { namespace tests {
 	static_assert(1_kcd == 1000_cd);
 	static_assert(1_cd == 0.001_kcd);
 
-	// #4 CHECK DERIVED UNITS
+	// *** DERIVED UNITS CHECKS ***
 	// area in...
 	static_assert(1_km² == 100_hm²);
 	static_assert(1_hm² == 10000_m²);
@@ -204,18 +204,18 @@ namespace SI { namespace tests {
 	// volumetric flow in...
 	// TODO
 
-	// #5 CHECK ASTRONOMICAL UNITS
+	// *** ASTRONOMICAL UNITS CHECKS ***
 	static_assert(1_Gpc == 1000_Mpc);
 	static_assert(1_Mpc == 1000_kpc);
 	static_assert(1_kpc == 1000_pc);
 
-	// #6 CHECK IMPERIAL UNITS
+	// *** IMPERIAL UNITS CHECKS ***
 	static_assert(1_ft == 12_in);
 	static_assert(1_nmi == 10_cable);
 	static_assert(1_nmi == 1852_m);
 	static_assert(1_ft == 0.3048_m);
 
-	// #7 CHECK DIGITAL UNITS
+	// *** DIGITAL UNITS CHECKS ***
 	static_assert(1_ZB == 1000_EB);
 	static_assert(1_EB == 1000_PB);
 	static_assert(1_PB == 1000_TB);
@@ -224,14 +224,14 @@ namespace SI { namespace tests {
 	static_assert(1_MB == 1000_kB);
 	static_assert(1_kB == 1000_byte);
 
-	// #8 CHECK VARIOUS UNITS
+	// *** VARIOUS UNITS CHECKS ***
 	//static_assert(0_deg == 273.15_K);
 	// pressure in...
 	static_assert(1_Mbar == 1000_kbar);
 	static_assert(1_kbar == 1000_bar);
 	static_assert(1_bar  == 1000_mbar);
 
-	// #9 CHECK FUNCTIONS
+	// *** FUNCTION CHECKS ***
 	static_assert(abs(-3.5_m) == 3.5_m);
 	static_assert(abs(-1_m) == 1_m);
 	static_assert(abs(0_m) == 0_m);
