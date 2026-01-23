@@ -2,8 +2,9 @@
 #pragma once
 
 #include <SI/units.h>
+using namespace SI;
 
-namespace SI { namespace dataset {
+namespace dataset {
 
 typedef struct {
 	const char* name;
@@ -25,7 +26,7 @@ const material_data Zinc      = { "Zinc",      7144_kg_per_m³ };
 
 const material_data materials[] = { Aluminium, Asphalt, Concrete, Copper, Gold, Granite, Paper, Tin, Titanium, Tungsten, Zinc };
 
-} } // SI::dataset
+} // dataset::
 
 // Sources
 // -------

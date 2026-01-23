@@ -2,8 +2,9 @@
 #pragma once
 
 #include <SI/literals.h>
+using namespace SI;
 
-namespace SI { namespace dataset {
+namespace dataset {
 
 // ISO 216 - international standard for paper sizes
 const auto A0_paper_width = 841_mm;
@@ -82,7 +83,7 @@ const auto container_1AA_ext_width  =  2.438_m;
 const auto container_1AA_max_gross_mass = 36'000_kg;
 //...
 
-} } // SI::dataset
+} // dataset::
 
 // Sources
 // -------

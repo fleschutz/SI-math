@@ -2,8 +2,9 @@
 #pragma once
 
 #include <SI/literals.h>
+using namespace SI;
 
-namespace SI { namespace dataset {
+namespace dataset {
 
 typedef struct {
 	const char* name;
@@ -35,7 +36,7 @@ const Moon_data Moon = {
 	708.7 * 60 * 60_s, 
 };
 
-} } // SI::dataset
+} // dataset::
 
 // Sources
 // -------

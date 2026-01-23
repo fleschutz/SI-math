@@ -2,8 +2,9 @@
 #pragma once
 
 #include <SI/literals.h>
+using namespace SI;
 
-namespace SI { namespace dataset { 
+namespace dataset {
 
 struct satellite_data {
     const char* planet;
@@ -195,5 +196,5 @@ const satellite_data satellites[] {
 {"Pluto","Styx",0.,10._km,00_g_per_cm³,27.,0.35,},
 };
 
-} } // SI::dataset
+} // dataset::
 

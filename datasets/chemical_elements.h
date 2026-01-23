@@ -2,8 +2,9 @@
 #pragma once
 
 #include <SI/literals.h>
+using namespace SI;
 
-namespace SI { namespace dataset { 
+namespace dataset { 
 
 struct element_data {
     int atomic_number;
@@ -161,5 +162,5 @@ const element_data elements[] {
 #endif
 };
 
-} } // SI::dataset
+} // dataset::
 

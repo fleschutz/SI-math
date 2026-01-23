@@ -241,7 +241,7 @@ int main()
 	}
 } {
 	print("\n36. Which exoplanets are near and seem life-friendly? ");
-	for (auto exoplanet : SI::dataset::exoplanets)
+	for (auto exoplanet : dataset::exoplanets)
 	{
 		if (exoplanet.number_of_stars == 0)
 			continue; // too cold without a star
