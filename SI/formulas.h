@@ -289,6 +289,12 @@ velocity gravitational_escape_velocity(mass M, length r)
 	return sqrt((2.0 * constant::G * M) / r);
 }
 
+// Computes the amount of energy absorbed (E) from a source of radiation by some material per mass (m)
+specific_energy absorbed_dose(energy E, mass m)
+{
+	return E / m;
+}
+
 } } // SI::formula
 
 // Sources
