@@ -262,5 +262,6 @@ int main()
 	dimensionless y = t / 1_s; // <- y again contains a dimensionless number (no unit)
 	// NOTE: this does not work for celsius and fahrenheit due to the offset!
 }
+	print("\nNOTE: switch to Unicode output if you see gibberish text");
 	return 0;
 }
