@@ -1,4 +1,4 @@
-// <SI/units.h> - type-safe SI units such as meters or seconds
+// <SI/units.h> - type-safe SI units, e.g. meters or seconds
 #pragma once
 
 #include <SI/datatypes.h>
@@ -7,7 +7,7 @@ namespace SI
 {
 #define UNIT(_name) inline constexpr auto _name
 
-	// *** THE 7 BASE SI UNITS ***
+	// ++ SI BASE UNITS +++
 	UNIT(meters)       = unit<length>();
 	UNIT(seconds)      = unit<time>();
 	UNIT(kilograms)    = unit<mass>();
@@ -16,7 +16,7 @@ namespace SI
 	UNIT(moles)        = unit<amount_of_substance>();
 	UNIT(candelas)     = unit<luminous_intensity>();
 
-	// *** THE SI PREFIXES ***
+	// ++ SI PREFIXES +++
 	UNIT(exa)          = unit<detail::dimensionless, 1000000000000000000, 1>();
 	UNIT(peta)         = unit<detail::dimensionless, 1000000000000000, 1>();
 	UNIT(tera)         = unit<detail::dimensionless, 1000000000000, 1>();
@@ -32,7 +32,7 @@ namespace SI
 	UNIT(femto)        = unit<detail::dimensionless, 1, 1000000000000000>();
 	UNIT(atto)         = unit<detail::dimensionless, 1, 1000000000000000000>();
 
-	// *** THE DERIVED/COMBINED SI UNITS ***
+	// ++ SI DERIVED/COMBINED UNITS +++
 	UNIT(kilometers)   = kilo * meters; 
 	UNIT(centimeters)  = centi * meters;
 	UNIT(millimeters)  = milli * meters;
@@ -115,7 +115,7 @@ namespace SI
 	UNIT(mols_per_second) = moles / seconds;
 	UNIT(per_mol)      = unit<per_amount_of_substance>();
 
-	// *** THE IMPERIAL UNITS ***
+	// +++ IMPERIAL UNITS +++
 	UNIT(pounds)       = unit<mass, 45359237, 100000000>();
 	UNIT(feet)         = unit<length, 3048, 10000>();
 	UNIT(nautical_miles) = unit<length, 1852, 100>();
@@ -125,12 +125,12 @@ namespace SI
 	UNIT(miles_per_hour) = statute_miles / hours;
 	UNIT(knots)        = nautical_miles / hours;
 
-	// *** VARIOUS UNITS ***
+	// +++ VARIOUS UNITS +++
 	UNIT(celsius)      = detail::unit<detail::temperature_dimension, detail::tag_celsius>();
 	UNIT(bytes)        = unit<detail::dimensionless>();
 	UNIT(bytes_per_second) = bytes / seconds;
 
-	// *** UNIT ANGLE (DIMENSIONLESS) ***
+	// +++ ANGLE +++ (DIMENSIONLESS)
 	typedef long double angle;
 	typedef angle radians;
 
@@ -154,8 +154,7 @@ namespace SI
 		return std::atan2(meters(y), meters(x));
 	}
 
-	// *** BASIC FUNCTIONS/TEMPLATES ***
-
+	// +++ BASIC FUNCTIONS/TEMPLATES +++
 	// Raise any number <x> to power of 2 (x² or x*x).
 	template <typename T>
 	[[nodiscard]] SI_INLINE_CONSTEXPR auto square(T x) { return x * x; }
