@@ -10,9 +10,10 @@ namespace SI {
 constexpr auto operator "" _symbol(long double x) { return _base_unit(static_cast<double_t>(_factor ## L * x)); } \
 constexpr auto operator "" _symbol(unsigned long long x) { return _base_unit(static_cast<double_t>(_factor ## L * x)); }
 
-// SI Base Units
-// -------------
+// +++ SI BASE UNITS +++
+//
 //     SYMBOL FACTOR  BASE UNIT                EXAMPLE
+// -------------------------------------------------------------
 // length in...                                     (sorted from big to small unit)
 LITERAL(_Gm,     1e9, meters);              // 1_Gm (gigameter)
 LITERAL(_Mm,     1e6, meters);              // 1_Mm (megameter)
@@ -74,9 +75,10 @@ LITERAL(_fmol, 1e-15, moles);               // 1_fmol (femtomole)
 LITERAL(_kcd,    1e3, candelas);            // 1_kcd (kilocandela)
 LITERAL(_cd,       1, candelas);            // 1_cd  (candela)
 
-// SI Derived Units
-// ----------------
+// +++ SI DERIVED UNITS +++
+//
 //     SYMBOL FACTOR  BASE UNIT                EXAMPLE
+// ----------------------------------------------------
 // area in...
 LITERAL(_km²,    1e6, meters2);             // 1_km² (square kilometer)
 LITERAL(_hm²,    1e4, meters2);             // 1_hm² (hectare)
@@ -261,10 +263,11 @@ LITERAL(_rad,      1, radians);             // 1_rad (radian)
 LITERAL(_deg,0.01745329251994329576923690768489, radians); // 1_deg  (angle degree)
 LITERAL(_sr,       1, steradians);          // 1_sr  (steradian)
 
-// Non-SI Units
-// ------------
+// +++ NON-SI UNITS +++
+//
 //       SYMBOL               FACTOR        BASE UNIT   EXAMPLE
-// Astronomical units in...
+// -------------------------------------------------------------
+// astronomical units in...
 LITERAL(_Gpc,     30'856'775'814'913'673e9, meters); // 1_Gpc (gigaparsec, as of IAU 2012)
 LITERAL(_Mpc,     30'856'775'814'913'673e6, meters); // 1_Mpc (megaparsec, as of IAU 2012)
 LITERAL(_kpc,     30'856'775'814'913'673e3, meters); // 1_kpc (kiloparsec, as of IAU 2012)
