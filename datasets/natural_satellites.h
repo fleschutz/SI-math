@@ -1,4 +1,4 @@
-// dataset converted from satellites.csv by csv2hpp. NOTE: 00=empty (or unknown)
+// dataset converted from natural_satellites.csv by csv2hpp. NOTE: 00=empty (or unknown)
 #pragma once
 
 #include <SI/literals.h>

@@ -9,6 +9,6 @@
 #include "Earth.h"
 #include "planets.h"
 #include "Moon.h"
-#include "satellites.h"
+#include "natural_satellites.h"
 #include "exoplanets.h"
 #include "sunspots.h"
