@@ -10,8 +10,8 @@
 
 namespace SI
 {
-	typedef double SIfloat;        // <- internal datatype to hold floating point values
-	typedef SIfloat dimensionless; // <- basic datatype to hold a dimensionless value (without any unit), e.g. 42
+	typedef double SIdouble;        // <- internal datatype to hold floating point values
+	typedef SIdouble dimensionless; // <- basic datatype to hold a dimensionless value (without any unit), e.g. 42
 
 	namespace internal
 	{
@@ -649,7 +649,7 @@ namespace SI
 		template <long Num, long Den>
 		struct ratio
 		{
-			static constexpr auto factor = static_cast<SIfloat>(Num) / Den;
+			static constexpr auto factor = static_cast<SIdouble>(Num) / Den;
 		};
 
 		struct tag_celsius {};
@@ -668,7 +668,7 @@ namespace SI
 		};
 
 		template <class T>
-		using promoted_scalar_type = std::conditional_t<std::is_same_v<scalar_value_type_t<T>, SIfloat>, SIfloat, SIfloat>;
+		using promoted_scalar_type = std::conditional_t<std::is_same_v<scalar_value_type_t<T>, SIdouble>, SIdouble, SIdouble>;
 
 		template <class T>
 		struct is_arithmetic : std::is_arithmetic<T> {};
@@ -786,17 +786,17 @@ namespace SI
 				return value(q);
 			}
 
-			SI_INLINE_CONSTEXPR SIfloat operator()(const quantity<Dimension, SIfloat>& q) const
+			SI_INLINE_CONSTEXPR SIdouble operator()(const quantity<Dimension, SIdouble>& q) const
 			{
 				return value(q);
 			}
 
-			SI_INLINE_CONSTEXPR vec2<SIfloat> operator()(const quantity<Dimension, vec2<SIfloat>>& q) const
+			SI_INLINE_CONSTEXPR vec2<SIdouble> operator()(const quantity<Dimension, vec2<SIdouble>>& q) const
 			{
 				return value(q);
 			}
 
-			SI_INLINE_CONSTEXPR vec3<SIfloat> operator()(const quantity<Dimension, vec3<SIfloat>>& q) const
+			SI_INLINE_CONSTEXPR vec3<SIdouble> operator()(const quantity<Dimension, vec3<SIdouble>>& q) const
 			{
 				return value(q);
 			}

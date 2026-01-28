@@ -7,8 +7,8 @@
 namespace SI {
 
 #define LITERAL(_symbol, _factor, _base_unit) \
-constexpr auto operator "" _symbol(long double x) { return _base_unit(static_cast<double_t>(_factor ## L * x)); } \
-constexpr auto operator "" _symbol(unsigned long long x) { return _base_unit(static_cast<double_t>(_factor ## L * x)); }
+constexpr auto operator "" _symbol(long double x) { return _base_unit(static_cast<SIdouble>(_factor ## L * x)); } \
+constexpr auto operator "" _symbol(unsigned long long x) { return _base_unit(static_cast<SIdouble>(_factor ## L * x)); }
 
 // +++ SI BASE UNITS +++
 //
