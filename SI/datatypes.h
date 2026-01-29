@@ -45,6 +45,7 @@ namespace SI
 	DATATYPE(per_amount_of_substance,0, 0,  0, 0,-1, 0, 0); // per mol (reciprocal)
 	DATATYPE(angular_speed,          0, 0, -1, 0, 1, 0, 0); // in °/s
 	DATATYPE(specific_energy,        2, 0, -2, 0, 0, 0, 0); // in J/kg
+	DATATYPE(volume_per_time_squared,3, 0, -2, 0, 0, 0, 0); // in m³/s²
 
 #undef DATATYPE
 } // namespace SI
