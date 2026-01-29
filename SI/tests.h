@@ -116,8 +116,16 @@ namespace SI { namespace tests {
 	// velocity in...
 	static_assert(1_km_per_s == 1000_m_per_s);
 	static_assert(3.6_km_per_h == 1_m_per_s);
+	static_assert(1_km_per_h == 1_km / 1_h);
+	static_assert(1_km_per_h == 1000_m / 1_h);
+	static_assert(1_km_per_h == 1_km / 60_min);
+	static_assert(1_km_per_h == 1000_m / 60_min);
+	static_assert(1_km_per_h == 1_km / 3600_s);
+	static_assert(1_km_per_h == 1000_m / 3600_s);
+	static_assert(1_km_per_h == 500_m / 1800_s);
 	// acceleration in...
 	static_assert(1_km_per_s² == 1000_m_per_s²);
+	static_assert(0.001_km_per_s² == 1_m_per_s²);
 	// frequency in :
 	static_assert(1_THz == 1000_GHz);
 	static_assert(1_GHz == 1000_MHz);
