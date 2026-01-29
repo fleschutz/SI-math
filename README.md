@@ -14,14 +14,14 @@ Apply math based on SI units correct, with high precision, and as easy as possib
 
 🧱 Building Blocks
 ------------------
-1. **Datypes** such as SI::length or SI::time in [<SI/datatypes.h>](SI/datatypes.h)
-2. **Units** such as SI::meters or SI::seconds in [<SI/units.h>](SI/units.h)
-3. **Literals** such as 100_m or 60_sec in [<SI/literals.h>](SI/literals.h)
-4. **Constants** such as SI::constant::speed_of_light in [<SI/constants.h>](SI/constants.h)
-5. **Formulas** such as SI::formula::wavelength() in [<SI/formulas.h>](SI/formulas.h)
-6. **I/O** such as SI::print() in [<SI/IO.h>](SI/IO.h)
+1. **Datypes** such as SI::length or SI::time in [<SI/datatypes.h>](SI/datatypes.h).
+2. **Units** such as SI::meters or SI::seconds in [<SI/units.h>](SI/units.h).
+3. **Literals** such as 100_m or 60_sec in [<SI/literals.h>](SI/literals.h).
+4. **Constants** such as SI::constant::speed_of_light in [<SI/constants.h>](SI/constants.h).
+5. **Formulas** such as SI::formula::wavelength() in [<SI/formulas.h>](SI/formulas.h).
+6. **I/O** such as SI::print() in [<SI/IO.h>](SI/IO.h).
 7. **Tests** at compile-time to verify everything in [<SI/tests.h>](SI/tests.h).
-8. **Datasets** such as chemical elements, satellites, exoplanets in 📂[datasets](datasets/)
+8. **Datasets** such as chemical elements, satellites, exoplanets in 📂[datasets](datasets/).
 
 🔎 Quick Example
 ----------------
