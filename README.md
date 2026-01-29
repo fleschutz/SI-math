@@ -84,6 +84,7 @@ Please find 34 more examples in: [examples.cpp](examples.cpp). Executing: `cmake
 ❔ FAQ
 -------
 * **What is SI?** It's the [International System of Units](https://en.wikipedia.org/wiki/International_System_of_Units).
+* **Why use libSI?** To avoid mistakes and for precision and convenience (see the constants, common formulas, literals, and datasets)
 * **Where are the list of references?** At the end of each source code file.
 
 🤝 Contributing
