@@ -196,5 +196,5 @@ const satellite_data satellites[] {
 {"Pluto","Styx",0.,10._km,00_g_per_cm³,27.,0.35,},
 };
 
-} // dataset::
+} // namespace dataset
 

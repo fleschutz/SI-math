@@ -83,7 +83,7 @@ const auto container_1AA_ext_width  =  2.438_m;
 const auto container_1AA_max_gross_mass = 36'000_kg;
 //...
 
-} // dataset::
+} // namespace dataset
 
 // Sources
 // -------

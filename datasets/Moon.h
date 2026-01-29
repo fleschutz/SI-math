@@ -36,7 +36,7 @@ const Moon_data Moon = {
 	708.7 * 60 * 60_s, 
 };
 
-} // dataset::
+} // namespace dataset
 
 // Sources
 // -------

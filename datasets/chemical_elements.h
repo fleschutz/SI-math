@@ -4,7 +4,7 @@
 #include <SI/literals.h>
 using namespace SI;
 
-namespace dataset { 
+namespace dataset {
 
 struct element_data {
     int atomic_number;
@@ -162,5 +162,5 @@ const element_data elements[] {
 #endif
 };
 
-} // dataset::
+} // namespace dataset
 

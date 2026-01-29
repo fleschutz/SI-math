@@ -26,7 +26,7 @@ const material_data Zinc      = { "Zinc",      7144_kg_per_m³ };
 
 const material_data materials[] = { Aluminium, Asphalt, Concrete, Copper, Gold, Granite, Paper, Tin, Titanium, Tungsten, Zinc };
 
-} // dataset::
+} // namespace dataset
 
 // Sources
 // -------

@@ -19,7 +19,7 @@ typedef struct {
 //                             NAME      VOLUME            MASS           DENSITY         SURFACE GRAVITY   CIRCUMERENCE   POPULATION
 const Earth_data Earth   = { "Earth",   1.0832e12_km³,    5.97370e24_kg, 5.515_g_per_cm³,9.80665_m_per_s², 40075.0167_km, 8.2e9, };
 
-} // dataset::
+} // namespace dataset
 
 // Sources
 // -------
