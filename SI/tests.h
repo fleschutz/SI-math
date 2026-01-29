@@ -36,6 +36,11 @@ namespace SI { namespace tests {
 	static_assert(sizeof(float) <= sizeof(double));
 	static_assert(sizeof(double) <= sizeof(long double));
 
+	static_assert(sizeof(char) == sizeof(unsigned char));
+	static_assert(sizeof(short) == sizeof(unsigned short));
+	static_assert(sizeof(int) == sizeof(unsigned int));
+	static_assert(sizeof(long) == sizeof(unsigned long));
+
 	// +++ SI BASE UNITS +++
 	// length in...
 	static_assert(1_Gm == 1000_Mm);
