@@ -79,19 +79,19 @@ CONSTANT(speed_of_sound_in_diamonds,   12'000, meters_per_second);
 // +++ MATHEMATICAL CONSTANTS +++
 CONSTANT(tau,          6.28318530717958647692, radians); // (symbol: τ)
 CONSTANT(pi,           3.14159265358979323846, radians); // (symbol: π)
-CONSTANT(half_pi,      1.57079632679489661923, radians);
-CONSTANT(quarter_pi,   0.78539816339744830961, radians);
+CONSTANT(half_pi,      1.57079632679489661923, radians); // (π / 2)
+CONSTANT(quarter_pi,   0.78539816339744830961, radians); // (π / 4)
 CONSTANT(phi,          1.61803398874989484820, dimensionless); // (symbol: φ)
 CONSTANT(Eulers_number,2.71828182845904523536, dimensionless);
 
 // +++ ASTRONOMICAL CONSTANTS +++
 CONSTANT(AU,                  149'597'870'691, meters); // one astronomical unit (symbol: au)
 CONSTANT(parsec,       30'856'775'814'913'700, meters); // one Parsec (symbol: pc)
-CONSTANT(lightyear,     9'460'730'777'119'564, meters); 
+CONSTANT(lightyear,     9'460'730'777'119'564, meters); // one light-year (symbol: ly)
 
 // +++ VARIOUS CONSTANTS +++
 CONSTANT(atm,                          101325, pascals); // standard atmosphere
-CONSTANT(Marathon_length,              42'195, meters);
+CONSTANT(Marathon_distance,            42'195, meters);
 CONSTANT(quarter_mile,                 402.34, meters);
 
 #undef CONSTANT
