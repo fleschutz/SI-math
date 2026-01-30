@@ -1,4 +1,4 @@
-// <SI/constants.h> - type-safe constants based on SI units, e.g. SI::constant::speed_of_light
+// <SI/constants.h> - type-safe constants based on SI units, e.g. SI::constant::G
 //                    (sorted by: SI defining, universal, electromagnetic, atomic and nuclear, physico-chemical,...)
 #pragma once
 #include <SI/units.h>
@@ -26,6 +26,10 @@ CONSTANT(G,                        6.67430e-11, meters3_per_kilogram_per_second2
 CONSTANT(min_temperature,                   0, kelvins); // the lowest possible temperature (Absolute zero)
 CONSTANT(Z_0,                   376.730313667, ohms); // characteristic impedance of vacuum
 CONSTANT(epsilon_0,  8.854'187'817'620'39e-12, farads_per_meter); // electric constant (vacuum permittivity, symbol: ε_0)
+CONSTANT(l_P,                    1.616255e-35, meters); // Planck length (2022 CODATA)
+CONSTANT(m_P,                     2.176434e-8, kilograms); // Planck mass (2022 CODATA)
+CONSTANT(T_P,                     1.416784e32, kelvins); // Planck temperature (2022 CODATA)
+CONSTANT(t_P,                    5.391247e-44, seconds); // Planck time (2022 CODATA)
 CONSTANT(h_bar,             1.054'571'817e-34, jouleseconds); // reduced Planck constant
 
 // +++ ELECTROMAGNETIC CONSTANTS +++
