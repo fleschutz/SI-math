@@ -42,22 +42,23 @@ CONSTANT(mu_N,                  5.0507837e-27, joules_per_tesla); // nuclear mag
 CONSTANT(R_K,                     25812.80745, ohms); // von Klitzing constant
 
 // +++ ATOMIC AND NUCLEAR CONSTANTS +++
-CONSTANT(electron_mass,      9.1093837139e-31, kilograms);
-CONSTANT(m_e,                9.1093837139e-31, kilograms); // electron mass
-CONSTANT(muon_mass,           1.883531627e-28, kilograms);
-CONSTANT(tau_mass,                3.16754e-27, kilograms);
-CONSTANT(proton_mass,       1.67262192595e-27, kilograms);
-CONSTANT(m_p,               1.67262192595e-27, kilograms);
-CONSTANT(neutron_mass,      1.67492750056e-27, kilograms);
-CONSTANT(a_0,                  5.29177210e-11, meters);   // Bohr radius
-CONSTANT(r_e,                   2.8179403e-15, meters);   // classical electron radius
-CONSTANT(g_e,               -2.00231930436256, dimensionless); // electron g-factor
+CONSTANT(a_0,            5.291'772'105'44e-11, meters);   // Bohr radius (2022 CODATA)
 CONSTANT(alpha,                  7.2973525e-3, dimensionless); // fine-structure constant
-CONSTANT(alpha_inv,             137.035999084, dimensionless); // inverse fine-structure constant
+CONSTANT(alpha_inv,           137.035'999'177, dimensionless); // inverse fine-structure constant (2022 CODATA)
 CONSTANT(E_h,                4.3597447222e-18, joules);    // Hartree energy
-CONSTANT(sin2Theta_W,                 0.22290, dimensionless); // weak mixing angle
+CONSTANT(g_e,               -2.00231930436256, dimensionless); // electron g-factor
 CONSTANT(h_2me,                  3.6369475e-4, meters2_per_second); // quantum of circulation
-CONSTANT(R_inf,               10973731.568160, per_meter); // Rydberg constant
+CONSTANT(m_e,              9.109'383'7139e-31, kilograms); // electron mass (2022 CODATA)
+CONSTANT(m_d,              3.343'583'7768e-27, kilograms); // deuteron mass (2022 CODATA)
+CONSTANT(m_h,              5.006'412'7862e-27, kilograms); // helion mass (2022 CODATA)
+CONSTANT(m_mu,              1.883'531'627e-28, kilograms); // muon mass (2022 CODATA)
+CONSTANT(m_n,            1.674'927'500'56e-27, kilograms); // neutron mass (2022 CODATA)
+CONSTANT(m_p,            1.672'621'925'95e-27, kilograms); // proton mass (2022 CODATA)
+CONSTANT(m_tau,                  3.167'54e-27, kilograms); // tau mass (2022 CODATA)
+CONSTANT(m_t,              5.007'356'7512e-27, kilograms); // triton mass (2022 CODATA)
+CONSTANT(r_e,              2.817'940'3205e-15, meters); // classical electron radius (2022 CODATA)
+CONSTANT(R_inf,            10'973'731.568'157, per_meter); // Rydberg constant (2022 CODATA)
+CONSTANT(sin2Theta_W,                 0.22290, dimensionless); // weak mixing angle
 CONSTANT(sigma_e,               6.6524587e-29, meters2); // Thomson cross section (symbol: σ_e)
 
 // +++ PHYSICO-CHEMICAL CONSTANTS +++
