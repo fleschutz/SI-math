@@ -22,15 +22,15 @@ CONSTANT(N_A,                   6.02214076e23, per_mol); // the Avogadro constan
 CONSTANT(K_cd,                            683, lumens_per_watt); // the luminous efficacy of monochromatic radiation of frequency 540 THz
 
 // +++ UNIVERSAL CONSTANTS +++
-CONSTANT(G,                        6.67430e-11, meters3_per_kilogram_per_second2); // universal gravitational constant (2022 CODATA)
-CONSTANT(min_temperature,                   0, kelvins); // the lowest possible temperature (Absolute zero)
-CONSTANT(Z_0,                   376.730313667, ohms); // characteristic impedance of vacuum
-CONSTANT(epsilon_0,  8.854'187'817'620'39e-12, farads_per_meter); // electric constant (vacuum permittivity, symbol: ε_0)
+CONSTANT(G,                       6.67430e-11, meters3_per_kilogram_per_second2); // Newtonian constant of gravitation (2022 CODATA)
+CONSTANT(Z_0,                 376.730'313'412, ohms); // characteristic impedance of vacuum (2022 CODATA)
+CONSTANT(epsilon_0,        8.854'187'8188e-12, farads_per_meter); // vacuum electric permittivity, symbol: ε_0, 2022 CODATA)
 CONSTANT(l_P,                    1.616255e-35, meters); // Planck length (2022 CODATA)
 CONSTANT(m_P,                     2.176434e-8, kilograms); // Planck mass (2022 CODATA)
 CONSTANT(T_P,                     1.416784e32, kelvins); // Planck temperature (2022 CODATA)
 CONSTANT(t_P,                    5.391247e-44, seconds); // Planck time (2022 CODATA)
-CONSTANT(h_bar,             1.054'571'817e-34, jouleseconds); // reduced Planck constant
+CONSTANT(h_bar,             1.054'571'817e-34, jouleseconds); // reduced Planck constant (2022 CODATA)
+CONSTANT(mu_0,            1.256'637'061'27e-6, newtons_per_ampere2); // vacuum magnetic permeability (2022 CODATA)
 
 // +++ ELECTROMAGNETIC CONSTANTS +++
 CONSTANT(mu_B,                  9.2740100e-24, joules_per_tesla); // Bohr magneton (symbol: µB)
@@ -93,6 +93,7 @@ CONSTANT(parsec,       30'856'775'814'913'700, meters); // one Parsec (symbol: p
 CONSTANT(lightyear,     9'460'730'777'119'564, meters); // one light-year (symbol: ly)
 
 // +++ VARIOUS CONSTANTS +++
+CONSTANT(min_temperature,                   0, kelvins); // the lowest possible temperature (absolute zero)
 CONSTANT(atm,                          101325, pascals); // standard atmosphere
 CONSTANT(Marathon_distance,            42'195, meters);
 CONSTANT(quarter_mile,                 402.34, meters);

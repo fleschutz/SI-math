@@ -66,6 +66,7 @@ namespace SI
 	UNIT(newtons)      = unit<force>();
 	UNIT(newtonmeters) = newtons * meters;
 	UNIT(newtonseconds) = newtons * seconds;
+	UNIT(newtons_per_ampere2) = newtons / (amperes * amperes);
 	// energy in...
 	UNIT(joules)       = unit<energy>();
 	UNIT(jouleseconds) = joules * seconds;
