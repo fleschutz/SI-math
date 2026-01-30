@@ -152,7 +152,7 @@ volume volume_of_prism(area base_area, length height)
 }
 
 // +++ MOVING OBJECTS +++
-// Calculates the kinetic energy of a non-rotating object of mass m traveling at velocity v.
+// Calculates the kinetic energy of a non-rotating object of mass (m) traveling at velocity (v).
 energy kinetic_energy(mass m, velocity v)
 {
 	return 0.5 * m * square(v);
@@ -207,7 +207,7 @@ force lift_force_of_wing(dimensionless lift_coefficient, area wing_surface, dens
 	return 0.5 * air_density * square(true_air_speed) * wing_surface * lift_coefficient;
 }
 
-// Calculate the Mach number from velocity of moving aircraft (v) at altitude's speed of sound.
+// Calculate the Mach number from velocity (v) of moving aircraft at altitude's speed of sound.
 dimensionless Mach_number(velocity v, velocity speed_of_sound)
 {
 	return v / speed_of_sound;
@@ -235,7 +235,7 @@ frequency frequency_of_chromatic_note(int note, int reference_note, frequency re
 	return std::pow(std::pow(2., 1. / 12.), note - reference_note) * reference_frequency;
 }
 
-// Calculates the wavelength from velocity and frequency.
+// Calculates the wavelength from velocity (v) and frequency (f).
 length wavelength(velocity v, frequency f)
 {
 	return v / f;
