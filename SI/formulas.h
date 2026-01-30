@@ -231,10 +231,10 @@ velocity climb_rate(velocity ground_speed, angle climb_angle)
 
 // +++ GRAVITATION +++
 
-// Calculate the attractive force between two bodies of masses m1 and m2 with distance r between their centres of mass.
-force gravitational_attractive_force(mass m1, mass m2, length r)
+// Calculates the attractive force between two bodies of masses (m1) and (m2) with distance (d) between their centres of mass.
+force gravitational_attractive_force(mass m1, mass m2, length d)
 {
-	return constant::G * ((m1 * m2 / square(r)));
+	return (constant::G * m1 * m2) / square(d);
 }
 
 // Calculates the escape velocity from a Mass (M) of body (e.g. a planet) with radius of body (r).

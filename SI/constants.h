@@ -23,7 +23,7 @@ CONSTANT(N_A,                   6.02214076e23, per_mol); // the Avogadro constan
 CONSTANT(K_cd,                            683, lumens_per_watt); // the luminous efficacy of monochromatic radiation of frequency 540 THz
 
 // +++ UNIVERSAL CONSTANTS +++
-CONSTANT(G,                        6.6743e-11, meters3_per_kilogram_per_second2); // universal gravitational constant 
+CONSTANT(G,                        6.67430e-11, meters3_per_kilogram_per_second2); // universal gravitational constant (2022 CODATA)
 CONSTANT(min_temperature,                   0, kelvins); // the lowest possible temperature (Absolute zero)
 CONSTANT(Z_0,                   376.730313667, ohms); // characteristic impedance of vacuum
 CONSTANT(epsilon_0,  8.854'187'817'620'39e-12, farads_per_meter); // electric constant (vacuum permittivity, symbol: ε_0)
@@ -103,4 +103,4 @@ CONSTANT(quarter_mile,                 402.34, meters);
 // 2. https://en.wikipedia.org/wiki/List_of_physical_constants
 // 3. https://en.wikipedia.org/wiki/List_of_mathematical_constants
 // 4. https://en.wikipedia.org/wiki/Astronomical_constant
-
+// 5. https://codata.org - CODATA: the committee on data of the International Science Council (ISC)
