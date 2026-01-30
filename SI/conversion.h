@@ -311,6 +311,14 @@ namespace SI
 
 	std::string to_string(force F)
 	{
+		if (F <= -1_ZN || F >= 1_ZN)
+			return _join(F / 1_ZN, "ZN");
+		if (F <= -1_EN || F >= 1_EN)
+			return _join(F / 1_EN, "EN");
+		if (F <= -1_PN || F >= 1_PN)
+			return _join(F / 1_PN, "PN");
+		if (F <= -1_TN || F >= 1_TN)
+			return _join(F / 1_TN, "TN");
 		if (F <= -1_GN || F >= 1_GN)
 			return _join(F / 1_GN, "GN");
 		if (F <= -1_MN || F >= 1_MN)

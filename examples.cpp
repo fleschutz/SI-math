@@ -228,7 +228,20 @@ int main()
 	auto flight_time = formula::ballistic_travel_time(muzzle_velocity, altitude, launch_angle, dataset::Moon.surface_gravity);
 	print(max_height, max_range, flight_time);
 } {
-	print("\n35. What are the frequencies and wavelengths of all music notes? ");
+	print("\n36. What's the attractive force between Earth and Moon? ");
+	auto Earth_mass = 5.9722e24_kg;
+	auto Moon_mass = 7.346e22_kg;
+	auto Earth_Moon_distance = 384'399_km;
+	auto force = formula::gravitational_attractive_force(Earth_mass, Moon_mass, Earth_Moon_distance);
+	print(force);
+} {
+	print("\n37. What's the attractive force between Sun and Earth? ");
+	auto Sun_mass = 1.988416e30_kg;
+	auto Earth_mass = 5.9722e24_kg;
+	auto force = formula::gravitational_attractive_force(Sun_mass, Earth_mass, constant::AU);
+	print(force);
+} {
+	print("\n38. What are the frequencies and wavelengths of all music notes? ");
 	auto reference_note = 49;     // reference note is A in octave 4 (ranks #49 on a piano)...
 	auto reference_freq = 440_Hz; // ... which is at 440Hz.
 	auto notes = "CDEFGAB";       // notes string starting from A
@@ -240,7 +253,7 @@ int main()
 		print(frequency, wavelength);
 	}
 } {
-	print("\n36. Which exoplanets are near and seem life-friendly? ");
+	print("\n39. Which exoplanets are near and seem life-friendly? ");
 	for (auto exoplanet : dataset::exoplanets)
 	{
 		if (exoplanet.number_of_stars == 0)

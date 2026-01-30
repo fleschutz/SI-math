@@ -23,10 +23,10 @@ CONSTANT(N_A,                   6.02214076e23, per_mol); // the Avogadro constan
 CONSTANT(K_cd,                            683, lumens_per_watt); // the luminous efficacy of monochromatic radiation of frequency 540 THz
 
 // +++ UNIVERSAL CONSTANTS +++
+CONSTANT(G,                        6.6743e-11, meters3_per_kilogram_per_second2); // universal gravitational constant 
 CONSTANT(min_temperature,                   0, kelvins); // the lowest possible temperature (Absolute zero)
 CONSTANT(Z_0,                   376.730313667, ohms); // characteristic impedance of vacuum
 CONSTANT(epsilon_0,  8.854'187'817'620'39e-12, farads_per_meter); // electric constant (vacuum permittivity, symbol: ε_0)
-CONSTANT(G,                       6.67408e-11, meters3_per_kilogram_per_second2); // Newtonian constant of gravitation
 CONSTANT(h_bar,             1.054'571'817e-34, jouleseconds); // reduced Planck constant
 
 // +++ ELECTROMAGNETIC CONSTANTS +++

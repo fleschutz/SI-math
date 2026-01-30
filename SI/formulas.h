@@ -229,6 +229,20 @@ velocity climb_rate(velocity ground_speed, angle climb_angle)
 	return sin(climb_angle) * ground_speed;
 }
 
+// +++ GRAVITATION +++
+
+// Calculate the attractive force between two bodies of masses m1 and m2 with distance r between their centres of mass.
+force gravitational_attractive_force(mass m1, mass m2, length r)
+{
+	return constant::G * ((m1 * m2 / square(r)));
+}
+
+// Calculates the escape velocity from a Mass (M) of body (e.g. a planet) with radius of body (r).
+velocity gravitational_escape_velocity(mass M, length r)
+{
+	return sqrt((2.0 * constant::G * M) / r);
+}
+
 // +++ VARIOUS FORMULAS +++
 frequency frequency_of_chromatic_note(int note, int reference_note, frequency reference_frequency)
 {
@@ -301,12 +315,6 @@ length ballistic_max_range(velocity v0, length h, angle a, acceleration g)
 time ballistic_travel_time(velocity v0, length h, angle a, acceleration g)
 {
 	return (v0 * sin(a) + sqrt(square(v0 * sin(a)) + 2.0 * g * h)) / g;
-}
-
-// Calculates the escape velocity from a Mass (M) of body (e.g. a planet) with radius of body (r).
-velocity gravitational_escape_velocity(mass M, length r)
-{
-	return sqrt((2.0 * constant::G * M) / r);
 }
 
 // Calculates the amount of energy absorbed (E) from a source of radiation by some material per mass (m)
