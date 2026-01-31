@@ -36,23 +36,22 @@ int main()
 	print(E);
 }
 ```
-Please find 34 more examples in: [examples.cpp](examples.cpp). Executing: `cmake . && make && ./examples` generates this output:
+Please find all 39 examples in: [examples.cpp](examples.cpp). Executing: `cmake . && make && ./examples` generates this output:
 
 ```
 1. What's the potential energy of just 1g mass? 89.88TJ
 2. What's the free fall time from Burj Khalifa tower in Dubai? 12.99sec
 3. What's the average speed of Kiptum's world record in Marathon? 21.10km/h
 4. What's the kinetic energy of a car at 50 km/h? 125.39kJ
-5. What's the wavelength of hydrogen (H2) in vacuum? 21.11cm
-6. What's the frequency and wavelength of the high 'c' music note? 1.05kHz, 32.78cm
-7. What's the population density on Earth (people per km² of land area)? 55.06/km²
-8. How much land area would be available for each person on Earth? 1.82hm²
-9. How long takes a 1TB download at 100MBit speed? 22.22h
 ...
 ```
 
-📁 Project Structure
---------------------
+❔ FAQ
+-------
+* **What is SI?** It's the [International System of Units](https://en.wikipedia.org/wiki/International_System_of_Units).
+* **Why use libSI?** To avoid mistakes and for precision and convenience (see the constants, common formulas, literals, and datasets)
+* **Where are the list of references?** At the end of each source code file.
+* **Where are libSI's files and folders?** Here is the project structure:
 ```
 ├📄CMakeLists.txt 
 ├📄examples.cpp 
@@ -79,12 +78,6 @@ Please find 34 more examples in: [examples.cpp](examples.cpp). Executing: `cmake
    ...
    (59 files, 3 folders, 19MB total)
 ```
-
-❔ FAQ
--------
-* **What is SI?** It's the [International System of Units](https://en.wikipedia.org/wiki/International_System_of_Units).
-* **Why use libSI?** To avoid mistakes and for precision and convenience (see the constants, common formulas, literals, and datasets)
-* **Where are the list of references?** At the end of each source code file.
 
 🤝 Contributing
 ---------------
