@@ -168,26 +168,29 @@ namespace SI {
 		return std::atan2(meters(y), meters(x));
 	}
 
-	SI_INLINE angle sin2(angle x) // returns sin²x
+	/// @brief Calculates sin²x
+	SI_INLINE angle sin2(angle x)
 	{
 		return 0.5 * (1.0 - std::cos(2.0 * x));
 	}
 
-	SI_INLINE angle cos2(angle x) // returns cos²x
+	/// @brief Calculates cos²x
+	SI_INLINE angle cos2(angle x)
 	{
 		return 0.5 * (1.0 + std::cos(2.0 * x));
 	}
 
 	// BASIC FUNCTIONS/TEMPLATES
-	// Raise any number <x> to power of 2 (x² or x*x).
+
+	/// @brief Raise any number <x> to power of 2 (x² or x*x).
 	template <typename T>
 	[[nodiscard]] SI_INLINE_CONSTEXPR auto square(T x) { return x * x; }
 
-	// Raise any number <x> to power of 3 (x³ or x*x*x).
+	/// @brief Raise any number <x> to power of 3 (x³ or x*x*x).
 	template <typename T>
 	[[nodiscard]] SI_INLINE_CONSTEXPR auto cube(T x) { return x * x * x; }
 
-	// Clamp any number <x> between min and max value.
+	/// @brief Clamp any number <x> between min and max value.
 	template <typename T>
 	[[nodiscard]] SI_INLINE_CONSTEXPR auto clamp(T x, T min, T max) {
 		if (x < min) x = min;

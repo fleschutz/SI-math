@@ -1,6 +1,6 @@
 /// @file	SI/tests.h
 /// @brief	Defines unit tests at compile-time to verify everything.
-/// @details	Contains: 1. Demo Checks, 2. Basic C/C++, 3. SI Base Units, 4. SI Derived Units, 5. Astronomical Units, 6. Imperial Units, 7. Digital Units, 8. Various Units, 9. Functions & Templates
+/// @details	Contains: 1. Demo Checks, 2. Datatypes, 3. SI Base Units, 4. SI Derived Units, 5. Astronomical Units, 6. Imperial Units, 7. Digital Units, 8. Various Units, 9. Functions & Templates
 
 #pragma once
 #include <cassert>
@@ -21,8 +21,8 @@ namespace SI {
 	static_assert(1_Mach * 10_percent == 33_m_per_s);
 	static_assert((0_degC + 32_degF + 491.67_degR + 273.15_K) / 4 == 273.15_K);
 
-	// 2. Check Basic C/C++
-	// --------------------
+	// 2. Check Datatypes
+	// ------------------
 	static_assert(sizeof(char) <= sizeof(short));
 	static_assert(sizeof(short) <= sizeof(int));
 	static_assert(sizeof(int) <= sizeof(long));
@@ -34,6 +34,15 @@ namespace SI {
 	static_assert(sizeof(short) == sizeof(unsigned short));
 	static_assert(sizeof(int) == sizeof(unsigned int));
 	static_assert(sizeof(long) == sizeof(unsigned long));
+
+	static_assert(sizeof(dimensionless) == sizeof(SIdouble));
+	static_assert(sizeof(length) == sizeof(SIdouble));
+	static_assert(sizeof(mass) == sizeof(SIdouble));
+	static_assert(sizeof(time) == sizeof(SIdouble));
+	static_assert(sizeof(temperature) == sizeof(SIdouble));
+	static_assert(sizeof(electric_current) == sizeof(SIdouble));
+	static_assert(sizeof(amount_of_substance) == sizeof(SIdouble));
+	static_assert(sizeof(luminous_intensity) == sizeof(SIdouble));
 
 	// 3. Check SI Base Units
 	// ----------------------
