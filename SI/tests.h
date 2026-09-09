@@ -1,6 +1,6 @@
 /// @file	SI/tests.h
 /// @brief	Defines unit tests at compile-time to verify everything.
-/// @details	Contains: 1. Demo Checks, 2. Basic C/C++, 3. SI Base Units, 4. SI Derived Units, 5. Astronomical Units, 6. Imperial Units, 7. Digital Units, 8. Various Units, 9. Function Checks
+/// @details	Contains: 1. Demo Checks, 2. Basic C/C++, 3. SI Base Units, 4. SI Derived Units, 5. Astronomical Units, 6. Imperial Units, 7. Digital Units, 8. Various Units, 9. Functions & Templates
 
 #pragma once
 #include <cassert>
@@ -262,27 +262,36 @@ namespace SI {
 	// 8. Check Various Units
 	// ----------------------
 	// pressure in...
+	static_assert(1_Gbar == 1000_Mbar);
 	static_assert(1_Mbar == 1000_kbar);
 	static_assert(1_kbar == 1000_bar);
 	static_assert(1_bar  == 1000_mbar);
 
-	// 9. Check Functions
-	// ------------------
+	// 9. Check Functions & Templates
+	// ------------------------------
 	static_assert(abs(-3.5_m) == 3.5_m);
-	static_assert(abs(-1_m) == 1_m);
-	static_assert(abs(0_m) == 0_m);
-	static_assert(abs(1_m) == 1_m);
-	static_assert(abs(5.6_m) == 5.6_m);
+	static_assert(abs(-1_m)   == 1_m);
+	static_assert(abs(0_m)    == 0_m);
+	static_assert(abs(1_m)    == 1_m);
+	static_assert(abs(5.6_m)  == 5.6_m);
 
-	static_assert(square(0_m) == 0_m²);
-	static_assert(square(1_m) == 1_m²);
-	static_assert(square(3_m) == 9_m²);
+	static_assert(square(-3_m) == 9_m²);
+	static_assert(square(-1_m) == 1_m²);
+	static_assert(square(-.5_m)== .25_m²);
+	static_assert(square(0_m)  == 0_m²);
+	static_assert(square(.5_m) == .25_m²);
+	static_assert(square(1_m)  == 1_m²);
+	static_assert(square(3_m)  == 9_m²);
 
 	// static_assert(sqrt(9_m²) == 3_m); (TODO)
 
-	static_assert(cube(0_m) == 0_m³);
-	static_assert(cube(1_m) == 1_m³);
-	static_assert(cube(3_m) == 27_m³);
+	static_assert(cube(-3_m) == -27_m³);
+	static_assert(cube(-1_m) == -1_m³);
+	static_assert(cube(-.5_m)== -0.125_m³);
+	static_assert(cube(0_m)  == 0_m³);
+	static_assert(cube(.5_m) == 0.125_m³);
+	static_assert(cube(1_m)  == 1_m³);
+	static_assert(cube(3_m)  == 27_m³);
 
 	// static_assert(cbrt(27_m³) == 3_m); (TODO)
 
